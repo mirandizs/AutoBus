@@ -1,0 +1,252 @@
+body {
+  margin: 0;
+  font-family: Calibri, Helvetica, sans-serif;
+}
+
+.main {
+  flex: 1;
+}
+
+.textoAzul {
+  color: rgb(3, 3, 59);
+}
+
+/* marca do site (o nome no topo da página) */
+.marca{
+    float: left;
+    align-items: left;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 9px;
+  }
+  
+  
+  /* imagem da logodo site */
+  .imagemLogo {
+    width: 50px;
+    height: 40px;
+    margin-top: 0;
+    padding-bottom: 2px;
+  }
+  
+  
+  .topo{
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: rgba(3, 3, 59);
+    color: white;
+    z-index: 2;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /*  -----  SOBRE O BOTAO DE LOGIN  ----------------------------------  */
+  .botaoLogin{
+    background-color: transparent;
+    /*border: none;*/
+    color: white;
+    size: 20spx;
+    margin-right: 30px;
+    float: right;
+    cursor: pointer;
+    /*transition: transform 0.2s ease-in-out;*/
+    outline: none;
+  }
+  
+  .botaoLogin:active {
+    transform: scale(1.1); /* Animação de pop-up */
+  }
+  
+  .botaoLogin-a{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-right: 20px;
+    cursor: pointer;
+    outline: none;
+    
+    float: left;
+    align-items: left;
+    text-align: left;
+  }
+  
+  /*para o botao de login*/
+  .login{
+    float: right;
+    display: flex;
+    outline: none;
+  }
+  
+  .conta{
+    text-align: center;
+    float: center;
+    background-color: transparent;
+    text-size-adjust: 10px;
+    align-items: center;
+    outline: none;
+  }
+  
+  .conta:active{
+    background-color: transparent;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* MODAL ----------------------------------------------------------------------------------------------------- */
+  /* Estilo para os campos de entrada no form */
+  .inserir {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid white/*#ccc*/;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  
+  .erro{
+    padding-left: 12px;
+    margin: 3px 0;
+  }
+  
+  /* Form de login (fundo para deixar a página atrás meio escura) */
+  .modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo preto com opacidade */
+    padding-top: 30px;
+    border-radius: 4;
+  }
+  
+  /* Conteúdo do form de login */
+  .modal-content {
+    background-color: rgb(3,3,59); /*rgba(3, 3, 56, 0.945)    rgb(56,68,76)   rgb(24,36,52*/
+    margin: 5% auto;
+    padding: 10px;
+    padding-left: 20px;
+    border: 1px /*solid*/;
+    width: 400px; /* Largura fixa para centralizar */
+    color: white;
+    border-radius: 4%;
+  }
+  
+  /*para mudar a cor da letra do "Não tenho conta. >Criar uma<"*/
+  .letra{
+    color: rgb(0, 162, 255);
+    outline: none;
+  }
+  
+  .imagemLogin{
+    height: 135px;
+    width: 150px;
+    align-items: center;
+    text-align: center;
+    float: center;
+    align-content: center;
+  }
+  
+  /* Botões dentro do do form de login */
+  .botao2, .cancelbtn {
+    width: 45%;
+    padding: 10px;
+    margin: 8px 5px;
+    cursor: pointer;
+    margin-left: 5%;
+    margin-top: 8%;
+    border-radius: 5px;
+  }
+  
+  /*botao para entrar na conta */
+  .botao2 {
+    background-color: #f5f5f5/*#555*/;
+    color: rgb(3,3,59);
+    align-items: center;
+  }
+  
+  .botao2:hover {
+    opacity: 0.8;
+  }
+  
+  /* botao de cancelar */
+  .cancelbtn {
+    background-color: #c4c4c4/*#f44336*/;
+    color: rgb(3,3,59);
+  }
+  
+  .cancelbtn:hover {
+    opacity: 0.8;
+  }
+  
+  .inserir2{
+    float: left;
+    text-align: left;
+    align-items: left;
+  }
+  
+  /* Contêiner para centralizar o conteúdo */
+  .container {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+  }
+  
+  .entrar {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    margin-left: -7%;
+  }
+  
+  /* Animação de zoom para o modal */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from { -webkit-transform: scale(0); }
+    to { -webkit-transform: scale(1); }
+  }
+  
+  @keyframes animatezoom {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+  }
+  
+  /* Responsividade para dispositivos pequenos */
+  @media screen and (max-width: 300px) {
+    span.password {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }

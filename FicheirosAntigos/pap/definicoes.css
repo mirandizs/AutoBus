@@ -1,0 +1,771 @@
+body{
+    /*margin-left: 170px;
+    margin-right: 50px;
+    padding: 30px;*/
+    align-items: center;
+    justify-content: center;
+    font-family: Calibri, Helvetica, sans-serif;
+    background-color: rgb(3,3,59);
+    color: white;
+}
+
+header{
+    background-color:  rgba(2, 2, 41, 0.945);
+    width: 100%;
+    padding: 10px;          
+    margin: 0;   
+    text-align: center;
+    top: 0;              
+    left: 0;  
+    position: fixed;  
+    z-index: 0;
+    font-size: xx-large;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: bold;
+}
+
+.roww {
+    display: flex;
+    margin-left: 12%;
+  }
+
+
+.row {
+    display: flex;
+  }
+
+.column {
+    padding: 10px;
+    /*height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+.left {
+    width: 50%;
+  }
+  
+.right {
+    /*padding-top: 100px;*/
+    padding-top: 40px;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+
+
+
+/* primeira coluna */
+.box1 {
+    padding-top: 10px;
+    padding-left: 1px;
+    padding-right: 1px;
+    width: 200px;
+    height: 520px; 
+    margin-right: 20px;
+    /*margin-top: 70px;*/
+    margin-top: 40px;
+
+    border-radius: 10px;
+    border-color: rgba(3, 3, 56, 0.945);
+    background-color: rgb(255, 255, 255); /* Cor de fundo adicionada */
+    box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.4);
+    float: left;
+    align-items: center;
+    color: rgba(3, 3, 56, 0.945);
+}
+
+/* segunda coluna */
+.box2 {
+    color: rgba(3, 3, 56, 0.945);
+    padding-left: 30px;
+    width: 880px;
+    height: 530px; 
+    margin-left: 1px;
+    margin-right: 180px;
+    margin-top: 40px;
+
+    border-radius: 10px;
+    border-color: rgba(3, 3, 56, 0.945);
+    background-color: rgb(255, 255, 255); /* Cor de fundo adicionada */
+    box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.4);
+    float: left;
+}
+
+/* opções de botão para as definições da conta */
+.botao {
+    background-color: white;
+    border-radius: 7px;
+    border-style: none;
+    border: none;
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 2px;
+    padding-left: 20px;
+    color: rgb(3,3,59);
+    text-align: left;
+    font-size: 14px;
+    display: inline-block; /* Garante que a imagem fique visível */
+}
+
+.botao:hover{
+    background-color: rgba(240, 240, 240);
+    cursor: pointer;
+}
+
+
+/* informações da conta */
+.info {
+    color:grey;
+    /*border: none;*/
+    padding-left: 10px;
+    background-color: white;
+}
+
+/* estilo dos inputs todos (alteração de campos e etc)*/
+.caixa{ 
+    width: 70%;
+    padding: 8px;
+    margin-top: 1px;
+    /*margin-bottom: 1px;*/
+    /*padding-left: 4px;
+    padding-right: 10px;*/
+    display: inline-block;
+    border: 2px solid rgba(230, 227, 255, 0.664);
+    border-radius: 4px;
+    box-sizing: border-box;
+    -webkit-transition: 0.2s;
+    transition: 0.4s;
+    outline: none;
+}
+
+.caixa:focus {
+    border: 2px solid rgb(12, 12, 137);
+    box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.267);
+    color: black
+}
+
+
+
+
+
+
+
+
+
+
+
+/* botao azul de editar dados da conta (tanto no admin como no cliente) --------------------------*/
+#botaoEditar {
+  background-color: rgba(3, 3, 130, 0.945);
+  color: white;
+  border: none;
+  width: 20%;
+  padding: 10px;
+  right: 100%;
+  left: 0 auto;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#botaoEditar:hover{
+  background-color: #0056b3;
+}
+
+#botaoEditar:disabled {
+  cursor: not-allowed;
+  background-color: rgba(70, 70, 87, 0.945);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* isto vai ser para o botao de pesquisar utilizadores*/
+.pesquisar {
+    justify-content: right;
+    margin-left: 20px;
+    width: 40%;
+    height: 30px;
+}
+
+.select {
+  width: 100%;
+  outline: none;
+  border: none;
+
+  .option:hover {
+    background-color: rgb(3, 3, 59);
+    color: white
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* para mostrar as divs do utilizador cliente, ou seja, as definições da conta */
+.janela {
+  display: none; /* esconde todas por padrão */ 
+}
+
+.janela.ativa {
+    display: block; /* mostra apenas a div com a classe 'ativa' */
+}
+
+/* para mostrar as divs do utilizador administrador, ou seja, as getão de utilizadores */
+.gerir {
+  display: none;
+}
+
+.gerir.ativa {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* estilo para o botão de visualizar a password -------------------------------------- */
+.ver{
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    outline: none;
+    margin-right: 7px;
+}
+
+.ver:active{
+    background:url(./img/escondido.png) no-repeat;
+}
+
+.ver:hover{
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* botao para editar a palavra passe e o email do utilizador cliente (imagem com lapis)----------------------------------- */
+.editar {
+    align-items: center;
+    /*width: 15px;*/
+    /*height: 15px;*/
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    padding-top: 5px;
+}
+
+.editar:hover {
+    cursor: pointer;
+}
+
+
+/* imagem do lápis, de editar */
+.imagemEditar {
+    img {
+      width: 15px;
+      height: 15px;
+    }
+}
+
+/* imagem de estado da conta do utilizador*/
+.imagemAtividade {
+  img {
+    width: 35px;
+    height: 25px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* para a tabela de gestão de utilizadores --------------------------------- */
+
+table th,
+table td{
+    border: 2px solid black;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-collapse: collapse;
+}
+
+.dadosTabela {
+    text-align: center;
+}
+
+th {
+    background-color: rgb(3,3,59);
+    color: white;
+}
+  
+
+
+
+
+
+
+/* modal do código de verificação -------------------------------------------------------------------------------------------------*/
+
+/* Full-width input fields */
+.alterar {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  .botaoModal {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .botaoModal:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+    cursor: pointer;
+  }
+  
+  /* imagem para o X do modal */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 450px; /* Could be more or less, depending on screen size */
+    height: 350px;
+    border-radius: 10px;
+    border: none;
+
+    color: rgba(3, 3, 59);
+    text-align: center;
+  }
+  
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+    padding-top: 0;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+/* para os inputs do código de verificação  --------------------------------
+.codigo{
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  width: 100%;
+  font-size: 70px;
+  text-align: center;
+}
+
+.codigoVerificacao {
+  text-align: center;
+  font-size: 60%;
+  padding: auto;
+}*/
+
+.codigo {
+  border: 2px solid rgba(230, 227, 255, 0.664);
+  border-radius: 4px;
+  width: 50%;
+  height: 40px;
+  padding: 8px;
+  outline: none;
+
+  
+  font-size: 30px;
+  text-align: center;
+}
+
+.codigo:focus {
+  border: 2px solid rgb(12, 12, 137);
+  box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.267);
+  color: black
+}
+
+
+
+
+
+
+
+
+
+
+
+/* botao de verificar o código que foi enviado para o email -------------------------------*/
+.botaoVerificar {
+    background-color: rgb(3, 3, 59);
+    color: white;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.botaoVerificar:hover{
+  background-color: rgba(15, 15, 120, 0.945);
+  }
+
+
+
+
+
+
+
+
+
+
+  /* carregamento */
+  .carregamento {
+    --uib-size: 80px;
+    --uib-color: rgb(14, 14, 123);
+    --uib-speed: 1.5s;
+    --dot-size: calc(var(--uib-size) * 0.17);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: var(--uib-size);
+    width: var(--uib-size);
+    margin-left: 48%;
+    margin-right: 52%;
+    margin-top: 225px;
+    margin-bottom: 100px;
+    animation: smoothRotate calc(var(--uib-speed) * 1.8) linear infinite;
+}
+
+.carregamentoFundo {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+.dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    animation: rotate var(--uib-speed) ease-in-out infinite;
+}
+
+.dot::before {
+    content: '';
+    height: var(--dot-size);
+    width: var(--dot-size);
+    border-radius: 50%;
+    background-color: var(--uib-color);
+    transition: background-color 0.3s ease;
+}
+
+.dot:nth-child(2),
+.dot:nth-child(2)::before {
+    animation-delay: calc(var(--uib-speed) * -0.835 * 0.5);
+}
+
+.dot:nth-child(3),
+.dot:nth-child(3)::before {
+    animation-delay: calc(var(--uib-speed) * -0.668 * 0.5);
+}
+
+.dot:nth-child(4),
+.dot:nth-child(4)::before {
+    animation-delay: calc(var(--uib-speed) * -0.501 * 0.5);
+}
+
+.dot:nth-child(5),
+.dot:nth-child(5)::before {
+    animation-delay: calc(var(--uib-speed) * -0.334 * 0.5);
+}
+
+.dot:nth-child(6),
+.dot:nth-child(6)::before {
+    animation-delay: calc(var(--uib-speed) * -0.167 * 0.5);
+}
+
+@keyframes rotate {
+    0% {
+    transform: rotate(0deg);
+    }
+    65%,
+    100% {
+    transform: rotate(360deg);
+    }
+}
+
+@keyframes smoothRotate {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+/* imagem do perfil do utilizador */
+/*.fundo {
+  background-color: transparent;
+  border: none;
+  border-radius: 80px;
+  height: 180px;
+  width: 160px;
+  /*margin-left: 65px;
+}*/
+
+/*.fundo:hover {
+  /*background-color: rgba(0, 0, 0, 0.303);
+  height: 150;
+  width: 150;
+  margin-left: 65px;
+}*/
+
+.imagemm {
+  background: url('img/cameraB2.png') no-repeat center; /* Insere a imagem */
+  height: 50px;
+  width: 50px;
+} 
+
+.imagemUti {
+  height: 260px;
+  width: 260px;
+}
+
+/* BOTAO PARA A IMAGEM DE UTILIZADOR 
+.uploadImg {
+  position: relative;
+  bottom: 0; /* Aligns button at the bottom 
+  left: 35%;
+  margin-top: 20px;
+  transform: translateX(-50%); /* Centers button 
+  border-radius: 10px;
+  background-color: rgb(6, 6, 114);
+  color: white;
+  width: 150px;
+  height: 35px;
+}*/
+
+
+.file-label {
+  position: relative;
+  /*left:26%;*/
+  display: inline-block;
+  padding: 10px 20px;
+  /*background-color: #007bff;*/
+  background-color: rgba(3, 3, 130, 0.945);;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.file-label:hover {
+  background-color: #0056b3;
+}
+
+.file-input {
+  display: none;
+}
+
+/* "caixa" que fica em volta da imagem de perfil */
+.bordas {
+  border: 2px solid rgb(180, 180, 180);
+  border-radius: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  width: 280px;
+  margin-left: 10px;
+}
+
+.alignment {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  margin: auto;
+}
+
+.foto-perfil {
+  margin-left: 110px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
