@@ -9,5 +9,8 @@ import { Footer } from '../../Componentes/Footer/footer';
   styleUrl: './carrinho.css'
 })
 export class PaginaCarrinho {
-
+  ModalMetodo = false
+  TipoPagamentoCartao = false
+  TipoPagamentoMB = false
+  ModalCodigo = false
 }

@@ -22,6 +22,7 @@ export class HttpService {
         Body = JSON.stringify(Body)
       }
 
+      
       const Request = fetch(URL, {
         method: Method,
         credentials: 'include',
@@ -37,6 +38,7 @@ export class HttpService {
           } else {
             Result = await Response.text();
           }
+
           
           resolve(Result)
         } else {

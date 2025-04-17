@@ -1,25 +1,25 @@
 
-
 <footer class="footer">
     <div style="display: flex; align-items: center;">
 
-        @if (true){
-            <div style="position: absolute; left: 0;">
-                <button class="contact-button" routerLink="/contacto">Contacte-nos!</button>
-                <button class="contact-button" routerLink="/contacto">Sobre Nós</button>
-            </div>
-        }@else {
-            <div style="position: absolute; left: 0;">
-                <button class="contact-button">
-                    <style>
-                       
-                    </style>
-                    <div style="display:flex;">
-                        <img class="imagemContact" src="img/telefoneB.png">
-                        <a style="padding-top: 7px">+351 916942618</a>
-                    </div>
-                </button>
-            </div>
+        @if (!Caminho.includes("definicoes")) {
+            @if (Caminho.includes("contacto")) {
+                <div style="position: absolute; left: 0;">
+                    <button class="contact-button">
+                        <div style="display:flex;">
+                            <img class="imagemContact" src="img/telefoneB.png">
+                            <a style="padding-top: 7px">+351 916942618</a>
+                        </div>
+                    </button>
+                </div>
+            }
+            
+            @else {
+                <div style="position: absolute; left: 0;">
+                    <button class="contact-button" routerLink="/contacto">Contacte-nos!</button>
+                    <button class="contact-button" routerLink="/contacto">Sobre Nós</button>
+                </div>
+            }
         }
 
         <div style="margin: 0 auto; text-align:center;">

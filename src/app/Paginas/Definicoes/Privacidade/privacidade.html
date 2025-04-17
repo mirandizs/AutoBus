@@ -14,14 +14,18 @@
                 <img src='img/lapis.png' width='20px' height='20px'>
             </button><br><br>
 
+
+
             <label>Password:</label><br>
-            <input type='password' class='info caixa campoTexto' name='password' id='password'>
+            <input [type]="PasswordVisivel ? 'text' : 'password'" class='info caixa campoTexto' name='password' id='password'>
             <button type='button' class='ver' name="iconPasswordConfirm" id="iconPasswordConfirm"
-                onclick='myFunction("password")'>
-                <img src='img/fechado.png' width='20px' height='20px'>
+                (click)="PasswordVisivel = !PasswordVisivel">
+                <img [src]="PasswordVisivel ? 'img/aberto.png' : 'img/fechado.png'" width='20px' height='20px'>
             </button>
-            <button type='submit' class='editar imagemEditar' id='editarPassword' disabled
-                style="cursor:not-allowed">
+
+
+
+            <button type='submit' class='editar imagemEditar' id='editarPassword' disabled style="cursor:not-allowed">
                 <img src='img/lapis.png' width='20px' height='20px'>
             </button><br><br><br>
 

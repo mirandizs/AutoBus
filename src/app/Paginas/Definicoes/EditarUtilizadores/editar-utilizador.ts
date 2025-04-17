@@ -1,6 +1,20 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ServicoAutenticacao } from '../../../Services/Autenticacao.service';
+import { HttpService } from '../../../Services/Http.service';
+import { Definicoes } from '../../../Definicoes';
+
+interface Utilizador {
+  nif: number;
+  telefone:number;
+  morada: string;
+  nascimento: string;
+  localidade:string;
+  nome: string;
+  email: string;
+  tipo_utilizador: number;
+  atividade: number;
+}
 
 @Component({
   selector: 'janela-editar-utilizador',
@@ -8,15 +22,26 @@ import { ServicoAutenticacao } from '../../../Services/Autenticacao.service';
   templateUrl: './editar-utilizador.html',
   styleUrl: '../definicoes.css'
 })
+
+
 export class JanelaEditarUtilizador {
   ServicoAutenticacao = inject(ServicoAutenticacao)
   route = inject(ActivatedRoute)
+  servicoHTTP = inject(HttpService)
   Utilizador = this.ServicoAutenticacao.Utilizador
 
-  UtilizadorSelecionado = this.ServicoAutenticacao.Utilizador
+  UtilizadorSelecionado = signal<null | Utilizador>(null)
 
-  ngOnInit() {
-    const IdUtilizador = this.route.snapshot.paramMap.get('id');
-    console.log(IdUtilizador)
+  async ngOnInit() {
+    const NIFUtilizador = this.route.snapshot.paramMap.get('id');
+
+    const LinkAPI = Definicoes.API_URL
+
+    const resultado = await this.servicoHTTP.Request(LinkAPI + `utilizadores/` + NIFUtilizador, 'GET')
+
+    if (resultado) {
+      this.UtilizadorSelecionado.set(resultado)
+      console.log(resultado)
+    }
   }
 }

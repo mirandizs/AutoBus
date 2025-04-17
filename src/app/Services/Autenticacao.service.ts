@@ -11,6 +11,8 @@ interface Utilizador {
   localidade:string;
   nome: string;
   email: string;
+  tipo_utilizador: number;
+  atividade: number;
 }
 
 @Injectable({

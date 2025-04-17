@@ -11,4 +11,5 @@ import { ServicoAutenticacao } from '../../../Services/Autenticacao.service';
 export class JanelaPrivacidade {
   ServicoAutenticacao = inject(ServicoAutenticacao)
   Utilizador = this.ServicoAutenticacao.Utilizador
+  PasswordVisivel = false
 }

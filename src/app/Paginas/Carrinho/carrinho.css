@@ -145,24 +145,21 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5); /* fundo escuro */
-  display: none; /* escondido por padrão */
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
 }
-.modalFUNDO.show {
-  display: flex; /* para centralizar os modais */
-}
+
 
 /* modal metodo */
 .modal-payment {
-  position: relative;
+  position: absolute;
+
   z-index: 2; /* acima do fundo */
   background-color: #fff;
   height: 270px;
   width: 380px;
-  margin: 5% auto;
-  margin-top: 200px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   padding: 25px 20px;
@@ -173,7 +170,8 @@ body {
 
 /* modal dos metodos de pagamento (cartao de credito e mbway)*/
 .modalTipoPagamento {
-  position: relative;
+  position: absolute;
+  
   z-index: 2; /* acima do fundo */
   background-color: #fff;
   height: 430px;
@@ -204,9 +202,6 @@ body {
   animation: slideFromRight 0.5s forwards; /* Animação de deslizamento */
 }
 
-/* Removed unused classes:
-.animate-in-left, .animate-out-right, .modalSlideLeft, .modalSlidein, .modalSlideRight, .roww, .botao-avancar
-*/
 
 /* animacao para o modalmetodo*/
 @keyframes slideIn {

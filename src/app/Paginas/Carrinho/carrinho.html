@@ -33,90 +33,84 @@
 
             <hr style='border: 1px solid black; margin-left: 0px; margin-right: 10px; margin-top: 20px; width: 380px;'><br>
 
-            <button id="openModal" class="botaoFinalizar botaoTransicao">Finalizar compra</button> <!--para ao clicar, aparecer o formulario de pagamento-->
+            <button id="openModal" class="botaoFinalizar botaoTransicao" (click)="ModalMetodo = true">Finalizar compra</button> <!--para ao clicar, aparecer o formulario de pagamento-->
         </div>
 
     </div>
 </div>
 
+@if (ModalMetodo == true || TipoPagamentoCartao == true || TipoPagamentoMB == true || ModalCodigo == true){
+    <div class="modalFUNDO"> 
 
-
-<div class="modalFUNDO"> 
-
-    <!-- CAIXA DE PAGAMENTO ---------------------------------------------------------------> 
-    <div id="modalMetodo" style="display:none;" class="modalSlidein">
-        <div class="modalpay" id="fundoPagamento">
-            <div class="modal-payment">
+        @if (ModalMetodo) {
+            <!-- CAIXA DE PAGAMENTO ---------------------------------------------------------------> 
+            <div  id="modalMetodo" class="modal-payment">
                 <button class="fechar" id="fecharModal">✖</button>
                 <h2 style="color: rgb(0, 0, 150); margin-bottom: 50px; margin-left: 20px;">Método de pagamento</h2>
 
                 <div class="caixaEscolha" style="display: flex;">
-                    <button id="btnCartao" class="btnEscolha" style="display:flex; padding-top: 10px;">
+                    <button id="btnCartao" class="btnEscolha" style="display:flex; padding-top: 10px;" (click)="TipoPagamentoCartao = true">
                         <label style="margin-right:120px; margin-top:6px; cursor:pointer;">Cartão de crédito</label>
                         <img src="img/cartoes.png" style="height: 25px; width: 25;">
                     </button>
                 </div>
                 <div class="caixaEscolha" style="margin-bottom:30px;">
-                    <button id="btnMbway" class="btnEscolha"  style="display:flex; padding-top: 10px;">
+                    <button id="btnMbway" class="btnEscolha"  style="display:flex; padding-top: 10px;" (click)="TipoPagamentoMB = true">
                         <label style="margin-right:180px; margin-top:6px; cursor:pointer;">MB WAY</label>
                         <img src="img/mbway.png" style="height: 25px; width: 25;">
                     </button>
                 </div>
             </div>
-        </div>
-    </div>
+        }
 
-
-    <!-- OPCAO DO CARTAO DE CREDITO -->
-    <div id="modalCartao" style="display: none;" class="modalSlideRight">
-        <div class="modalTipoPagamento">
-            <!--<?php //var_dump($_SESSION["metodoPagamento"])?>-->
-            <button class="fechar" id="fecharModal2">✖</button><br>
-
-            <h2 style="color: rgb(0, 0, 150); margin-bottom: 50px; margin-left: 20px;">Pagamento com cartão de crédito</h2>
-
-            <form id="formCartao" action="inserirCartao.php" method="POST">
-                <div style="margin-left:20px;">
-                    <div class="form-group">
-                        <input type="text" id="nome_Cartao" name="nome_Cartao"  placeholder=" " required class="input-grande"/>
-                        <label>Nome do titular do cartão</label>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" id="numero_cartao" name="numero_cartao"  placeholder=" " minlength="16" maxlength="16" required class="input-grande"/>
-                        <label>Número do cartão</label>
-                    </div>
-
-                    <div style="display: flex;">
+        @if (TipoPagamentoCartao) {
+             <!-- OPCAO DO CARTAO DE CREDITO -->
+            <div id="modalCartao" class="modalTipoPagamento">
+                <!--<?php //var_dump($_SESSION["metodoPagamento"])?>-->
+                <button class="fechar" id="fecharModal2">✖</button><br>
+    
+                <h2 style="color: rgb(0, 0, 150); margin-bottom: 50px; margin-left: 20px;">Pagamento com cartão de crédito</h2>
+    
+                <form id="formCartao" action="inserirCartao.php" method="POST">
+                    <div style="margin-left:20px;">
                         <div class="form-group">
-                            <input type="text" id="validade" name="validade"  placeholder=" " required class="input-pequeno"/>
-                            <label>Validade</label>
+                            <input type="text" id="nome_Cartao" name="nome_Cartao"  placeholder=" " required class="input-grande"/>
+                            <label>Nome do titular do cartão</label>
                         </div>
-
-                        <div class="form-group" style="margin-left:-70px; margin-right:0px;">
-                            <input type="tel" id="cvv" name="ccv"  placeholder=" "minlength="3" maxlength="3" class="input-pequeno" required/>
-                            <label>CVV</label>
+    
+                        <div class="form-group">
+                            <input type="text" id="numero_cartao" name="numero_cartao"  placeholder=" " minlength="16" maxlength="16" required class="input-grande"/>
+                            <label>Número do cartão</label>
                         </div>
+    
+                        <div style="display: flex;">
+                            <div class="form-group">
+                                <input type="text" id="validade" name="validade"  placeholder=" " required class="input-pequeno"/>
+                                <label>Validade</label>
+                            </div>
+    
+                            <div class="form-group" style="margin-left:-70px; margin-right:0px;">
+                                <input type="tel" id="cvv" name="ccv"  placeholder=" "minlength="3" maxlength="3" class="input-pequeno" required/>
+                                <label>CVV</label>
+                            </div>
+    
+                            <img src="img/visamastercard.png" style="height:40px; width: 45px; margin-right:20px; margin-left:-70px;">
+                        </div>
+    
+                        <div style="display: flex; margin-bottom: 30px;">
+                            <input type="checkbox" style="margin-right: 10px; cursor:pointer;" id="guardarCartao">
+                            <label>Guardar os dados do cartão.</label>
+                        </div>
+    
+                        <button type="submit" id="openCode" class="btnContinuarPay botaoTransicao" onclick="verificarCheckbox(event)">Continuar</button>
+                    </div>               
+                </form>
+            </div>
+        }
 
-                        <img src="img/visamastercard.png" style="height:40px; width: 45px; margin-right:20px; margin-left:-70px;">
-                    </div>
-
-                    <div style="display: flex; margin-bottom: 30px;">
-                        <input type="checkbox" style="margin-right: 10px; cursor:pointer;" id="guardarCartao">
-                        <label>Guardar os dados do cartão.</label>
-                    </div>
-
-                    <button type="submit" id="openCode" class="btnContinuarPay botaoTransicao" onclick="verificarCheckbox(event)">Continuar</button>
-                </div>               
-            </form>
-        </div>
-    </div>
-
-
-    <!-- OPCAO DO MBWAY -->
-    <div id="modalMbway" class="modalSlideRight" style="display: none;">
-        <div class="modalpay" >
-            <div class="modalTipoPagamento">
+        @else if (TipoPagamentoMB) {
+            <!-- OPCAO DO MBWAY -->
+            <div id="modalMbway" class="modalTipoPagamento">
                 <button class="fechar" id="fecharModal3">✖</button>
 
                 <h2 style="color: rgb(0, 0, 150); margin-bottom: 50px; margin-left: 20px;">Pagamento com MB MAY</h2>
@@ -130,32 +124,37 @@
                     <label>Este é o teu número?</label>
                 </div>
             </div>
-        </div>
-    </div>
+        }
 
-    
-    <!-- MODAL DE CODIGO DE CONFIRMACAO -->
-    <div id='modalCodigo' class='modalSlideRight'>
-        <div class='modalCodigo'>
-            <button class="fechar" id="fecharModal4">✖</button><br><br>
 
-            <h2 style="color: rgb(0, 0, 150); margin-bottom: 30px; margin-left: 20px; text-align: center;">Insira o código de 6 dígitos</h2>
-            
-          
-
-            <p style="margin-left:20px; text-align:center;">Insira o código de verificação que foi enviado para '<?= htmlspecialchars($registo["email"]) ?>'</p>
-
-            <div class='container'>
-                <form action='verificar_codigo.php' method='POST'>
-                    <input type='tel' class='codigo' maxlength='6' id='codigo' name='codigo' required><br>
-                    <div class='container' style='margin-bottom: 15px;'>
-                        <button type='submit' class='botaoVerificar botaoTransicao'><strong>Verificar</strong></button>
+        @if (ModalCodigo) {
+            <!-- MODAL DE CODIGO DE CONFIRMACAO -->
+            <div id='modalCodigo' class='modalSlideRight'>
+                <div class='modalCodigo'>
+                    <button class="fechar" id="fecharModal4">✖</button><br><br>
+        
+                    <h2 style="color: rgb(0, 0, 150); margin-bottom: 30px; margin-left: 20px; text-align: center;">Insira o código de 6 dígitos</h2>
+                    
+                  
+        
+                    <p style="margin-left:20px; text-align:center;">Insira o código de verificação que foi enviado para '<?= htmlspecialchars($registo["email"]) ?>'</p>
+        
+                    <div class='container'>
+                        <form action='verificar_codigo.php' method='POST'>
+                            <input type='tel' class='codigo' maxlength='6' id='codigo' name='codigo' required><br>
+                            <div class='container' style='margin-bottom: 15px;'>
+                                <button type='submit' class='botaoVerificar botaoTransicao'><strong>Verificar</strong></button>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
+            
+        }
     </div>
-</div>
+}
+
+
 
 
 <script>
