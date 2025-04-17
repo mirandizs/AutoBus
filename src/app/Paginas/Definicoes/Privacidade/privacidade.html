@@ -1,0 +1,32 @@
+<form action='codigo.php' method='POST'>
+    <div class='box2 row'>
+        <div class='column left'>
+            <h2>Privacidade e Segurança</h2><br>
+
+            <label>Aqui poderás alterar o teu email e password com segurança! Atenção, será enviado um email
+                de confirmação.</label><br><br><br>
+
+            <label>Email:</label><br>
+            <input type='email' class='info caixa campoTexto' name='email' id='email'
+                [value]='Utilizador()?.email'>
+            <button type='button' class='editar imagemEditar' id='editarEmail' disabled
+                style="cursor:not-allowed">
+                <img src='img/lapis.png' width='20px' height='20px'>
+            </button><br><br>
+
+            <label>Password:</label><br>
+            <input type='password' class='info caixa campoTexto' name='password' id='password'>
+            <button type='button' class='ver' name="iconPasswordConfirm" id="iconPasswordConfirm"
+                onclick='myFunction("password")'>
+                <img src='img/fechado.png' width='20px' height='20px'>
+            </button>
+            <button type='submit' class='editar imagemEditar' id='editarPassword' disabled
+                style="cursor:not-allowed">
+                <img src='img/lapis.png' width='20px' height='20px'>
+            </button><br><br><br>
+
+            <label>Tenha certeza de que o email que está a utilizar está ativo ou que tenha espaço o
+                suficiente para receber emails de confirmação do nosso site.</label>
+        </div>
+    </div>
+</form>

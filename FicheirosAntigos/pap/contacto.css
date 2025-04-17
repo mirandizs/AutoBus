@@ -274,38 +274,6 @@ body {
 
 
 
-/* carregamento -------------------------------------------------------------------------------------------------------------- */
-.carregamento {
-  --uib-size: 80px;
-  --uib-color: rgb(14, 14, 123);
-  --uib-speed: 1.5s;
-  --dot-size: calc(var(--uib-size) * 0.17);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: var(--uib-size);
-  width: var(--uib-size);
-  margin-left: 48%;
-  margin-right: 52%;
-  margin-top: 225px;
-  margin-bottom: 100px;
-  animation: smoothRotate calc(var(--uib-speed) * 1.8) linear infinite;
-}
-
-.carregamentoFundo {
-display: none; /* Hidden by default */
-position: fixed; /* Stay in place */
-z-index: 1; /* Sit on top */
-left: 0;
-top: 0;
-width: 100%; /* Full width */
-height: 100%; /* Full height */
-overflow: auto; /* Enable scroll if needed */
-background-color: rgb(0,0,0); /* Fallback color */
-background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-padding-top: 60px;
-}
 
 .dot {
   position: absolute;

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ServicoAutenticacao } from './Services/Autenticacao.service';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'AutoBus';
+
+  ServicoAutenticacao = inject(ServicoAutenticacao)
+
+  constructor() {
+    this.ServicoAutenticacao.Autenticar()
+  }
 }

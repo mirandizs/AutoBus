@@ -1,0 +1,43 @@
+
+
+<footer class="footer">
+    <div style="display: flex; align-items: center;">
+
+        @if (true){
+            <div style="position: absolute; left: 0;">
+                <button class="contact-button" routerLink="/contacto">Contacte-nos!</button>
+                <button class="contact-button" routerLink="/contacto">Sobre Nós</button>
+            </div>
+        }@else {
+            <div style="position: absolute; left: 0;">
+                <button class="contact-button">
+                    <style>
+                       
+                    </style>
+                    <div style="display:flex;">
+                        <img class="imagemContact" src="img/telefoneB.png">
+                        <a style="padding-top: 7px">+351 916942618</a>
+                    </div>
+                </button>
+            </div>
+        }
+
+        <div style="margin: 0 auto; text-align:center;">
+
+            <br>
+
+            <!--licenças do site-->
+            <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+                <span property="dct:title"><strong>AutoBus</strong></span> by <span property="cc:attributionName"><strong>Sofia Miranda</strong></span><br> is licensed under 
+                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block; color: white; text-decoration: none;">CC BY-NC-ND 4.0
+                    <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1">
+                    <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1">
+                    <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1">
+                    <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1">
+                </a>
+            </p>
+
+            <!--<p><strong>By,</strong> Sofia Miranda</p>-->
+        </div>
+    </div>
+</footer>

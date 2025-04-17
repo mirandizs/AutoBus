@@ -1,0 +1,83 @@
+<carregamento [Visivel]="CarregamentoVisivel"></carregamento>
+
+<div class="topo">
+    <div>
+        <div class="login">
+
+            @if (ServicoAutenticacao.Utilizador()){
+            <button id="butao-compras" class="botaoLogin-a botao-imagem-compras" routerLink="/carrinho">
+                <img class="icon-butao" src="img/comprasB.png">
+            </button>
+            <button id="butao-carrinho" class="botaoLogin-a botao-imagem-carrinho" routerLink="/carrinho">
+                <img class="icon-butao" src="img/carrinhoB.png">
+            </button>
+            }
+
+            <div id="dropdown-container" class="dropdown" (mouseenter)="DropdownVisivel = true"
+                (mouseleave)="DropdownVisivel = false" (click)="ModalLoginVisivel = true">
+
+                <!-- BUTAO PERFIL -->
+                <button class="botaoLogin botao-imagem dropbtn" id="butao-perfil" alt="Utilizador">
+                    <img class="imagem-butao-perfil" src="img/default-profile.png">
+                    <span id="nome-utilizador" style="color: white; font-size: 14px; margin-left:10px;">
+                        {{ServicoAutenticacao.Utilizador()?.nome}}
+                    </span>
+                </button>
+
+
+                <br><br>
+
+                <!-- DROPDOWN -->
+                @if (DropdownVisivel && ServicoAutenticacao.Utilizador()){
+                <div id="dropdown" class="dropdown-content">
+                    <a routerLink="/definicoes" style="padding-top: 30px;">Definições</a>
+                    <a (click)="Logout()" style="padding-bottom: 17px; cursor: pointer;">Sair</a>
+                </div>
+                }
+            </div>
+
+        </div>
+
+
+        <a class="marca" style="padding-left:30px; padding-right: 50px;" routerLink="/inicial">AutoBus</a>
+
+        <a class="marca" style="padding-right: 40px;" routerLink="/localidades">Mapa e Localidades</a>
+
+        <a class="marca" style="padding-right: 20px;" routerLink="/viagens">Viagens</a>
+
+        <br>
+    </div>
+</div>
+
+
+@if (ModalLoginVisivel && !ServicoAutenticacao.Utilizador()){
+<div class="modal" id="ModalLogin">
+
+    <form [formGroup]="FormLogin" class="modal-content animate">
+        <div class="container">
+            <label class="entrar"><strong>Entrar</strong></label>
+
+            <br><br>
+            <label style="margin-left:3%"><b>Email</b></label>
+            <input class="inserir" type="email" placeholder="Insira o email" formControlName="email" required
+                style="margin-left:3%"><br>
+
+            <label style="margin-left:3%"><b>Palavra-Passe</b></label>
+            <input class="inserir" type="password" placeholder="Insira a palavra-passe" formControlName="password"
+                required style="margin-left:3%">
+
+
+
+            <div style="display: flex; justify-content: space-between; width: 90%;">
+                <button type="submit" class="ButaoLogin" (click)="Login()"
+                    [disabled]="FormLogin.invalid">Entrar</button>
+
+                <button type="button" (click)="ModalLoginVisivel = false" class="cancelbtn">Cancelar</button>
+            </div><br>
+
+
+            <p class="conta">Não tenho conta. <a routerLink="/criarConta" class="letra"><u>Criar uma.</u></a></p><br>
+        </div>
+    </form>
+</div>
+}

@@ -1,0 +1,7 @@
+google-map{
+    border-radius: inherit;
+}
+
+::ng-deep .map-container{
+    border-radius: inherit;
+}

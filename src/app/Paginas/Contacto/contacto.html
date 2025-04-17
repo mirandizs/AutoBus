@@ -1,0 +1,56 @@
+<topbar></topbar>
+
+<div class="column">
+    <div class="column left">
+        <img src="img/paisagem.jpg" class="ImagemPaisagem">
+    </div>
+
+    <div class="column right" style="margin-top: 30px;">
+        <div>
+            <h1 class="texto">Entre em contacto conosco!</h1><br><br>
+
+            <form action="contactoEmail.php" method="POST">
+                <label class="texto"><strong>Email: </strong><br><br>
+                    <input type="email" name="email" id="email" class="inputs"
+                        style="width: 300px; margin-bottom: 50px; padding-left: 10px"
+                        placeholder="Insira o seu email..."><br>
+                </label>
+
+                <label class="texto"><strong>Assunto: </strong><br><br>
+                    <input type="text" class="inputs campoTexto" name="assunto" id="assunto"
+                        style="width: 300px; margin-bottom: 50px; padding-left: 10px"
+                        placeholder="Assunto da mensagem..."><br>
+                </label>
+
+                <label class="texto"><strong>Mensagem: </strong><br><br>
+                    <textarea class="inputs campoTexto" name="mensagem" id="mensagem"
+                        style="text-align:justify; width: 600px; height: 300px; resize: none; padding-left: 15px; padding-right:15px; font-family: Calibri, Helvetica, sans-serif; padding-top:10px;"
+                        placeholder="Texto..."></textarea>
+                </label><br><br><br>
+
+                <button class="enviar" id="enviarMensagem" name="enviarMensagem" type="submit" disabled>Enviar
+                    email</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@if (ModalSucessoVisivel){
+    <div id="modalVerificacao" class='modal'>
+        <div class='modal-contentt animate'>
+            <div>
+                <h3></h3>
+                <!-- BOTAO X DE SAIR -->
+                <div id='sair'>
+                    <span onclick='verificacao' class='close' title='Close Modal'>&times;</span>
+                </div><br><br>
+    
+                <h3>Email enviado com sucesso!</h3><br>
+    
+                <label>Entraremos em contacto consigo o mais breve possível.</label>
+            </div>
+        </div>
+    </div>
+}
+
+<footer-componente></footer-componente>

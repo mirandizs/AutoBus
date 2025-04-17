@@ -1,0 +1,60 @@
+<form action="editarAdmin.php" method="POST">
+    <div class="box2 row">
+        <div class="column left">
+            <h2>Gestão de Utilizadores - Editar</h2><br>
+
+            <label>Nome:</label><br>
+            <input type="text" class="info campoTexto caixa"><br><br>
+
+            <label>NIF:</label><br>
+            <input type="tel" class="info campoTexto caixa" name="nif" maxlength="9" [value]="UtilizadorSelecionado()?.nif" disabled>
+            <br><br>
+
+            <label>Data de nascimento:</label><br>
+            <input type="date" class="info campoTexto caixa" name="nascimento"><br><br>
+
+            <label>Password:</label><br>
+            <input type="password" class="info campoTexto caixa"name="password"
+                style="margin-bottom:10px;"><br><br>
+
+            <button type="submit" id="botaoEditar" name="botaoEditar" disabled>Salvo</button>
+        </div>
+
+        <div class="column right">
+            <div style="padding-top: 60px;">
+                <label>Telemóvel:</label><br>
+                <input type="tel" class="info campoTexto caixa" name="telefone"
+                    maxlength="9"><br><br>
+
+                <label>Localidade:</label><br>
+                <input type="text" class="info campoTexto caixa" name="localidade"><br><br>
+
+                <label>Email:</label><br>
+                <input type="email" class="info campoTexto caixa" name="email"><br><br>
+
+                <div class="row">
+                    <div class="column left">
+                        <label>Tipo de utilizador:</label><br>
+                        <select class="campoSelect" name="tipo_utilizador">
+                            <option value="0">
+                                Administrador</option>
+                            <option value="1">
+                                Cliente</option>
+                        </select>
+                    </div>
+
+                    <div class="column right" style="padding-top:10px;">
+                        <label>Atividade:</label><br>
+                        <select class="campoSelect" name="atividade">
+                            <option value="0">Inativo
+                            </option>
+                            <option value="1">Ativo
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</form>

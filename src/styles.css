@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+/* CSS global, aplicado a todas as paginas e componentes */
+
+body {
+  margin: 0;
+  font-family: Calibri, Helvetica, sans-serif;
+}
+
+
+.icon-butao{
+  width: 30px; /* Largura da imagem */
+  height: 30px;
+  object-fit: cover;
+}

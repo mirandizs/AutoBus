@@ -1,0 +1,120 @@
+<!--<header><img src="img/busBranco.png"> AutoBus </header>-->
+<div class="box">
+
+  <!--<header>AutoBus</header>-->
+
+  <h1 class="logoTexto">AutoBus</h1>
+
+  <!--<p class="logo"><h1 style="text-align: center;">AutoBus</h1></p>-->
+
+  <h2>Novo Registo</h2>
+
+  <form [formGroup]="FormCriar">
+
+    <div class="row">
+      <div class="column left">
+        <!-- NOME -->
+        <label><strong>Nome*</strong></label><br>
+        <input type="text" formControlName="nome" style="padding-left:10px;" required>
+        <br><br>
+
+        <!-- NIF -->
+        <label><strong>NIF*</strong></label><br>
+        <input type="tel" formControlName="nif" style="padding-left:10px;" required pattern="[125679][0-9]{8}"
+          title="O NIF deve conter 9 números e começar com 1, 2, 5, 6, 7 ou 9." inputmode="numeric" maxlength="9"
+          placeholder="XXXXXXXXX">
+        <br><br>
+
+        <!-- EMAIL -->
+        <label><strong>E-mail*</strong></label><br>
+        <input type="email" formControlName="email"  style="padding-left:10px;" required
+          pattern="[a-zA-Z0-9._]+@(gmail|yahoo|hotmail)\.com"
+          title="O email deve ser @gmail.com, @yahoo.com ou @hotmail.com" placeholder="exemplo@gmail.com">
+        <br><br>
+
+        <!-- PALAVRA-PASSE -->
+        <label for=password><strong>Palavra-Passe*</strong></label><br>
+        <input formControlName="password" class="campoTexto"
+          [type]="MostarPassword ? 'text' : 'password'"
+          style="padding-left:10px;" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Deve conter pelo menos um número, uma letra maiúscula e pelo menos 8 ou mais caracteres" required>
+        
+
+        <button type="button" class="ver" (click)="MostarPassword = !MostarPassword">
+          <img [src]="MostarPassword ? 'img/aberto.png' : 'img/fechado.png'" width="20px" height="20px">
+        </button><br>
+        <p>
+          <strong>* Campo obrigatório.</strong>
+        </p>
+      </div>
+
+      <div class="column right">
+
+        <!-- DATA DE NASCIMENTO -->
+        <label><strong>Data de Nascimento*</strong></label>
+        <br>
+        <input type="date" formControlName="nascimento" style="padding-right:10px; padding-left:10px;" required
+          pattern="\d{2}|\d{3}" title="Tem de ser maior de 18 anos.">
+        <br><br>
+
+        <!-- TELEMOVEL -->
+        <label><strong>Telemóvel*</strong></label><br>
+        <input type="tel" formControlName="telefone" style="padding-left:10px;" required pattern="9[0-9]{8}"
+          title="O número de telemóvel deve conter 9 números e deve iniciar com 9." maxlength="9"
+          placeholder="9XXXXXXXX">
+        <br><br>
+
+        <!-- LOCALIDADE -->
+        <label><strong>Localidade*</strong></label><br>
+        <input type="text" formControlName="localidade"style="padding-left:10px;" placeholder="Ex: Coimbra"
+          required>
+        <br><br>
+
+        <!-- CONFIRMAR PALAVRA-PASSE -->
+        <label for=pass><strong>Confirmar palavra-passe*</strong></label><br>
+        <input formControlName="confirm_password" style="padding-left:10px;"
+          [type]="MostarConfirmacaoPassword ? 'text' : 'password'"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+       
+        
+        <button type="button" class="ver" (click)="MostarConfirmacaoPassword = !MostarConfirmacaoPassword">
+          <img [src]="MostarConfirmacaoPassword ? 'img/aberto.png' : 'img/fechado.png'" width="20px" height="20px">
+        </button>
+      </div>
+    </div>
+
+
+    <a routerLink="/inicial"><button type="button" value="Voltar" class="botaoVoltar">Voltar</button></a>
+    
+    <button type="submit" value="Criar Conta" class="botaoCriar" [disabled]="FormCriar.invalid">Avançar</button>
+
+    <div id="popup" class="modal">
+      <div class="modal-content">
+        <!--<span class="close">&times;</span>-->
+        <p>As palavras-passe não coincidem.</p>
+        <p class="letra2">Clique em qualquer parte do ecrã para sair.</p>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Mostar sempre que o valor nao e vazio -->
+@if (password?.value != ''){
+  <div id="anchor">
+    <div class="box2" id="messageBox">
+      <h3>A palavra-passe deve conter pelo menos: </h3>
+      <p id="letter" [className]="password?.hasError('minuscula') ? 'invalid' : 'valid'">
+        Uma letra <b>minúscula</b>
+      </p>
+      <p id="capital" [className]="password?.hasError('maiuscula') ? 'invalid' : 'valid'">
+        Uma letra <b>maiúscula</b>
+      </p>
+      <p id="number" [className]="password?.hasError('numero') ? 'invalid' : 'valid'">
+        Um <b>número</b>
+      </p>
+      <p id="length" [className]="password?.hasError('caracteres') ? 'invalid' : 'valid'">
+        Mínimo <b>8 caracteres</b>
+      </p>
+    </div>
+  </div>
+}
