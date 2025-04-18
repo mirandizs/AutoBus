@@ -24,4 +24,27 @@ export class Validadores {
     
         return Object.keys(erros).length > 0 ? erros : null;
     }
+
+    static ConfirmacaoPassword (Input: AbstractControl): ValidationErrors | null {
+      const Form = Input.parent
+
+      if (Form){
+        const InputPassword = Form.get('password');
+        const InputConfirmacaoPassword = Form.get('confirm_password');
+    
+        if (InputPassword && InputConfirmacaoPassword) {
+          const error = InputPassword.value != InputConfirmacaoPassword.value ? { PasswordNaoIgual: true } : null;
+          
+          InputConfirmacaoPassword.setErrors(error);
+
+          const InputSelecionadoEConfirmacao = Input == InputConfirmacaoPassword;
+
+          return InputSelecionadoEConfirmacao ? error : null; // Se o input nao for o de confirmacao, retorna null
+        }else{
+          console.warn('Um dos campos não existe no formulário. Verifica se os nomes estão corretos (formControlname).');
+        }
+      }
+  
+      return null;
+    };
 }
