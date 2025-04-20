@@ -1,0 +1,75 @@
+<form [formGroup]="FormPesquisa" (submit)="RedirecionarPesquisa()">
+    <!-- Seletor de ida e ida e volta -->
+    <div class="row" style="justify-content: space-between;">
+        <div class="trip-type">
+            <label class="radioestilo"><strong>Ida</strong>
+                <input type="radio" formControlName="ida" value="ida" />
+                <span class="checkmark"></span>
+            </label>
+            <label class="radioestilo"><strong>Ida e volta</strong>
+                <input type="radio" formControlName="ida" value="ida-e-volta" />
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+
+        @if (PaginaViagens){
+            <ng-container *ngTemplateOutlet="ButaoProcurar"></ng-container>
+        }
+    </div>
+
+
+
+
+    <br>
+    <br>
+
+    <div class="row" style="gap:20px">
+        <div class="campo">
+            <label class="titulo-campo"><strong>Partida</strong></label>
+            <div class="input-icon">
+                <i>📍</i>
+                <input type="text" placeholder=" De: Braga" formControlName="local_partida" />
+            </div>
+        </div>
+
+        <div class="campo">
+            <label class="titulo-campo"><strong>Chegada</strong></label>
+            <div class="input-icon">
+                <i>📍</i>
+                <input type="text" placeholder=" Para: Porto" formControlName="local_chegada" />
+            </div>
+        </div>
+
+        <div class="campo">
+            <label class="titulo-campo"><strong>Passageiros</strong></label>
+
+            <select style="width: 230px; cursor: pointer" formControlName="passageiros">
+                <option value="1">1 Adulto</option>
+                <option value="2">2 Adultos</option>
+                <option value="3">3 Adultos</option>
+            </select>
+        </div>
+
+
+        <div class="campo data-ida">
+            <label class="titulo-campo"><strong>Ida</strong></label>
+            <input type="date" value="yyyy-MM-dd" formControlName="data_ida" id="data_ida" />
+        </div>
+
+        <div class="campo hora-ida">
+            <label class="titulo-campo"><strong>Hora de Ida</strong></label>
+            <input type="time" formControlName="hora_ida" />
+        </div>
+
+        @if (!PaginaViagens){
+            <ng-container *ngTemplateOutlet="ButaoProcurar"></ng-container>
+        }
+    </div>
+
+</form>
+
+<ng-template #ButaoProcurar>
+    <input type="submit" id="btProcurar" value="Procurar" class="botaoTransicao botaoProcurar"
+    [style]="PaginaViagens ? 'height:30px' : '' " />
+</ng-template>

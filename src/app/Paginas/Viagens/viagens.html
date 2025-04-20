@@ -1,119 +1,6 @@
 <topbar></topbar>
 <div class='caixaViagens'>
-
-    <form class='caixa' action="viagens.php" method="GET">
-        <div class='input-row'>
-
-        </div>
-        <!-- Seletor de ida e ida e volta -->
-        <div class='trip-type '>
-            <label class='radioestilo'><strong>Ida</strong>
-                <input type='radio' name='radioIda' id='radioIda' checked='checked'>
-                <span class='checkmark'></span>
-            </label>
-            <label class='radioestilo' style='margin-right: 890px;'><strong>Ida e volta</strong>
-                <input type='radio' name='radioIdaVolta' id='radioIdaVolta'>
-                <span class='checkmark'></span>
-            </label>
-
-            <button class='botaoTransicao procurar' name='procurar' id='procurar'
-                style='cursor:pointer;'>Procurar</button>
-        </div>
-
-
-
-        <div class='idaevolta'>
-            <label
-                style='color: rgb(43,34,99); font-size: 13px; margin-right: 180px; margin-left: 3px'><strong>Partida</strong></label>
-            <label style='color: rgb(43,34,99); font-size: 13px; margin-right: 172px;'><strong>Chegada</strong></label>
-            <label
-                style='color: rgb(43,34,99); font-size: 13px; margin-right: 140px;'><strong>Passageiros</strong></label>
-
-            <div id='textoIda' class='janela ativa'>
-                <label style='color: rgb(43,34,99); font-size: 13px; margin-right: 266px;'><strong>Ida</strong></label>
-                <label style='color: rgb(43,34,99); font-size: 13px;'><strong>Hora de Ida</strong></label>
-            </div>
-
-            <div id='textoVolta' class='janela'>
-                <label
-                    style='color: rgb(43,34,99); font-size: 13px; padding-right: 120px/*305px*/'><strong>Ida</strong></label>
-                <label
-                    style='color: rgb(43,34,99); font-size: 13px; padding-right: 115px'><strong>Volta</strong></label>
-                <label style='color: rgb(43,34,99); font-size: 13px; padding-right: 65px'><strong>Hora de
-                        Ida</strong></label>
-                <label style='color: rgb(43,34,99); font-size: 13px'><strong>Hora de Volta</strong></label>
-            </div>
-        </div>
-
-        <!-- campos de origem e destino -->
-        <div class='input-row' style='width:100%; margin-bottom: 20px'>
-            <div class='input-icon'>
-                <i>📍</i>
-                <input type='text' placeholder=' De: Braga' style='width:150px; padding-left: 50px; margin-right: 15px;'
-                    name="partida" value='' />
-            </div>
-            <div class='input-icon'>
-                <i>📍</i>
-                <input type='text' placeholder=' Para: Porto'
-                    style='width:150px; padding-left: 50px; margin-right: 15px;' name="chegada" value='' />
-            </div>
-
-            <!-- número de passageiros -->
-            <div>
-                <select style='width:200px; margin-right: 15px;'>
-                    <option>1 Adulto</option>
-                    <option>2 Adultos</option>
-                    <option>3 Adultos</option>
-                </select>
-            </div>
-
-
-
-            <!-- janela de ida ------------------------------------------------------------------------->
-            <div id='janelaIda' class='janela ativa' style='display: block;'>
-                <div class='input-row' style='width:100%; margin-bottom: 10px;'>
-                    <!-- seletor de data -->
-                    <div class='input-icon'>
-                        <input type='date'
-                            style='padding-left: 20px; padding-right: 15px; margin-right:15px; width: 240px'
-                            value='". htmlspecialchars($data_ida)."'> <!--value='yyyy-MM-dd'-->
-                    </div>
-
-                    <div class='input-icon'>
-                        <input type='time' style='padding-left: 25px; padding-right: 20px; width:220px;'
-                            value='" . htmlspecialchars($hora_ida) . "'>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-            <!-- janela de voltar ------------------------------------------------------------------------->
-            <div id='janelaVolta' class='janela'>
-                <div class='input-row' style='width:100%; margin-bottom: 10px;'>
-                    <!-- seletor de data-->
-                    <div class='input-icon'>
-                        <input type='date' style='padding-left: 10px; padding-right: 10px; margin-right:5px'
-                            value='" . htmlspecialchars($data_ida) . "'>
-                    </div>
-                    <div class='input-icon' style='margin-right: 15px;'>
-                        <input type='date' style='padding-left: 10px; width: 113px'>
-                    </div>
-
-                    <div class='input-icon'>
-                        <input type='time'
-                            style='padding-left: 15px; padding-right: 15px; width:100px; margin-right:5px'>
-                    </div>
-
-                    <div class='input-icon'>
-                        <input type='time' style='padding-left: 15px; width:104px;'>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </form>
+  <pesquisa-viagens></pesquisa-viagens>
 </div>
 
 <br><br><br>
@@ -148,4 +35,5 @@
     </form>
 </div><br>
 
+<butao-voltar></butao-voltar>
 <!-- <footer-componente></footer-componente> -->

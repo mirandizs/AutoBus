@@ -8,21 +8,25 @@ body {
 /* CAIXA DE PESQUISA ------------------------------------------------------------------- */
 .caixaViagens {
   position: relative;
-  margin: 0px auto 0 auto; /* Eleva a caixa sobre o header */
-  height: 150px;
+  margin: 0px auto 0 auto;
+  width: 100vw;
+  
+  box-sizing: border-box;
   background: white;
   padding: 20px;
   padding-left: 140px;
+  
   padding-top: 20px;
   border-radius: 20px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-  max-width: 120%; /* Largura máxima da caixa */
 }
 
 .idaevolta {
-  align-items: center; /* Alinhamento vertical */
+  align-items: center;
+  /* Alinhamento vertical */
   display: flex;
-  margin-bottom: 0px; /* Reduz espaço abaixo */
+  margin-bottom: 0px;
+  /* Reduz espaço abaixo */
 }
 
 /* Título */
@@ -30,42 +34,49 @@ body {
   font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
-  color: rgb(3,3,59);
+  color: rgb(3, 3, 59);
 }
 
 
 /* input e select */
-.caixa input,
-.caixa select {
-padding: 10px;
-border: 1px solid #ccc;
-border-radius: 5px;
-font-size: 14px;
+.input select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  
 }
 
 /* seletor de tipo de viagem */
 .trip-type {
   display: flex;
-  align-items: center; /* alinhamento vertical */
-  gap: 20px; /* espaço entre os radios */
-  margin-bottom: 30px; /* reduz espaço abaixo */
+  align-items: center;
+  /* alinhamento vertical */
+  gap: 20px;
+  /* espaço entre os radios */
+  margin-bottom: 30px;
+  /* reduz espaço abaixo */
 }
 
 .trip-type label {
   display: flex;
   align-items: center;
-  gap: 8px; /* espaço entre o radio e o texto */
+  gap: 8px;
+  /* espaço entre o radio e o texto */
   cursor: pointer;
   font-size: 14px;
-  margin: 0; /* remove margens adicionais */
+  margin: 0;
+  /* remove margens adicionais */
 }
 
 /* Ícones */
 .input-row {
   display: flex;
-  align-items: center; /* Alinha verticalmente */
+  align-items: center;
+  /* Alinha verticalmente */
   /*gap: 0px; Espaçamento entre os elementos */
-  flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+  flex-wrap: wrap;
+  /* Permite quebrar linha em telas menores */
   margin-top: 5px;
 }
 
@@ -91,14 +102,16 @@ select {
 }
 
 /* Responsividade */
-@media (max-width: 500px /*768px*/) {
-.input-row {
-  flex-direction: column;
-}
+@media (max-width: 500px
+  /*768px*/
+) {
+  .input-row {
+    flex-direction: column;
+  }
 
-.caixaViagens {
-  padding: 15px;
-}
+  .caixaViagens {
+    padding: 15px;
+  }
 }
 
 
@@ -129,19 +142,20 @@ select {
   position: absolute;
   background-color: #eee;
   border-radius: 50%;
-  height: 18px; /* Tamanho menor do círculo */
+  height: 18px;
+  /* Tamanho menor do círculo */
   width: 18px;
   /*top: 0;*/
   left: 0;
 }
 
 /* On mouse-over, add a grey background color */
-.radioestilo:hover input ~ .checkmark {
+.radioestilo:hover input~.checkmark {
   background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-.radioestilo input:checked ~ .checkmark {
+.radioestilo input:checked~.checkmark {
   background-color: rgb(20, 20, 111);
 }
 
@@ -153,9 +167,10 @@ select {
 }
 
 /* Show the indicator (dot/circle) when checked */
-.radioestilo input:checked ~ .checkmark:after {
+.radioestilo input:checked~.checkmark:after {
   display: block;
-  top: 6px; /* Ajuste do dot */
+  top: 6px;
+  /* Ajuste do dot */
   left: 6px;
   width: 6px;
   height: 6px;
@@ -163,20 +178,22 @@ select {
 
 /* Style the indicator (dot/circle) */
 .radioestilo .checkmark:after {
-     top: 9px;
-    left: 9px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: white;
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
 }
 
 nav {
-  transform: translateX(-100%); /* Move a barra para fora da tela */
+  transform: translateX(-100%);
+  /* Move a barra para fora da tela */
   position: absolute;
   visibility: hidden;
   opacity: 0;
-    pointer-events: none; /* Opcional: impede cliques na barra */
+  pointer-events: none;
+  /* Opcional: impede cliques na barra */
 }
 
 
@@ -191,9 +208,9 @@ nav {
   background-color: rgb(255, 255, 255);
 }
 
-.procurar:hover {   
+.procurar:hover {
   color: white;
-  background-color: rgb(9,9,127);
+  background-color: rgb(9, 9, 127);
 }
 
 
@@ -203,11 +220,12 @@ nav {
   display: none;
 }
 
-.janela.ativa{
+.janela.ativa {
   display: block;
 }
 
-#janelaIda, #janelaVolta {
+#janelaIda,
+#janelaVolta {
   display: none;
 }
 
@@ -234,90 +252,95 @@ nav {
 
 /* caixa dos bilhetes --------------------------------------------------------------------------*/
 .caixaBilhete {
-width: 600px;
-height: 200px;
-background-color: white;
-border-radius: 20px;
-box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.1);
-margin-left: 30%;
-margin-right: 50%;
+  width: 600px;
+  height: 200px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.1);
+  margin-left: 30%;
+  margin-right: 50%;
 
-padding-left: 30px;
-padding-right: 5px;
-padding-top: 30px;
-/*padding-bottom: 20px;*/
+  padding-left: 30px;
+  padding-right: 5px;
+  padding-top: 30px;
+  /*padding-bottom: 20px;*/
 
-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .caixaBilhete:hover {
-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .column {
-display: flex;
+  display: flex;
 }
 
 .left {
-width: 70%;
+  width: 70%;
 }
 
 .right {
-width: 30%;
+  width: 30%;
 }
 
 .botaoTransicao {
-display: inline-block;
-transition-duration: 0.4s;
-cursor: pointer;
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .verMais {
-color: rgb(0, 0, 0);
-/*background-color: rgb(4, 4, 77);*/
-background-color: rgb(255,255,255);
-height: 35px;
-width: 200px;
-border-radius: 10px;
-/*border-color: none;*/
-border-color: rgb(4, 4, 77);
+  color: rgb(0, 0, 0);
+  /*background-color: rgb(4, 4, 77);*/
+  background-color: rgb(255, 255, 255);
+  height: 35px;
+  width: 200px;
+  border-radius: 10px;
+  /*border-color: none;*/
+  border-color: rgb(4, 4, 77);
 
-align-items: center;
-margin-left: 30%;
+  align-items: center;
+  margin-left: 30%;
 }
 
-.verMais:hover {   
-background-color: rgb(9, 9, 127);
-color: white;
-cursor:pointer;
+.verMais:hover {
+  background-color: rgb(9, 9, 127);
+  color: white;
+  cursor: pointer;
 }
 
 
 .btCarrinho {
-content: ''; /* Adiciona a imagem */
-display: inline-block; /* Garante que a imagem fique visível */
-border: none;
-border-color: transparent;
-outline: none;
-position: absolute;
-background-size: contain; /* Ajusta o tamanho da imagem */
-width: 28px; /* Largura da imagem */
-height: 30px; /* Altura da imagem */
-margin-right: 5px; 
-margin-left: 160px; 
-border: none;
-cursor: pointer;
-transition: 0.4s;
+  content: '';
+  /* Adiciona a imagem */
+  display: inline-block;
+  /* Garante que a imagem fique visível */
+  border: none;
+  border-color: transparent;
+  outline: none;
+  position: absolute;
+  background-size: contain;
+  /* Ajusta o tamanho da imagem */
+  width: 28px;
+  /* Largura da imagem */
+  height: 30px;
+  /* Altura da imagem */
+  margin-right: 5px;
+  margin-left: 160px;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .btCarrinho:hover {
-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 
 /*select de passageiros */
 .passageiros {
-padding-right: 10px;
+  padding-right: 10px;
 }
 
 
@@ -340,32 +363,33 @@ padding-right: 10px;
 
 /* BOTAO PARA VOLTAR IR PARA O TOPO DE PÁGINA */
 .botaoTopo {
-position: fixed;
-bottom: 20px;
-right: 20px;
-opacity: 0;
-transform: translateX(100px); /* Começa fora da tela */
-transition: opacity 0.5s ease, transform 0.5s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  transform: translateX(100px);
+  /* Começa fora da tela */
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .btTopo {
-padding: 15px 30px;
-font-size: 15px;
-color: white;
-background: rgb(4, 4, 77);
-border: none;
-cursor: pointer;
-border-radius: 5px;
-transition: 0.3s;       
+  padding: 15px 30px;
+  font-size: 15px;
+  color: white;
+  background: rgb(4, 4, 77);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
 .btTopo:hover {
-background: rgb(9,9,127);
-transform: scale(1.05);
-} 
+  background: rgb(9, 9, 127);
+  transform: scale(1.05);
+}
 
 /* classe para exibir o botão */
 .mostrar {
-opacity: 1;
-transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
