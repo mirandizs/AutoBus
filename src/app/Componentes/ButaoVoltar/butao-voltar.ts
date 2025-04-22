@@ -13,12 +13,17 @@ import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
 export class ButaoVoltar {
 
   Visible = false
-  PixeisParaMostrar = 50
+
 
   @HostListener('window:scroll')
   onWindowScroll() {
-    const PosicaoScroll = window.scrollY || document.documentElement.scrollTop;
-    this.Visible = PosicaoScroll > this.PixeisParaMostrar;
+    const TamanhoJanela = window.innerHeight;
+    const TamanhoTotalPagina = document.documentElement.scrollHeight
+    const PixeisParaMostrar = TamanhoTotalPagina - 100 // Tamanho total menos 100 pixeis, 100 pixeis antes da pagina estar no fim
+
+    const PosicaoScroll = TamanhoJanela + (window.scrollY || document.documentElement.scrollTop)
+    this.Visible = PosicaoScroll > PixeisParaMostrar; 
+    //console.log(PixeisParaMostrar, PosicaoScroll)
   }
 
   VoltarAoTopo() {
