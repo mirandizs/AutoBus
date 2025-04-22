@@ -1,16 +1,92 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Topbar } from '../../Componentes/Topbar/topbar';
 import { Footer } from '../../Componentes/Footer/footer';
+import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
+
 
 @Component({
   selector: 'pagina-carrinho',
-  imports: [Topbar, Footer],
+  imports: [Topbar],
   templateUrl: './carrinho.html',
   styleUrl: './carrinho.css'
 })
+
+
 export class PaginaCarrinho {
+  ServicoAutenticacao = inject(ServicoAutenticacao)
+  Utilizador = this.ServicoAutenticacao.Utilizador
+
   ModalMetodo = false
   TipoPagamentoCartao = false
   TipoPagamentoMB = false
   ModalCodigo = false
+
+
+
+  //funcao para permitir apenas a insercao de letras
+  permitirApenasLetras(event: any) {
+    const input = event.target as HTMLInputElement;
+    input.value = input.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+  }
+
+  //funcao para permitir apenas a insercao de numeros
+  permitirApenasNumeros(event: KeyboardEvent): void {
+    const tecla = event.key;
+    if (!/^\d$/.test(tecla)) {
+      event.preventDefault();
+    }
+  }
+
+
+  //funcao para fazer a mascara do input do cartao, com limite de digitos e os espacos
+  formatarCartao(event: Event): void {
+    let input = (event.target as HTMLInputElement).value;
+    input = input.replace(/\D/g, ''); // remove não números
+    //input = input.substring(0, 16);   // limita a 16 dígitos
+    input = input.replace(/(\d{4})(?=\d)/g, '$1 '); // insere espaços a cada 4 dígitos
+    (event.target as HTMLInputElement).value = input;
+  }
+
+
+  //funcao para a validade do cartao
+  formatarValidade(event: Event): void {
+    let input = (event.target as HTMLInputElement).value;
+    input = input.replace(/\D/g, '');
+    input = input.substring(0, 4); // MMYY
+  
+    //verificacao do mes
+    if (input.length >= 2) {
+      const mes = parseInt(input.substring(0, 2), 10);
+      if (mes < 1 || mes > 12) {
+        (event.target as HTMLInputElement).value = '';
+        return;
+      }
+    }
+  
+    if (input.length > 2) {
+      input = input.replace(/(\d{2})(\d{1,2})/, '$1/$2'); //adicionar a barra entre o mes e o ano
+    }
+  
+    (event.target as HTMLInputElement).value = input;
+  
+    // Validação completa da data
+
+    //esta funcao vai separar o input em mes e ano e adicionar o "20" antes do parametro do utilizador
+    //vai buscar o ano e mes atual e verificar se o cartao é valido ou nao, caso nao um alert aparece
+    if (input.length === 5) {
+      const [mesStr, anoStr] = input.split('/');
+      const mes = parseInt(mesStr, 10);
+      const ano = parseInt('20' + anoStr, 10);
+  
+      const hoje = new Date();
+      const anoAtual = hoje.getFullYear();
+      const mesAtual = hoje.getMonth() + 1;
+  
+      if (ano < anoAtual || (ano === anoAtual && mes < mesAtual)) {
+        alert('Data de validade inválida');
+        (event.target as HTMLInputElement).value = '';
+      }
+    }
+  }  
 }
+

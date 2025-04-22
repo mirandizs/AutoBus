@@ -7,7 +7,7 @@ import { ButaoVoltar } from "../../Componentes/ButaoVoltar/butao-voltar";
 
 @Component({
   selector: 'pagina-viagens',
-  imports: [Footer, Topbar, FormPesquisaViagens, ButaoVoltar],
+  imports: [Topbar, FormPesquisaViagens, ButaoVoltar],
   templateUrl: './viagens.html',
   styleUrl: './viagens.css'
 })

@@ -15,14 +15,13 @@
       <div class="column left">
         <!-- NOME -->
         <label><strong>Nome*</strong></label><br>
-        <input type="text" formControlName="nome" style="padding-left:10px;">
+        <input type="text" formControlName="nome" style="padding-left:10px;" (input)="permitirApenasLetras($event)">
         <br><br>
 
         <!-- NIF -->
         <label><strong>NIF*</strong></label><br>
-        <input type="tel" formControlName="nif" style="padding-left:10px;"
-          title="O NIF deve conter 9 números e começar com 1, 2, 5, 6, 7 ou 9." inputmode="numeric" maxlength="9"
-          placeholder="XXXXXXXXX">
+        <input type="tel" formControlName="nif" style="padding-left:10px;" title="O NIF deve conter 9 números e começar com 1, 2, 5, 6, 7 ou 9." 
+              inputmode="numeric" maxlength="9" placeholder="XXXXXXXXX" (keypress)="permitirApenasNumeros($event)">
         <br>
         @if (nif?.invalid && nif?.value){
           <label class="erro-campo">NIF Invalido</label>
@@ -53,16 +52,15 @@
       <div class="column right">
 
         <!-- DATA DE NASCIMENTO -->
-        <label><strong>Data de Nascimento*</strong></label>
-        <br>
-        <input type="date" formControlName="nascimento" style="padding-right:10px; padding-left:10px;" title="Tem de ser maior de 18 anos.">
+        <label><strong>Data de Nascimento*</strong></label><br>
+        <input type="date" formControlName="nascimento" style="padding-right:10px; padding-left:10px;" title="Tem de ser maior de 18 anos." maxlength="8"
+                (keypress)="permitirApenasNumeros($event)">
         <br><br>
 
         <!-- TELEMOVEL -->
         <label><strong>Telemóvel*</strong></label><br>
-        <input type="tel" formControlName="telefone" style="padding-left:10px;"
-          title="O número de telemóvel deve conter 9 números e deve iniciar com 9." maxlength="9"
-          placeholder="9XXXXXXXX">
+        <input type="tel" formControlName="telefone" style="padding-left:10px;" title="O número de telemóvel deve conter 9 números e deve iniciar com 9." 
+              maxlength="9" placeholder="9XXXXXXXX" (keypress)="permitirApenasNumeros($event)">
         <br>
         @if (telefone?.invalid && telefone?.value){
           <label class="erro-campo">O número de telemóvel deve conter 9 números e deve iniciar com 9.</label>
@@ -71,7 +69,7 @@
         
         <!-- LOCALIDADE -->
         <label><strong>Localidade*</strong></label><br>
-        <input type="text" formControlName="localidade"style="padding-left:10px;" placeholder="Ex: Coimbra" >
+        <input type="text" formControlName="localidade"style="padding-left:10px;" placeholder="Ex: Coimbra" (input)="permitirApenasLetras($event)">
         <br><br>
 
         <!-- CONFIRMAR PALAVRA-PASSE -->
@@ -92,13 +90,13 @@
     </div>
 
 
-    <a routerLink="/inicial">
-      <button type="button" value="Voltar" class="botaoVoltar">
-        Voltar
-      </button>
-    </a>
-    
-    <button type="submit" value="Criar Conta" class="botaoCriar" [disabled]="FormCriar.invalid">Avançar</button>
+    <div style="display:flex; justify-content: space-between; margin-right: 30px;">
+      <a routerLink="/inicial">
+        <button type="button" value="Voltar" class="botaoVoltar">Voltar</button>
+      </a>
+      
+      <button type="submit" class="botaoCriar" [disabled]="FormCriar.invalid">Avançar</button>
+    </div>
 
     <div id="popup" class="modal">
       <div class="modal-content">

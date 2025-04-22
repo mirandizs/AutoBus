@@ -261,7 +261,7 @@ nav {
   margin-right: 50%;
 
   padding-left: 30px;
-  padding-right: 5px;
+  padding-right: 20px;
   padding-top: 30px;
   /*padding-bottom: 20px;*/
 
@@ -313,21 +313,15 @@ nav {
 
 .btCarrinho {
   content: '';
-  /* Adiciona a imagem */
   display: inline-block;
-  /* Garante que a imagem fique visível */
   border: none;
   border-color: transparent;
   outline: none;
   position: absolute;
   background-size: contain;
-  /* Ajusta o tamanho da imagem */
+  background-color: transparent;
   width: 28px;
-  /* Largura da imagem */
   height: 30px;
-  /* Altura da imagem */
-  margin-right: 5px;
-  margin-left: 160px;
   border: none;
   cursor: pointer;
   transition: 0.4s;

@@ -45,7 +45,7 @@
         @if (ModalMetodo) {
             <!-- CAIXA DE PAGAMENTO ---------------------------------------------------------------> 
             <div  id="modalMetodo" class="modal-payment">
-                <button class="fechar" id="fecharModal">✖</button>
+                <button class="fechar" id="fecharModal" (click)="ModalMetodo = false">✖</button>
                 <h2 style="color: rgb(0, 0, 150); margin-bottom: 50px; margin-left: 20px;">Método de pagamento</h2>
 
                 <div class="caixaEscolha" style="display: flex;">
@@ -65,32 +65,35 @@
 
         @if (TipoPagamentoCartao) {
              <!-- OPCAO DO CARTAO DE CREDITO -->
-            <div id="modalCartao" class="modalTipoPagamento">
+            <div id="modalCartao" class="modalTipoPagamentoCartao">
                 <!--<?php //var_dump($_SESSION["metodoPagamento"])?>-->
-                <button class="fechar" id="fecharModal2">✖</button><br>
+                <button class="fechar" id="fecharModal2" (click)="TipoPagamentoCartao = false">✖</button><br>
     
                 <h2 style="color: rgb(0, 0, 150); margin-bottom: 50px; margin-left: 20px;">Pagamento com cartão de crédito</h2>
     
                 <form id="formCartao" action="inserirCartao.php" method="POST">
                     <div style="margin-left:20px;">
                         <div class="form-group">
-                            <input type="text" id="nome_Cartao" name="nome_Cartao"  placeholder=" " required class="input-grande"/>
+                            <input type="text" id="nome_Cartao" name="nome_Cartao"  placeholder=" " required class="input-grande" (input)="permitirApenasLetras($event)"/>
                             <label>Nome do titular do cartão</label>
                         </div>
     
                         <div class="form-group">
-                            <input type="text" id="numero_cartao" name="numero_cartao"  placeholder=" " minlength="16" maxlength="16" required class="input-grande"/>
+                            <input type="tel" id="numero_cartao" name="numero_cartao"  placeholder=" " maxlength="19" required class="input-grande" 
+                            (input)="formatarCartao($event)"/>
                             <label>Número do cartão</label>
                         </div>
     
                         <div style="display: flex;">
                             <div class="form-group">
-                                <input type="text" id="validade" name="validade"  placeholder=" " required class="input-pequeno"/>
+                                <input type="text" id="validade" name="validade"  placeholder=" " required class="input-pequeno"
+                                       (input)="formatarValidade($event)"/>
                                 <label>Validade</label>
-                            </div>
+                            </div> 
     
                             <div class="form-group" style="margin-left:-70px; margin-right:0px;">
-                                <input type="tel" id="cvv" name="ccv"  placeholder=" "minlength="3" maxlength="3" class="input-pequeno" required/>
+                                <input type="password" id="cvv" name="ccv"  placeholder=" "minlength="3" maxlength="3" class="input-pequeno" required
+                                       (keypress)="permitirApenasNumeros($event)"/>
                                 <label>CVV</label>
                             </div>
     
@@ -102,7 +105,7 @@
                             <label>Guardar os dados do cartão.</label>
                         </div>
     
-                        <button type="submit" id="openCode" class="btnContinuarPay botaoTransicao" onclick="verificarCheckbox(event)">Continuar</button>
+                        <button type="submit" id="openCode" class="btnContinuarPay botaoTransicao">Continuar</button>
                     </div>               
                 </form>
             </div>
@@ -110,18 +113,21 @@
 
         @else if (TipoPagamentoMB) {
             <!-- OPCAO DO MBWAY -->
-            <div id="modalMbway" class="modalTipoPagamento">
-                <button class="fechar" id="fecharModal3">✖</button>
+            <div id="modalMbway" class="modalTipoPagamentoMB">
+                <button class="fechar" id="fecharModal3" (click)="TipoPagamentoMB = false">✖</button>
 
-                <h2 style="color: rgb(0, 0, 150); margin-bottom: 50px; margin-left: 20px;">Pagamento com MB MAY</h2>
+                <h2 style="color: rgb(0, 0, 150); margin-bottom: 50px; margin-left: 20px;">Pagamento com MB WAY</h2>
 
                 <div style="margin-left:20px;">
                     <div class="form-group">
-                        <input type="tel" id="telefone" name="telefone" maxlength="9" pattern="9[0-9]{8}" title="O número de telemóvel deve conter 9 números e deve iniciar com 9." placeholder="9XXXXXXXX" style="padding-left:20px;" required class="input-grande" value='<?= htmlspecialchars($registo["telefone"]) ?>'/>
+                        <input type="tel" id="telefone" name="telefone" maxlength="9" placeholder=" " style="padding-left:20px;" required class="input-grande" 
+                            (keypress)="permitirApenasNumeros($event)" [value]="ServicoAutenticacao.Utilizador()?.telefone"/>
                         <label>Número de telemóvel</label>
                     </div>
 
-                    <label>Este é o teu número?</label>
+                    <label>Caso este não seja o teu número associado ao MBWAY, altere-o.</label><br><br><br>
+
+                    <button id="openCode" class="btnContinuarPay botaoTransicao">Continuar</button>
                 </div>
             </div>
         }
@@ -131,7 +137,7 @@
             <!-- MODAL DE CODIGO DE CONFIRMACAO -->
             <div id='modalCodigo' class='modalSlideRight'>
                 <div class='modalCodigo'>
-                    <button class="fechar" id="fecharModal4">✖</button><br><br>
+                    <button class="fechar" id="fecharModal4" (click)="ModalCodigo = false">✖</button><br><br>
         
                     <h2 style="color: rgb(0, 0, 150); margin-bottom: 30px; margin-left: 20px; text-align: center;">Insira o código de 6 dígitos</h2>
                     
@@ -181,59 +187,6 @@
 
     const fundoModal = document.querySelector('.modalFUNDO');
 
-    // abrir modalmetodo
-    btnAbrir?.addEventListener("click", function () {
-        fundoModal.classList.add("show"); // mostra o fundo
-        modal.style.display = 'block'; // mostra o primeiro modal (modalmetodo)
-        modal.classList.add("show");
-    });
-
-    
-    //funcao para guardar o metodo que foi selecionado na session 
-    function guardarMetodo(metodo) {
-        console.log("Método selecionado:", metodo); // Mostra antes de enviar
-
-        fetch("guardarMetodo.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: `metodoPagamento=${encodeURIComponent(metodo)}`
-        }).then(res => res.json());
-        //.then(data => console.log(data));
-    }
-
-    // quando escolhe cartão
-    btnCartao?.addEventListener('click', () => {
-        guardarMetodo("Cartao de Crédito");
-        modal.style.display = 'none';
-        modal.classList.remove("show");
-        modalCartao.style.display = 'block';
-        modalCartao.classList.add("show");
-    });
-
-    // quando escolhe MB Way
-    btnMbway?.addEventListener('click', () => {
-        guardarMetodo("MB WAY");
-        modal.style.display = 'none';
-        modalMbway.style.display = 'block';
-        modalMbway.classList.add("show");
-    });
-
-
-
-    // aparicao do modalcodigo 
-    btnContinuar?.addEventListener('click', () => {
-        modal.style.display = 'none';
-        modal.classList.remove("show");
-        modalCartao.style.display = 'none';
-        modalCartao.classList.remove("show");
-
-        modalCode.style.display = 'block';
-        modalCode.classList.add("show");
-    });
-
-
     
 
     // função para remover o método de pagamento da sessão
@@ -250,86 +203,6 @@
             console.log("Método removido da sessão:", data);
         });
     }
-
-
-
-    
-    // fechar o modalmetodo
-    btnFechar1.addEventListener('click', () => {
-        //fecharModal(modal);
-        modal.style.display = 'none';
-        fundoModal.classList.remove("show");
-    });
-
-    // fechar o modal de cartão e voltar ao anterior
-    btnFechar2.addEventListener('click', () => {
-        removerMetodoSessao();
-        fecharModal(modalCartao);
-        modal.style.display = 'block'; // voltar para o modalmetodo
-        /*modalCartao.classList.add("outshow");
-        modal.classList.add("back");*/
-    });
-
-    // mesma coisa para o mbway
-    btnFechar3.addEventListener('click', () => {
-        removerMetodoSessao();
-        fecharModal(modalMbway);
-        modal.style.display = 'block';
-        /*modalMbway.classList.add("outshow");
-        modal.classList.add("show");*/
-    });
-
-    // mesma coisa para o codigo
-    btnFechar4.addEventListener('click', () => {
-        fecharModal(modalCode);
-        modal.style.display = 'block';
-        /*modalMbway.classList.add("outshow");
-        modal.classList.add("show");*/
-    });
-
-
-    //funcao para fechar os modals
-    function fecharModal(modalElement) {
-        modalElement.style.display = 'none';
-        modalElement.classList.remove('show');
-    }
-
-
-    //funcao para não permitir inserir letras no campo de telefone 
-    document.addEventListener('DOMContentLoaded', () => {
-        const telefoneInput = document.getElementById('telefone');
-        const cvvInput = document.getElementById('cvv');
-        const codigoInput = document.getElementById('codigo');
-
-        // não permitir que sejam inseridas letras no número de telemóvel
-        if (telefoneInput) {
-            telefoneInput.addEventListener('input', () => {
-                telefoneInput.value = telefoneInput.value.replace(/[^0-9]/g, ''); // permite apenas números no telefone
-            });
-        } else {
-            console.error("Elemento com ID 'telefone' não encontrado.");
-        }
-
-        // não permitir que sejam inseridas letras no cvv
-        if (cvvInput) {
-            cvvInput.addEventListener('input', () => {
-                cvvInput.value = cvvInput.value.replace(/[^0-9]/g, '');
-            });
-        } else {
-            console.error("Elemento com ID 'cvv' não encontrado.");
-        }
-
-        // não permitir que sejam inseridas letras no codigo
-        if (codigoInput) {
-            codigoInput.addEventListener('input', () => {
-                codigoInput.value = codigoInput.value.replace(/[^0-9]/g, '');
-            });
-        } else {
-            console.error("Elemento com ID 'codigo' não encontrado.");
-        }
-    });
-
-
 
 
     // verificar se a checkbox de guardar os dados do cartao está selecionada
