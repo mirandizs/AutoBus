@@ -8,12 +8,11 @@
             <br><br>
 
             <label>NIF: </label><br>
-            <input type='tel' class='info campoTexto caixa' name='nif' maxlength='9'
-                [value]='Utilizador()?.telefone' disabled style="cursor:not-allowed;"><br><br>
+            <input type='tel' class='info campoTexto caixa' name='nif' maxlength='9' [value]='Utilizador()?.telefone'
+                disabled style="cursor:not-allowed;"><br><br>
 
             <label>Data de nascimento: </label><br>
-            <input type='date' class='info campoTexto caixa' name='nascimento'
-                [value]='Utilizador()?.nascimento'>
+            <input type='date' class='info campoTexto caixa' name='nascimento' [value]='Utilizador()?.nascimento'>
             <br><br>
 
             <label>Telemóvel: </label><br>
@@ -23,12 +22,10 @@
             <br><br>
 
             <label>Localidade: </label><br>
-            <input type='text' class='info campoTexto caixa' name='localidade'
-                [value]='Utilizador()?.localidade'>
+            <input type='text' class='info campoTexto caixa' name='localidade' [value]='Utilizador()?.localidade'>
             <br>
 
-            <button type='submit' id='botaoEditar' name='botaoEditar' disabled
-                style='margin-top:30px;'>Salvo</button>
+            <button type='submit' id='botaoEditar' name='botaoEditar' disabled style='margin-top:30px;'>Salvo</button>
         </div>
 
         <div class='column right'>
@@ -38,25 +35,11 @@
             <div class="bordas">
                 <div class="alignment">
                     <a class='fundo'>
-                        <img class='imagemUti' id='preview' src="<?= 'uploads/' . $registo['foto'] ?>"
-                            onerror='this.src="img/default.png"'>
+                        <img class="imagemUtil" [src]="ImageSelecionada || URL_Imagens" onerror="this.src='img/default.png'">
                     </a>
-
-                    <script>
-                        function previewImage(event) {
-                            var reader = new FileReader();
-                            reader.onload = function () {
-                                var output = document.getElementById('preview');
-                                output.src = reader.result;
-                            };
-                            reader.readAsDataURL(event.target.files[0]);
-                        }
-                    </script>
-
                     <br>
                     <label for="file" class="file-label">Selecione uma imagem</label>
-                    <input type="file" accept="image/*" id="file" class="file-input" name="foto"
-                        onchange="previewImage(event)">
+                    <input type="file" accept="image/*" id="file" class="file-input" name="foto" (change)="PreverImagem($event)">
                     <br>
                 </div>
             </div>

@@ -20,6 +20,8 @@ export class Topbar {
   ServicoHttp = inject(HttpService)
   ServicoAutenticacao = inject(ServicoAutenticacao)
 
+  URL_Imagens = Definicoes.API_URL+'imagens/utilizador'
+  
   async Login(){
     this.CarregamentoVisivel = true
 

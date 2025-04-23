@@ -20,7 +20,7 @@
 
                 <!-- BUTAO PERFIL -->
                 <button class="botaoLogin botao-imagem dropbtn" id="butao-perfil" alt="Utilizador">
-                    <img class="imagem-butao-perfil" src="img/default-profile.png">
+                    <img class="imagem-butao-perfil" [src]="URL_Imagens" onerror="this.src='img/default-profile.png'">
                     <span id="nome-utilizador" style="color: white; font-size: 14px; margin-left:10px;">
                         {{ServicoAutenticacao.Utilizador()?.nome}}
                     </span>
