@@ -21,6 +21,15 @@
 .cidades {
   display: flex;
   text-align: center;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+
+.alinhamento {
+  justify-content: center;
+  align-items: center;
 }
 
 .imagem {

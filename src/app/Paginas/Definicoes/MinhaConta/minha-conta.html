@@ -35,9 +35,9 @@
             <div class="bordas">
                 <div class="alignment">
                     <a class='fundo'>
-                        <img class="imagemUtil" [src]="ImageSelecionada || URL_Imagens" onerror="this.src='img/default.png'">
-                    </a>
-                    <br>
+                        <img class="imagemUti" [src]="ImageSelecionada || URL_Imagens" onerror="this.src='img/default.png'">
+                    </a><br>
+                    
                     <label for="file" class="file-label">Selecione uma imagem</label>
                     <input type="file" accept="image/*" id="file" class="file-input" name="foto" (change)="PreverImagem($event)">
                     <br>

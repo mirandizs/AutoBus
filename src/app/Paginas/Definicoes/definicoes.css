@@ -5,8 +5,10 @@
 }
 
 .roww {
+  margin-top: 100px;
   display: flex;
-  margin-left: 12%;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -33,13 +35,6 @@
   content: "";
   display: table;
   clear: both;
-}
-
-
-.imagemUtil{
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
 }
 
 
@@ -71,8 +66,6 @@
   padding-left: 30px;
   width: 880px;
   height: 530px;
-  margin-left: 1px;
-  margin-right: 180px;
   margin-top: 40px;
 
   border-radius: 10px;
@@ -120,9 +113,6 @@
   width: 70%;
   padding: 8px;
   margin-top: 1px;
-  /*margin-bottom: 1px;*/
-  /*padding-left: 4px;
-  padding-right: 10px;*/
   display: inline-block;
   border: 2px solid rgba(230, 227, 255, 0.664);
   border-radius: 4px;
@@ -492,9 +482,11 @@ padding: auto;
   width: 50px;
 }
 
+/* foto de perfil do "minha conta"*/
 .imagemUti {
-  height: 260px;
-  width: 260px;
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
 }
 
 
@@ -512,7 +504,7 @@ padding: auto;
   cursor: pointer;
   transition: background 0.3s;
   margin-top: 10px;
-  margin-left: 40px;
+  margin-left: 30px;
 }
 
 .file-label:hover {
@@ -528,20 +520,19 @@ padding: auto;
   border: 2px solid rgb(180, 180, 180);
   border-radius: 10px;
   padding-bottom: 20px;
-  padding-left: 20px;
   padding-top: 20px;
   width: 280px;
-  margin-left: 10px;
+  margin-left: 30px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .alignment {
   align-items: center;
-  align-content: center;
   justify-content: center;
-  justify-items: center;
-  margin: auto;
 }
 
 .foto-perfil {
-  margin-left: 110px;
+  margin-left: 120px;
 }
