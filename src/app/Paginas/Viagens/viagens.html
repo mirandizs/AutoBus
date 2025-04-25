@@ -7,13 +7,16 @@
 
 
 
+@for (Viagem of Viagens; track $index){
+    
 <div class='caixaBilhete'>
+    
     <div style='display:inline-flex; justify-items:center; text-align: center'>
         <br>
-        <a><strong>" . $local_partida . " ⮕ " . $local_chegada . "</strong></a>
+        <a><strong>{{Viagem.local_partida}} ⮕ {{Viagem.local_chegada}}</strong></a>
         <h2 style='margin-left:390px; margin-top:-4px; float: right; display:flex'>00,00€</h2>
     </div><br>
-    <a>Hora de partida: " . $resultado["hora_partida"] . "</a>
+    <a>Hora de partida: {{Viagem.hora_partida}}</a>
     <br><br><br><br><br>
 
     <!--<button class='botaoTransicao botaoComprar'>Adicionar ao carrinho</button>-->
@@ -21,21 +24,11 @@
     <button class='botaoTransicao verMais'>Ver mais detalhes</button>
     <!--</form>-->
 
-    <form action='inserirCarrinho.php' method='POST'>
-
-        <input type='hidden' name='id_ponto_partida' value='" . $resultado["id_ponto_partida"] . "'>
-        <input type='hidden' name='id_ponto_chegada' value='" . $resultado["id_ponto_chegada"] . "'>
-        <input type='hidden' name='local_partida' value='" . $local_partida . "'>
-        <input type='hidden' name='local_chegada' value='" . $local_chegada . "'>
-        <input type='hidden' name='hora_partida' value='" . $resultado["hora_partida"] . "'>
-        <input type='hidden' name='passageiros' value='" . $passageiros . "'>
-        <input type='hidden' name='data_ida' value='" . $data_ida . "'>
-        <input type='hidden' name='data_volta' value='" . $data_volta . "'>
-        <button class='btCarrinho'>
-            <img src="img/carrinhoAdicionarA.png" style="height: 25px; width: 25;">
-        </button>
-    </form>
+    <button class='btCarrinho' (click)="adicionarCarrinho(Viagem)">
+        <img src="img/carrinhoAdicionarA.png" style="height: 25px; width: 25;">
+    </button>
 </div><br>
-
+    
+}
 <butao-voltar></butao-voltar>
 <!-- <footer-componente></footer-componente> -->

@@ -29,12 +29,12 @@ export class FormPesquisaViagens {
   });
 
   RedirecionarPesquisa() {
-    console.log(this.FormPesquisa.get('local_partida'))
 
     this.router.navigate(['/viagens'], {
       queryParams: this.FormPesquisa.value
-    }
-    )
+    }).then(()=>{
+      window.location.reload()
+    })
   }
 
   // Os estilos para definir a largura dos campos de pesquisa são definidos de acordo com a página ativa, para podermos usar este componente em ambas páginas

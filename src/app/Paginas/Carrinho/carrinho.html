@@ -9,20 +9,21 @@
         <h2 style="text-align: center; margin-bottom:70px; color: rgb(5, 5, 96);">Bilhetes</h2>
 
        
-
-        <div class='caixaBilhete'>
-            <div style='display:inline-flex; justify-items:center; text-align: center'>
-                <br>
-                <a><strong>".$local_partida."  ⮕ " . $resultado['local'] . "</strong></a>
-                <h2 style='margin-left:500px; margin-top:-4px; float: right; display:flex'>00,00€</h2>
-            </div><br>
-
-            <a style='margin-right:360px;'>Hora de partida: ".$resultado["hora_partida"]."</a>
-
-            
-            <button class='btCarrinho'></button>
-            <!--<button class='botaoTransicao verMais'></button>-->
-        </div>
+        @for (Bilhete of Carrinho ; track $index){
+            <div class='caixaBilhete'>
+                <div style='display:inline-flex; justify-items:center; text-align: center'>
+                    <br>
+                    <a><strong>{{Bilhete.local_partida}} ⮕ {{Bilhete.local_chegada}}</strong></a>
+                    <h2 style='margin-left:500px; margin-top:-4px; float: right; display:flex'>00,00€</h2>
+                </div><br>
+    
+                <a style='margin-right:360px;'>Hora de partida: {{Bilhete.hora_partida}}</a>
+    
+                
+                <button class='btCarrinho'></button>
+                <!--<button class='botaoTransicao verMais'></button>-->
+            </div>
+        }        
     </div>
 
     <div class="column right">

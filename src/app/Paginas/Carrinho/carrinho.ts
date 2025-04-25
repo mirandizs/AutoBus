@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { Topbar } from '../../Componentes/Topbar/topbar';
 import { Footer } from '../../Componentes/Footer/footer';
 import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
+import { HttpService } from '../../Services/Http.service';
+import { Definicoes } from '../../Definicoes';
 
 
 @Component({
@@ -20,6 +22,17 @@ export class PaginaCarrinho {
   TipoPagamentoCartao = false
   TipoPagamentoMB = false
   ModalCodigo = false
+
+
+  ServicoHTTP = inject(HttpService)
+  Carrinho : any[] = []
+
+  async ngOnInit() {
+    const Pedido_URL = new URL(Definicoes.API_URL+"carrinho")
+
+    this.Carrinho = await this.ServicoHTTP.Request(Pedido_URL, "GET") 
+  }
+
 
 
 
