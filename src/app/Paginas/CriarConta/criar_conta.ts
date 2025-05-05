@@ -37,7 +37,7 @@ export class PaginaCriarConta {
     this.FormCriar.enable()
   }
 
-  // Definimos o form, com estrutura, campos e validacoes
+  // Definimos o form com estrutura, campos e validacoes
   FormCriar:FormGroup = new FormGroup({
     nome: new FormControl('', [Validators.required]),
     nif: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),  // ^\d{9}$ -> 9 digitos

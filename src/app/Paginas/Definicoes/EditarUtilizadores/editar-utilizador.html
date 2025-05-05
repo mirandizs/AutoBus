@@ -4,17 +4,21 @@
             <h2>Gestão de Utilizadores - Editar</h2><br>
 
             <label>Nome:</label><br>
-            <input type="text" class="info campoTexto caixa" [value]="UtilizadorSelecionado()?.nome"><br><br>
+            <input type="text" class="info campoTexto caixa" [value]="UtilizadorSelecionado()?.nome" (input)="permitirApenasLetras($event)"><br><br>
 
             <label>NIF:</label><br>
-            <input type="tel" class="info campoTexto caixa" name="nif" maxlength="9" [value]="UtilizadorSelecionado()?.nif" disabled>
+            <input type="tel" class="info campoTexto caixa" name="nif" maxlength="9" [value]="UtilizadorSelecionado()?.nif" (keypress)="permitirApenasNumeros($event)" disabled>
             <br><br>
 
             <label>Data de nascimento:</label><br>
-            <input type="date" class="info campoTexto caixa" name="nascimento"><br><br>
+            <input type="date" class="info campoTexto caixa" name="nascimento" [value]="UtilizadorSelecionado()?.nascimento"><br><br>
 
             <label>Password:</label><br>
-            <input type="password" class="info campoTexto caixa"name="password" style="margin-bottom:10px;"><br><br>
+            <input [type]="PasswordVisivel ? 'text' : 'password'" class='info caixa campoTexto' name='password' id='password' style="margin-bottom:30px;" >
+            <button type='button' class='ver' name="iconPasswordConfirm" id="iconPasswordConfirm"
+                (click)="PasswordVisivel = !PasswordVisivel">
+                <img [src]="PasswordVisivel ? 'img/aberto.png' : 'img/fechado.png'" width='20px' height='20px'>
+            </button><br>
 
             <button type="submit" id="botaoEditar" name="botaoEditar" disabled>Salvo</button>
         </div>
@@ -22,10 +26,10 @@
         <div class="column right">
             <div style="padding-top: 60px;">
                 <label>Telemóvel:</label><br>
-                <input type="tel" class="info campoTexto caixa" name="telefone" maxlength="9" [value]="UtilizadorSelecionado()?.telefone"><br><br>
+                <input type="tel" class="info campoTexto caixa" name="telefone" maxlength="9" [value]="UtilizadorSelecionado()?.telefone" (keypress)="permitirApenasNumeros($event)"><br><br>
 
                 <label>Localidade:</label><br>
-                <input type="text" class="info campoTexto caixa" name="localidade" [value]="UtilizadorSelecionado()?.localidade"><br><br>
+                <input type="text" class="info campoTexto caixa" name="localidade" [value]="UtilizadorSelecionado()?.localidade" (input)="permitirApenasLetras($event)"><br><br>
 
                 <label>Email:</label><br>
                 <input type="email" class="info campoTexto caixa" name="email" [value]="UtilizadorSelecionado()?.email"><br><br>

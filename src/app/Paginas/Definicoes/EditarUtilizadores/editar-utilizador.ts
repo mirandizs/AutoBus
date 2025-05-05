@@ -29,6 +29,7 @@ export class JanelaEditarUtilizador {
   route = inject(ActivatedRoute)
   servicoHTTP = inject(HttpService)
   Utilizador = this.ServicoAutenticacao.Utilizador
+  PasswordVisivel = false
 
   UtilizadorSelecionado = signal<null | Utilizador>(null)
 
@@ -42,6 +43,21 @@ export class JanelaEditarUtilizador {
     if (resultado) {
       this.UtilizadorSelecionado.set(resultado)
       console.log(resultado)
+    }
+  }
+
+
+  //funcao para permitir apenas a insercao de letras
+  permitirApenasLetras(event: any) {
+    const input = event.target as HTMLInputElement;
+    input.value = input.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+  }
+
+  //funcao para permitir apenas a insercao de numeros
+  permitirApenasNumeros(event: KeyboardEvent): void {
+    const tecla = event.key;
+    if (!/^\d$/.test(tecla)) {
+      event.preventDefault();
     }
   }
 }

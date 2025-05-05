@@ -6,12 +6,12 @@
         <button routerLink="privacidade" type='button' id='privacidadeSeguranca' class='botao' (click)='JanelaAtiva="Seguranca"'>Privacidade
             e Segurança</button>
 
-        @if (ServicoAutenticacao.Admin()){
-        <button routerLink="utilizadores" type="button" id="gestor" class="botao" (click)='JanelaAtiva="Utilizadores"'>Gerir
-            Utilizadores</button>
+        @if (ServicoAutenticacao.Admin() == true) {
+            <button routerLink="utilizadores" type="button" id="gestor" class="botao" (click)='JanelaAtiva="Utilizadores"'>Gerir
+                Utilizadores</button>
 
-        <button routerLink="editar-utilizador" type="button" id="edicao" class="botao" (click)='JanelaAtiva="EditarUtilizador"'>Editar
-            Utilizadores</button>
+            <button routerLink="editar-utilizador" type="button" id="edicao" class="botao" (click)='JanelaAtiva="EditarUtilizador"'>Editar
+                Utilizadores</button>
         }
 
         <a routerLink="/inicial"><button type='button' value='Voltar' class='botao'>Voltar</button></a>
@@ -25,6 +25,6 @@
 
 </div>
 
-<br><br>
+<br>
 
 <footer-componente></footer-componente>
