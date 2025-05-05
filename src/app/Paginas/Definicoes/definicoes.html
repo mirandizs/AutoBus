@@ -6,7 +6,7 @@
         <button routerLink="privacidade" type='button' id='privacidadeSeguranca' class='botao' (click)='JanelaAtiva="Seguranca"'>Privacidade
             e Segurança</button>
 
-        @if (ServicoAutenticacao.Admin() == true) {
+        @if (!ServicoAutenticacao.Admin()) {
             <button routerLink="utilizadores" type="button" id="gestor" class="botao" (click)='JanelaAtiva="Utilizadores"'>Gerir
                 Utilizadores</button>
 

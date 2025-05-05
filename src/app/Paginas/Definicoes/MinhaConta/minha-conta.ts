@@ -80,15 +80,10 @@ export class JanelaMinhaConta {
   FormEditar:FormGroup = new FormGroup({
     nome: new FormControl('', [Validators.required]),
     nif: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),  // ^\d{9}$ -> 9 digitos
-    password: new FormControl('', [Validators.required, Validadores.SenhaForte, Validadores.ConfirmacaoPassword]), 
-    // Usamos o de confirmacao de password apenas para atualizar o campo de confirmacao sempre que o da password muda.
-    // ^ Fiz um validador com varios erros no ficheiro Services/Validadores.ts
-
     nascimento: new FormControl('', [Validators.required]),
     telefone: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),  // ^\d{9}$ -> 9 digitos
     localidade: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    confirm_password: new FormControl('', [Validators.required, Validadores.ConfirmacaoPassword]),
   });
 
 
@@ -99,9 +94,6 @@ export class JanelaMinhaConta {
   }
   get nif() {
     return this.FormEditar.get('nif');
-  }
-  get password() {
-    return this.FormEditar.get('password');
   }
   get nascimento() {
     return this.FormEditar.get('nascimento');
@@ -115,7 +107,34 @@ export class JanelaMinhaConta {
   get email() {
     return this.FormEditar.get('email');
   }
-  get confirm_password() {
-    return this.FormEditar.get('confirm_password');
-  }
+
+
+
+
+
+  // VerificarCampos(event: Event): void {
+  //   const inputAtual = event.target as HTMLInputElement;
+  //   const form = inputAtual.closest('form');
+  
+  //   if (!form) return;
+  
+  //   const inputs = form.querySelectorAll('input[type="text"], input[type="tel"], input[type="date"]');
+  //   const botao = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+  
+  //   const todosPreenchidos = Array.from(inputs).every(input => {
+  //     return (input as HTMLInputElement).value.trim() !== '' && !(input as HTMLInputElement).disabled;
+  //   });
+  
+  //   botao.disabled = !todosPreenchidos;
+  // }
+
+  // funcaoChamarLetra (event: Event): void {
+  //   this.VerificarCampos(event);
+  //   this.permitirApenasLetras(event);
+  // }
+
+  // funcaoChamarNumero (event: KeyboardEvent): void {
+  //   this.VerificarCampos(event);
+  //   this.permitirApenasNumeros(event);
+  // }
 }
