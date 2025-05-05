@@ -8,7 +8,7 @@ import { HttpService } from '../../../Services/Http.service';
 
 @Component({
   selector: 'janela-minha-conta',
-  imports: [RouterModule],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule],
   templateUrl: './minha-conta.html',
   styleUrl: '../definicoes.css'
 })
@@ -66,11 +66,11 @@ export class JanelaMinhaConta {
   async SubmeterForm(){
     this.FormEditar.disable()
 
-    const Resultado = await this.ServicoHttp.Request(Definicoes.API_URL+'minha_conta', 'POST', 'Nao foi possivel editar os dados da conta', 
+    const Resultado = await this.ServicoHttp.Request(Definicoes.API_URL+'minha-conta', 'PATCH', 'Nao foi possivel editar os dados da conta', 
       this.FormEditar.value) // O body equivale ao valor do form criar. Este .value e um array, com o nome de todos os campos e os seus valores
 
     if (Resultado){
-      this.router.navigate(['/definicoes/minha_conta'])
+      this.router.navigate(['/definicoes/minha-conta'])
     }
     this.FormEditar.enable()
   }

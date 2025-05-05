@@ -7,14 +7,14 @@
             <input type="text" class="info campoTexto caixa" [value]="UtilizadorSelecionado()?.nome" (input)="permitirApenasLetras($event)"><br><br>
 
             <label>NIF:</label><br>
-            <input type="tel" class="info campoTexto caixa" name="nif" maxlength="9" [value]="UtilizadorSelecionado()?.nif" (keypress)="permitirApenasNumeros($event)" disabled>
+            <input type="tel" class="info campoTexto caixa" name="nif" maxlength="9" style="cursor: not-allowed;" [value]="UtilizadorSelecionado()?.nif" (keypress)="permitirApenasNumeros($event)" disabled>
             <br><br>
 
             <label>Data de nascimento:</label><br>
-            <input type="date" class="info campoTexto caixa" name="nascimento" [value]="UtilizadorSelecionado()?.nascimento"><br><br>
+            <input type="date" class="info campoTexto caixa" name="nascimento" [value]="UtilizadorSelecionado()?.nascimento" style="cursor: pointer;"><br><br>
 
             <label>Password:</label><br>
-            <input [type]="PasswordVisivel ? 'text' : 'password'" class='info caixa campoTexto' name='password' id='password' style="margin-bottom:30px;" >
+            <input [type]="PasswordVisivel ? 'text' : 'password'" class='info caixa campoTexto' name='password' id='password' style="margin-bottom:30px; cursor:not-allowed" disabled>
             <button type='button' class='ver' name="iconPasswordConfirm" id="iconPasswordConfirm"
                 (click)="PasswordVisivel = !PasswordVisivel">
                 <img [src]="PasswordVisivel ? 'img/aberto.png' : 'img/fechado.png'" width='20px' height='20px'>
@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="column left">
                         <label>Tipo de utilizador:</label><br>
-                        <select class="campoSelect" name="tipo_utilizador">
+                        <select class="campoSelect" name="tipo_utilizador" style="cursor: pointer;">
                             <option value="0" [selected]="UtilizadorSelecionado()?.tipo_utilizador == 0">
                                 Administrador
                             </option>
@@ -49,7 +49,7 @@
 
                     <div class="column right" style="padding-top:10px;">
                         <label>Atividade:</label><br>
-                        <select class="campoSelect" name="atividade">
+                        <select class="campoSelect" name="atividade" style="cursor: pointer;">
                             <option value="0" [selected]="UtilizadorSelecionado()?.atividade == 0">
                                 Inativo
                             </option>
