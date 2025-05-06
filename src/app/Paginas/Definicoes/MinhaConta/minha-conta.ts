@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ServicoAutenticacao } from '../../../Services/Autenticacao.service';
 import { Definicoes } from '../../../Definicoes';
@@ -22,11 +22,20 @@ export class JanelaMinhaConta {
   router = inject(Router)
 
 
-  async ngOnInit() {
-    while (true){
-     await this.ServicoHttp.Wait(3)
-    }
+
+  constructor() {
+    effect(() => {
+      const Utilizador = this.Utilizador()
+      if(Utilizador) {
+        this.FormEditar.get('nome')?.setValue(this.Utilizador()?.nome)
+        this.FormEditar.get('nif')?.setValue(this.Utilizador()?.nif)
+        this.FormEditar.get('nascimento')?.setValue(this.Utilizador()?.nascimento)
+        this.FormEditar.get('telefone')?.setValue(this.Utilizador()?.telefone)
+        this.FormEditar.get('localidade')?.setValue(this.Utilizador()?.localidade)
+      }
+    });
   }
+
 
 
   URL_Imagens = Definicoes.API_URL + 'imagens/utilizador'
@@ -48,23 +57,8 @@ export class JanelaMinhaConta {
     }
   }
 
-  //funcao para permitir apenas a insercao de letras
-  permitirApenasLetras(event: any) {
-    const input = event.target as HTMLInputElement;
-    input.value = input.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
-  }
-
-  //funcao para permitir apenas a insercao de numeros
-  permitirApenasNumeros(event: KeyboardEvent): void {
-    const tecla = event.key;
-    if (!/^\d$/.test(tecla)) {
-      event.preventDefault();
-    }
-  }
-
-
   async SubmeterForm(){
-    this.FormEditar.disable()
+    //this.FormEditar.disable()
 
     const Resultado = await this.ServicoHttp.Request(Definicoes.API_URL+'minha-conta', 'PATCH', 'Nao foi possivel editar os dados da conta', 
       this.FormEditar.value) // O body equivale ao valor do form criar. Este .value e um array, com o nome de todos os campos e os seus valores
@@ -83,7 +77,7 @@ export class JanelaMinhaConta {
     nascimento: new FormControl('', [Validators.required]),
     telefone: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),  // ^\d{9}$ -> 9 digitos
     localidade: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
+    foto: new FormControl('', [Validators.required]),// Adicionei o campo foto para o form
   });
 
 
@@ -104,12 +98,26 @@ export class JanelaMinhaConta {
   get localidade() {
     return this.FormEditar.get('localidade');
   }
-  get email() {
-    return this.FormEditar.get('email');
+  get foto() {
+    return this.FormEditar.get('foto');
   }
 
 
 
+  
+  //funcao para permitir apenas a insercao de letras
+  permitirApenasLetras(event: any) {
+    const input = event.target as HTMLInputElement;
+    input.value = input.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+  }
+
+  //funcao para permitir apenas a insercao de numeros
+  permitirApenasNumeros(event: KeyboardEvent): void {
+    const tecla = event.key;
+    if (!/^\d$/.test(tecla)) {
+      event.preventDefault();
+    }
+  }
 
 
   // VerificarCampos(event: Event): void {
@@ -125,7 +133,7 @@ export class JanelaMinhaConta {
   //     return (input as HTMLInputElement).value.trim() !== '' && !(input as HTMLInputElement).disabled;
   //   });
   
-  //   botao.disabled = !todosPreenchidos;
+  //   botao.disabled = todosPreenchidos;
   // }
 
   // funcaoChamarLetra (event: Event): void {

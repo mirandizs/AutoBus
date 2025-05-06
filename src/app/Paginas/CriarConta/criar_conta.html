@@ -15,13 +15,13 @@
       <div class="column left">
         <!-- NOME -->
         <label><strong>Nome*</strong></label><br>
-        <input type="text" formControlName="nome" style="padding-left:10px;" (input)="permitirApenasLetras($event)">
+        <input type="text" formControlName="nome" style="padding-left:10px;" (input)="permitirApenasLetras($event)" required>
         <br><br>
 
         <!-- NIF -->
         <label><strong>NIF*</strong></label><br>
         <input type="tel" formControlName="nif" style="padding-left:10px;" title="O NIF deve conter 9 números e começar com 1, 2, 5, 6, 7 ou 9." 
-              inputmode="numeric" maxlength="9" placeholder="XXXXXXXXX" (keypress)="permitirApenasNumeros($event)">
+              inputmode="numeric" maxlength="9" placeholder="XXXXXXXXX" (keypress)="permitirApenasNumeros($event)" required>
         <br>
         @if (nif?.invalid && nif?.value){
           <label class="erro-campo">NIF Invalido</label>
@@ -31,14 +31,14 @@
         <!-- EMAIL -->
         <label><strong>E-mail*</strong></label><br>
         <input type="email" formControlName="email"  style="padding-left:10px;"
-          title="O email deve ser @gmail.com, @yahoo.com ou @hotmail.com" placeholder="exemplo@gmail.com">
+          title="O email deve ser @gmail.com, @yahoo.com ou @hotmail.com" placeholder="exemplo@gmail.com" required>
         <br><br>
 
         <!-- PALAVRA-PASSE -->
         <label for=password><strong>Palavra-Passe*</strong></label><br>
         <input formControlName="password" class="campoTexto" style="padding-left:10px;"
           [type]="MostarPassword ? 'text' : 'password'"
-          title="Deve conter pelo menos um número, uma letra maiúscula e pelo menos 8 ou mais caracteres">
+          title="Deve conter pelo menos um número, uma letra maiúscula e pelo menos 8 ou mais caracteres" required>
         
 
         <button type="button" class="ver" (click)="MostarPassword = !MostarPassword">
@@ -54,13 +54,13 @@
         <!-- DATA DE NASCIMENTO -->
         <label><strong>Data de Nascimento*</strong></label><br>
         <input type="date" formControlName="nascimento" style="padding-right:10px; padding-left:10px;" title="Tem de ser maior de 18 anos." maxlength="8"
-                (keypress)="permitirApenasNumeros($event)">
+                (keypress)="permitirApenasNumeros($event)" required>
         <br><br>
 
         <!-- TELEMOVEL -->
         <label><strong>Telemóvel*</strong></label><br>
         <input type="tel" formControlName="telefone" style="padding-left:10px;" title="O número de telemóvel deve conter 9 números e deve iniciar com 9." 
-              maxlength="9" placeholder="9XXXXXXXX" (keypress)="permitirApenasNumeros($event)">
+              maxlength="9" placeholder="9XXXXXXXX" (keypress)="permitirApenasNumeros($event)" required>
         <br>
         @if (telefone?.invalid && telefone?.value){
           <label class="erro-campo">O número de telemóvel deve conter 9 números e deve iniciar com 9.</label>
@@ -69,15 +69,14 @@
         
         <!-- LOCALIDADE -->
         <label><strong>Localidade*</strong></label><br>
-        <input type="text" formControlName="localidade"style="padding-left:10px;" placeholder="Ex: Coimbra" (input)="permitirApenasLetras($event)">
+        <input type="text" formControlName="localidade"style="padding-left:10px;" placeholder="Ex: Coimbra" (input)="permitirApenasLetras($event)" required>
         <br><br>
 
         <!-- CONFIRMAR PALAVRA-PASSE -->
         <label for=pass><strong>Confirmar palavra-passe*</strong></label><br>
         <input formControlName="confirm_password" style="padding-left:10px;"
-          [type]="MostarConfirmacaoPassword ? 'text' : 'password'"
-          >
-        <button type="button" class="ver" (click)="MostarConfirmacaoPassword = !MostarConfirmacaoPassword">
+          [type]="MostarConfirmacaoPassword ? 'text' : 'password'" required>
+        <button type="button" class="ver" (click)="MostarConfirmacaoPassword = !MostarConfirmacaoPassword" >
           <img [src]="MostarConfirmacaoPassword ? 'img/aberto.png' : 'img/fechado.png'" width="20px" height="20px">
         </button>
 

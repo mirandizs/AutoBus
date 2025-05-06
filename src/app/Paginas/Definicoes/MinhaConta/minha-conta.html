@@ -3,30 +3,29 @@
         <div class='column left'>
             <h2 style="margin-bottom: 25px;">Minha conta</h2>
 
-            <!-- <label>Nome: </label><br>
-            <input type='text' class='info campoTexto caixa' name='nome' [value]='Utilizador()?.nome' (input)="funcaoChamarLetra($event)">
+            <label>Nome: </label><br>
+            <input type='text' class='info campoTexto caixa' formControlName='nome' [value]='Utilizador()?.nome' (input)="permitirApenasLetras($event)">
             <br><br>
 
             <label>NIF: </label><br>
-            <input type='tel' class='info campoTexto caixa' name='nif' maxlength='9' [value]='Utilizador()?.telefone'
-                (keypress)="funcaoChamarNumero($event)" disabled style="cursor:not-allowed;"><br><br>
+            <input type='tel' class='info campoTexto caixa' formControlName='nif' maxlength='9' [value]='Utilizador()?.nif' (keypress)="permitirApenasNumeros($event)" 
+                    [disabled]="true" style="cursor:not-allowed;"><br><br>
 
             <label>Data de nascimento: </label><br>
-            <input type='date' class='info campoTexto caixa' name='nascimento' [value]='Utilizador()?.nascimento' (keypress)="funcaoChamarNumero($event)">
+            <input type='date' class='info campoTexto caixa' formControlName='nascimento' [value]='Utilizador()?.nascimento' (keypress)="permitirApenasNumeros($event)">
             <br><br>
 
             <label>Telemóvel: </label><br>
-            <input type='tel' class='info campoTexto caixa' name='telefone' pattern='9[0-9]{8}'
+            <input type='tel' class='info campoTexto caixa' formControlName='telefone' pattern='9[0-9]{8}'
                 title='O número de telemóvel deve conter 9 números e deve iniciar com 9.' maxlength='9'
-                [value]='Utilizador()?.telefone' (keypress)="funcaoChamarNumero($event)">
+                [value]='Utilizador()?.telefone' (keypress)="permitirApenasNumeros($event)">
             <br><br>
 
             <label>Localidade: </label><br>
-            <input type='text' class='info campoTexto caixa' name='localidade' [value]='Utilizador()?.localidade' (input)="funcaoChamarLetra($event)">
+            <input type='text' class='info campoTexto caixa' formControlName='localidade' [value]='Utilizador()?.localidade' (input)="permitirApenasLetras($event)">
             <br>
 
-            <button type='submit' id='botaoEditar' name='botaoEditar' disabled style='margin-top:30px;' [disabled]="FormEditar.invalid">Salvo
-            </button> -->
+            <button type='submit' id='botaoEditar' name='botaoEditar' style='margin-top:30px;'>Salvo</button>
         </div>
 
         <div class='column right'>
@@ -40,7 +39,7 @@
                     </a><br>
                     
                     <label for="file" class="file-label">Selecione uma imagem</label>
-                    <input type="file" accept="image/*" id="file" class="file-input" name="foto" (change)="PreverImagem($event)">
+                    <input type="file" accept="image/*" id="file" class="file-input" formControlName="foto" (change)="PreverImagem($event)">
                     <br>
                 </div>
             </div>
