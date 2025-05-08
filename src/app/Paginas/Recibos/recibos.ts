@@ -13,16 +13,18 @@ import { Definicoes } from '../../Definicoes';
   })
 
 export class PaginaRecibos {
-    // ServicoAutenticacao = inject(ServicoAutenticacao)
-    // Utilizador = this.ServicoAutenticacao.Utilizador
-    // Recibos : any[] = []
+    ServicoAutenticacao = inject(ServicoAutenticacao)
+    Utilizador = this.ServicoAutenticacao.Utilizador
+    Recibos : any[] = []
 
-    // ServicoHTTP = inject(HttpService)
+    ServicoHTTP = inject(HttpService)
 
-    // async ngOnInit() {
-    //     const Pedido_URL = new URL(Definicoes.API_URL+"recibos")
-    //     this.Recibos = await this.ServicoHTTP.Request(Pedido_URL, "GET") 
-    // }
+    async ngOnInit() {
+        const Pedido_URL = new URL(Definicoes.API_URL+"recibos")
+        this.Recibos = await this.ServicoHTTP.Request(Pedido_URL, "GET") 
+    }
+
+    
 }
 
   

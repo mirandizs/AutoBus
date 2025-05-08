@@ -32,7 +32,7 @@ export class PaginaCriarConta {
       this.FormCriar.value) // O body equivale ao valor do form criar. Este .value e um array, com o nome de todos os campos e os seus valores
 
     if (Resultado){
-      this.router.navigate(['/inicial'])
+      this.router.navigate(['/foto_perfil'])
     }
     this.FormCriar.enable()
   }
