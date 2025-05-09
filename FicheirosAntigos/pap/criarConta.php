@@ -31,7 +31,7 @@
             
             <div class="row">
                 <div class="column left">
-                    <!--<label><strong>Nome*</strong></label><br>
+                    <label><strong>Nome*</strong></label><br>
                     <input type="text" name="nome" id="nome" style="padding-left:10px;" required>
                     <span id="textoNome"></span><br><br>
 
@@ -41,7 +41,7 @@
 
                     <label><strong>E-mail*</strong></label><br>
                     <input type="email" name="email" id="email" style="padding-left:10px;" required pattern="[a-zA-Z0-9._]+@(gmail|yahoo|hotmail)\.com" title="O email deve ser @gmail.com, @yahoo.com ou @hotmail.com" placeholder="exemplo@gmail.com">
-                    <span id="textoEmail"></span><br><br>-->
+                    <span id="textoEmail"></span><br><br>
 
                     <label for=password><strong>Palavra-Passe*</strong></label><br>
                     <input href="#anchor" type="password" name="password" id="password" class="campoTexto" style="padding-left:10px;"
@@ -59,7 +59,7 @@
 
                 <div class="column right">
 
-                    <!--<label><strong>Data de Nascimento*</strong></label><br>
+                    <label><strong>Data de Nascimento*</strong></label><br>
                     <input type="date" name="nascimento" id="nascimento" style="padding-right:10px; padding-left:10px;" required pattern="\d{2}|\d{3}" title="Tem de ser maior de 18 anos.">
                     <span id="textoIdade" name="textoIdade">
                     </span><br><br>
@@ -70,7 +70,7 @@
 
                     <label><strong>Localidade*</strong></label><br>
                     <input type="text" name="localidade" id="localidade" style="padding-left:10px;" placeholder="Ex: Coimbra"required>
-                    <span id="textoLocalidade"></span><br><br>-->
+                    <span id="textoLocalidade"></span><br><br>
 
                     <label for=pass><strong>Confirmar palavra-passe*</strong></label><br>
                     <input type="password" name="pass" id="pass" style="padding-left:10px;" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="" required >

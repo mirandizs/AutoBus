@@ -7,7 +7,7 @@ import { Definicoes } from '../../Definicoes';
 
 @Component({
     selector: 'recibos',
-    imports: [Topbar],
+    imports: [Topbar, Footer],
     templateUrl: './recibos.html',
     styleUrl: './recibos.css'
   })

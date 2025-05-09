@@ -26,7 +26,7 @@ export class PaginaCriarConta {
 
 
   async SubmeterForm(){
-    this.FormCriar.disable()
+    /*this.FormCriar.disable()*/
 
     const Resultado = await this.ServicoHttp.Request(Definicoes.API_URL+'criar_conta', 'POST', 'Nao foi possivel criar a conta', 
       this.FormCriar.value) // O body equivale ao valor do form criar. Este .value e um array, com o nome de todos os campos e os seus valores
@@ -95,5 +95,8 @@ export class PaginaCriarConta {
       event.preventDefault();
     }
   }
+  
+
+
   
 }
