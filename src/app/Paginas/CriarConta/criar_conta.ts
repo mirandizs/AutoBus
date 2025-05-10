@@ -14,15 +14,10 @@ import { Definicoes } from '../../Definicoes';
 export class PaginaCriarConta {
   MostarPassword = false
   MostarConfirmacaoPassword = false
+  MostrarFotoCriarConta = false
 
   ServicoHttp = inject(HttpService)
   router = inject(Router)
-
-  async ngOnInit() {
-   while (true){
-    await this.ServicoHttp.Wait(3)
-   }
-  }
 
 
   async SubmeterForm(){
@@ -36,6 +31,11 @@ export class PaginaCriarConta {
     }
     this.FormCriar.enable()
   }
+
+  FormFoto:FormGroup = new FormGroup({
+    foto: new FormControl('', [Validators.required]),
+  });
+
 
   // Definimos o form com estrutura, campos e validacoes
   FormCriar:FormGroup = new FormGroup({

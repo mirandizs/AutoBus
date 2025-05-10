@@ -6,13 +6,13 @@ import { HttpService } from '../../Services/Http.service';
 import { Definicoes } from '../../Definicoes';
 
 @Component({
-    selector: 'recibos',
+    selector: 'compras',
     imports: [Topbar, Footer],
-    templateUrl: './recibos.html',
-    styleUrl: './recibos.css'
+    templateUrl: './compras.html',
+    styleUrl: './compras.css'
   })
 
-export class PaginaRecibos {
+export class PaginaCompras {
     ServicoAutenticacao = inject(ServicoAutenticacao)
     Utilizador = this.ServicoAutenticacao.Utilizador
     Recibos : any[] = []

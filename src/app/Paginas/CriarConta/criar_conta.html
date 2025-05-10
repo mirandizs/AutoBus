@@ -1,4 +1,5 @@
-<!--<header><img src="img/busBranco.png"> AutoBus </header>-->
+@if (!MostrarFotoCriarConta){
+
 <div class="box">
 
   <!--<header>AutoBus</header>--> 
@@ -127,4 +128,36 @@
     </div>
     <br><br>
   </div>
+}
+}
+@else {
+  <div class="caixa">
+  <form [formGroup]="FormFoto" (ngSubmit)="SubmeterForm()" enctype="multipart/form-data">
+        <div style="display:flex; align-items: center;">
+            <!-- <a href="criarConta.php" style="text-decoration: none; color: white; padding-right: 20px;">
+                        <img class="imagemVolt" src="img/voltarr.png">
+                </a> -->
+
+            <h2>Foto de perfil</h2>
+        </div>
+
+        <br>
+
+        <label style="margin-left: 70px;">Insira uma imagem para o teu perfil de utilizador!</label><br><br>
+
+        <a>
+            <img class='imagemUti' id='preview' src=""
+                onerror='this.src="img/default.png"'>
+        </a>
+
+        <br>
+        <label for="file" class="file-label">Selecione uma imagem</label>
+        <input type="file" accept="image/*" id="file" class="file-input" name="foto" onchange="previewImage(event)">
+        <br>
+
+        <a href="incial.php"><button type='button' class="botaoCriarConta" id='botaoAvancar'
+                disabled style='margin-right: 250px; margin-left:5px'>Alterar depois</button></a>
+        <button type='submit' class="botaoCriarConta" id='botaoCriarConta'>Criar conta</button>
+    </form>
+    </div>
 }

@@ -28,12 +28,22 @@ export class PaginaCarrinho {
   Carrinho : any[] = []
 
   async ngOnInit() {
-    const Pedido_URL = new URL(Definicoes.API_URL+"carrinho")
+    const Pedido_URL = new URL(Definicoes.API_URL+"carrinho") //api = http://localhost:3000/api/
 
     this.Carrinho = await this.ServicoHTTP.Request(Pedido_URL, "GET") 
   }
 
 
+  async realizarCompra() {
+    const Pedido_URL = new URL(Definicoes.API_URL+"comprar") 
+
+    const resultadoCompra = await this.ServicoHTTP.Request(Pedido_URL, "POST", "", {
+      numero_cartao: 89234623786,
+      validade_cartao: "12/25",
+      cvv_cartao: 123,
+      tituçar: "João Silva",
+    })
+  }
 
 
   //funcao para permitir apenas a insercao de letras
