@@ -4,11 +4,12 @@ import { Footer } from '../../Componentes/Footer/footer';
 import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
 import { HttpService } from '../../Services/Http.service';
 import { Definicoes } from '../../Definicoes';
+import { FormsModule, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'pagina-carrinho',
-  imports: [Topbar],
+  imports: [Topbar, FormsModule, ReactiveFormsModule],
   templateUrl: './carrinho.html',
   styleUrl: './carrinho.css'
 })
@@ -17,6 +18,7 @@ import { Definicoes } from '../../Definicoes';
 export class PaginaCarrinho {
   ServicoAutenticacao = inject(ServicoAutenticacao)
   Utilizador = this.ServicoAutenticacao.Utilizador
+
 
   ModalMetodo = false
   TipoPagamentoCartao = false
@@ -34,16 +36,31 @@ export class PaginaCarrinho {
   }
 
 
+  //funcao para submeter o formulario do cartao
   async realizarCompra() {
     const Pedido_URL = new URL(Definicoes.API_URL+"comprar") 
 
     const resultadoCompra = await this.ServicoHTTP.Request(Pedido_URL, "POST", "", {
-      numero_cartao: 89234623786,
-      validade_cartao: "12/25",
-      cvv_cartao: 123,
-      tituçar: "João Silva",
+      metodo:  this.TipoPagamentoCartao ? "cartao" : "mb",
+      nome_cartao: this.FormCartao.value.nome_cartao,
+      numero_cartao: this.FormCartao.value.numero_cartao,
+      validade: this.FormCartao.value.validade,
+      cvv: this.FormCartao.value.cvv,
+      guardarCartao: this.FormCartao.value.guardarCartao,
     })
   }
+
+
+
+  FormCartao:FormGroup = new FormGroup({
+    nome_cartao: new FormControl('', []),
+    numero_cartao: new FormControl('', []),
+    validade: new FormControl('', []),
+    cvv: new FormControl('', []),
+    guardarCartao: new FormControl(false, []),
+  });
+
+
 
 
   //funcao para permitir apenas a insercao de letras
