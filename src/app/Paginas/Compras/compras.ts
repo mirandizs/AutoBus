@@ -15,16 +15,15 @@ import { Definicoes } from '../../Definicoes';
 export class PaginaCompras {
     ServicoAutenticacao = inject(ServicoAutenticacao)
     Utilizador = this.ServicoAutenticacao.Utilizador
-    Recibos : any[] = []
+    Compras : any[] = []
 
     ServicoHTTP = inject(HttpService)
 
     async ngOnInit() {
-        const Pedido_URL = new URL(Definicoes.API_URL+"recibos")
-        this.Recibos = await this.ServicoHTTP.Request(Pedido_URL, "GET") 
+        const Pedido_URL = new URL(Definicoes.API_URL+"compras")
+        this.Compras = await this.ServicoHTTP.Request(Pedido_URL, "GET")
     }
 
-    
+    // transferirRecibo(id: number) {
 }
 
-  

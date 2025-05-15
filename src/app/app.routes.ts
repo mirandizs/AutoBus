@@ -4,6 +4,7 @@ import { PaginaInicial } from './Paginas/Inicial/inicial';
 import { PaginaViagens } from './Paginas/Viagens/viagens';
 import { PaginaLogin } from './Paginas/Login/login';
 import { PaginaCriarConta } from './Paginas/CriarConta/criar_conta';
+import { PaginaCompras} from './Paginas/Compras/compras';
 import { PaginaCarrinho } from './Paginas/Carrinho/carrinho';
 import { PaginaLocalidades } from './Paginas/Localidades/localidades';
 import { PaginaContacto } from './Paginas/Contacto/contacto';
@@ -30,6 +31,7 @@ export const routes: Routes = [
         {path:'editar-utilizador', component:JanelaEditarUtilizador}, // Como id e opcional, tambem e preciso definir rota sem id
     ]},
     {path:'carrinho', component:PaginaCarrinho},
+    {path:'compras', component:PaginaCompras},
 
     {path:'login', component:PaginaLogin},
     {path:'criarConta', component:PaginaCriarConta}

@@ -6,6 +6,14 @@ body {
 
 
 /* CAIXA DE PESQUISA ------------------------------------------------------------------- */
+
+.alinhamento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .caixaViagens {
   position: relative;
   

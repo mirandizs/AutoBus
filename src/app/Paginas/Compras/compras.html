@@ -1,11 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<topbar></topbar>
+
+
+<div class="pagina">
     
-</body>
-</html>
+    <h1 class="titulo">Compras realizadas</h1>
+
+    <!-- <h2 style="text-align: center; margin-bottom:70px; color: rgb(5, 5, 96);">Bilhetes</h2> -->
+
+    <div style="justify-content: center; align-items: center; position: absolute;">
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Total pago</th>
+                <th>Recibo</th>
+            </tr>
+
+            @for (Recibo of Compras ; track $index){
+                <tr>
+                    <td>{{Recibo.data}}</td>
+                    <td><a><strong>{{Recibo.local_partida}} para {{Recibo.local_chegada}}</strong></a></td>
+                    <td>{{Recibo.preco}}€</td>
+                    <td>
+                        <button class="botao-transferir"> <!--(click)="transferirRecibo(Compra.id)" -->
+                            <img src="img/transferir.png">
+                        </button>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

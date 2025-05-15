@@ -1,3 +1,51 @@
-body {
-    font-family: Calibri, Helvetica, sans-serif;
+.pagina {
+    margin-left: 40px;
 }
+
+
+.row{
+  display: flex;
+  margin: 0%;
+}
+
+
+
+
+/* titulo "compras realizadas"*/
+.titulo {
+  color: rgb(5, 5, 96);
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+
+
+.botao-transferir {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    background: none;
+    display: inline-block;
+    border-color: transparent;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+th {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  background-color: rgba(235, 235, 235, 0.514);
+}
+
+tr:hover {background-color: rgba(36, 33, 125, 0.514);}

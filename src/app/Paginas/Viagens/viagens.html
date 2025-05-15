@@ -8,27 +8,28 @@
 
 
 @for (Viagem of Viagens; track $index){
-    
-<div class='caixaBilhete'>
-    
-    <div style='display:inline-flex; justify-items:center; text-align: center'>
-        <br>
-        <a><strong>{{Viagem.local_partida}} ⮕ {{Viagem.local_chegada}}</strong></a>
-        <h2 style='margin-left:390px; margin-top:-4px; float: right; display:flex'>00,00€</h2>
-    </div><br>
-    <a>Hora de partida: {{Viagem.hora_partida}}</a>
-    <br><br><br><br><br>
+    <div class="alinhamento">
+        <div class='caixaBilhete'>
+            <div style='display:inline-flex; justify-items:center; text-align: center'>
+                <br>
+                <a><strong>{{Viagem.local_partida}} ⮕ {{Viagem.local_chegada}}</strong></a>
+                <h2 style='margin-left:390px; margin-top:-4px; float: right; display:flex'>00,00€</h2>
+            </div><br>
 
-    <!--<button class='botaoTransicao botaoComprar'>Adicionar ao carrinho</button>-->
-    <!--<form action='' method='POST'>-->
-    <button class='botaoTransicao verMais'>Ver mais detalhes</button>
-    <!--</form>-->
+            <a>Hora de partida: {{Viagem.hora_partida}}</a>
+            <br><br><br><br><br>
 
-    <button class='btCarrinho' (click)="adicionarCarrinho(Viagem)">
-        <img src="img/carrinhoAdicionarA.png" style="height: 25px; width: 25;">
-    </button>
-</div><br>
-    
+            <!--<button class='botaoTransicao botaoComprar'>Adicionar ao carrinho</button>-->
+            <!--<form action='' method='POST'>-->
+            <button class='botaoTransicao verMais'>Ver mais detalhes</button>
+            <!--</form>-->
+
+            <button class='btCarrinho' (click)="adicionarCarrinho(Viagem)">
+                <img src="img/carrinhoAdicionarA.png" style="height: 25px; width: 25;">
+            </button>
+        </div><br>
+    </div>
 }
+
 <butao-voltar></butao-voltar>
 <!-- <footer-componente></footer-componente> -->

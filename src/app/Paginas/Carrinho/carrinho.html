@@ -142,8 +142,6 @@
                     <button class="fechar" id="fecharModal4" (click)="ModalCodigo = false">✖</button><br><br>
         
                     <h2 style="color: rgb(0, 0, 150); margin-bottom: 30px; margin-left: 20px; text-align: center;">Insira o código de 6 dígitos</h2>
-                    
-                  
         
                     <p style="margin-left:20px; text-align:center;">Insira o código de verificação que foi enviado para '<?= htmlspecialchars($registo["email"]) ?>'</p>
         
@@ -157,73 +155,7 @@
                     </div>
                 </div>
             </div>
-            
         }
     </div>
 }
-
-
-
-
-<script>
-    // modal metodo
-    const btnAbrir = document.getElementById('openModal'); 
-    const modal = document.getElementById('modalMetodo');
-    const btnFechar1 = document.getElementById('fecharModal');
-
-    // modal cartao
-    const modalCartao = document.getElementById('modalCartao');
-    const btnCartao = document.getElementById('btnCartao');
-    const btnFechar2 = document.getElementById('fecharModal2');
-    const btnContinuar = document.getElementById('openCode');
-    const formCartao = document.getElementById('formCartao');
-
-    // modal mbway
-    const modalMbway = document.getElementById('modalMbway');
-    const btnMbway = document.getElementById('btnMbway');
-    const btnFechar3 = document.getElementById('fecharModal3');
-
-    // modal codigo
-    const modalCode = document.getElementById('modalCodigo');
-    const btnFechar4 = document.getElementById('fecharModal4');
-
-    const fundoModal = document.querySelector('.modalFUNDO');
-
-    
-
-    // função para remover o método de pagamento da sessão
-    function removerMetodoSessao() {
-        fetch('removerMetodo.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: 'removerMetodo=true'
-        })
-        .then(response => response.text())
-        .then(data => {
-            console.log("Método removido da sessão:", data);
-        });
-    }
-
-
-    // verificar se a checkbox de guardar os dados do cartao está selecionada
-    function verificarCheckbox(event) {
-        event.preventDefault(); 
-
-        const checkbox = document.getElementById("guardarCartao");
-
-        if (checkbox.checked) {
-            // redireciona para a página que insere o cartão e depois volta com query string
-            window.location.href = "inserirCartao.php?voltarPara=carrinho.php&abrirModal=modalCodigo";
-        } else {
-            // só avança para o próximo modal (código)
-            fecharModal(modalCartao);
-            modalCode.style.display = 'block';
-            modalCode.classList.add("show");
-        }
-    }
-</script>
-
-
 <!-- <footer-componente></footer-componente> -->
