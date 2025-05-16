@@ -16,13 +16,7 @@
         @if (PaginaViagens){
             <ng-container *ngTemplateOutlet="ButaoProcurar"></ng-container>
         }
-    </div>
-
-
-
-
-    <br>
-    <br>
+    </div><br><br>
 
     <div class="row" style="gap:20px">
         <div class="campo">
@@ -44,7 +38,7 @@
         <div class="campo">
             <label class="titulo-campo"><strong>Passageiros</strong></label>
 
-            <select style="width: 230px; cursor: pointer" formControlName="passageiros">
+            <select style="width: 230px; cursor: pointer; padding-right: -20px;" formControlName="passageiros" >
                 <option value="1">1 Adulto</option>
                 <option value="2">2 Adultos</option>
                 <option value="3">3 Adultos</option>
@@ -54,16 +48,16 @@
 
         <div class="campo data-ida">
             <label class="titulo-campo"><strong>Ida</strong></label>
-            <input type="date" value="yyyy-MM-dd" formControlName="data_ida" id="data_ida" />
+            <input type="date" value="yyyy-MM-dd" formControlName="data_ida" id="data_ida" style="width: 230px; padding-left: 20px; padding-right: 20px;"/>
         </div>
 
         <div class="campo hora-ida">
-            <label class="titulo-campo"><strong>Hora de Ida</strong></label>
-            <input type="time" formControlName="hora_ida" />
+            <label class="titulo-campo" style="margin-left: -20px;"><strong>Hora de Ida</strong></label>
+            <input type="time" formControlName="hora_ida" style="margin-left: -20px; width: 230px; padding-left: 15px; padding-right: 20px;"/>
         </div>
 
         @if (!PaginaViagens){
-            <ng-container *ngTemplateOutlet="ButaoProcurar"></ng-container>
+            <ng-container *ngTemplateOutlet="ButaoProcurar" style="margin-left: -20px;"></ng-container>
         }
     </div>
 
