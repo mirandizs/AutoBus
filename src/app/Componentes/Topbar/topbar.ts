@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Carregamento } from '../Carregamento/carregamento';
 import { HttpService } from '../../Services/Http.service';
 import { Definicoes } from '../../Definicoes';
@@ -19,6 +19,7 @@ export class Topbar {
 
   ServicoHttp = inject(HttpService)
   ServicoAutenticacao = inject(ServicoAutenticacao)
+  Router = inject(Router)
 
   URL_Imagens = Definicoes.API_URL+'imagens/utilizador'
   
@@ -48,7 +49,8 @@ export class Topbar {
     const ResultadoLogout = await this.ServicoHttp.Request(URLLogout, 'POST', 'Erro no logout')
 
     if(ResultadoLogout){
-      window.location.reload();
+      await this.Router.navigate(['/inicial']) 
+      window.location.reload()
     }else{
       this.CarregamentoVisivel = false
     }

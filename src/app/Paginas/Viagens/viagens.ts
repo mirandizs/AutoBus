@@ -34,11 +34,11 @@ export class PaginaViagens {
 
 
   adicionarCarrinho(viagem: any) {
-    const URL_Pedido = new URL(Definicoes.API_URL+"/carrinho")
+    const URL_Pedido = new URL(Definicoes.API_URL+"carrinho")
 
     const Resposta = this.ServicoHttp.Request(URL_Pedido,"POST", "", {
-      "local_partida": viagem.local_partida,
-      "local_chegada": viagem.local_chegada,
+      "id_ponto_partida": viagem.id_ponto_partida,
+      "id_ponto_chegada": viagem.id_ponto_chegada,
     }) 
   }
 }
