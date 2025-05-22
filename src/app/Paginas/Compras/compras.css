@@ -30,15 +30,27 @@
 }
 
 
+.tabela-container {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+}
+
+
 .tabela {
-  width: 100%;
+  width: 1100px;
   border-collapse: collapse;
   margin-top: 10px;
+  margin-bottom: 50px;
+  justify-content: center;
 }
 
 .tabela thead {
   background-color:  rgba(3, 3, 59);
   color: white;
+}
+
+.tabela th {
+  text-align: center;
 }
 
 .tabela th,
@@ -49,36 +61,10 @@
 }
 
 .tabela tbody tr:hover {
-  background-color: rgba(36, 33, 125, 0.514);
+  /*background-color: rgba(36, 33, 125, 0.514);*/
+  background-color: #f0f0f0;
 }
 
 .tabela td:nth-child(4) {
   font-weight: bold;
 }
-
-.tabela td:nth-child(4)::before {
-  content: '🟢 ';
-}
-
-.tabela td:nth-child(4):contains('Inativo')::before {
-  content: '🔴 ';
-}
-
-/* table {
-  border-collapse: collapse;
-  width: 100%;
-  text-align: center;
-}
-
-th {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  background-color: rgba(235, 235, 235, 0.514);
-} */

@@ -26,13 +26,17 @@
         }        
     </div>
 
+    <!--CAIXA DE RESUMO DA COMPRA-->
     <div class="column right">
         <h2 style="text-align: center; margin-top: 140px; margin-bottom:70px; color: rgb(5, 5, 96);">Resumo da compra:</h2>
 
         <div class="caixaTotal">
-            <label><strong>Total a pagar: </strong></label>
+            <div style="display: flex; margin-top: 10px;">
+                <label><strong>Total a pagar: </strong></label>
+                <p style="margin-left: 245px; margin-top: 2px;"><strong>00,00€</strong></p> <!--MOSTRAR O PRECO TOTAL -->
+            </div>
 
-            <hr style='border: 1px solid black; margin-left: 0px; margin-right: 10px; margin-top: 20px; width: 380px;'><br>
+            <hr style='border: 1px solid black; margin-left: 0px; margin-right: 10px; margin-top: 10px; width: 380px;'><br>
 
             <button id="openModal" class="botaoFinalizar botaoTransicao" (click)="ModalMetodo = true">Finalizar compra</button> <!--para ao clicar, aparecer o formulario de pagamento //// 
             (click)="realizarCompra()"  (click)="ModalMetodo = true"-->

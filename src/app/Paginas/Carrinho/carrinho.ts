@@ -28,11 +28,16 @@ export class PaginaCarrinho {
 
   ServicoHTTP = inject(HttpService)
   Carrinho : any[] = []
+  Total: number = 0;
 
   async ngOnInit() {
     const Pedido_URL = new URL(Definicoes.API_URL+"carrinho") //api = http://localhost:3000/api/
 
     this.Carrinho = await this.ServicoHTTP.Request(Pedido_URL, "GET") 
+
+    this.Carrinho.forEach((produto: any) => {
+      this.Total += produto.preco * produto.quantidade
+    })
   }
 
 
