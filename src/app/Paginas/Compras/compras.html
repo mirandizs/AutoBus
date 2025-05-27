@@ -6,11 +6,16 @@
     <h1 class="titulo">Compras realizadas</h1>
 
 
-    <h4 style="text-align: center;">Caso deseje fazer o download do recibo, basta clicar no botão de download!</h4><br><br><br>
+    <h4 style="text-align: center;">Caso deseje fazer o download do recibo, basta clicar no botão de download!</h4><br>
     <!-- <h2 style="text-align: center; margin-bottom:70px; color: rgb(5, 5, 96);">Bilhetes</h2> -->
+
+
+
 
     <div class="tabela-container">
         <div style="justify-content: center; align-items: center; position: absolute;">
+            <h4>Filtrar</h4><br>
+
             <table class="tabela">
                 <thead>
                     <tr>
@@ -27,7 +32,7 @@
                             <td><a><strong>{{Recibo.local_partida}} para {{Recibo.local_chegada}}</strong></a></td>
                             <td>{{Recibo.preco}}€</td>
                             <td>
-                                <button class="botao-transferir"  style="display: flex;"> <!--(click)="transferirRecibo(Compra.id)" -->
+                                <button class="botao-transferir"  style="display: flex;" (click)="transferirRecibo(Recibo.id_compraRealizada)"> <!--" -->
                                     <img src="img/transferir.png">
                                 </button>
                             </td>
