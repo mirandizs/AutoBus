@@ -14,13 +14,15 @@
                 <div style='display:inline-flex; justify-items:center; text-align: center'>
                     <br>
                     <a><strong>{{Bilhete.local_partida}} ⮕ {{Bilhete.local_chegada}}</strong></a>
-                    <h2 style='margin-left:500px; margin-top:-4px; float: right; display:flex'>00,00€</h2>
+                    <h2 style='margin-left:670px; margin-top:-4px; float: right; display:flex'>00,00€</h2>
                 </div><br>
     
                 <a style='margin-right:360px;'>Hora de partida: {{Bilhete.hora_partida}}</a>
     
                 
-                <button class='btCarrinho'></button>
+                <button class='btCarrinho' (click)="removerBilhete(Bilhete)">
+                    <img src="img/carrinhoExcluirA.png" style="height: 25px; width: 25;">
+                </button>
                 <!--<button class='botaoTransicao verMais'></button>-->
             </div>
         }        

@@ -57,6 +57,20 @@ export class PaginaCarrinho {
 
 
 
+  //funcao para remover um produto do carrinho
+  async removerBilhete(idProduto: number) {
+    const Pedido_URL = new URL(Definicoes.API_URL+"carrinho/"+idProduto) //api = http://localhost:3000/api/
+
+    await this.ServicoHTTP.Request(Pedido_URL, "DELETE") 
+
+    //atualizar o carrinho
+    this.Carrinho = this.Carrinho.filter(produto => produto.id !== idProduto);
+    this.Total = this.Carrinho.reduce((acc, produto) => acc + produto.preco * produto.quantidade, 0);
+  }
+
+
+
+
   FormCartao:FormGroup = new FormGroup({
     nome_cartao: new FormControl('', []),
     numero_cartao: new FormControl('', []),

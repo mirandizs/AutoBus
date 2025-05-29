@@ -41,20 +41,20 @@ body {
 
 /* botao de excluir bilhetes do carrinho */
 .btCarrinho {
-  content: ''; /* Adiciona a imagem */
-  display: inline-block; /* Garante que a imagem fique visível */
+  content: '';
+  display: inline-block;
   border: none;
   border-color: transparent;
   outline: none;
   position: absolute;
-  background-size: contain; /* Ajusta o tamanho da imagem */
-  width: 28px; /* Largura da imagem */
-  height: 30px; /* Altura da imagem */
-  margin-right: 5px; 
-  margin-left: 160px; 
+  background-size: contain;
+  background-color: transparent;
+  width: 28px;
+  height: 30px;
   border: none;
   cursor: pointer;
   transition: 0.4s;
+  margin-left:300px;
 }
 
 .btCarrinho:hover {
