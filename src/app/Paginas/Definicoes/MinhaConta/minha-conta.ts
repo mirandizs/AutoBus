@@ -5,6 +5,7 @@ import { Definicoes } from '../../../Definicoes';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Validadores } from '../../../Services/Validadores';
 import { HttpService } from '../../../Services/Http.service';
+import { Reactive } from '@angular/core/primitives/signals';
 
 @Component({
   selector: 'janela-minha-conta',
@@ -58,7 +59,7 @@ export class JanelaMinhaConta {
   }
 
   async SubmeterForm(){
-    //this.FormEditar.disable()
+    this.FormEditar.disable()
 
     const Resultado = await this.ServicoHttp.Request(Definicoes.API_URL+'minha-conta', 'PATCH', 'Nao foi possivel editar os dados da conta', 
       this.FormEditar.value) // O body equivale ao valor do form criar. Este .value e um array, com o nome de todos os campos e os seus valores

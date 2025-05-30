@@ -5,6 +5,7 @@ import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
 import { HttpService } from '../../Services/Http.service';
 import { Definicoes } from '../../Definicoes';
 import { FormsModule, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ModalVerificacao } from "../../Componentes/ModalVerificacao/modal-verificacao";
 
 
 @Component({
@@ -24,7 +25,6 @@ export class PaginaCarrinho {
   TipoPagamentoCartao = false
   TipoPagamentoMB = false
   ModalCodigo = false
-
 
   ServicoHTTP = inject(HttpService)
   Carrinho : any[] = []

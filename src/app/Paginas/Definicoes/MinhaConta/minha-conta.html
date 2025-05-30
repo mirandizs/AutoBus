@@ -25,7 +25,7 @@
             <input type='text' class='info campoTexto caixa' formControlName='localidade' [value]='Utilizador()?.localidade' (input)="permitirApenasLetras($event)">
             <br>
 
-            <button type='submit' id='botaoEditar' name='botaoEditar' style='margin-top:30px;'>Salvo</button>
+            <button type='submit' style='margin-top:30px;' id='botaoEditar' name='botaoEditar' [disabled]="FormEditar.invalid">Salvo</button> <!--|| !FormEditar.dirty"-->
         </div>
 
         <div class='column right'>

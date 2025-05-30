@@ -204,12 +204,13 @@ body {
 /* modal do envio de codigo */
 .modalCodigo {
   position: relative;
+
   z-index: 2; /* acima do fundo */
   background-color: #fff;
   height: 350px;
   width: 380px;
   margin: 5% auto;
-  margin-top: 150px;
+  margin-top: 80px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   padding: 25px 20px;
@@ -272,6 +273,10 @@ body {
 
 #modalCartao, #modalMbway {
   z-index: 1001;
+}
+
+#modalCodigo {
+  z-index: 1002;
 }
 
 
@@ -489,6 +494,9 @@ input[type="radio"] {
   padding-bottom: 10px;
   padding-right: 40px;
   padding-left: 40px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
 }
 
 .botaoVerificar:hover{
