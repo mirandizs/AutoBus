@@ -29,6 +29,7 @@
     text-align: center;
     margin: 24px 0 12px 0;
     position: relative;
+    cursor: pointer;
 }
 
 .container {
@@ -36,4 +37,89 @@
     padding-left: 10px;
     padding-top: 0;
     padding-bottom: 0;
+}
+
+
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+    padding-top: 0;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }
+
+
+
+/* botao de verificar o código*/
+.botaoVerificar {
+    background-color: rgb(3, 3, 59);
+    color: white;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.botaoVerificar:hover{
+  background-color: rgba(15, 15, 120, 0.945);
+  }
+
+
+
+
+/* input do codigo */
+.codigo {
+  border: 2px solid rgba(230, 227, 255, 0.664);
+  border-radius: 4px;
+  width: 50%;
+  height: 40px;
+  padding: 8px;
+  outline: none;
+
+  
+  font-size: 30px;
+  text-align: center;
+}
+
+.codigo:focus {
+  border: 2px solid rgb(12, 12, 137);
+  box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.267);
+  color: black
 }

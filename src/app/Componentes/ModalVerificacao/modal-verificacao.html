@@ -1,9 +1,10 @@
+@if (ModalCodigo) {
 <div id='modalVerificacao' class='modal'>
     <div class='modal-content animate'>
 
         <!--BOTAO SAIR X-->
         <div class='imgcontainer' id='sair'>
-            <span onclick='verificacao()' class='close' title='Fechar'>&times;</span>
+            <span (click)="ModalCodigo =false" class='close' title='Fechar'>&times;</span>
         </div><br>
 
         <h2>Insira o código de 6 dígitos</h2><br>
@@ -13,8 +14,7 @@
 
         <div class='container'>
             <form action='verificar_codigo.php' method='POST'>
-                <input type='tel' class='codigoVerificacao codigo' maxlength='6' id='codigo' name='codigo'
-                    required><br><br>
+                <input type='tel' class='codigoVerificacao codigo' maxlength='6' (keypress)="permitirApenasNumeros($event)" required><br><br>
                 <div class='container' style='margin-bottom: 15px;'>
                     <button type='submit' class='botaoVerificar'><strong>Verificar</strong></button>
                 </div>
@@ -22,3 +22,4 @@
         </div><br>
     </div>
 </div>
+}

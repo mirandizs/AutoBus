@@ -10,4 +10,14 @@ import { RouterModule } from '@angular/router';
 
 export class ModalVerificacao {
   @Input() Visivel: boolean = false;
+  
+  ModalCodigo: boolean = false;
+
+  //funcao para permitir apenas a insercao de numeros
+  permitirApenasNumeros(event: KeyboardEvent): void {
+    const tecla = event.key;
+    if (!/^\d$/.test(tecla)) {
+      event.preventDefault();
+    }
+  }
 }

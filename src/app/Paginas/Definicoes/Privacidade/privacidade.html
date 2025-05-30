@@ -1,4 +1,6 @@
-<form action='codigo.php' method='POST'>
+<carregamento [Visivel]="AMandarEmail"></carregamento>
+
+<form [formGroup]="FormPrivacidade" (ngSubmit)="MandarEmail()" method='POST'>
     <div class='box2 row'>
         <div class='column left'>
             <h2>Privacidade e Segurança</h2><br>
@@ -9,8 +11,7 @@
             <label>Email:</label><br>
             <input type='email' class='info caixa campoTexto' name='email' id='email'
                 [value]='Utilizador()?.email'>
-            <button type='button' class='editar imagemEditar' id='editarEmail' disabled
-                style="cursor:not-allowed">
+            <button type='button' class='editar imagemEditar' id='editarEmail' [disabled]="FormPrivacidade.invalid" style="cursor:not-allowed">
                 <img src='img/lapis.png' width='20px' height='20px'>
             </button><br><br>
 
@@ -25,7 +26,7 @@
 
 
 
-            <button type='submit' class='editar imagemEditar' id='editarPassword' disabled style="cursor:not-allowed">
+            <button type='submit' class='editar imagemEditar' id='editarPassword' style="cursor:not-allowed" [disabled]="FormPrivacidade.invalid">
                 <img src='img/lapis.png' width='20px' height='20px'>
             </button><br><br><br>
 
@@ -34,3 +35,5 @@
         </div>
     </div>
 </form>
+
+<modal-verificacao></modal-verificacao>
