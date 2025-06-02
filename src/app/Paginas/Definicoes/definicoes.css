@@ -483,14 +483,130 @@ padding: auto;
   width: 50px;
 }
 
+
+
+.foto-perfil {
+  margin-left: 120px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PARA A PÁGINA MINHA CONTA ----------------------------------------------------------------------*/
+.cidades {
+  display: flex;
+  text-align: center;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.caixaImg {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.imagem {
+  background-color: transparent;
+  height: 60px;
+  width: 60px;
+}
+
+
+/* modal para selecionar a imagem de perfil*/
+.modalFundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* fundo escuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-selecionar {
+  position: absolute;
+
+  z-index: 2; /* acima do fundo */
+  background-color: #fff;
+  height: 310px;
+  width: 380px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 25px 20px;
+  padding-bottom: 30px;
+  transform: translateY(-50px); /* Iniciar acima */
+  animation: slideIn 0.5s forwards; /* Animação de deslizamento */
+}
+
+
+.fechar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.fechar:hover {
+  color: red;
+  display: inline-block;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+@keyframes slideIn {
+  0% {
+      transform: translateY(-50px); /* Iniciar acima */
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0); /* Ficar no lugar */
+      opacity: 1;
+  }
+}
+
+
+
+
+
 /* foto de perfil do "minha conta"*/
 .imagemUti {
   height: 250px;
   width: 250px;
+  margin-left: 20px;
+  margin-bottom: 15px;
   object-fit: cover;
 }
 
-
+/*estilo dos botoes da imagem de perfil*/
 .file-label {
   position: relative;
   /*left:26%;*/
@@ -504,8 +620,6 @@ padding: auto;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s;
-  margin-top: 10px;
-  margin-left: 30px;
 }
 
 .file-label:hover {
@@ -520,20 +634,17 @@ padding: auto;
 .bordas {
   border: 2px solid rgb(180, 180, 180);
   border-radius: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   padding-top: 20px;
-  width: 280px;
+  width: 290px;
   margin-left: 30px;
   align-items: center;
   justify-content: center;
   display: flex;
 }
 
+/* alinhamento da imagem carregada*/
 .alignment {
   align-items: center;
   justify-content: center;
-}
-
-.foto-perfil {
-  margin-left: 120px;
 }

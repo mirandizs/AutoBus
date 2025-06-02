@@ -4,10 +4,11 @@ import { Router, RouterModule } from '@angular/router';
 import { HttpService } from '../../Services/Http.service';
 import { Validadores } from '../../Services/Validadores';
 import { Definicoes } from '../../Definicoes';
+import { SeletorImagens } from '../../Componentes/SeletorImagens/seletor-imagens';
 
 @Component({
   selector: 'criar-conta',
-  imports: [RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule, SeletorImagens],
   templateUrl: './criar_conta.html',
   styleUrl: './criar_conta.less'
 })
@@ -15,6 +16,13 @@ export class PaginaCriarConta {
   MostarPassword = false
   MostarConfirmacaoPassword = false
   MostrarFotoCriarConta = false
+  SelecionarImagens = false
+  
+  ngOnInit() {
+    if (this.SelecionarImagens === true) {
+      console.log('Está a aparecer!');
+    }
+  }
 
   ServicoHttp = inject(HttpService)
   router = inject(Router)
@@ -37,13 +45,13 @@ export class PaginaCriarConta {
   });
 
 
-  // Definimos o form com estrutura, campos e validacoes
+  // definir o form com estrutura, campos e validacoes
   FormCriar:FormGroup = new FormGroup({
     nome: new FormControl('', [Validators.required]),
     nif: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),  // ^\d{9}$ -> 9 digitos
     password: new FormControl('', [Validators.required, Validadores.SenhaForte, Validadores.ConfirmacaoPassword]), 
-    // Usamos o de confirmacao de password apenas para atualizar o campo de confirmacao sempre que o da password muda.
-    // ^ Fiz um validador com varios erros no ficheiro Services/Validadores.ts
+    // o de confirmacao de password é utilizador apenas para atualizar o campo de confirmacao sempre que o da password muda.
+    // ^ fiz um validador com varios erros no ficheiro Services/Validadores.ts
 
     nascimento: new FormControl('', [Validators.required]),
     telefone: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),  // ^\d{9}$ -> 9 digitos
@@ -52,8 +60,8 @@ export class PaginaCriarConta {
     confirm_password: new FormControl('', [Validators.required, Validadores.ConfirmacaoPassword]),
   });
 
-  // Usamos um wrapper para o form, para facilitar o acesso aos campos
-  // Definimos estas variaveis para poderem ser acedidas no html
+  // usei um wrapper para o form, para facilitar o acesso aos campos
+  // defini estas variaveis para poderem ser acedidas no html
   get nome() {
     return this.FormCriar.get('nome');
   }
@@ -95,8 +103,4 @@ export class PaginaCriarConta {
       event.preventDefault();
     }
   }
-  
-
-
-  
 }

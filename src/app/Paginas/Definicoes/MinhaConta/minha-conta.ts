@@ -6,10 +6,11 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { Validadores } from '../../../Services/Validadores';
 import { HttpService } from '../../../Services/Http.service';
 import { Reactive } from '@angular/core/primitives/signals';
+import { SeletorImagens } from '../../../Componentes/SeletorImagens/seletor-imagens';
 
 @Component({
   selector: 'janela-minha-conta',
-  imports: [RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule, SeletorImagens],
   templateUrl: './minha-conta.html',
   styleUrl: '../definicoes.css'
 })
@@ -18,10 +19,11 @@ import { Reactive } from '@angular/core/primitives/signals';
 export class JanelaMinhaConta {
   ServicoAutenticacao = inject(ServicoAutenticacao)
   Utilizador = this.ServicoAutenticacao.Utilizador
-  CarregamentoVisivel = false
   ServicoHttp = inject(HttpService)
   router = inject(Router)
-
+  
+  CarregamentoVisivel = false
+  SelecionarImagem = false
 
 
   constructor() {
@@ -43,6 +45,7 @@ export class JanelaMinhaConta {
 
   ImageSelecionada: string | ArrayBuffer | null = null;
 
+  //funcao para carregar a imagem do pc 
   PreverImagem(event: Event): void {
     const input = event.target as HTMLInputElement;
 
@@ -57,6 +60,7 @@ export class JanelaMinhaConta {
       reader.readAsDataURL(file);
     }
   }
+
 
   async SubmeterForm(){
     this.FormEditar.disable()
@@ -79,11 +83,8 @@ export class JanelaMinhaConta {
     nascimento: new FormControl('', [Validators.required]),
     telefone: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),  // ^\d{9}$ -> 9 digitos
     localidade: new FormControl('', [Validators.required]),
-    foto: new FormControl('', [Validators.required]),// Adicionei o campo foto para o form
+    foto: new FormControl('', [Validators.required]),
   });
-
-
-
 
   get nome() {
     return this.FormEditar.get('nome');
@@ -120,31 +121,4 @@ export class JanelaMinhaConta {
       event.preventDefault();
     }
   }
-
-
-  // VerificarCampos(event: Event): void {
-  //   const inputAtual = event.target as HTMLInputElement;
-  //   const form = inputAtual.closest('form');
-  
-  //   if (!form) return;
-  
-  //   const inputs = form.querySelectorAll('input[type="text"], input[type="tel"], input[type="date"]');
-  //   const botao = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-  
-  //   const todosPreenchidos = Array.from(inputs).every(input => {
-  //     return (input as HTMLInputElement).value.trim() !== '' && !(input as HTMLInputElement).disabled;
-  //   });
-  
-  //   botao.disabled = todosPreenchidos;
-  // }
-
-  // funcaoChamarLetra (event: Event): void {
-  //   this.VerificarCampos(event);
-  //   this.permitirApenasLetras(event);
-  // }
-
-  // funcaoChamarNumero (event: KeyboardEvent): void {
-  //   this.VerificarCampos(event);
-  //   this.permitirApenasNumeros(event);
-  // }
 }

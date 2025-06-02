@@ -14,7 +14,16 @@
 
     <div class="tabela-container">
         <div style="justify-content: center; align-items: center; position: absolute;">
-            <h4>Filtrar</h4><br>
+            <h4>Filtrar por: 
+                <select class="select-filtro" (change)="onFiltroAlterado($event)"> <!-- [(ngModel)]="filtro"-->
+                    <option>A-Z</option>
+                    <option>Z-A</option>
+                    <option>Mais recente</option>
+                    <option>Mais antiga</option>
+                    <option>Menor preço</option>
+                    <option>Maior preço</option>
+                </select>
+            </h4><br>
 
             <table class="tabela">
                 <thead>

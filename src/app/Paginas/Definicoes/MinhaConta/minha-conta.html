@@ -34,15 +34,24 @@
 
             <div class="bordas">
                 <div class="alignment">
-                    <a class='fundo'>
-                        <img class="imagemUti" [src]="ImageSelecionada || URL_Imagens" onerror="this.src='img/default.png'">
-                    </a><br>
-                    
-                    <label for="file" class="file-label">Selecione uma imagem</label>
-                    <input type="file" accept="image/*" id="file" class="file-input" formControlName="foto" (change)="PreverImagem($event)">
+                    <img class="imagemUti" [src]="ImageSelecionada || URL_Imagens" onerror="this.src='img/default.png'">
+
+                    <div style="display: flex;">
+                        
+                        <label for="file" class="file-label" style="margin-left: 30px;">Carregar imagem</label>
+                        <input type="file" accept="image/*" id="file" class="file-input" formControlName="foto" (change)="PreverImagem($event)"> 
+
+                        <label class="file-label" style="margin-left: 20px; margin-right: 30px;">Selecionar imagem
+                            <input type="button" class="file-input" (click)="SelecionarImagem = true" (change)="PreverImagem($event)">
+                        </label>
+                    </div>
                     <br>
                 </div>
             </div>
+
+            @if (SelecionarImagem) { 
+                <seletor-imagens></seletor-imagens>
+            }
         </div>
     </div>
 </form>

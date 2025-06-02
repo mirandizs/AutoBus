@@ -1,0 +1,77 @@
+.cidades {
+  display: flex;
+  text-align: center;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.caixaImg {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.imagem {
+  background-color: transparent;
+  height: 60px;
+  width: 60px;
+}
+
+
+/* modal para selecionar a imagem de perfil*/
+.modalFundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* fundo escuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-selecionar {
+  position: absolute;
+
+  z-index: 2; /* acima do fundo */
+  background-color: #fff;
+  height: 330px;
+  width: 380px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 25px 20px;
+  padding-bottom: 30px;
+  transform: translateY(-50px); /* Iniciar acima */
+  animation: slideIn 0.5s forwards; /* Animação de deslizamento */
+}
+
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+    padding-top: 0;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+
+@keyframes slideIn {
+  0% {
+      transform: translateY(-50px); /* Iniciar acima */
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0); /* Ficar no lugar */
+      opacity: 1;
+  }
+}

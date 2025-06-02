@@ -12,6 +12,8 @@ import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
   templateUrl: './topbar.html',
   styleUrl: './topbar.css'
 })
+
+
 export class Topbar {
   ModalLoginVisivel = false
   DropdownVisivel = false
