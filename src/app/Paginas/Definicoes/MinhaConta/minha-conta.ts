@@ -24,9 +24,12 @@ export class JanelaMinhaConta {
   
   CarregamentoVisivel = false
   SelecionarImagem = false
+  Desativado = true;
 
 
   constructor() {
+    this.FormEditar.get('nif')?.disable(); 
+
     effect(() => {
       const Utilizador = this.Utilizador()
       if(Utilizador) {

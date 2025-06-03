@@ -21,13 +21,13 @@ export class JanelaPrivacidade {
   PasswordVisivel = false
   
   AMandarEmail: boolean = false;
-  ModalCodigo: boolean = false;
+  ModalCodigo = false
 
   async MandarEmail() {
       this.AMandarEmail = true
       this.FormPrivacidade.disable()
   
-      const EmailMandado = await this.ServicoHttp.Request(Definicoes.API_URL + 'email-contacto', 'POST', 'Nao foi possivel contactar',
+      const EmailMandado = await this.ServicoHttp.Request(Definicoes.API_URL + 'email-confirmacao', 'POST', 'Nao foi possivel contactar',
         this.FormPrivacidade.value) // Valores do form
   
       if (EmailMandado) {

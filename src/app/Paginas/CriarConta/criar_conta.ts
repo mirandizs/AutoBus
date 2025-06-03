@@ -5,10 +5,12 @@ import { HttpService } from '../../Services/Http.service';
 import { Validadores } from '../../Services/Validadores';
 import { Definicoes } from '../../Definicoes';
 import { SeletorImagens } from '../../Componentes/SeletorImagens/seletor-imagens';
+import { ModalVerificacao } from "../../Componentes/ModalVerificacao/modal-verificacao";
+import { Carregamento } from "../../Componentes/Carregamento/carregamento";
 
 @Component({
   selector: 'criar-conta',
-  imports: [RouterModule, FormsModule, ReactiveFormsModule, SeletorImagens],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule, SeletorImagens, ModalVerificacao, Carregamento],
   templateUrl: './criar_conta.html',
   styleUrl: './criar_conta.less'
 })
@@ -17,6 +19,7 @@ export class PaginaCriarConta {
   MostarConfirmacaoPassword = false
   MostrarFotoCriarConta = false
   SelecionarImagens = false
+  ModalCodigo = false
   
   ngOnInit() {
     if (this.SelecionarImagens === true) {

@@ -161,11 +161,16 @@
         </div>
 
 
-        <a href="incial.php">
-          <button type='button' class="botaoCriarConta" style='margin-right: 250px; margin-left:5px' routerLink="/inicial">Alterar depois</button>
-        </a>
+        <button type='button' class="botaoCriarConta" style='margin-right: 250px; margin-left:5px' routerLink="/inicial">Alterar depois</button>
 
-        <button type='submit' class="botaoCriarConta">Criar conta</button>
+
+        <input type="button" class="botaoCriarConta" (click)="ModalCodigo = true" value="Criar conta">
+        
+        <carregamento></carregamento>
+
+        @if (ModalCodigo) {
+          <modal-verificacao (close)="ModalCodigo = false"></modal-verificacao>
+        }
       </form>
     </div>
   </div>

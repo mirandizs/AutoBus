@@ -1,4 +1,4 @@
-<form action="editarAdmin.php" method="POST">
+<form [formGroup]="FormEditarUtilizador" method="POST">
     <div class="box2 row">
         <div class="column left">
             <h2>Gestão de Utilizadores - Editar</h2><br>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="column right">
-            <div style="padding-top: 60px;">
+            <div style="padding-top: 70px;">
                 <label>Telemóvel:</label><br>
                 <input type="tel" class="info campoTexto caixa" name="telefone" maxlength="9" [value]="UtilizadorSelecionado()?.telefone" (keypress)="permitirApenasNumeros($event)"><br><br>
 
@@ -35,9 +35,10 @@
                 <input type="email" class="info campoTexto caixa" name="email" [value]="UtilizadorSelecionado()?.email"><br><br>
 
                 <div class="row">
-                    <div class="column left">
+                    <div class="column left" style="padding:0px; padding-top:10px;">
                         <label>Tipo de utilizador:</label><br>
-                        <select class="campoSelect" name="tipo_utilizador" style="cursor: pointer;">
+
+                        <select class="select-filtro" style="cursor: pointer;">
                             <option value="0" [selected]="UtilizadorSelecionado()?.tipo_utilizador == 0">
                                 Administrador
                             </option>
@@ -47,9 +48,10 @@
                         </select>
                     </div>
 
-                    <div class="column right" style="padding-top:10px;">
+                    <div class="column right" style="padding:0px; padding-top:10px;">
                         <label>Atividade:</label><br>
-                        <select class="campoSelect" name="atividade" style="cursor: pointer;">
+
+                        <select class="select-filtro" style="cursor: pointer;">
                             <option value="0" [selected]="UtilizadorSelecionado()?.atividade == 0">
                                 Inativo
                             </option>

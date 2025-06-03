@@ -28,7 +28,7 @@
 
 .right {
   /*padding-top: 100px;*/
-  padding-top: 40px;
+  padding-top: 30px;
   width: 50%;
 }
 
@@ -601,7 +601,7 @@ padding: auto;
 .imagemUti {
   height: 250px;
   width: 250px;
-  margin-left: 20px;
+  /*margin-left: 20px;*/
   margin-bottom: 15px;
   object-fit: cover;
 }
@@ -614,12 +614,13 @@ padding: auto;
   padding: 10px 20px;
   /*background-color: #007bff;*/
   background-color: rgba(3, 3, 130, 0.945);
-  ;
   color: white;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition:  background-color 0.3s ease;   
+  text-align: center;
+  width: 60%;
 }
 
 .file-label:hover {
@@ -647,4 +648,51 @@ padding: auto;
 .alignment {
   align-items: center;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* JANELA EDITAR UTILIZADORES -------------------------------------------------------------------------------*/
+/* estilo do select */
+.select-filtro {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 8px;
+  color: #333;
+  /*transition: all 0.3s ease;*/
+  -webkit-transition: 0.2s;
+  transition: 0.4s;
+  margin-top: 5px;
+  display: inline-block;
+  border: 2px solid rgba(230, 227, 255, 0.664);
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+  padding-right: 15px;
+}
+
+.select-filtro:hover {
+  border: 2px solid rgb(12, 12, 137);
+  box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.267);
+  color: black;
+}
+
+
+
+
