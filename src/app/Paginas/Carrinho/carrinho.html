@@ -8,6 +8,14 @@
 
         <h2 style="text-align: center; margin-bottom:70px; color: rgb(5, 5, 96);">Bilhetes</h2>
 
+        @if (Carrinho.length == 0) {
+            <h3 style="text-align: center; margin-top: 100px; color: rgb(5, 5, 96);">O seu carrinho está vazio!</h3>
+        } 
+        
+        @else {
+            <h4 style="text-align: center; margin-top: 20px;">Caso deseje remover algum bilhete, basta clicar no botão de excluir!</h4>
+        }
+
        
         @for (Bilhete of Carrinho ; track $index){
             <div class='caixaBilhete'>
@@ -20,7 +28,7 @@
                 <a style='margin-right:360px;'>Hora de partida: {{Bilhete.hora_partida}}</a>
     
                 
-                <button class='btCarrinho' (click)="removerBilhete(Bilhete)">
+                <button class='btCarrinho' (click)="removerBilhete(Bilhete.id_produto)">
                     <img src="img/carrinhoExcluirA.png" style="height: 25px; width: 25;">
                 </button>
                 <!--<button class='botaoTransicao verMais'></button>-->

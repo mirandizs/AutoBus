@@ -8,6 +8,7 @@ import { PaginaCompras} from './Paginas/Compras/compras';
 import { PaginaCarrinho } from './Paginas/Carrinho/carrinho';
 import { PaginaLocalidades } from './Paginas/Localidades/localidades';
 import { PaginaContacto } from './Paginas/Contacto/contacto';
+import { PaginaSobre } from './Paginas/Sobre/sobre';
 import { JanelaPrivacidade } from './Paginas/Definicoes/Privacidade/privacidade';
 import { JanelaMinhaConta } from './Paginas/Definicoes/MinhaConta/minha-conta';
 import { JanelaUtilizadores } from './Paginas/Definicoes/GerirUtilizadores/utilizadores';
@@ -34,5 +35,7 @@ export const routes: Routes = [
     {path:'compras', component:PaginaCompras},
 
     {path:'login', component:PaginaLogin},
-    {path:'criarConta', component:PaginaCriarConta}
+    {path:'criarConta', component:PaginaCriarConta},
+
+    {path:'sobre', component:PaginaSobre}
 ];

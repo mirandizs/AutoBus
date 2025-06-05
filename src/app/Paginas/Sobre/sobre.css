@@ -1,0 +1,30 @@
+.pagina {
+    margin: 40px;
+}
+
+/* BOTAO PARA VOLTAR IR PARA O TOPO DE PÁGINA */
+.botaoTopo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  transform: translateX(100px); /* Começa fora da tela */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.btTopo {
+  padding: 15px 30px;
+  font-size: 15px;
+  color: white;
+  background: rgb(4, 4, 77);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;   
+  margin-bottom: 80px;     
+}
+
+.btTopo:hover {
+  background: rgb(9,9,127);
+  transform: scale(1.05);
+} 

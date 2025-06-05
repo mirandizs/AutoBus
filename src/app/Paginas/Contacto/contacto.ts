@@ -25,6 +25,10 @@ export class PaginaContacto {
     mensagem: new FormControl('', [Validators.required]),
   })
 
+  get email() {
+    return this.FormContacto.get('email');
+  }
+
   async MandarEmail() {
     this.AMandarEmail = true
     this.FormContacto.disable()

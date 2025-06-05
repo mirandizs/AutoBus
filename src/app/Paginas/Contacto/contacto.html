@@ -12,20 +12,17 @@
 
             <form [formGroup]="FormContacto" (ngSubmit)="MandarEmail()">
                 <label class="texto"><strong>Email: </strong><br><br>
-                    <input type="email" formControlName="email"class="inputs"
-                        style="width: 300px; margin-bottom: 50px; padding-left: 10px"
-                        placeholder="Insira o seu email..."><br>
+                    <input type="email" formControlName="email" class="inputs" style="width: 300px; margin-bottom: 50px; padding-left: 10px"
+                            placeholder="Insira o seu email..."><br>
                 </label>
 
                 <label class="texto"><strong>Assunto: </strong><br><br>
-                    <input type="text" class="inputs campoTexto" formControlName="assunto" id="assunto"
-                        style="width: 300px; margin-bottom: 50px; padding-left: 10px"
+                    <input type="text" class="inputs" formControlName="assunto" style="width: 300px; margin-bottom: 50px; padding-left: 10px"
                         placeholder="Assunto da mensagem..."><br>
                 </label>
 
                 <label class="texto"><strong>Mensagem: </strong><br><br>
-                    <textarea class="inputs campoTexto" formControlName="mensagem"
-                        style="text-align:justify; width: 600px; height: 300px; resize: none; padding-left: 15px; padding-right:15px; font-family: Calibri, Helvetica, sans-serif; padding-top:10px;"
+                    <textarea class="inputs" formControlName="mensagem" style="text-align:justify; width: 600px; height: 300px; resize: none; padding-left: 15px; padding-right:15px; font-family: Calibri, Helvetica, sans-serif; padding-top:10px;"
                         placeholder="Texto..."></textarea>
                 </label><br><br><br>
 

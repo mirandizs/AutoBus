@@ -42,6 +42,9 @@
   margin-top: 10px;
   margin-bottom: 50px;
   justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ddd;
 }
 
 .tabela thead {
@@ -67,6 +70,22 @@
 
 .tabela td:nth-child(4) {
   font-weight: bold;
+}
+
+/* Canto superior esquerdo e direito do cabeçalho */
+.tabela thead tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+.tabela thead tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* Canto inferior esquerdo e direito da última linha */
+.tabela tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+.tabela tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
 }
 
 
