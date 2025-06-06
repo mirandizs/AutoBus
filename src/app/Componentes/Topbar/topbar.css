@@ -196,6 +196,12 @@
   margin: 3px 0;
 }
 
+.erro-campo {
+  color: red;
+  font-size: small;
+  padding-left: 12px;
+}
+
 /* Form de login (fundo para deixar a página atrás meio escura) */
 .modal {
   position: fixed;

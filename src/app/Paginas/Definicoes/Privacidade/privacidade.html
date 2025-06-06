@@ -1,6 +1,6 @@
 <carregamento [Visivel]="AMandarEmail"></carregamento>
 
-<form [formGroup]="FormPrivacidade" (ngSubmit)="MandarEmail()" method='POST'>
+<form [formGroup]="FormPrivacidade" (ngSubmit)="EditarCredenciais()" method='POST'>
     <div class='box2 row'>
         <div class='column left'>
             <h2>Privacidade e Segurança</h2><br>
@@ -9,22 +9,20 @@
                 de confirmação.</label><br><br><br>
 
             <label>Email:</label><br>
-            <input type='email' class='info caixa' name='email' id='email'
-                [value]='Utilizador()?.email'>
-            <button type='submit' class='editar imagemEditar' id='editarEmail' (click)="ModalCodigo = true"> <!-- style="cursor:not-allowed"[disabled]="FormPrivacidade.invalid"-->
+            <input type='email' class='info caixa' [value]='Utilizador()?.email'>
+            <button type='submit' class='editar imagemEditar' (click)="ModalCodigo = true"> <!-- style="cursor:not-allowed"[disabled]="FormPrivacidade.invalid"-->
                 <img src='img/lapis.png' width='20px' height='20px'>
             </button><br><br>
 
             
 
             <label>Password:</label><br>
-            <input [type]="PasswordVisivel ? 'text' : 'password'" class='info caixa' name='password' id='password'>
-            <button type='button' class='ver' name="iconPasswordConfirm" id="iconPasswordConfirm"
-                (click)="PasswordVisivel = !PasswordVisivel">
+            <input [type]="PasswordVisivel ? 'text' : 'password'" class='info caixa'>
+            <button type='button' class='ver' (click)="PasswordVisivel = !PasswordVisivel">
                 <img [src]="PasswordVisivel ? 'img/aberto.png' : 'img/fechado.png'" width='20px' height='20px'>
             </button>
 
-            <button type='submit' class='editar imagemEditar' id='editarPassword' (click)="ModalCodigo = true"> <!-- style="cursor:not-allowed"[disabled]="FormPrivacidade.invalid"-->
+            <button type='submit' class='editar imagemEditar' (click)="ModalCodigo = true"> <!-- style="cursor:not-allowed"[disabled]="FormPrivacidade.invalid"-->
                 <img src='img/lapis.png' width='20px' height='20px'>
             </button><br><br><br>
 

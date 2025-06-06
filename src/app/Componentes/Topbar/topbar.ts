@@ -39,7 +39,9 @@ export class Topbar {
 
     if(ResultadoLogin){
       window.location.reload();
-    }else{
+    }
+    
+    else{
       this.CarregamentoVisivel = false
     }
   }
@@ -62,4 +64,11 @@ export class Topbar {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
   });
+
+  // get email() {
+  //   return this.FormLogin.get('email');
+  // }
+  // get password() {
+  //   return this.FormLogin.get('password');
+  // }
 }

@@ -4,11 +4,17 @@
 
         @if (!Caminho.includes("definicoes")) {
             @if (Caminho.includes("contacto")) {
-                <div style="position: absolute; left: 0;">
+                <div style="position: absolute; left: 0; display: flex;">
                     <button class="contact-button">
                         <div style="display:flex;">
                             <img class="imagemContact" src="img/telefoneB.png">
                             <a style="padding-top: 7px">+351 916942618</a>
+                        </div>
+                    </button>
+                    <button class="contact-button">
+                        <div style="display:flex;">
+                            <img class="imagemContact" src="img/emailB.png">
+                            <a style="padding-top: 7px">autobus.pap&#64;gmail.com</a>
                         </div>
                     </button>
                 </div>

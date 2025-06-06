@@ -1,28 +1,28 @@
 <!-- @if (ModalCodigo) { -->
-<div id='modalVerificacao' class='modal'>
-    <div class='modal-content animate'>
+ 
+<form  [formGroup]="FormVerificacao" method='POST' (ngSubmit)="VerificarCodigo()">
+    <div id='modalVerificacao' class='modal'>
+        <div class='modal-content animate'>
+            <!--BOTAO SAIR X-->
+            <div class='imgcontainer' id='sair'>
+                <span (click)="onFechar()" class='close' title='Fechar'>&times;</span>
+            </div><br>
 
-        <!--BOTAO SAIR X-->
-        <div class='imgcontainer' id='sair'>
-            <span (click)="onFechar()" class='close' title='Fechar'>&times;</span>
-        </div><br>
-
-        <h2>Insira o código de 6 dígitos</h2><br>
+            <h2>Insira o código de 6 dígitos</h2><br>
 
 
-        <p>Insira o código de verificação que foi enviado para </p><br>
+            <p>Insira o código de verificação que foi enviado para <strong>{{ServicoAutenticacao.Utilizador()?.email}}</strong></p><br>
 
-        <div class='container'>
-            <form action='verificar_codigo.php' method='POST'>
-                <input type='tel' class='codigoVerificacao codigo' maxlength='6' (keypress)="permitirApenasNumeros($event)" required><br><br>
+            <div class='container'>
+                    <input type='tel' class='codigoVerificacao codigo' maxlength='6' (keypress)="permitirApenasNumeros($event)" required><br><br>
 
-                <p>Se não recebeu o código, <a style="cursor: pointer; color:blue;" (click)="ReenviarCodigo()"><u>clique aqui</u></a> para reenviar.</p><br>
+                    <p>Se não recebeu o código, <a style="cursor: pointer; color:blue;" (click)="ReenviarCodigo()"><u>clique aqui</u></a> para reenviar.</p><br>
 
-                <div class='container' style='margin-bottom: 15px;'>
-                    <button type='submit' class='botaoVerificar'><strong>Verificar</strong></button>
-                </div>
-            </form>
-        </div><br>
+                    <div class='container' style='margin-bottom: 15px;'>
+                        <button type='submit' class='botaoVerificar'><strong>Verificar</strong></button>
+                    </div>
+            </div><br>
+        </div>
     </div>
-</div>
+</form>
 <!-- } -->

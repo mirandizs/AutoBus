@@ -23,25 +23,34 @@ export class JanelaPrivacidade {
   AMandarEmail: boolean = false;
   ModalCodigo = false
 
-  async MandarEmail() {
-      this.AMandarEmail = true
-      this.FormPrivacidade.disable()
-  
-      const EmailMandado = await this.ServicoHttp.Request(Definicoes.API_URL + 'email-confirmacao', 'POST', 'Nao foi possivel contactar',
-        this.FormPrivacidade.value) // Valores do form
-  
-      if (EmailMandado) {
+  TipoEdicao: 'email' | 'password' | null = null;
+
+  async EditarCredenciais() {
+    this.AMandarEmail = true
+    this.FormPrivacidade.disable()
+    
+    const valores = this.FormPrivacidade.value;
+
+    const carregado = {
+      email: this.TipoEdicao === 'email' ? valores.email : undefined,
+      password: this.TipoEdicao === 'password' ? valores.password : undefined,
+    };
+
+    const EmailMandado = await this.ServicoHttp.Request(Definicoes.API_URL + 'editar-privacidade', 'PATCH', 'Não foi possivel editar os dados de privacidade', carregado) // Valores do form
+
+    if (EmailMandado) {
         this.FormPrivacidade.reset()
         this.ModalCodigo = true
-      }
-      this.AMandarEmail = false
-      this.FormPrivacidade.enable()
     }
+    this.AMandarEmail = false
+    this.FormPrivacidade.enable()
+    this.TipoEdicao = null; // resetar depois da edição
+  }
 
 
-    FormPrivacidade: FormGroup = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required]),
-    })
+  FormPrivacidade: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+  })
 
 }

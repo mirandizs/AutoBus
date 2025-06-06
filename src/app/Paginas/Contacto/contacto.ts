@@ -11,7 +11,7 @@ import { Carregamento } from "../../Componentes/Carregamento/carregamento";
   selector: 'pagina-contacto',
   imports: [Footer, Topbar, ButaoVoltar, FormsModule, ReactiveFormsModule, Carregamento],
   templateUrl: './contacto.html',
-  styleUrl: './contacto.css'
+  styleUrl: './contacto.less'
 })
 export class PaginaContacto {
   ModalSucessoVisivel: boolean = false;
