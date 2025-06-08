@@ -8,7 +8,7 @@ import { Definicoes } from '../../../Definicoes';
   selector: 'janela-utilizadores',
   imports: [RouterModule],
   templateUrl: './utilizadores.html',
-  styleUrl: '../definicoes.css'
+  styleUrl: '../definicoes.less'
 })
 export class JanelaUtilizadores {
   ServicoAutenticacao = inject(ServicoAutenticacao)

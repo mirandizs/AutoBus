@@ -12,7 +12,7 @@ import { SeletorImagens } from '../../../Componentes/SeletorImagens/seletor-imag
   selector: 'janela-minha-conta',
   imports: [RouterModule, FormsModule, ReactiveFormsModule, SeletorImagens],
   templateUrl: './minha-conta.html',
-  styleUrl: '../definicoes.css'
+  styleUrl: '../definicoes.less'
 })
 
 
@@ -21,18 +21,18 @@ export class JanelaMinhaConta {
   Utilizador = this.ServicoAutenticacao.Utilizador
   ServicoHttp = inject(HttpService)
   router = inject(Router)
-  
+
   CarregamentoVisivel = false
   SelecionarImagem = false
   Desativado = true;
 
 
   constructor() {
-    this.FormEditar.get('nif')?.disable(); 
+    this.FormEditar.get('nif')?.disable();
 
     effect(() => {
       const Utilizador = this.Utilizador()
-      if(Utilizador) {
+      if (Utilizador) {
         this.FormEditar.get('nome')?.setValue(this.Utilizador()?.nome)
         this.FormEditar.get('nif')?.setValue(this.Utilizador()?.nif)
         this.FormEditar.get('nascimento')?.setValue(this.Utilizador()?.nascimento)
@@ -47,31 +47,49 @@ export class JanelaMinhaConta {
   URL_Imagens = Definicoes.API_URL + 'imagens/utilizador'
 
   ImageSelecionada: string | ArrayBuffer | null = null;
+  FicheiroSelecionado: File | null = null;
 
   //funcao para carregar a imagem do pc 
-  PreverImagem(event: Event): void {
-    const input = event.target as HTMLInputElement;
+  async PreverImagem(Ficheiro: File) {
+    if (Ficheiro){
+    const reader = new FileReader();
 
-    if (input.files && input.files[0]) {
-      const file = input.files[0];
-      const reader = new FileReader();
+    this.FicheiroSelecionado = Ficheiro
 
-      reader.onload = () => {
-        this.ImageSelecionada = reader.result;
-      };
+    reader.onload = () => {
+      this.ImageSelecionada = reader.result
+      this.MudarImagem(Ficheiro)
+    };
 
-      reader.readAsDataURL(file);
+    reader.readAsDataURL(Ficheiro);
+
     }
   }
 
+  async ImagemMudada(Event:Event){
+    const Input = Event.target as HTMLInputElement
+    this.PreverImagem(Input.files![0])
+  }
 
-  async SubmeterForm(){
+
+
+  async MudarImagem(Ficheiro: File) {
+
+    const Data = new FormData()
+    Data.append('foto', Ficheiro)
+
+    const Sucesso = await this.ServicoHttp.Request(this.URL_Imagens, 'POST', 'Nao foi possivel editar a foto da conta', Data)
+  }
+
+
+
+  async SubmeterForm() {
     this.FormEditar.disable()
 
-    const Resultado = await this.ServicoHttp.Request(Definicoes.API_URL+'minha-conta', 'PATCH', 'Nao foi possivel editar os dados da conta', 
+    const Resultado = await this.ServicoHttp.Request(Definicoes.API_URL + 'minha-conta', 'PATCH', 'Nao foi possivel editar os dados da conta',
       this.FormEditar.value) // O body equivale ao valor do form criar. Este .value e um array, com o nome de todos os campos e os seus valores
 
-    if (Resultado){
+    if (Resultado) {
       await this.router.navigate(['/definicoes/minha-conta'])
       window.location.reload()
     }
@@ -80,20 +98,17 @@ export class JanelaMinhaConta {
 
 
 
-  FormEditar:FormGroup = new FormGroup({
+  FormEditar: FormGroup = new FormGroup({
     nome: new FormControl('', [Validators.required]),
-    nif: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),  // ^\d{9}$ -> 9 digitos
     nascimento: new FormControl('', [Validators.required]),
     telefone: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),  // ^\d{9}$ -> 9 digitos
     localidade: new FormControl('', [Validators.required]),
-    foto: new FormControl('', [Validators.required]),
-  });
+  })
+
+
 
   get nome() {
     return this.FormEditar.get('nome');
-  }
-  get nif() {
-    return this.FormEditar.get('nif');
   }
   get nascimento() {
     return this.FormEditar.get('nascimento');
@@ -104,13 +119,16 @@ export class JanelaMinhaConta {
   get localidade() {
     return this.FormEditar.get('localidade');
   }
-  get foto() {
-    return this.FormEditar.get('foto');
+
+
+  VerificarMudancas() {
+    const ValoresForm = this.FormEditar.value
+    return ValoresForm.nome !== this.Utilizador()?.nome ||
+      ValoresForm.nascimento !== this.Utilizador()?.nascimento ||
+      ValoresForm.telefone !== this.Utilizador()?.telefone ||
+      ValoresForm.localidade !== this.Utilizador()?.localidade
   }
 
-
-
-  
   //funcao para permitir apenas a insercao de letras
   permitirApenasLetras(event: any) {
     const input = event.target as HTMLInputElement;

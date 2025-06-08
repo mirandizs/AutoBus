@@ -21,7 +21,7 @@ interface Utilizador {
   selector: 'janela-editar-utilizador',
   imports: [RouterModule, FormsModule, ReactiveFormsModule],
   templateUrl: './editar-utilizador.html',
-  styleUrl: '../definicoes.css'
+  styleUrl: '../definicoes.less'
 })
 
 

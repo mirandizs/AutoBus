@@ -17,6 +17,13 @@
   width: 60px;
 }
 
+.imagens{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espaçamento entre as imagens */
+}
 
 /* modal para selecionar a imagem de perfil*/
 .modalFundo {

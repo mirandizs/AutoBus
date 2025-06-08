@@ -15,6 +15,7 @@ import { Definicoes } from '../../Definicoes';
 
 export class ModalVerificacao {
   @Output() close = new EventEmitter<void>();
+  @Output() submetido = new EventEmitter<number>();
 
   router = inject(Router);
   ServicoAutenticacao = inject(ServicoAutenticacao);
@@ -37,17 +38,6 @@ export class ModalVerificacao {
     codigo: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]),
   });
 
-  // Método para submeter o formulário de verificação
-  async SubmeterVerificacao() {
-    if (this.FormVerificacao.valid) {
-      const codigo = this.FormVerificacao.value.codigo;
-      console.log('Código de verificação:', codigo);
-      this.onFechar();
-    } else {
-      console.log('Formulário inválido');
-    }
-  }
-
   //funcao para permitir apenas a insercao de numeros
   permitirApenasNumeros(event: KeyboardEvent): void {
     const tecla = event.key;
@@ -56,18 +46,9 @@ export class ModalVerificacao {
     }
   }
 
-  async VerificarCodigo(){
-      /*this.FormCriar.disable()*/
-  
-      const Resultado = await this.ServicoHttp.Request(Definicoes.API_URL+'verificar-codigo', 'POST', 'O codigo de verificacao é invalido', 
-        this.FormVerificacao.value) // O body equivale ao valor do form criar. Este .value e um array, com o nome de todos os campos e os seus valores
-  
-      if (Resultado){
-      await this.router.navigate(['/definicoes/privacidade'])
-      window.location.reload()
-      }
-      this.FormVerificacao.enable()
-    }
+  SubmeterModal(){
+    this.submetido.emit(this.FormVerificacao.value.codigo);
+  }
 
     
 }

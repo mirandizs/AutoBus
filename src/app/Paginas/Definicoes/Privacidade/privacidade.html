@@ -1,6 +1,6 @@
 <carregamento [Visivel]="AMandarEmail"></carregamento>
 
-<form [formGroup]="FormPrivacidade" (ngSubmit)="EditarCredenciais()" method='POST'>
+<form [formGroup]="FormPrivacidade" (ngSubmit)="MandarCodigoVerificacao()">
     <div class='box2 row'>
         <div class='column left'>
             <h2>Privacidade e Segurança</h2><br>
@@ -8,25 +8,26 @@
             <label>Aqui poderás alterar o teu email e password com segurança! Atenção, será enviado um email
                 de confirmação.</label><br><br><br>
 
+            <!-- EMAIL -->
             <label>Email:</label><br>
-            <input type='email' class='info caixa' [value]='Utilizador()?.email'>
-            <button type='submit' class='editar imagemEditar' (click)="ModalCodigo = true"> <!-- style="cursor:not-allowed"[disabled]="FormPrivacidade.invalid"-->
+            <input formControlName="email"  type='email' class='info caixa'>
+            <button type='submit' class='editar imagemEditar' [disabled]="Utilizador()?.email == FormPrivacidade.value.email" 
+            (click)="ModalCodigo = true; TipoEdicao='email'"> 
                 <img src='img/lapis.png' width='20px' height='20px'>
             </button><br><br>
 
             
-
+            <!-- PASSWORD -->
             <label>Password:</label><br>
-            <input [type]="PasswordVisivel ? 'text' : 'password'" class='info caixa'>
+            <input formControlName="password" [type]="PasswordVisivel ? 'text' : 'password'" class='info caixa'>
             <button type='button' class='ver' (click)="PasswordVisivel = !PasswordVisivel">
                 <img [src]="PasswordVisivel ? 'img/aberto.png' : 'img/fechado.png'" width='20px' height='20px'>
             </button>
 
-            <button type='submit' class='editar imagemEditar' (click)="ModalCodigo = true"> <!-- style="cursor:not-allowed"[disabled]="FormPrivacidade.invalid"-->
+            <button type='submit' class='editar imagemEditar' [disabled]="FormPrivacidade.invalid"
+            (click)="ModalCodigo = true; TipoEdicao='password'">
                 <img src='img/lapis.png' width='20px' height='20px'>
             </button><br><br><br>
-
-
 
             <label>Tenha certeza de que o email que está a utilizar está ativo ou que tenha espaço o
                 suficiente para receber emails de confirmação do nosso site.</label>
@@ -36,5 +37,5 @@
 
 @if (ModalCodigo) {
     <carregamento [Visivel]="AMandarEmail"></carregamento>
-    <modal-verificacao (close)="ModalCodigo = false"></modal-verificacao>
+    <modal-verificacao (submetido)="EditarCredenciais($event)" (close)="ModalCodigo = false"></modal-verificacao>
 }

@@ -13,7 +13,7 @@
             <div style='display:inline-flex; justify-items:center; text-align: center'>
                 <br>
                 <a><strong>{{Viagem.local_partida}} ⮕ {{Viagem.local_chegada}}</strong></a>
-                <h2 style='margin-left:390px; margin-top:-4px; float: right; display:flex'>00,00€</h2>
+                <h2 style='margin-left:390px; margin-top:-4px; float: right; display:flex'>{{Viagem.preco | currency:'EUR'}}</h2>
             </div><br>
 
             <a>Hora de partida: {{Viagem.hora_partida}}</a>
@@ -29,7 +29,7 @@
             </button>
         </div><br>
     </div>
-}
+}<br><br>
 
 <butao-voltar></butao-voltar>
 <!-- <footer-componente></footer-componente> -->

@@ -6,11 +6,12 @@ import { HttpService } from '../../Services/Http.service';
 import { Definicoes } from '../../Definicoes';
 import { FormsModule, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ModalVerificacao } from "../../Componentes/ModalVerificacao/modal-verificacao";
+import { CurrencyPipe } from '@angular/common';
 
 
 @Component({
   selector: 'pagina-carrinho',
-  imports: [Topbar, FormsModule, ReactiveFormsModule],
+  imports: [Topbar, FormsModule, ReactiveFormsModule, CurrencyPipe],
   templateUrl: './carrinho.html',
   styleUrl: './carrinho.css'
 })
@@ -36,7 +37,7 @@ export class PaginaCarrinho {
     this.Carrinho = await this.ServicoHTTP.Request(Pedido_URL, "GET") 
 
     this.Carrinho.forEach((produto: any) => {
-      this.Total += produto.preco * produto.quantidade
+      this.Total += produto.preco
     })
   }
 
@@ -54,6 +55,7 @@ export class PaginaCarrinho {
       guardarCartao: this.FormCartao.value.guardarCartao,
     })
   }
+
 
 
 

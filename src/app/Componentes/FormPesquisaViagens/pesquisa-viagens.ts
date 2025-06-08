@@ -20,8 +20,6 @@ export class FormPesquisaViagens {
   PaginaViagens = this.router.url.includes('viagens')
   Ida = true
   Volta = false
-  FormularioIda = true
-  FormularioVolta = false
 
   FormPesquisa: FormGroup = new FormGroup({
     local_partida: new FormControl('', []),

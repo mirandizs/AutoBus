@@ -6,10 +6,11 @@ import { FormPesquisaViagens } from "../../Componentes/FormPesquisaViagens/pesqu
 import { ButaoVoltar } from "../../Componentes/ButaoVoltar/butao-voltar";
 import { HttpService } from '../../Services/Http.service';
 import { Definicoes } from '../../Definicoes';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'pagina-viagens',
-  imports: [Topbar, FormPesquisaViagens, ButaoVoltar],
+  imports: [Topbar, FormPesquisaViagens, ButaoVoltar, CurrencyPipe],
   templateUrl: './viagens.html',
   styleUrl: './viagens.css'
 })

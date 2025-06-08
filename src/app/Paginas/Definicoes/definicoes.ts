@@ -7,7 +7,7 @@ import { Footer } from '../../Componentes/Footer/footer';
   selector: 'pagina-definicoes',
   imports: [RouterModule, RouterOutlet, Footer],
   templateUrl: './definicoes.html',
-  styleUrl: './definicoes.css'
+  styleUrl: './definicoes.less'
 })
 export class PaginaDefinicoes {
   JanelaAtiva = "MinhaConta";  

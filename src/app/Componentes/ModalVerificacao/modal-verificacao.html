@@ -1,6 +1,6 @@
 <!-- @if (ModalCodigo) { -->
  
-<form  [formGroup]="FormVerificacao" method='POST' (ngSubmit)="VerificarCodigo()">
+<form  [formGroup]="FormVerificacao" method='POST' (ngSubmit)="SubmeterModal()">
     <div id='modalVerificacao' class='modal'>
         <div class='modal-content animate'>
             <!--BOTAO SAIR X-->
@@ -14,7 +14,7 @@
             <p>Insira o código de verificação que foi enviado para <strong>{{ServicoAutenticacao.Utilizador()?.email}}</strong></p><br>
 
             <div class='container'>
-                    <input type='tel' class='codigoVerificacao codigo' maxlength='6' (keypress)="permitirApenasNumeros($event)" required><br><br>
+                    <input type='tel' formControlName="codigo" class='codigoVerificacao codigo' maxlength='6' (keypress)="permitirApenasNumeros($event)" required><br><br>
 
                     <p>Se não recebeu o código, <a style="cursor: pointer; color:blue;" (click)="ReenviarCodigo()"><u>clique aqui</u></a> para reenviar.</p><br>
 
