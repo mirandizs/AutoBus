@@ -61,7 +61,7 @@ export class PaginaCarrinho {
 
   //funcao para remover um produto do carrinho
   async removerBilhete(idProduto: number) {
-    const Pedido_URL = new URL(Definicoes.API_URL+"carrinho/"+idProduto) //api = http://localhost:3000/api/
+    const Pedido_URL = new URL(Definicoes.API_URL+"/carrinho"+idProduto) //api = http://localhost:3000/api/
 
     await this.ServicoHTTP.Request(Pedido_URL, "DELETE", "") 
 

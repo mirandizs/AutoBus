@@ -55,3 +55,17 @@
         </div>
     </div>
 </form>
+
+
+@if (ModalSucessoVisivel){
+    <div class='modalSucessoFundo'>
+        <div class='modalSucesso animate'>
+            <div>
+                <span (click)="FecharModalSucesso()" class='fecharSu'>&times;</span>
+                <br><br>
+    
+                <h3>Dados alterados com sucesso!</h3><br>
+            </div>
+        </div>
+    </div>
+}

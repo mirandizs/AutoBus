@@ -41,35 +41,68 @@
         <div class="campo">
             <label class="titulo-campo"><strong>Passageiros</strong></label>
 
-            <select style="width: 230px; cursor: pointer; padding-right: -20px;" formControlName="passageiros" >
-                <option value="1">1 Adulto</option>
-                <option value="2">2 Adultos</option>
-                <option value="3">3 Adultos</option>
-            </select>
+            @if (!PaginaViagens) {
+                <select style="width: 230px; cursor: pointer; padding-right: -20px;" formControlName="passageiros" >
+                    <option value="1">1 Adulto</option>
+                    <option value="2">2 Adultos</option>
+                    <option value="3">3 Adultos</option>
+                </select>
+            }
+            @else {
+                <select style="width: 220px; cursor: pointer; padding-right: -20px;" formControlName="passageiros" >
+                    <option value="1">1 Adulto</option>
+                    <option value="2">2 Adultos</option>
+                    <option value="3">3 Adultos</option>
+                </select>
+            }
         </div>
 
 
         
-        <div class="campo data-ida">
-            <label class="titulo-campo"><strong>Ida</strong></label>
-            <input type="date" value="yyyy-MM-dd" formControlName="data_ida" id="data_ida" style="padding-left: 20px; padding-right: 20px;"/>
-        </div>
-        @if (FormPesquisa.value.ida == "ida-e-volta"){
-            Pila
-        }
+        <div class="campo data-ida" >
+            <div style="display: flex;">
+                <label class="titulo-campo"><strong>Ida</strong></label> 
 
-        <div class="campo hora-ida">
-            <label class="titulo-campo" ><strong>Hora de Ida</strong></label>
-            <input type="time" formControlName="hora_ida" style="width: 255px; padding-left: 15px; padding-right: 25px;"/>
+                @if(FormPesquisa.value.ida == "ida-e-volta") {
+                  <label class="titulo-campo" style="margin-left: 100px;"><strong>Volta</strong></label>
+                }
+            </div>
+            
+            <div style="display: flex;">
+            @if (FormPesquisa.value.ida == "ida-e-volta"){
+                <input type="date" value="yyyy-MM-dd" formControlName="data_ida" style="padding-left: 15px; padding-right: 20px; min-width: 150px; cursor: text;"/>
+                <input type='date' value="yyyy-MM-dd" formControlName="data_volta" style='padding-left: 15px; padding-right: 10px; width: 130px; margin-left: -75px; cursor: text;'>
+            }
+            @else { <!--ida-->
+                <input type="date" value="yyyy-MM-dd" formControlName="data_ida" style="padding-left: 15px; padding-right: 20px; cursor: text;"/>
+            }
+            </div>  
         </div>
-        @if (FormPesquisa.value.ida == "ida-e-volta"){
-            Pila
-        }
+
+        <div class="campo hora-ida" style="display: flex;">
+            <div style="display: flex;">
+                <label class="titulo-campo" ><strong>Hora de ida</strong></label>
+                @if (FormPesquisa.value.ida == "ida-e-volta") {
+                    <label class="titulo-campo" style="margin-left: 50px;"><strong>Hora de volta</strong></label>
+                }
+            </div>
+
+            <div style="display: flex;">
+                @if (FormPesquisa.value.ida == "ida-e-volta"){
+                    <input type="time" formControlName="hora_ida" style="width: 200px; padding-left: 15px; padding-right: 25px; cursor: text;"/>
+                    <input type="time" formControlName="hora_volta" style="width: 130px; padding-left: 15px; padding-right: 25px; margin-left: -90px; cursor: text;"/>
+                }
+                @else {
+                    <input type="time" formControlName="hora_ida" style="padding-left: 15px; padding-right: 25px; cursor: text;"/>
+                }
+            </div>
+        </div>
 
         @if (!PaginaViagens){
             <ng-container *ngTemplateOutlet="ButaoProcurar"></ng-container>
         }
     </div>
+    
 
 </form>
 

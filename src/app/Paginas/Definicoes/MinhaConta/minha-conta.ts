@@ -25,6 +25,7 @@ export class JanelaMinhaConta {
   CarregamentoVisivel = false
   SelecionarImagem = false
   Desativado = true;
+  ModalSucessoVisivel: boolean = false;
 
 
   constructor() {
@@ -90,11 +91,19 @@ export class JanelaMinhaConta {
       this.FormEditar.value) // O body equivale ao valor do form criar. Este .value e um array, com o nome de todos os campos e os seus valores
 
     if (Resultado) {
-      await this.router.navigate(['/definicoes/minha-conta'])
-      window.location.reload()
+      this.ModalSucessoVisivel = true
+      //await this.router.navigate(['/definicoes/minha-conta'])
     }
     this.FormEditar.enable()
   }
+
+
+
+  // funcao para fechar o modal
+  FecharModalSucesso() {
+    this.ModalSucessoVisivel = false;
+    window.location.reload();
+  } 
 
 
 
