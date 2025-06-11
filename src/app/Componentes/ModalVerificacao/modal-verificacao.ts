@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, inject} from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject, HostBinding } from '@angular/core';
 import { RouterModule, } from '@angular/router';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
@@ -14,23 +14,32 @@ import { Definicoes } from '../../Definicoes';
 })
 
 export class ModalVerificacao {
-  @Output() close = new EventEmitter<void>();
+  private _aberto = true;
+
+  @Input()
+  set Aberto(value: boolean) {
+    this._aberto = value;
+  }
+
+  get Aberto(): boolean {
+    return this._aberto;
+  }
+
+  @HostBinding('style.display')
+  get display(): string {
+    return this._aberto ? '' : 'none';
+  }
+
   @Output() submetido = new EventEmitter<number>();
 
   router = inject(Router);
   ServicoAutenticacao = inject(ServicoAutenticacao);
   ServicoHttp = inject(HttpService);
-  
-  Caminho = this.router.url
 
-  onFechar() {
-    this.close.emit();
-  }
+  Caminho = this.router.url
 
 
   async ReenviarCodigo() {
-    // Aqui você pode implementar a lógica para reenviar o código de verificação
-    console.log('Reenviar código de verificação');
   }
 
   // Formulário de verificação
@@ -46,9 +55,9 @@ export class ModalVerificacao {
     }
   }
 
-  SubmeterModal(){
+  SubmeterModal() {
     this.submetido.emit(this.FormVerificacao.value.codigo);
   }
 
-    
+
 }

@@ -5,7 +5,6 @@ import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
 import { HttpService } from '../../Services/Http.service';
 import { Definicoes } from '../../Definicoes';
 import { FormsModule, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { ModalVerificacao } from "../../Componentes/ModalVerificacao/modal-verificacao";
 import { CurrencyPipe } from '@angular/common';
 
 

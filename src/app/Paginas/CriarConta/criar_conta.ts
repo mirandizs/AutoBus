@@ -20,6 +20,7 @@ export class PaginaCriarConta {
   MostrarFotoCriarConta = false
   SelecionarImagens = false
   ModalCodigo = false
+  ACriarConta = false
   
   ngOnInit() {
     if (this.SelecionarImagens === true) {
@@ -31,22 +32,64 @@ export class PaginaCriarConta {
   router = inject(Router)
 
 
-  async SubmeterForm(){
-    /*this.FormCriar.disable()*/
+  URL_Imagens = Definicoes.API_URL + 'imagens/utilizador'
 
-    const Resultado = await this.ServicoHttp.Request(Definicoes.API_URL+'criar_conta', 'POST', 'Nao foi possivel criar a conta', 
-      this.FormCriar.value) // O body equivale ao valor do form criar. Este .value e um array, com o nome de todos os campos e os seus valores
+  async VerificarConta(codigo:number){
+    const SucessoConta = await this.ServicoHttp.Request(Definicoes.API_URL+'verificar_conta', 'POST', 'Nao foi possivel verificar a conta', {
+      codigo:codigo
+    })
 
-    if (Resultado){
-      this.router.navigate(['/foto_perfil'])
+    if (SucessoConta){
+      this.router.navigate(['/inicial']).then(()=>{
+        window.location.reload()
+      })
     }
+  }
+  
+  async CriarConta(){
+    /*this.FormCriar.disable()*/
+    this.ACriarConta = true
+
+    const SucessoConta = await this.ServicoHttp.Request(Definicoes.API_URL+'criar_conta', 'POST', 'Nao foi possivel criar a conta', 
+      this.FormCriar.value)
+
+    if (SucessoConta){
+      if (this.FicheiroSelecionado){
+        const Data = new FormData()
+        Data.append('foto', this.FicheiroSelecionado)
+
+        const SucessoImagem = await this.ServicoHttp.Request(this.URL_Imagens, 'POST', 'Nao foi possivel editar a foto da conta', Data)
+
+        this.ModalCodigo = true
+      }
+    }
+
+    
+    this.ACriarConta = false
     this.FormCriar.enable()
   }
 
-  FormFoto:FormGroup = new FormGroup({
-    foto: new FormControl('', [Validators.required]),
-  });
+  FicheiroSelecionado?:File
+  ImagemSelecionada?:string|ArrayBuffer|null
 
+  async PreverImagem(Ficheiro: File) {
+    if (Ficheiro){
+    const reader = new FileReader();
+
+    this.FicheiroSelecionado = Ficheiro
+
+    reader.onload = () => {
+      this.ImagemSelecionada = reader.result
+    };
+
+    reader.readAsDataURL(Ficheiro);
+    }
+  }
+
+  async ImagemMudada(Event:Event){
+    const Input = Event.target as HTMLInputElement
+    this.PreverImagem(Input.files![0])
+  }
 
   // definir o form com estrutura, campos e validacoes
   FormCriar:FormGroup = new FormGroup({
@@ -106,4 +149,70 @@ export class PaginaCriarConta {
       event.preventDefault();
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+  preencherFormComValoresAleatorios() {
+    const randomNif = () => {
+      const prefixos = [1, 2, 5, 6, 7, 9];
+      const prefix = prefixos[Math.floor(Math.random() * prefixos.length)];
+      let nif = prefix.toString();
+      for (let i = 0; i < 8; i++) {
+        nif += Math.floor(Math.random() * 10);
+      }
+      return nif;
+    };
+    const randomTelemovel = () => {
+      let tel = '9';
+      for (let i = 0; i < 8; i++) {
+        tel += Math.floor(Math.random() * 10);
+      }
+      return tel;
+    };
+    const randomEmail = () => {
+      const dominios = ['gmail.com', 'yahoo.com', 'hotmail.com'];
+      const dominio = dominios[Math.floor(Math.random() * dominios.length)];
+      const user = Math.random().toString(36).substring(2, 10);
+      return `teste_${user}@${dominio}`;
+    };
+    this.FormCriar.setValue({
+      nome: 'Teste',
+      nif: randomNif(),
+      password: 'Teste1234',
+      nascimento: '1990-01-01',
+      telefone: randomTelemovel(),
+      localidade: 'Lisboa',
+      email: randomEmail(),
+      confirm_password: 'Teste1234',
+    });
+  }
 }
+
+
+// DA PRINT AOS VALORES INVALIDPS DO FORM A CADA 2 SEGUDOS
+ // setInterval(() => {
+
+    //   const invalidFields = [];
+    //   const controls = this.FormCriar.controls;
+    //   for (const name in controls) {
+    //     if (controls[name].invalid) {
+    //       invalidFields.push({
+    //         field: name,
+    //         errors: controls[name].errors
+    //       });
+    //     }
+    //   }
+    //   console.log('Invalid fields:', invalidFields);
+    //   return invalidFields;
+    
+    // }, 1
+    //2000)

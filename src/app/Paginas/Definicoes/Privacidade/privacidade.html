@@ -10,13 +10,14 @@
 
             <!-- EMAIL -->
             <label>Email:</label><br>
-            <input formControlName="email"  type='email' class='info caixa'>
-            <button type='submit' class='editar imagemEditar' [disabled]="Utilizador()?.email == FormPrivacidade.value.email" 
-            (click)="ModalCodigo = true; TipoEdicao='email'"> 
+            <input formControlName="email" type='email' class='info caixa'>
+            <button type='submit' class='editar imagemEditar'
+                [disabled]="Utilizador()?.email == FormPrivacidade.value.email"
+                (click)="ModalCodigo = true; TipoEdicao='email'">
                 <img src='img/lapis.png' width='20px' height='20px'>
             </button><br><br>
 
-            
+
             <!-- PASSWORD -->
             <label>Password:</label><br>
             <input formControlName="password" [type]="PasswordVisivel ? 'text' : 'password'" class='info caixa'>
@@ -25,7 +26,7 @@
             </button>
 
             <button type='submit' class='editar imagemEditar' [disabled]="FormPrivacidade.invalid"
-            (click)="ModalCodigo = true; TipoEdicao='password'">
+                (click)="ModalCodigo = true; TipoEdicao='password'">
                 <img src='img/lapis.png' width='20px' height='20px'>
             </button><br><br><br>
 
@@ -35,7 +36,5 @@
     </div>
 </form>
 
-@if (ModalCodigo) {
-    <carregamento [Visivel]="AMandarEmail"></carregamento>
-    <modal-verificacao (submetido)="EditarCredenciais($event)" (close)="ModalCodigo = false"></modal-verificacao>
-}
+<carregamento [Visivel]="AMandarEmail"></carregamento>
+<modal-verificacao (submetido)="EditarCredenciais($event)" [Aberto]="ModalCodigo"></modal-verificacao>

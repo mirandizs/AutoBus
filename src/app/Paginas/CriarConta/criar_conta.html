@@ -2,7 +2,7 @@
 
   <div class="box">
 
-    <!--<header>AutoBus</header>--> 
+    <!--<header>AutoBus</header>-->
 
     <h1 class="logoTexto">AutoBus</h1>
 
@@ -10,28 +10,30 @@
 
     <h2>Novo Registo</h2>
 
-    <form [formGroup]="FormCriar" (ngSubmit)="SubmeterForm()">
+    <form [formGroup]="FormCriar">
 
       <div class="row">
         <div class="column left">
           <!-- NOME -->
           <label><strong>Nome*</strong></label><br>
-          <input type="text" formControlName="nome" style="padding-left:10px;" (input)="permitirApenasLetras($event)" required>
+          <input type="text" formControlName="nome" style="padding-left:10px;" (input)="permitirApenasLetras($event)"
+            required>
           <br><br>
 
           <!-- NIF -->
           <label><strong>NIF*</strong></label><br>
-          <input type="tel" formControlName="nif" style="padding-left:10px;" title="O NIF deve conter 9 números e começar com 1, 2, 5, 6, 7 ou 9." 
-                inputmode="numeric" maxlength="9" placeholder="XXXXXXXXX" (keypress)="permitirApenasNumeros($event)" required>
+          <input type="tel" formControlName="nif" style="padding-left:10px;"
+            title="O NIF deve conter 9 números e começar com 1, 2, 5, 6, 7 ou 9." inputmode="numeric" maxlength="9"
+            placeholder="XXXXXXXXX" (keypress)="permitirApenasNumeros($event)" required>
           <br>
           @if (nif?.invalid && nif?.value){
             <label class="erro-campo">NIF Invalido</label>
           }
           <br>
-          
+
           <!-- EMAIL -->
           <label><strong>E-mail*</strong></label><br>
-          <input type="email" formControlName="email"  style="padding-left:10px;"
+          <input type="email" formControlName="email" style="padding-left:10px;"
             title="O email deve ser @gmail.com, @yahoo.com ou @hotmail.com" placeholder="exemplo@gmail.com" required>
           <br><br>
 
@@ -40,7 +42,7 @@
           <input formControlName="password" class="campoTexto" style="padding-left:10px;"
             [type]="MostarPassword ? 'text' : 'password'"
             title="Deve conter pelo menos um número, uma letra maiúscula e pelo menos 8 ou mais caracteres" required>
-          
+
 
           <button type="button" class="ver" (click)="MostarPassword = !MostarPassword">
             <img [src]="MostarPassword ? 'img/aberto.png' : 'img/fechado.png'" width="20px" height="20px">
@@ -54,34 +56,36 @@
 
           <!-- DATA DE NASCIMENTO -->
           <label><strong>Data de Nascimento*</strong></label><br>
-          <input type="date" formControlName="nascimento" style="padding-right:10px; padding-left:10px;" title="Tem de ser maior de 18 anos." maxlength="8"
-                  (keypress)="permitirApenasNumeros($event)" required>
+          <input type="date" formControlName="nascimento" style="padding-right:10px; padding-left:10px;"
+            title="Tem de ser maior de 18 anos." (keypress)="permitirApenasNumeros($event)">
           <br><br>
 
           <!-- TELEMOVEL -->
           <label><strong>Telemóvel*</strong></label><br>
-          <input type="tel" formControlName="telefone" style="padding-left:10px;" title="O número de telemóvel deve conter 9 números e deve iniciar com 9." 
-                maxlength="9" placeholder="9XXXXXXXX" (keypress)="permitirApenasNumeros($event)" required>
+          <input type="tel" formControlName="telefone" style="padding-left:10px;"
+            title="O número de telemóvel deve conter 9 números e deve iniciar com 9." maxlength="9"
+            placeholder="9XXXXXXXX" (keypress)="permitirApenasNumeros($event)" required>
           <br>
           @if (telefone?.invalid && telefone?.value){
             <label class="erro-campo">O número de telemóvel deve conter 9 números e deve iniciar com 9.</label>
           }
           <br>
-          
+
           <!-- LOCALIDADE -->
           <label><strong>Localidade*</strong></label><br>
-          <input type="text" formControlName="localidade"style="padding-left:10px;" placeholder="Ex: Coimbra" (input)="permitirApenasLetras($event)" required>
+          <input type="text" formControlName="localidade" style="padding-left:10px;" placeholder="Ex: Coimbra"
+            (input)="permitirApenasLetras($event)" required>
           <br><br>
 
           <!-- CONFIRMAR PALAVRA-PASSE -->
           <label for=pass><strong>Confirmar palavra-passe*</strong></label><br>
           <input formControlName="confirm_password" style="padding-left:10px;"
             [type]="MostarConfirmacaoPassword ? 'text' : 'password'" required>
-          <button type="button" class="ver" (click)="MostarConfirmacaoPassword = !MostarConfirmacaoPassword" >
+          <button type="button" class="ver" (click)="MostarConfirmacaoPassword = !MostarConfirmacaoPassword">
             <img [src]="MostarConfirmacaoPassword ? 'img/aberto.png' : 'img/fechado.png'" width="20px" height="20px">
           </button>
 
-          
+
           @if (confirm_password?.hasError('PasswordNaoIgual') && confirm_password?.value){
             <br>
             <label class="erro-campo">As passwords nao condizem</label>
@@ -90,12 +94,14 @@
       </div>
 
 
+
       <div style="display:flex; justify-content: space-between; margin-right: 30px;">
         <a routerLink="/inicial">
           <button type="button" value="Voltar" class="botaoVoltar">Voltar</button>
         </a>
-        
-        <button type="button" class="botaoCriar" (click)="MostrarFotoCriarConta = true">Avançar</button><!--[disabled]="FormCriar.invalid"-->
+
+        <button type="button" class="botaoCriar" (click)="MostrarFotoCriarConta = true"
+          [disabled]="FormCriar.invalid">Avançar</button><!--[disabled]="FormCriar.invalid"-->
       </div>
 
       <div id="popup" class="modal">
@@ -134,7 +140,7 @@
 @if (MostrarFotoCriarConta){
   <div class="caixa">
     <div style="display: flex; justify-content: center; align-items: center;">
-      <form [formGroup]="FormFoto" (ngSubmit)="SubmeterForm()" enctype="multipart/form-data">
+      <form>
         <div style="display:flex; align-items: center;">
           <!-- <a href="criarConta.php" style="text-decoration: none; color: white; padding-right: 20px;">
             <img class="imagemVolt" src="img/voltarr.png">
@@ -148,12 +154,13 @@
         <label style="margin-left: 70px;">Insira uma imagem para o teu perfil de utilizador!</label><br><br>
 
         <a>
-          <img class='imagemUti' id='preview' src="" onerror='this.src="img/default.png"'>
+          <img class='imagemUti' id='preview' [src]="ImagemSelecionada" onerror='this.src="img/default.png"'>
         </a><br>
 
         <div style="display:flex; justify-content: center; align-items: center;">
           <label for="file" class="file-label">Carregar imagem</label>
-          <input type="file" accept="image/*" id="file" class="file-input" name="foto" onchange="previewImage(event)"><br>
+          <input type="file" accept="image/*" id="file" class="file-input" name="foto"
+            (change)="ImagemMudada($event)"><br>
 
           <label class="file-label" style="margin-left: 10px;">Selecionar imagem
             <input type="button" class="file-input" (click)="SelecionarImagens = true"><br>
@@ -161,21 +168,25 @@
         </div>
 
 
-        <button type='button' class="botaoCriarConta" style='margin-right: 250px; margin-left:5px' routerLink="/inicial">Alterar depois</button>
+        <button type='button' class="botaoCriarConta" style='margin-right: 250px; margin-left:5px'
+          (click)="ModalCodigo = true">Alterar depois</button>
 
 
         <input type="button" class="botaoCriarConta" (click)="ModalCodigo = true" value="Criar conta">
-        
-        <carregamento></carregamento>
 
-        @if (ModalCodigo) {
-          <modal-verificacao (close)="ModalCodigo = false"></modal-verificacao>
-        }
+        <carregamento [Visivel]="ACriarConta"></carregamento>
+
+
       </form>
     </div>
   </div>
 }
 
+<modal-verificacao [Aberto]="ModalCodigo" (submetido)="VerificarConta($event)"></modal-verificacao>
+
+
+<button (click)="preencherFormComValoresAleatorios()">Preencher</button>
+
 @if (SelecionarImagens) {
-  <seletor-imagens (close)="SelecionarImagens = false"></seletor-imagens>
+  <seletor-imagens (close)="SelecionarImagens = false" (imagemSelecionada)="PreverImagem($event)"></seletor-imagens>
 }
