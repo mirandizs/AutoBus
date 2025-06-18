@@ -1,16 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { Topbar } from '../../Componentes/Topbar/topbar';
-import { Footer } from '../../Componentes/Footer/footer';
 import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
 import { HttpService } from '../../Services/Http.service';
 import { Definicoes } from '../../Definicoes';
 import { FormsModule, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
-
+import { ModalVerificacao } from '../../Componentes/ModalVerificacao/modal-verificacao';
 
 @Component({
   selector: 'pagina-carrinho',
-  imports: [Topbar, FormsModule, ReactiveFormsModule, CurrencyPipe],
+  imports: [Topbar, FormsModule, ReactiveFormsModule, CurrencyPipe, ModalVerificacao],
   templateUrl: './carrinho.html',
   styleUrl: './carrinho.css'
 })
