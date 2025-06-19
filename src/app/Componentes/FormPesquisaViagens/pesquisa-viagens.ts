@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, HostBinding, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
 import { Definicoes } from '../../Definicoes';
@@ -18,6 +18,8 @@ export class FormPesquisaViagens {
 
   PaginaAtiva = this.router.url
   PaginaViagens = this.router.url.includes('viagens')
+  @HostBinding("class.pagina-viagens") pag_vig = this.PaginaViagens
+
   Ida = true
   Volta = false
 

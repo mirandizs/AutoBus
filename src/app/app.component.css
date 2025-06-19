@@ -1,1 +1,5 @@
 /* Nao adicionar nada, a nao ser que se seja css para o app.component.html */
+
+.contentor-pagina{
+    width: 100%;
+}

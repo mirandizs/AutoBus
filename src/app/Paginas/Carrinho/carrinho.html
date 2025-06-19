@@ -19,18 +19,17 @@
        
         @for (Bilhete of Carrinho ; track $index){
             <div class='caixaBilhete'>
-                <div style='display:inline-flex; justify-items:center; text-align: center'>
-                    <br>
+                <div>
                     <a><strong>{{Bilhete.local_partida}} ⮕ {{Bilhete.local_chegada}}</strong></a>
-                    <h2 style='margin-left:670px; margin-top:-4px; float: right; display:flex'>{{Bilhete.preco | currency:'EUR'}}</h2>
-                </div><br>
+                    <h2>{{Bilhete.preco | currency:'EUR'}}</h2>
+                </div>
     
-                <a style='margin-right:360px;'>Hora de partida: {{Bilhete.hora_partida}}</a>
-    
-                
-                <button class='btCarrinho' (click)="removerBilhete(Bilhete.id_produto)">
-                    <img src="img/carrinhoExcluirA.png" style="height: 25px; width: 25;">
-                </button>
+                <div>
+                    <a>Hora de partida: {{Bilhete.hora_partida}}</a>
+                    <button class='btCarrinho' (click)="removerBilhete(Bilhete.id_produto)">
+                        <img src="img/carrinhoExcluirA.png" style="height: 25px; width: 25;">
+                    </button>
+                </div>
                 <!--<button class='botaoTransicao verMais'></button>-->
             </div>
         }        
@@ -38,15 +37,15 @@
 
     <!--CAIXA DE RESUMO DA COMPRA-->
     <div class="column right">
-        <h2 style="text-align: center; margin-top: 150px; margin-bottom:100px; color: rgb(5, 5, 96);">Resumo da compra:</h2>
+        <h2 style="text-align: center; margin-top: 120px; margin-bottom:50px; color: rgb(5, 5, 96);">Resumo da compra:</h2>
 
         <div class="caixaTotal">
-            <div style="display: flex; margin-top: 10px;">
-                <label><strong>Total a pagar: </strong></label>
-                <p style="margin-left: 245px; margin-top: 2px;"><strong>{{Total | currency:"EUR"}}</strong></p> <!--MOSTRAR O PRECO TOTAL -->
+            <div style="display: flex; margin-top: 10px; padding-bottom: 5%; justify-content: space-between;">
+                <strong>Total a pagar: </strong>
+                <strong>{{Total | currency:"EUR"}}</strong>
             </div>
 
-            <hr style='border: 1px solid black; margin-left: 0px; margin-right: 10px; margin-top: 10px; width: 380px;'><br>
+            <hr><br>
 
             <button id="openModal" class="botaoFinalizar botaoTransicao" (click)="ModalMetodo = true">Finalizar compra</button> <!--para ao clicar, aparecer o formulario de pagamento //// 
             (click)="realizarCompra()"  (click)="ModalMetodo = true"-->

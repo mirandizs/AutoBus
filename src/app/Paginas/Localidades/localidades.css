@@ -40,7 +40,15 @@
 }
 
 .caixaImg {
-  margin-left: 40px;
+}
+
+.cidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 16px; /* optional: space between items */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 50px;
 }
 
 /* BOTAO PARA VOLTAR IR PARA O TOPO DE PÁGINA */

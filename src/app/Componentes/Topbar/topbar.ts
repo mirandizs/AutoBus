@@ -10,7 +10,7 @@ import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
   selector: 'topbar',
   imports: [RouterModule, Carregamento, FormsModule, ReactiveFormsModule],
   templateUrl: './topbar.html',
-  styleUrl: './topbar.css'
+  styleUrl: './topbar.less'
 })
 
 

@@ -5,28 +5,34 @@ body {
 
 .titulo {
   color: rgb(5, 5, 96);
-  margin-left: 40px;
-  margin-top: 40px;
   margin-bottom: 60px;
 }
 
 /* div dos bilhetes */
 .caixaBilhete {
-  width: 900px;
-  height: 100px;
+  width: 100%;
+  height: 150px;
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.1);
-  margin-left: 40px;
   border: 2px solid rgb(9, 9, 140);
 
+  padding-right: 30px;
   padding-left: 30px;
-  padding-right: 5px;
-  padding-top: 30px;
+  padding-top: 20px;
   /*padding-bottom: 20px;*/
-  
+
+  box-sizing: border-box;
+
   transition: 0.4s;
   margin-bottom: 15px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
 }
 
 /*.caixaBilhete:hover {
@@ -47,7 +53,6 @@ body {
   border: none;
   border-color: transparent;
   outline: none;
-  position: absolute;
   background-size: contain;
   background-color: transparent;
   width: 28px;
@@ -55,7 +60,6 @@ body {
   border: none;
   cursor: pointer;
   transition: 0.4s;
-  margin-left:300px;
 }
 
 .btCarrinho:hover {
@@ -67,20 +71,23 @@ body {
 .column {
   background-color: transparent;
 }
-  
+
 .left {
   width: 70%;
-  margin: 0%;
 }
 
 .right {
-  width: 40%;
-  margin: 0%;
+  width: 30%;
+  max-width: 30%;
 }
 
-.row{
+.row {
   display: flex;
-  margin: 0%;
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  padding: 40px;
+  gap: 40px;
 }
 
 
@@ -94,15 +101,25 @@ body {
 /* caixa sobre o preco total */
 .caixaTotal {
   background-color: rgb(231, 231, 231);
-  width: 400px;
+  width: 100%;
   height: 300px;
   border-radius: 10px;
 
-  margin-left: 70px;
-
+  margin-top: 110px;
   padding-top: 20px;
   padding-left: 20px;
-  padding-right: 10px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  hr {
+    border: 1px solid black;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 100%;
+  }
 }
 
 /* botao para finalizar a compra */
@@ -110,17 +127,19 @@ body {
   color: rgb(0, 0, 0);
   background-color: rgb(231, 231, 231);
   height: 35px;
-  width: 200px;
+  width: 70%;
+  justify-self: center;
+  align-self: center;
   border-radius: 10px;
   border-color: rgb(4, 4, 77);
 
   align-items: center;
 }
 
-.botaoFinalizar:hover {   
+.botaoFinalizar:hover {
   background-color: rgb(9, 9, 127);
   color: white;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 
@@ -145,7 +164,8 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* fundo escuro */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* fundo escuro */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,7 +177,8 @@ body {
 .modal-payment {
   position: absolute;
 
-  z-index: 2; /* acima do fundo */
+  z-index: 2;
+  /* acima do fundo */
   background-color: #fff;
   height: 270px;
   width: 380px;
@@ -165,15 +186,18 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   padding: 25px 20px;
   padding-bottom: 30px;
-  transform: translateY(-50px); /* Iniciar acima */
-  animation: slideIn 0.5s forwards; /* Animação de deslizamento */
+  transform: translateY(-50px);
+  /* Iniciar acima */
+  animation: slideIn 0.5s forwards;
+  /* Animação de deslizamento */
 }
 
 /* modal dos metodos de pagamento (cartao de credito e mbway)*/
 .modalTipoPagamentoCartao {
   position: absolute;
-  
-  z-index: 2; /* acima do fundo */
+
+  z-index: 2;
+  /* acima do fundo */
   background-color: #fff;
   height: 430px;
   width: 380px;
@@ -183,13 +207,15 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   padding: 25px 20px;
   padding-bottom: 30px;
-  animation: slideFromRight 0.5s forwards; /* Animação de deslizamento */
+  animation: slideFromRight 0.5s forwards;
+  /* Animação de deslizamento */
 }
 
 .modalTipoPagamentoMB {
   position: absolute;
-  
-  z-index: 2; /* acima do fundo */
+
+  z-index: 2;
+  /* acima do fundo */
   background-color: #fff;
   height: 300px;
   width: 380px;
@@ -199,14 +225,16 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   padding: 25px 20px;
   padding-bottom: 30px;
-  animation: slideFromRight 0.5s forwards; /* Animação de deslizamento */
+  animation: slideFromRight 0.5s forwards;
+  /* Animação de deslizamento */
 }
 
 /* modal do envio de codigo */
 .modalCodigo {
   position: relative;
 
-  z-index: 2; /* acima do fundo */
+  z-index: 2;
+  /* acima do fundo */
   background-color: #fff;
   height: 350px;
   width: 380px;
@@ -216,42 +244,50 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   padding: 25px 20px;
   padding-bottom: 30px;
-  padding-right:30px;
-  animation: slideFromRight 0.5s forwards; /* Animação de deslizamento */
+  padding-right: 30px;
+  animation: slideFromRight 0.5s forwards;
+  /* Animação de deslizamento */
 }
 
 
 /* animacao para o modalmetodo*/
 @keyframes slideIn {
   0% {
-      transform: translateY(-50px); /* Iniciar acima */
-      opacity: 0;
+    transform: translateY(-50px);
+    /* Iniciar acima */
+    opacity: 0;
   }
+
   100% {
-      transform: translateY(0); /* Ficar no lugar */
-      opacity: 1;
+    transform: translateY(0);
+    /* Ficar no lugar */
+    opacity: 1;
   }
 }
 
 /* animacao para os modals dos metodos de pagamento (aparicao) */
 @keyframes slideFromRight {
   0% {
-      transform: translateX(100%); /* Começa fora da tela à direita */
-      opacity: 0;
+    transform: translateX(100%);
+    /* Começa fora da tela à direita */
+    opacity: 0;
   }
+
   100% {
-      transform: translateX(0); /* Termina no lugar */
-      opacity: 1;
+    transform: translateX(0);
+    /* Termina no lugar */
+    opacity: 1;
   }
 }
 
 /* Animação para o modal que vai da direita para a esquerda */
 @keyframes slideLeft {
   from {
-      transform: translateX(100%);
+    transform: translateX(100%);
   }
+
   to {
-      transform: translateX(0);
+    transform: translateX(0);
   }
 }
 
@@ -260,6 +296,7 @@ body {
     transform: translateX(0);
     opacity: 1;
   }
+
   to {
     transform: translateX(100%);
     opacity: 0;
@@ -272,7 +309,8 @@ body {
   z-index: 1000;
 }
 
-#modalCartao, #modalMbway {
+#modalCartao,
+#modalMbway {
   z-index: 1001;
 }
 
@@ -360,7 +398,8 @@ body {
   margin-left: 30px;
   display: flex;
   align-items: center;
-  gap: 10px; /* Espaço entre radio e texto */
+  gap: 10px;
+  /* Espaço entre radio e texto */
 
   border-radius: 10px;
   padding-left: 10px;
@@ -368,11 +407,12 @@ body {
 }
 
 .caixaEscolha:hover {
-  background:rgb(240, 240, 240);
+  background: rgb(240, 240, 240);
 }
 
 input[type="radio"] {
-  accent-color: rgb(6, 6, 124); /* muda esta cor como quiseres */
+  accent-color: rgb(6, 6, 124);
+  /* muda esta cor como quiseres */
   transition: all 0.3s ease;
 }
 
@@ -383,19 +423,19 @@ input[type="radio"] {
   position: relative;
   margin-bottom: 30px;
   width: 300px;
-  }
+}
 
-  .form-group input{
+.form-group input {
   padding: 14px 10px;
   padding-left: 20px;
   border: 1px solid #999;
   border-radius: 5px;
   font-size: 14px;
   background: none;
-  outline: none;  
-  }
+  outline: none;
+}
 
-  .form-group label {
+.form-group label {
   position: absolute;
   top: 14px;
   left: 12px;
@@ -405,41 +445,42 @@ input[type="radio"] {
   font-size: 14px;
   pointer-events: none;
   transition: all 0.2s ease;
-  }
+}
 
-  .form-group input:focus + label,
-  .form-group input:not(:placeholder-shown) + label{
+.form-group input:focus+label,
+.form-group input:not(:placeholder-shown)+label {
   top: -8px;
   left: 10px;
   font-size: 12px;
   color: #000;
-  background:rgb(255, 255, 255);
-  }
+  background: rgb(255, 255, 255);
+}
 
-  .form-group select:invalid {
+.form-group select:invalid {
   color: gray;
-  }
+}
 
-  .input-pequeno {
+.input-pequeno {
   width: 100px;
-  }
+}
 
-  .input-medio {
+.input-medio {
   width: 200px;
-  }
+}
 
-  .input-grande {
+.input-grande {
   width: 300px;
-  }
+}
 
 
 /* botao para escolher o metodo de pagamento*/
 .btnEscolha {
-  margin-top:3px; 
-  cursor: pointer; 
-  background-color: transparent; 
-  border:none; width: 300px; 
-  height:50px; 
+  margin-top: 3px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  width: 300px;
+  height: 50px;
   text-align: left;
 }
 
@@ -457,10 +498,10 @@ input[type="radio"] {
   margin-left: 70px;
 }
 
-.btnContinuarPay:hover {   
+.btnContinuarPay:hover {
   background-color: rgb(9, 9, 127);
   color: white;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 
@@ -482,7 +523,7 @@ input[type="radio"] {
   padding: 8px;
   outline: none;
 
-  margin-left:80px;
+  margin-left: 80px;
   font-size: 30px;
   text-align: center;
 }
@@ -500,6 +541,6 @@ input[type="radio"] {
   align-items: center;
 }
 
-.botaoVerificar:hover{
-background-color: rgb(9, 9, 127);
+.botaoVerificar:hover {
+  background-color: rgb(9, 9, 127);
 }

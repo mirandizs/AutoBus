@@ -21,7 +21,7 @@
         }
     </div><br><br>
 
-    <div class="row" style="gap:20px; padding-left: 40px;">
+    <div class="row" style="gap:20px; padding-left: 40px;" [class.pagina-viagens]="PaginaViagens">
         <div class="campo">
             <label class="titulo-campo"><strong>Partida</strong></label>
             <div class="input-icon">
@@ -89,7 +89,7 @@
 
             <div style="display: flex;">
                 @if (FormPesquisa.value.ida == "ida-e-volta"){
-                    <input type="time" formControlName="hora_ida" style="width: 200px; padding-left: 15px; padding-right: 25px; cursor: text;"/>
+                    <input type="time" formControlName="hora_ida" style="padding-left: 15px; padding-right: 25px; cursor: text;"/>
                     <input type="time" formControlName="hora_volta" style="width: 130px; padding-left: 15px; padding-right: 25px; margin-left: -90px; cursor: text;"/>
                 }
                 @else {

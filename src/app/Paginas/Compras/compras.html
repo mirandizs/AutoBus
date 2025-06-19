@@ -2,59 +2,58 @@
 
 
 <div class="pagina">
-    
+
     <h1 class="titulo">Compras realizadas</h1>
 
 
     @if (Compras.length === 0) {
-        <h3 style="text-align: center; margin-top: 100px; color: rgb(5, 5, 96);">Não existem compras registadas!</h3>
-    } 
-    
+    <h3 style="text-align: center; margin-top: 100px; color: rgb(5, 5, 96);">Não existem compras registadas!</h3>
+    }
+
     @else {
-        <h4 style="text-align: center;">Caso deseje fazer o download do recibo, basta clicar no botão de download!</h4><br>
+    <h4 style="text-align: center;">Caso deseje fazer o download do recibo, basta clicar no botão de download!</h4><br>
     }
     <!-- <h2 style="text-align: center; margin-bottom:70px; color: rgb(5, 5, 96);">Bilhetes</h2> -->
 
 
 
 
-    <div class="tabela-container">
-        <div style="justify-content: center; align-items: center; position: absolute;">
-            <h4>Filtrar por: 
-                <select class="select-filtro" (change)="onFiltroAlterado($event)"> <!-- [(ngModel)]="filtro"-->
-                    <option>A-Z</option>
-                    <option>Z-A</option>
-                    <option>Mais recente</option>
-                    <option>Mais antiga</option>
-                    <option>Menor preço</option>
-                    <option>Maior preço</option>
-                </select>
-            </h4><br>
+    <div class="tabela-container" >
+        <h4 style="padding-left: 10%;">Filtrar por:
+            <select class="select-filtro" (change)="onFiltroAlterado($event)"> <!-- [(ngModel)]="filtro"-->
+                <option>A-Z</option>
+                <option>Z-A</option>
+                <option>Mais recente</option>
+                <option>Mais antiga</option>
+                <option>Menor preço</option>
+                <option>Maior preço</option>
+            </select>
+        </h4><br>
 
-            <table class="tabela">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Descrição</th>
-                        <th>Total pago</th>
-                        <th>Recibo</th>
-                    </tr>
-                </thead>  
-                <tbody>
-                    @for (Recibo of Compras ; track $index){
-                        <tr>
-                            <td>{{Recibo.data_compra}}</td>
-                            <td><a><strong>{{Recibo.local_partida}} para {{Recibo.local_chegada}}</strong></a></td>
-                            <td>{{Recibo.preco}}€</td>
-                            <td>
-                                <button class="botao-transferir"  style="display: flex;" (click)="transferirRecibo(Recibo.id_compraRealizada)"> <!--" -->
-                                    <img src="img/transferir.png">
-                                </button>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Total pago</th>
+                    <th>Recibo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (Recibo of Compras ; track $index){
+                <tr>
+                    <td>{{Recibo.data_compra}}</td>
+                    <td><a><strong>{{Recibo.local_partida}} para {{Recibo.local_chegada}}</strong></a></td>
+                    <td>{{Recibo.preco}}€</td>
+                    <td>
+                        <button class="botao-transferir" style="display: flex;"
+                            (click)="transferirRecibo(Recibo.id_compraRealizada)"> <!--" -->
+                            <img src="img/transferir.png">
+                        </button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>

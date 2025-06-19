@@ -3,6 +3,8 @@
 body {
   margin: 0;
   font-family: Calibri, Helvetica, sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 

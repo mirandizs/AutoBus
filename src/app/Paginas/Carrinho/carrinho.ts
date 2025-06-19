@@ -30,6 +30,8 @@ export class PaginaCarrinho {
   Total: number = 0;
 
   async ngOnInit() {
+    this.Total = 0
+
     const Pedido_URL = new URL(Definicoes.API_URL+"carrinho") //api = http://localhost:3000/api/
 
     this.Carrinho = await this.ServicoHTTP.Request(Pedido_URL, "GET") 
@@ -59,17 +61,13 @@ export class PaginaCarrinho {
 
   //funcao para remover um produto do carrinho
   async removerBilhete(idProduto: number) {
-    const Pedido_URL = new URL(Definicoes.API_URL+"/carrinho"+idProduto) //api = http://localhost:3000/api/
 
-    await this.ServicoHTTP.Request(Pedido_URL, "DELETE", "") 
+    const Pedido_URL = new URL(Definicoes.API_URL+"carrinho") //api = http://localhost:3000/api/
 
-    //atualizar o carrinho
-    this.Carrinho = this.Carrinho.filter(produto => produto.id !== idProduto);
-    this.Total = this.Carrinho.reduce((acc, produto) => acc + produto.preco * produto.quantidade, 0);
-    
-    if (this.Carrinho.length === 0) {
-      this.Total = 0; // Reset total if cart is empty
-    }
+    await this.ServicoHTTP.Request(Pedido_URL, "DELETE", "", {id_produto: idProduto}) 
+
+    this.ngOnInit()
+
   }
 
 
