@@ -28,6 +28,7 @@ export class FormPesquisaViagens {
     local_chegada: new FormControl('', []),
     hora_ida: new FormControl('', []),
     data_ida: new FormControl('', []),
+    data_volta: new FormControl('', []),
     passageiros: new FormControl('1', []),
     ida: new FormControl('ida', []), // Valor default e ida
   });

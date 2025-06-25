@@ -7,17 +7,20 @@ import { ButaoVoltar } from "../../Componentes/ButaoVoltar/butao-voltar";
 import { HttpService } from '../../Services/Http.service';
 import { Definicoes } from '../../Definicoes';
 import { CurrencyPipe } from '@angular/common';
+import { Carregamento } from "../../Componentes/Carregamento/carregamento";
 
 @Component({
   selector: 'pagina-viagens',
-  imports: [Topbar, FormPesquisaViagens, ButaoVoltar, CurrencyPipe],
+  imports: [Topbar, FormPesquisaViagens, ButaoVoltar, CurrencyPipe, Carregamento],
   templateUrl: './viagens.html',
-  styleUrl: './viagens.css'
+  styleUrl: './viagens.less'
 })
 export class PaginaViagens {
   route = inject(ActivatedRoute) //informacoes da pagina atual
   ServicoHttp = inject(HttpService)
   
+  ModalAdicionarBilhete : boolean = false;
+
   Viagens : any[] = []
 
   async ngOnInit() { //funcao q é executada quando a pagina inicia 
@@ -34,12 +37,31 @@ export class PaginaViagens {
 
 
 
-  adicionarCarrinho(viagem: any) {
+  async adicionarCarrinho(viagem: any) {
     const URL_Pedido = new URL(Definicoes.API_URL+"carrinho")
 
-    const Resposta = this.ServicoHttp.Request(URL_Pedido,"POST", "", {
-      "id_ponto_partida": viagem.id_ponto_partida,
-      "id_ponto_chegada": viagem.id_ponto_chegada,
-    }) 
+    const queryParams = this.route.snapshot.queryParams;
+
+    try {
+      const Resposta = await this.ServicoHttp.Request(URL_Pedido, "POST", "", {
+        "id_ponto_partida": viagem.id_ponto_partida,
+        "id_ponto_chegada": viagem.id_ponto_chegada,
+        tipo_viagem: queryParams["idaVolta"] === "ida-e-volta" ? "ida-e-volta" : "ida",
+        // data_ida: queryParams["data_ida"],
+        // data_volta: queryParams["data_volta"] === "ida-e-volta" ? queryParams["data_volta"] : null
+      });
+
+      if (Resposta?.success || Resposta?.status === 200) {
+        this.ModalAdicionarBilhete = true;
+      } 
+      
+      else {
+        console.error("Erro na resposta:", Resposta);
+      }
+    } 
+    
+    catch (erro) {
+      console.error("Erro no pedido:", erro);
+    }
   }
 }

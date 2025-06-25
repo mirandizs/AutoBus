@@ -42,6 +42,7 @@ export class ModalVerificacao {
   async ReenviarCodigo() {
   }
 
+  
   // Formulário de verificação
   FormVerificacao: FormGroup = new FormGroup({
     codigo: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]),
@@ -58,6 +59,4 @@ export class ModalVerificacao {
   SubmeterModal() {
     this.submetido.emit(this.FormVerificacao.value.codigo);
   }
-
-
 }

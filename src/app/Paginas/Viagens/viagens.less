@@ -398,3 +398,65 @@ nav {
   opacity: 1;
   transform: translateX(0);
 }
+
+
+
+
+
+
+
+/*  MENSAGEM DE ADICICAO DO BILHETE AO CARRINHO */
+.modal {
+  /* Oculto por padrão */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 30px;
+  border-radius: 4;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Conteúdo do form de login */
+.modal-content {
+  background-color: #fefefe;
+  /*margin: 15% auto 15% auto;*/
+
+  border: 1px solid #888;
+  width: 350px;
+  height: 120px;
+  border-radius: 10px;
+  border: none;
+  color: rgba(3, 3, 59);
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* The Close Button (x) */
+.close {
+  float: right;
+  margin-right: -30px;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}

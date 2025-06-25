@@ -1,15 +1,15 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Output, EventEmitter } from '@angular/core';
 import { Topbar } from '../../Componentes/Topbar/topbar';
 import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
 import { HttpService } from '../../Services/Http.service';
 import { Definicoes } from '../../Definicoes';
-import { FormsModule, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
-import { ModalVerificacao } from '../../Componentes/ModalVerificacao/modal-verificacao';
+import { Carregamento } from '../../Componentes/Carregamento/carregamento';
 
 @Component({
   selector: 'pagina-carrinho',
-  imports: [Topbar, FormsModule, ReactiveFormsModule, CurrencyPipe, ModalVerificacao],
+  imports: [Topbar, FormsModule, ReactiveFormsModule, CurrencyPipe, Carregamento],
   templateUrl: './carrinho.html',
   styleUrl: './carrinho.css'
 })
@@ -24,17 +24,21 @@ export class PaginaCarrinho {
   TipoPagamentoCartao = false
   TipoPagamentoMB = false
   ModalCodigo = false
+  
+  AMandarEmail: boolean = false;
 
-  ServicoHTTP = inject(HttpService)
+  ServicoHttp = inject(HttpService)
   Carrinho : any[] = []
   Total: number = 0;
+
+  @Output() submetido = new EventEmitter<number>();
 
   async ngOnInit() {
     this.Total = 0
 
     const Pedido_URL = new URL(Definicoes.API_URL+"carrinho") //api = http://localhost:3000/api/
 
-    this.Carrinho = await this.ServicoHTTP.Request(Pedido_URL, "GET") 
+    this.Carrinho = await this.ServicoHttp.Request(Pedido_URL, "GET") 
 
     this.Carrinho.forEach((produto: any) => {
       this.Total += produto.preco
@@ -46,7 +50,7 @@ export class PaginaCarrinho {
   async realizarCompra() {
     const Pedido_URL = new URL(Definicoes.API_URL+"comprar") 
 
-    const resultadoCompra = await this.ServicoHTTP.Request(Pedido_URL, "POST", "", {
+    const resultadoCompra = await this.ServicoHttp.Request(Pedido_URL, "POST", "", {
       metodo:  this.TipoPagamentoCartao ? "cartao" : "mb",
       nome_cartao: this.FormCartao.value.nome_cartao,
       numero_cartao: this.FormCartao.value.numero_cartao,
@@ -64,12 +68,25 @@ export class PaginaCarrinho {
 
     const Pedido_URL = new URL(Definicoes.API_URL+"carrinho") //api = http://localhost:3000/api/
 
-    await this.ServicoHTTP.Request(Pedido_URL, "DELETE", "", {id_produto: idProduto}) 
+    await this.ServicoHttp.Request(Pedido_URL, "DELETE", "", {id_produto: idProduto}) 
 
     this.ngOnInit()
-
   }
 
+  async SubmeterModal() {
+    this.AMandarEmail = true
+
+    const EmailMandado = await this.ServicoHttp.Request(Definicoes.API_URL + 'email-confirmacao', 'POST', 
+      'Falha ao enviar o email de confirmação')
+
+    
+    this.ModalMetodo = false
+    this.TipoPagamentoCartao = false
+    this.TipoPagamentoMB = false
+    this.ModalCodigo = false
+      
+    this.AMandarEmail = false
+  }
 
 
 
@@ -82,6 +99,14 @@ export class PaginaCarrinho {
   });
 
 
+  FormCodigo: FormGroup = new FormGroup({
+    codigo: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]),
+  });
+
+
+  // SubmeterModal() {
+  //   this.submetido.emit(this.FormCodigo.value.codigo);
+  // }
 
 
   //funcao para permitir apenas a insercao de letras

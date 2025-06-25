@@ -24,12 +24,27 @@
             <button class='botaoTransicao verMais'>Ver mais detalhes</button>
             <!--</form>-->
 
-            <button class='btCarrinho' (click)="adicionarCarrinho(Viagem)">
+            <button class='btCarrinho' (click)="adicionarCarrinho(Viagem)" >
                 <img src="img/carrinhoAdicionarA.png" style="height: 25px; width: 25;">
             </button>
         </div><br>
     </div>
 }<br><br>
+
+
+@if (ModalAdicionarBilhete){
+    <carregamento></carregamento>
+    <div class='modal'>
+        <div class='modal-content animate'>
+            <div>
+                <span (click)="ModalAdicionarBilhete=false" class='close'>&times;</span>
+                <br><br>
+    
+                <h3>Bilhete adicionado ao carrinho!</h3><br>
+            </div>
+        </div>
+    </div>
+}
 
 <butao-voltar></butao-voltar>
 <!-- <footer-componente></footer-componente> -->

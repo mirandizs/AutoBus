@@ -1,10 +1,10 @@
 <!-- @if (ModalCodigo) { -->
  
-<form  [formGroup]="FormVerificacao" method='POST' (ngSubmit)="SubmeterModal()">
-    <div id='modalVerificacao' class='modal'>
+<form  [formGroup]="FormVerificacao" (ngSubmit)="SubmeterModal()">
+    <div class='modal'>
         <div class='modal-content animate'>
             <!--BOTAO SAIR X-->
-            <div class='imgcontainer' id='sair'>
+            <div class='imgcontainer'>
                 <span (click)="Aberto = false" class='close' title='Fechar'>&times;</span>
             </div><br>
 

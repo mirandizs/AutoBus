@@ -21,6 +21,7 @@ export class Topbar {
 
   ServicoHttp = inject(HttpService)
   ServicoAutenticacao = inject(ServicoAutenticacao)
+  Utilizador = this.ServicoAutenticacao.Utilizador
   Router = inject(Router)
 
   URL_Imagens = Definicoes.API_URL+'imagens/utilizador'
@@ -61,14 +62,12 @@ export class Topbar {
   }
 
   FormLogin = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
+    email: new FormControl('autobus.pap@gmail.com', [Validators.required, Validators.email]),
+    password: new FormControl('123', [Validators.required]),
   });
 
-  // get email() {
-  //   return this.FormLogin.get('email');
-  // }
-  // get password() {
-  //   return this.FormLogin.get('password');
-  // }
+  // FormLogin = new FormGroup({
+  //   email: new FormControl('', [Validators.required, Validators.email]),
+  //   password: new FormControl('', [Validators.required]),
+  // });
 }

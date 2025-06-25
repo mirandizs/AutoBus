@@ -42,13 +42,22 @@
         <div class="caixaTotal">
             <div style="display: flex; margin-top: 10px; padding-bottom: 5%; justify-content: space-between;">
                 <strong>Total a pagar: </strong>
-                <strong>{{Total | currency:"EUR"}}</strong>
+                <strong formControlName="preco">{{Total | currency:"EUR"}}</strong>
             </div>
 
             <hr><br>
+            
+            @if (Carrinho.length == 0) {
+                <button formControlName="openModal" class="botaoFinalizarDisable botaoTransicao" (click)="ModalMetodo = false" [disabled]="Carrinho.length == 0">
+                    Finalizar compra
+                </button> 
+            }
 
-            <button id="openModal" class="botaoFinalizar botaoTransicao" (click)="ModalMetodo = true">Finalizar compra</button> <!--para ao clicar, aparecer o formulario de pagamento //// 
-            (click)="realizarCompra()"  (click)="ModalMetodo = true"-->
+            @else {
+                <button formControlName="openModal" class="botaoFinalizar botaoTransicao" (click)="ModalMetodo = true">
+                    Finalizar compra
+                </button> 
+            }
         </div>
     </div>
 </div>
@@ -85,7 +94,7 @@
     
                 <h2 style="color: rgb(0, 0, 150); margin-bottom: 50px; margin-left: 20px;">Pagamento com cartão de crédito</h2>
     
-                <form [formGroup]="FormCartao">
+                <form [formGroup]="FormCartao" (ngSubmit)="SubmeterModal()">
                     <div style="margin-left:20px;">
                         <div class="form-group">
                             <input type="text" formControlName="nome_cartao"  placeholder=" " required class="input-grande" (input)="permitirApenasLetras($event)"/>
@@ -148,28 +157,34 @@
 
 
         @if (ModalCodigo) {
+            
+            <carregamento [Visivel]="AMandarEmail"></carregamento>
+
             <!--MODAL DE CODIGO DE CONFIRMACAO-->
             
-            <!-- <div id='modalCodigo' class='modalCodigo' style="align-items: center; justify-content: center;">
-                <button class="fechar" id="fecharModal4" (click)="ModalCodigo = false">✖</button><br><br>
+            <div class='modalCodigo' style="align-items: center; justify-content: center;">
+                <button class="fechar" (click)="ModalCodigo = false">✖</button><br><br>
     
                 <h2 style="color: rgb(0, 0, 150); margin-bottom: 30px; margin-left: 20px; text-align: center;">Insira o código de 6 dígitos</h2>
     
-                <p style="margin-left:20px; text-align:center;">Insira o código de verificação que foi enviado para "{{ServicoAutenticacao.Utilizador()?.email}}"</p>
+                <p style="margin-left:20px; text-align:center; margin-bottom: 70 px;">Insira o código de verificação que foi enviado para 
+                    <strong>{{ServicoAutenticacao.Utilizador()?.email}}</strong>
+                </p><br>
     
                 <div class='container'>
-                    <form method='POST'> action='verificar_codigo.php'
-                        <input type='tel' class='codigo' maxlength='6' id='codigo' name='codigo' required><br><br>
+                    <form [formGroup]="FormCodigo"> 
+                        <input type='tel' formControlName="codigo" class='codigo' maxlength='6' (keypress)="permitirApenasNumeros($event)" required>
 
                         <div class='container' style='margin-bottom: 15px; justify-content: center;'>
-                            <button type='submit' class='botaoVerificar botaoTransicao'><strong>Verificar</strong></button>
+                            <button type='submit' class='btnContinuarPay botaoTransicao'><strong>Verificar</strong></button>
                         </div>
                     </form>
                 </div>
-            </div> -->
-            <div style="animation: slideFromRight 0.5s forwards;">
-                <modal-verificacao [Aberto]="ModalCodigo"></modal-verificacao>
             </div>
+
+            <!-- <div style="animation: slideFromRight 0.5s forwards; z-index: 3;">
+                <modal-verificacao [Aberto]="ModalCodigo"></modal-verificacao>
+            </div> -->
         }
 
     </div>

@@ -19,7 +19,7 @@ body {
 
   padding-right: 30px;
   padding-left: 30px;
-  padding-top: 20px;
+  padding-top: 10px;
   /*padding-bottom: 20px;*/
 
   box-sizing: border-box;
@@ -142,6 +142,19 @@ body {
   cursor: pointer;
 }
 
+.botaoFinalizarDisable {
+  height: 35px;
+  width: 70%;
+  justify-self: center;
+  align-self: center;
+  border-radius: 10px;
+  border-color: rgb(0, 0, 0);
+
+  align-items: center;
+  background-color: rgb(200, 200, 200);
+  color: rgb(100, 100, 100);
+  cursor: not-allowed;
+}
 
 
 
@@ -233,10 +246,10 @@ body {
 .modalCodigo {
   position: relative;
 
-  z-index: 2;
+  z-index: 1050;
   /* acima do fundo */
   background-color: #fff;
-  height: 350px;
+  height: 330px;
   width: 380px;
   margin: 5% auto;
   margin-top: 80px;
@@ -291,14 +304,13 @@ body {
   }
 }
 
-@keyframes slideOutRight {
+@keyframes slideOutLeft {
   from {
     transform: translateX(0);
     opacity: 1;
   }
-
   to {
-    transform: translateX(100%);
+    transform: translateX(-100%);
     opacity: 0;
   }
 }
@@ -315,7 +327,7 @@ body {
 }
 
 #modalCodigo {
-  z-index: 1002;
+  z-index: 1050;
 }
 
 
@@ -342,7 +354,7 @@ body {
 }
 
 #modalCartao.outshow {
-  animation: slideOutRight 0.4s forwards;
+  animation: slideOutLeft 0.4s forwards;
   display: block !important;
   opacity: 2;
 }
@@ -356,7 +368,7 @@ body {
 }
 
 #modalMbway.outshow {
-  animation: slideOutRight 0.4s forwards;
+  animation: slideOutLeft 0.4s forwards;
   display: block !important;
   opacity: 1;
 }
@@ -523,6 +535,7 @@ input[type="radio"] {
   padding: 8px;
   outline: none;
 
+  margin-bottom: 30px;
   margin-left: 80px;
   font-size: 30px;
   text-align: center;
@@ -536,9 +549,12 @@ input[type="radio"] {
   padding-bottom: 10px;
   padding-right: 40px;
   padding-left: 40px;
+  justify-self: center; 
+  align-self: center;
   justify-content: center;
   justify-items: center;
   align-items: center;
+  display: flex;
 }
 
 .botaoVerificar:hover {

@@ -14,7 +14,7 @@
 
 .modal-content {
     position: absolute;
-    z-index: 2; /* acima do fundo */
+    z-index: 1050; /* acima do fundo */
 
     background-color: #fefefe;
     margin: 0% auto 0% auto;
