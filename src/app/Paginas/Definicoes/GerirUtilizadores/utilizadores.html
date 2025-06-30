@@ -1,4 +1,4 @@
-<div class="box2 row">
+<div class="caixaContainer row">
     <div class="column left">
         <h2>Gestão de Utilizadores</h2><br>
 
@@ -17,24 +17,25 @@
 
 
             @for (Utilizador of Utilizadores; track $index){
-
-            <tr class="dadosTabela">
-                <td>{{Utilizador.nif}}</td>
-                <td>{{Utilizador.nome}}</td>
-                <td>{{Utilizador.nascimento}}</td>
-                <td>{{Utilizador.telefone}}</td>
-                <td>{{Utilizador.localidade}}</td>
-                <td>{{Utilizador.email}}</td>
-                <td>...</td>
-                <td>{{Utilizador.tipo_utilizador}}</td>
-                <td>
-                    <button type="button" class="editar imagemEditar" id="editarUtilizador"
-                        (click)="MostrarGestao(Utilizador.nif)">
-                        <img src="img/lapis.png" id="edit" width="20px" height="20px">
-                    </button>
-                </td>
-            </tr>
-            }@empty {
+                <tr class="dadosTabela">
+                    <td>{{Utilizador.nif}}</td>
+                    <td>{{Utilizador.nome}}</td>
+                    <td>{{Utilizador.nascimento}}</td>
+                    <td>{{Utilizador.telefone}}</td>
+                    <td>{{Utilizador.localidade}}</td>
+                    <td>{{Utilizador.email}}</td>
+                    <td>...</td>
+                    <td>{{Utilizador.tipo_utilizador}}</td>
+                    <td>
+                        <button type="button" class="editar imagemEditar"
+                            (click)="MostrarGestao(Utilizador.nif)">
+                            <img src="img/lapis.png" width="20px" height="20px">
+                        </button>
+                    </td>
+                </tr>
+            }
+            
+            @empty {
                 <tr>
                     <td colspan="8">Nenhum utilizador encontrado.</td>
                 </tr>

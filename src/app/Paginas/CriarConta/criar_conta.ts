@@ -69,6 +69,8 @@ export class PaginaCriarConta {
     this.FormCriar.enable()
   }
 
+
+
   FicheiroSelecionado?:File
   ImagemSelecionada?:string|ArrayBuffer|null
 
@@ -198,7 +200,7 @@ export class PaginaCriarConta {
 }
 
 
-// DA PRINT AOS VALORES INVALIDPS DO FORM A CADA 2 SEGUDOS
+// DA PRINT AOS VALORES INVALIDOS DO FORM A CADA 2 SEGUDOS
  // setInterval(() => {
 
     //   const invalidFields = [];
