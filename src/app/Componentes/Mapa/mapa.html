@@ -1,5 +1,14 @@
 <google-map height="100%" width="100%" [options]="options">
     @for (MarkerInfo of Markers; track $index){
-        <map-marker [position]="MarkerInfo.position" [label]="MarkerInfo.label" [title]="MarkerInfo.title"></map-marker>
+        <map-advanced-marker [position]="MarkerInfo.position" [title]="MarkerInfo.title" [content]="MarkerInfo.content">
+
+        </map-advanced-marker>
     }
+
+    @if (PontoA && PontoB){
+        <map-polyline [path]="[PontoA, PontoB]" [options]="VisuaisLinha"></map-polyline>
+    }
+
+    <map-polygon [paths]="PolygonPortugal"
+        [options]="{ fillColor: 'transparent', fillOpacity: 0.2, strokeColor: '#00a2ff', strokeWeight: 5 }"></map-polygon>
 </google-map>

@@ -7,6 +7,7 @@ import { Definicoes } from '../../Definicoes';
 import { SeletorImagens } from '../../Componentes/SeletorImagens/seletor-imagens';
 import { ModalVerificacao } from "../../Componentes/ModalVerificacao/modal-verificacao";
 import { Carregamento } from "../../Componentes/Carregamento/carregamento";
+import { ServicoMensagens } from '../../Componentes/ServicoMensagens/Mensagens.service';
 
 @Component({
   selector: 'criar-conta',
@@ -29,6 +30,7 @@ export class PaginaCriarConta {
   }
 
   ServicoHttp = inject(HttpService)
+  ServicoMensagens = inject(ServicoMensagens)
   router = inject(Router)
 
 
@@ -69,7 +71,24 @@ export class PaginaCriarConta {
     this.FormCriar.enable()
   }
 
-
+  Avancando = false
+  async Avancar(){
+    this.Avancando = true
+    
+    const ValoresForm = this.FormCriar.value
+    const Resposta = await this.ServicoHttp.Request(Definicoes.API_URL+'verificar_existe', 'GET', 'Erro ao avancar', {
+      nif:ValoresForm.nif,
+      email:ValoresForm.email
+    }) 
+    
+    const ContaExiste = Resposta?.existe
+    if (!ContaExiste){
+      this.MostrarFotoCriarConta = true
+    }else{
+      this.ServicoMensagens.erro('Uma conta com este nif ou email ja existe!')
+    }
+    this.Avancando = false
+  }
 
   FicheiroSelecionado?:File
   ImagemSelecionada?:string|ArrayBuffer|null

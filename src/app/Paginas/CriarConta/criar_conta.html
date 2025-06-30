@@ -100,8 +100,8 @@
           <button type="button" value="Voltar" class="botaoVoltar">Voltar</button>
         </a>
 
-        <button type="button" class="botaoCriar" (click)="MostrarFotoCriarConta = true"
-          [disabled]="FormCriar.invalid">Avançar</button><!--[disabled]="FormCriar.invalid"-->
+        <button type="button" class="botaoCriar" (click)="Avancar()"
+          [disabled]="FormCriar.invalid || Avancando">Avançar</button><!--[disabled]="FormCriar.invalid"-->
       </div>
 
       <div id="popup" class="modal">
@@ -148,7 +148,7 @@
 
           <h2 style="margin-left: 10px;">Foto de perfil</h2>
 
-          <button class="btVoltar" routerLink="/criarConta">
+          <button class="btVoltar" (click)="MostrarFotoCriarConta = false">
             <img src="img/voltar.png" class="imagemVolt">
           </button>
         </div>

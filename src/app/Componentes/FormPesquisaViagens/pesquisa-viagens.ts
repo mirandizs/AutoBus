@@ -2,7 +2,7 @@ import { Component, HostBinding, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
 import { Definicoes } from '../../Definicoes';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
@@ -24,8 +24,8 @@ export class FormPesquisaViagens {
   Volta = false
 
   FormPesquisa: FormGroup = new FormGroup({
-    local_partida: new FormControl('', []),
-    local_chegada: new FormControl('', []),
+    local_partida: new FormControl('', [Validators.required]),
+    local_chegada: new FormControl('', [Validators.required]),
     hora_ida: new FormControl('', []),
     data_ida: new FormControl('', []),
     data_volta: new FormControl('', []),

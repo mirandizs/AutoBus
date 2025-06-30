@@ -1,5 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { ActivatedRouteSnapshot, Route, Router } from '@angular/router';
+import { ServicoMensagens } from '../Componentes/ServicoMensagens/Mensagens.service';
 //import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Injectable({
@@ -14,7 +15,7 @@ export class HttpService {
     'Content-Type': 'application/json'
   }
 
-
+  ServicoMensagens = inject(ServicoMensagens)
 
 
   async Request(RequestURL: URL | string, Method: string = "GET", ErrorSuffix: string = "", Data?: any): Promise<any> {
@@ -76,14 +77,18 @@ export class HttpService {
         if (Response.ok) {
           resolve(Result)
         } else {
-          if (ErrorSuffix)
-            console.error(`Error: ${ErrorSuffix} - ${Response.status} ${Response.statusText}`, Result)
+          const MensagemErro = `${ErrorSuffix} - ${Response.statusText}`
+          if (ErrorSuffix) {
+            console.error(`Erro: ${MensagemErro}`)
+            this.ServicoMensagens.erro(MensagemErro)
+          }
           resolve(false)
         }
 
         // ERROR
       }).catch((Error: Error) => {
         console.error(Error)
+        this.ServicoMensagens.erro('Falha ao conectar ao servidor')
         resolve(false)
       })
     })

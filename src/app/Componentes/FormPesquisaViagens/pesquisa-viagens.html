@@ -102,7 +102,7 @@
                 }
                 @else {
                     <input type="time" formControlName="hora_ida" style="padding-left: 15px; padding-right: 25px; cursor: text;"/>
-                }
+                }   
             </div>
         </div>
 
@@ -116,5 +116,5 @@
 
 <ng-template #ButaoProcurar>
     <input type="submit" id="btProcurar" value="Procurar" class="botaoTransicao botaoProcurar"
-    [style]="PaginaViagens ? 'height:30px' : '' " />
+    [style]="PaginaViagens ? 'height:30px' : '' " [disabled]="FormPesquisa.invalid" />
 </ng-template>
