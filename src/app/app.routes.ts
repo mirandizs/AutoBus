@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { PaginaDefinicoes } from './Paginas/Definicoes/definicoes';
 import { PaginaInicial } from './Paginas/Inicial/inicial';
 import { PaginaViagens } from './Paginas/Viagens/viagens';
-import { PaginaLogin } from './Paginas/Login/login';
 import { PaginaCriarConta } from './Paginas/CriarConta/criar_conta';
 import { PaginaCompras} from './Paginas/Compras/compras';
 import { PaginaCarrinho } from './Paginas/Carrinho/carrinho';
@@ -33,8 +32,7 @@ export const routes: Routes = [
     ]},
     {path:'carrinho', component:PaginaCarrinho},
     {path:'compras', component:PaginaCompras},
-
-    {path:'login', component:PaginaLogin},
+    
     {path:'criarConta', component:PaginaCriarConta},
 
     {path:'sobre', component:PaginaSobre}

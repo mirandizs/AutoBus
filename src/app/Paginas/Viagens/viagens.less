@@ -269,7 +269,7 @@ nav {
 
   padding-left: 30px;
   padding-right: 20px;
-  padding-top: 30px;
+  padding-top: 10px;
   /*padding-bottom: 20px;*/
 
   transition: 0.4s;
@@ -277,6 +277,13 @@ nav {
   align-items: center;
   justify-content: center ;
   margin-bottom: 15px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
 }
 
 .caixaBilhete:hover {
@@ -328,7 +335,6 @@ nav {
   border: none;
   border-color: transparent;
   outline: none;
-  position: absolute;
   background-size: contain;
   background-color: transparent;
   width: 28px;
@@ -338,9 +344,9 @@ nav {
   transition: 0.4s;
 }
 
-.btCarrinho:hover {
-  transform: scale(1.1);
-}
+// .btCarrinho:hover {
+//   transform: scale(1.1);
+// }
 
 
 /*select de passageiros */

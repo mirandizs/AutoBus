@@ -2,44 +2,63 @@
     <div class="column left">
         <h2>Gestão de Utilizadores</h2><br>
 
-        <table>
-            <tr>
-                <th>NIF</th>
-                <th>Nome</th>
-                <th>Data de Nascimento</th>
-                <th>Telemóvel</th>
-                <th>Localidade</th>
-                <th>Email</th>
-                <th>Palavra-passe</th>
-                <th>Tipo de utilizador</th>
-                <th>Editar</th>
-            </tr>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>NIF</th>
+                    <th>Nome</th>
+                    <th>Nascimento</th>
+                    <th>Telemóvel</th>
+                    <th>Localidade</th>
+                    <th>Email</th>
+                    <th>Atividade</th>
+                    <th>Utilizador</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
 
 
             @for (Utilizador of Utilizadores; track $index){
-                <tr class="dadosTabela">
-                    <td>{{Utilizador.nif}}</td>
-                    <td>{{Utilizador.nome}}</td>
-                    <td>{{Utilizador.nascimento}}</td>
-                    <td>{{Utilizador.telefone}}</td>
-                    <td>{{Utilizador.localidade}}</td>
-                    <td>{{Utilizador.email}}</td>
-                    <td>...</td>
-                    <td>{{Utilizador.tipo_utilizador}}</td>
-                    <td>
-                        <button type="button" class="editar imagemEditar"
-                            (click)="MostrarGestao(Utilizador.nif)">
-                            <img src="img/lapis.png" width="20px" height="20px">
-                        </button>
-                    </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>{{Utilizador.nif}}</td>
+                        <td>{{Utilizador.nome}}</td>
+                        <td>{{Utilizador.nascimento}}</td>
+                        <td>{{Utilizador.telefone}}</td>
+                        <td>{{Utilizador.localidade}}</td>
+                        <td>{{Utilizador.email}}</td>
+                        <td>
+                            @if (Utilizador.atividade == 0) {
+                               <span style="color: red;">Inativa</span>
+                            }
+                            @else {
+                               <span style="color: green;">Ativa</span>
+                            }
+                        </td>
+                        <td>
+                            @if (Utilizador.tipo_utilizador == 0) {
+                                Administrador
+                            } 
+                            
+                            @else {
+                                Cliente
+                            }
+                        </td>
+                        <td>
+                            <button type="button" class="editar imagemEditar"
+                                (click)="MostrarGestao(Utilizador.nif)">
+                                <img src="img/lapis.png" width="20px" height="20px">
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
             }
             
             @empty {
                 <tr>
-                    <td colspan="8">Nenhum utilizador encontrado.</td>
+                    <td colspan="8" style="text-align: center;">Nenhum utilizador encontrado.</td>
                 </tr>
             }
-        </table>
+        </table><br>
     </div>
 </div>

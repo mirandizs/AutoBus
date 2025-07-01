@@ -30,6 +30,7 @@ export class PaginaViagens {
     URL_Pedido.searchParams.append("local_partida", queryParams["local_partida"]) // Append adiciona informacoes ao URL do endpoint que vai ser chamado
     URL_Pedido.searchParams.append("local_chegada", queryParams["local_chegada"])
     URL_Pedido.searchParams.append("hora_ida", queryParams["hora_ida"])
+    URL_Pedido.searchParams.append("data_ida", queryParams["data_ida"])
 
     this.Viagens = await this.ServicoHttp.Request(URL_Pedido,"GET")
     console.log(this.Viagens)
@@ -46,8 +47,8 @@ export class PaginaViagens {
       const Resposta = await this.ServicoHttp.Request(URL_Pedido, "POST", "", {
         "id_ponto_partida": viagem.id_ponto_partida,
         "id_ponto_chegada": viagem.id_ponto_chegada,
-        tipo_viagem: queryParams["idaVolta"] === "ida-e-volta" ? "ida-e-volta" : "ida",
-        // data_ida: queryParams["data_ida"],
+        data_ida: queryParams["data_ida"],
+        tipo_viagem: queryParams["idaVolta"] === "ida-e-volta" ? "ida-e-volta" : "ida"
         // data_volta: queryParams["data_volta"] === "ida-e-volta" ? queryParams["data_volta"] : null
       });
 
