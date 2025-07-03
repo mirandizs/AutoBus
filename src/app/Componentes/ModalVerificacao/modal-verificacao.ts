@@ -57,6 +57,7 @@ export class ModalVerificacao {
   }
 
   SubmeterModal() {
+    if (this.FormVerificacao.invalid) return;
     this.submetido.emit(this.FormVerificacao.value.codigo);
   }
 }
