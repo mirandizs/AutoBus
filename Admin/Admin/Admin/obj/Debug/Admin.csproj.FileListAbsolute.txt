@@ -1,0 +1,146 @@
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\obj\Debug\Admin.csproj.AssemblyReference.cache
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\obj\Debug\Admin.csproj.SuggestedBindingRedirects.cache
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\obj\Debug\Admin.exe.config
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\obj\Debug\Admin.Form1.resources
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\obj\Debug\Admin.Principal.resources
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\obj\Debug\Admin.csproj.GenerateResource.cache
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\obj\Debug\Admin.csproj.CoreCompileInputs.cache
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\Admin.exe.config
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\Admin.exe
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\Admin.pdb
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\MySql.Data.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Memory.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Buffers.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\obj\Debug\Admin.csproj.Up2Date
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\obj\Debug\Admin.exe
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\obj\Debug\Admin.pdb
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Collections.Immutable.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Reflection.DispatchProxy.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Reflection.Metadata.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Reflection.TypeExtensions.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Collections.Immutable.xml
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Reflection.Metadata.xml
+C:\Users\sofis\OneDrive\PAP - OD\Admin\Admin\bin\Debug\System.Threading.Tasks.Dataflow.xml
+C:\Users\gabri\Downloads\Admin\Admin\Admin\obj\Debug\Admin.csproj.AssemblyReference.cache
+C:\Users\gabri\Downloads\Admin\Admin\Admin\obj\Debug\Admin.Form1.resources
+C:\Users\gabri\Downloads\Admin\Admin\Admin\obj\Debug\Admin.Principal.resources
+C:\Users\gabri\Downloads\Admin\Admin\Admin\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\gabri\Downloads\Admin\Admin\Admin\obj\Debug\Admin.csproj.GenerateResource.cache
+C:\Users\gabri\Downloads\Admin\Admin\Admin\obj\Debug\Admin.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\Admin.exe.config
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\Admin.exe
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\Admin.pdb
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\MySql.Data.dll
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Collections.Immutable.dll
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Reflection.DispatchProxy.dll
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Reflection.Metadata.dll
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Reflection.TypeExtensions.dll
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Memory.dll
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Buffers.dll
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\MySql.Data.xml
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Collections.Immutable.xml
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Reflection.Metadata.xml
+C:\Users\gabri\Downloads\Admin\Admin\Admin\bin\Debug\System.Threading.Tasks.Dataflow.xml
+C:\Users\gabri\Downloads\Admin\Admin\Admin\obj\Debug\Admin.csproj.CopyComplete
+C:\Users\gabri\Downloads\Admin\Admin\Admin\obj\Debug\Admin.exe
+C:\Users\gabri\Downloads\Admin\Admin\Admin\obj\Debug\Admin.pdb
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\Admin.exe.config
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\Admin.exe
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\Admin.pdb
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Collections.Immutable.dll
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Reflection.DispatchProxy.dll
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Reflection.Metadata.dll
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Reflection.TypeExtensions.dll
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Memory.dll
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Buffers.dll
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Collections.Immutable.xml
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Reflection.Metadata.xml
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Threading.Tasks.Dataflow.xml
+C:\Users\sofis\Desktop\prog\Admin\Admin\obj\Debug\Admin.csproj.AssemblyReference.cache
+C:\Users\sofis\Desktop\prog\Admin\Admin\obj\Debug\Admin.Form1.resources
+C:\Users\sofis\Desktop\prog\Admin\Admin\obj\Debug\Admin.Principal.resources
+C:\Users\sofis\Desktop\prog\Admin\Admin\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\sofis\Desktop\prog\Admin\Admin\obj\Debug\Admin.csproj.GenerateResource.cache
+C:\Users\sofis\Desktop\prog\Admin\Admin\obj\Debug\Admin.csproj.CoreCompileInputs.cache
+C:\Users\sofis\Desktop\prog\Admin\Admin\obj\Debug\Admin.csproj.Up2Date
+C:\Users\sofis\Desktop\prog\Admin\Admin\obj\Debug\Admin.exe
+C:\Users\sofis\Desktop\prog\Admin\Admin\obj\Debug\Admin.pdb
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\MySql.Data.dll
+C:\Users\sofis\Desktop\prog\Admin\Admin\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\sofis\Desktop\prog\Admin\Admin\obj\Debug\Admin.Editar.resources
+C:\Users\sofis\Desktop\prog\Admin\Admin\obj\Debug\Admin.Criar.resources
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\Admin.exe.config
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\Admin.exe
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\Admin.pdb
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Collections.Immutable.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Reflection.DispatchProxy.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Reflection.Metadata.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Reflection.TypeExtensions.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Memory.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Buffers.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Collections.Immutable.xml
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Reflection.Metadata.xml
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\System.Threading.Tasks.Dataflow.xml
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.csproj.AssemblyReference.cache
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.Form1.resources
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.Principal.resources
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.csproj.GenerateResource.cache
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.csproj.CoreCompileInputs.cache
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.csproj.Up2Date
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.exe
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.pdb
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.Rotas.resources
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.Utilizador.resources
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.Autocarro.resources
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.Perfil.resources
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.ImagemPerfil.resources
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\obj\Debug\Admin.RotasAutocarro.resources
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Data.Desktop.v24.1.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Data.v24.1.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Drawing.v24.1.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Printing.v24.1.Core.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Sparkline.v24.1.Core.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Utils.v24.1.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.XtraEditors.v24.1.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Pdf.v24.1.Core.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Pdf.v24.1.Drawing.dll
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Data.Desktop.v24.1.xml
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Data.v24.1.xml
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Drawing.v24.1.xml
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Printing.v24.1.Core.xml
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Sparkline.v24.1.Core.xml
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Utils.v24.1.xml
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.XtraEditors.v24.1.xml
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Pdf.v24.1.Core.xml
+C:\Users\sofia\Desktop\pap\Admin\Admin\Admin\bin\Debug\DevExpress.Pdf.v24.1.Drawing.xml
