@@ -1,11 +1,11 @@
-@if (!MostrarFotoCriarConta){
 
+<img class="logo" src="img/logo.png" alt="Logo AutoBus">
+
+@if (!MostrarFotoCriarConta){
   <div class="box">
 
     <!--<header>AutoBus</header>-->
-
-    <h1 class="logoTexto">AutoBus</h1>
-
+    <!-- <h1 class="logoTexto">AutoBus</h1> -->
     <!--<p class="logo"><h1 style="text-align: center;">AutoBus</h1></p>-->
 
     <h2>Novo Registo</h2>
@@ -189,7 +189,7 @@
 <modal-verificacao [Aberto]="ModalCodigo" (submetido)="VerificarConta($event) "></modal-verificacao>
 
 
-<button (click)="preencherFormComValoresAleatorios()">Preencher</button>
+<button style="background-color: transparent;" (click)="preencherFormComValoresAleatorios()">Preencher</button>
 
 @if (SelecionarImagens) {
   <seletor-imagens (close)="SelecionarImagens = false" (imagemSelecionada)="PreverImagem($event)"></seletor-imagens>

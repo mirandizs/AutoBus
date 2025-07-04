@@ -1,82 +1,82 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\",
+  "WorkspaceRootPath": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\rotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\rotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|c:\\users\\sofia\\desktop\\pap\\admin\\admin\\admin\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\dadosutilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\dadosutilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\imagemperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\imagemperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\imagemperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\imagemperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\rotasautocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\rotasautocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\rotasautocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\rotasautocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\autocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\autocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\autocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\autocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\dadosautocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\dadosautocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\rotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\rotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\admin\\ligacaodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\ligacaodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\ligacaodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\rotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\rotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\autocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\autocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\dadosautocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\dadosautocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\autocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\autocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|c:\\users\\sofia\\desktop\\pap\\autobus\\admin\\admin\\admin\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\dadosutilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\dadosutilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\imagemperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\imagemperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\imagemperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\imagemperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\rotasautocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\rotasautocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\rotasautocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\rotasautocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\rotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\rotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,55 +86,56 @@
       "DocumentGroups": [
         {
           "DockedHeight": 293,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 2,
               "Title": "ligacaoDB.cs",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\ligacaoDB.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\ligacaoDB.cs",
               "RelativeDocumentMoniker": "Admin\\ligacaoDB.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\ligacaoDB.cs",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\ligacaoDB.cs",
               "RelativeToolTip": "Admin\\ligacaoDB.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwFgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T10:17:01.861Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DadosUtilizador.cs",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\DadosUtilizador.cs",
-              "RelativeDocumentMoniker": "Admin\\DadosUtilizador.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\DadosUtilizador.cs",
-              "RelativeToolTip": "Admin\\DadosUtilizador.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T09:49:11.248Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "dadosAutocarro.cs",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\dadosAutocarro.cs",
-              "RelativeDocumentMoniker": "Admin\\dadosAutocarro.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\dadosAutocarro.cs",
-              "RelativeToolTip": "Admin\\dadosAutocarro.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "DadosUtilizador.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\DadosUtilizador.cs",
+              "RelativeDocumentMoniker": "Admin\\DadosUtilizador.cs",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\DadosUtilizador.cs",
+              "RelativeToolTip": "Admin\\DadosUtilizador.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T12:47:28.7Z",
+              "WhenOpened": "2025-02-19T09:49:11.248Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 6,
+              "Title": "dadosAutocarro.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\dadosAutocarro.cs",
+              "RelativeDocumentMoniker": "Admin\\dadosAutocarro.cs",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\dadosAutocarro.cs",
+              "RelativeToolTip": "Admin\\dadosAutocarro.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T12:47:28.7Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Form1.cs",
               "RelativeDocumentMoniker": "Admin\\Form1.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Form1.cs [Design]",
               "RelativeToolTip": "Admin\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T10:17:01.974Z",
@@ -143,11 +144,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Form1.cs",
               "RelativeDocumentMoniker": "Admin\\Form1.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Form1.cs",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Form1.cs",
               "RelativeToolTip": "Admin\\Form1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -157,11 +158,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Principal.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Principal.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Principal.cs",
               "RelativeDocumentMoniker": "Admin\\Principal.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Principal.cs [Design]",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Principal.cs [Design]",
               "RelativeToolTip": "Admin\\Principal.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T10:17:01.986Z",
@@ -170,11 +171,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Principal.cs",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Principal.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Principal.cs",
               "RelativeDocumentMoniker": "Admin\\Principal.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Principal.cs",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Principal.cs",
               "RelativeToolTip": "Admin\\Principal.cs",
               "ViewState": "AgIAAPUCAAAAAAAAAAAawHQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -184,11 +185,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Utilizador.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Utilizador.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Utilizador.cs",
               "RelativeDocumentMoniker": "Admin\\Utilizador.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Utilizador.cs [Design]",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Utilizador.cs [Design]",
               "RelativeToolTip": "Admin\\Utilizador.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T11:05:30.566Z",
@@ -197,11 +198,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "Utilizador.cs",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Utilizador.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Utilizador.cs",
               "RelativeDocumentMoniker": "Admin\\Utilizador.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Utilizador.cs",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Utilizador.cs",
               "RelativeToolTip": "Admin\\Utilizador.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAQwLsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -211,36 +212,38 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 4,
               "Title": "Autocarro.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Autocarro.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Autocarro.cs",
               "RelativeDocumentMoniker": "Admin\\Autocarro.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Autocarro.cs [Design]",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Autocarro.cs [Design]",
               "RelativeToolTip": "Admin\\Autocarro.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-16T13:20:55.073Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 7,
               "Title": "Autocarro.cs",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Autocarro.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Autocarro.cs",
               "RelativeDocumentMoniker": "Admin\\Autocarro.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Autocarro.cs",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Autocarro.cs",
               "RelativeToolTip": "Admin\\Autocarro.cs",
-              "ViewState": "AgIAAAMBAAAAAAAAAAA/wEgBAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAALkAAAAAAAAAAAAUwPYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-16T13:25:07.675Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Rotas.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Rotas.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Rotas.cs",
               "RelativeDocumentMoniker": "Admin\\Rotas.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Rotas.cs [Design]",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Rotas.cs [Design]",
               "RelativeToolTip": "Admin\\Rotas.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-28T11:07:16.84Z",
@@ -249,11 +252,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Rotas.cs",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Rotas.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Rotas.cs",
               "RelativeDocumentMoniker": "Admin\\Rotas.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Rotas.cs",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Rotas.cs",
               "RelativeToolTip": "Admin\\Rotas.cs",
               "ViewState": "AgIAAEABAAAAAAAAAAAAAJMBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -263,23 +266,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "RotasAutocarro.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\RotasAutocarro.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\RotasAutocarro.cs",
               "RelativeDocumentMoniker": "Admin\\RotasAutocarro.cs",
               "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\RotasAutocarro.cs [Design]",
-              "RelativeToolTip": "Admin\\RotasAutocarro.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\Admin\\Admin\\Admin\\RotasAutocarro.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T13:06:34.967Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "RotasAutocarro.cs",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\RotasAutocarro.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\RotasAutocarro.cs",
               "RelativeDocumentMoniker": "Admin\\RotasAutocarro.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\RotasAutocarro.cs",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\RotasAutocarro.cs",
               "RelativeToolTip": "Admin\\RotasAutocarro.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -288,23 +291,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "ImagemPerfil.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\ImagemPerfil.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\ImagemPerfil.cs",
               "RelativeDocumentMoniker": "Admin\\ImagemPerfil.cs",
               "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\ImagemPerfil.cs [Design]",
-              "RelativeToolTip": "Admin\\ImagemPerfil.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\Admin\\Admin\\Admin\\ImagemPerfil.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T08:55:45.065Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "ImagemPerfil.cs",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\ImagemPerfil.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\ImagemPerfil.cs",
               "RelativeDocumentMoniker": "Admin\\ImagemPerfil.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\ImagemPerfil.cs",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\ImagemPerfil.cs",
               "RelativeToolTip": "Admin\\ImagemPerfil.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -313,11 +316,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "Perfil.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Perfil.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Perfil.cs",
               "RelativeDocumentMoniker": "Admin\\Perfil.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Perfil.cs [Design]",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Perfil.cs [Design]",
               "RelativeToolTip": "Admin\\Perfil.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-16T11:56:17.751Z",
@@ -326,13 +329,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "Perfil.cs",
-              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Perfil.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Perfil.cs",
               "RelativeDocumentMoniker": "Admin\\Perfil.cs",
-              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\Admin\\Admin\\Admin\\Perfil.cs",
+              "ToolTip": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\Admin\\Perfil.cs",
               "RelativeToolTip": "Admin\\Perfil.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAA1wGMAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAFcAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T15:33:22.991Z",
               "IsPinned": true,

@@ -51,11 +51,9 @@ export class PaginaCarrinho {
     const Pedido_URL = new URL(Definicoes.API_URL+"comprar") 
 
     const resultadoCompra = await this.ServicoHttp.Request(Pedido_URL, "POST", "", {
-      metodo:  this.TipoPagamentoCartao ? "cartao" : "mb",
       nome_cartao: this.FormCartao.value.nome_cartao,
       numero_cartao: this.FormCartao.value.numero_cartao,
       validade: this.FormCartao.value.validade,
-      cvv: this.FormCartao.value.cvv,
       guardarCartao: this.FormCartao.value.guardarCartao,
     })
   }
@@ -94,7 +92,6 @@ export class PaginaCarrinho {
     nome_cartao: new FormControl('', []),
     numero_cartao: new FormControl('', []),
     validade: new FormControl('', []),
-    cvv: new FormControl('', []),
     guardarCartao: new FormControl(false, []),
   });
 
