@@ -81,7 +81,7 @@ button:disabled{
 .box2 {
   color: rgba(3, 3, 56, 0.945);
   padding-left: 30px;
-  width: 880px;
+  width: 920px;
   height: 530px;
   margin-top: 40px;
 
@@ -287,29 +287,86 @@ button:disabled{
 
 
 /* para a tabela de gestão de utilizadores --------------------------------- */
-
-table th,
-table td {
-  border: 2px solid black;
-  padding-right: 5px;
-  padding-left: 5px;
-  border-collapse: collapse;
-}
+// table th,
+// table td {
+//   border: 2px solid black;
+//   padding-right: 5px;
+//   padding-left: 5px;
+//   border-collapse: collapse;
+// }
 
 .dadosTabela {
   text-align: center;
 }
 
-th {
-  background-color: rgb(3, 3, 59);
+// th {
+//   background-color: rgb(3, 3, 59);
+//   color: white;
+// }
+
+
+.tabela {
+  width: 80%;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  justify-content: center;
+  align-self: center;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.tabela thead {
+  background-color:  rgba(3, 3, 59);
   color: white;
+  text-align: center;
+}
+
+.tabela th {
+  text-align: center;
+}
+
+.tabela th,
+.tabela td {
+  border-bottom: 1px solid #ddd;
+  padding-right: 10px;
+  padding-left: 5px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+//   border-collapse: collapse;
+}
+
+.tabela td {
+  text-align: left;
+}
+
+.tabela tbody tr:hover {
+  /*background-color: rgba(36, 33, 125, 0.514);*/
+  background-color: #f0f0f0;
+}
+
+/* Canto superior esquerdo e direito do cabeçalho */
+.tabela thead tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+.tabela thead tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* Canto inferior esquerdo e direito da última linha */
+.tabela tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+.tabela tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
 }
 
 
 .caixaContainer {
   color: rgba(3, 3, 56, 0.945);
   padding-left: 30px;
-  width: 880px;
+  width: 920px;
   height: 530px;
   margin-top: 40px;
 

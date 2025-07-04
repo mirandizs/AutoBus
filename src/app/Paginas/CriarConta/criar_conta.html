@@ -100,8 +100,8 @@
           <button type="button" value="Voltar" class="botaoVoltar">Voltar</button>
         </a>
 
-        <button type="button" class="botaoCriar" (click)="MostrarFotoCriarConta = true"
-          [disabled]="FormCriar.invalid">Avançar</button><!--[disabled]="FormCriar.invalid"-->
+        <button type="button" class="botaoCriar" (click)="Avancar()"
+          [disabled]="FormCriar.invalid || Avancando">Avançar</button><!--[disabled]="FormCriar.invalid"-->
       </div>
 
       <div id="popup" class="modal">
@@ -140,7 +140,7 @@
 @if (MostrarFotoCriarConta){
   <div class="caixa">
     <div style="display: flex; justify-content: center; align-items: center;">
-      <form>
+      <form [formGroup]="FormFoto" (ngSubmit)="EnviarCodigo()">
         <div style="display:flex; align-items: center; justify-content: space-between;">
           <!-- <a href="criarConta.php" style="text-decoration: none; color: white; padding-right: 20px;">
             <img class="imagemVolt" src="img/voltarr.png">
@@ -148,10 +148,10 @@
 
           <h2 style="margin-left: 10px;">Foto de perfil</h2>
 
-          <button class="btVoltar" routerLink="/criarConta">
+          <button class="btVoltar" (click)="MostrarFotoCriarConta = false">
             <img src="img/voltar.png" class="imagemVolt">
           </button>
-        </div>
+        </div>             
 
         <br>
 
@@ -172,21 +172,21 @@
         </div>
 
 
-        <button type='button' class="botaoCriarConta" style='margin-right: 250px; margin-left:5px'
+        <button type='submit' class="botaoCriarConta" style='margin-right: 250px; margin-left:5px'
           (click)="ModalCodigo = true">Alterar depois</button>
 
 
-        <input type="button" class="botaoCriarConta" (click)="ModalCodigo = true" value="Criar conta">
+        <input type="submit" class="botaoCriarConta" (click)="ModalCodigo = true" value="Criar conta">
 
         <carregamento [Visivel]="ACriarConta"></carregamento>
-
-
       </form>
     </div>
   </div>
 }
 
-<modal-verificacao [Aberto]="ModalCodigo" (submetido)="VerificarConta($event)"></modal-verificacao>
+ 
+
+<modal-verificacao [Aberto]="ModalCodigo" (submetido)="VerificarConta($event) "></modal-verificacao>
 
 
 <button (click)="preencherFormComValoresAleatorios()">Preencher</button>

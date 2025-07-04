@@ -10,24 +10,25 @@
 @for (Viagem of Viagens; track $index){
     <div class="alinhamento">
         <div class='caixaBilhete'>
-            <div style='display:inline-flex; justify-items:center; text-align: center'>
-                <br>
+            <div>
                 <a><strong>{{Viagem.local_partida}} ⮕ {{Viagem.local_chegada}}</strong></a>
-                <h2 style='margin-left:390px; margin-top:-4px; float: right; display:flex'>{{Viagem.preco | currency:'EUR'}}</h2>
-            </div><br>
+                <h2 style=>{{Viagem.preco | currency:'EUR'}}</h2>
+            </div>
 
-            <a>Hora de partida: {{Viagem.hora_partida}}</a>
-            <br><br><br><br><br>
+            <label style="margin-bottom: 30px;">Hora de partida: {{Viagem.hora_partida}}</label><br>
+            <label>Data da viagem: {{Viagem.data_ida}}</label>
+            <br><br>
 
             <!--<button class='botaoTransicao botaoComprar'>Adicionar ao carrinho</button>-->
             <!--<form action='' method='POST'>-->
-            <button class='botaoTransicao verMais'>Ver mais detalhes</button>
-            <!--</form>-->
+            <div style="margin-top: 20px; display: flex;">
+                <button class='botaoTransicao verMais'>Ver mais detalhes</button><br>
 
-            <button class='btCarrinho' (click)="adicionarCarrinho(Viagem)" >
-                <img src="img/carrinhoAdicionarA.png" style="height: 25px; width: 25;">
-            </button>
-        </div><br>
+                <button class='btCarrinho' (click)="adicionarCarrinho(Viagem)" >
+                    <img src="img/carrinhoAdicionarA.png" style="height: 25px; width: 25;">
+                </button>
+            </div>
+        </div>
     </div>
 }<br><br>
 

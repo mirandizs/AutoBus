@@ -7,10 +7,10 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 
 interface Utilizador {
   nif: number;
-  telefone:number;
+  telefone: number;
   morada: string;
   nascimento: string;
-  localidade:string;
+  localidade: string;
   nome: string;
   email: string;
   tipo_utilizador: number;
@@ -35,27 +35,13 @@ export class JanelaEditarUtilizador {
 
   UtilizadorSelecionado = signal<null | Utilizador>(null)
 
-  // async ngOnInit() {
-  //   const NIFUtilizador = this.route.snapshot.paramMap.get('id');
-
-  //   const LinkAPI = Definicoes.API_URL
-
-  //   const resultado = await this.servicoHTTP.Request(LinkAPI + `editar-utilizador` + NIFUtilizador, 'GET')
-
-  //   if (resultado) {
-  //     this.UtilizadorSelecionado.set(resultado)
-  //     console.log(resultado)
-  //   }
-  // }
-
-
-  async SubmeterForm(){
+  async SubmeterForm() {
     this.FormEditarUtilizador.disable()
 
-    const Resultado = await this.ServicoHttp.Request(Definicoes.API_URL + 'editar-utilizador', 'PATCH', 'Não foi possivel editar os dados da conta', 
+    const Resultado = await this.ServicoHttp.Request(Definicoes.API_URL + 'editar-utilizador', 'PATCH', 'Não foi possivel editar os dados da conta',
       this.FormEditarUtilizador.value) // O body equivale ao valor do form criar. Este .value e um array, com o nome de todos os campos e os seus valores
 
-    if (Resultado){
+    if (Resultado) {
       await this.router.navigate(['/definicoes/minha-conta'])
       window.location.reload()
     }
@@ -64,7 +50,7 @@ export class JanelaEditarUtilizador {
 
 
 
-  FormEditarUtilizador : FormGroup = new FormGroup({
+  FormEditarUtilizador: FormGroup = new FormGroup({
     nome: new FormControl('', [Validators.required]),
     nif: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),  // ^\d{9}$ -> 9 digitos
     nascimento: new FormControl('', [Validators.required]),
@@ -93,12 +79,31 @@ export class JanelaEditarUtilizador {
   }
 
 
+  async ngOnInit() {
+    const NIFUtilizador = this.route.snapshot.paramMap.get('id');
+
+    if (NIFUtilizador) {
+      const LinkAPI = Definicoes.API_URL
+
+      const resultado = await this.ServicoHttp.Request(LinkAPI + `utilizadores/` + NIFUtilizador, 'GET')
+
+      if (resultado) {
+        this.UtilizadorSelecionado.set(resultado)
+        console.log(resultado)
+      }
+    }
+  }
+
+
   constructor() {
-    this.FormEditarUtilizador.get('nif')?.disable(); 
+    this.FormEditarUtilizador.get('nif')?.disable();
+
+    
+    const NIFUtilizador = this.route.snapshot.paramMap.get('id');
 
     effect(() => {
       const Utilizador = this.Utilizador()
-      if(Utilizador) {
+      if (Utilizador && !NIFUtilizador) {
         this.FormEditarUtilizador.get('nome')?.setValue(this.Utilizador()?.nome)
         this.FormEditarUtilizador.get('nif')?.setValue(this.Utilizador()?.nif)
         this.FormEditarUtilizador.get('nascimento')?.setValue(this.Utilizador()?.nascimento)

@@ -7,6 +7,7 @@ import { Definicoes } from '../../Definicoes';
 import { SeletorImagens } from '../../Componentes/SeletorImagens/seletor-imagens';
 import { ModalVerificacao } from "../../Componentes/ModalVerificacao/modal-verificacao";
 import { Carregamento } from "../../Componentes/Carregamento/carregamento";
+import { ServicoMensagens } from '../../Componentes/ServicoMensagens/Mensagens.service';
 
 @Component({
   selector: 'criar-conta',
@@ -15,6 +16,10 @@ import { Carregamento } from "../../Componentes/Carregamento/carregamento";
   styleUrl: './criar_conta.less'
 })
 export class PaginaCriarConta {
+  ServicoHttp = inject(HttpService)
+  ServicoMensagens = inject(ServicoMensagens)
+  router = inject(Router)
+
   MostarPassword = false
   MostarConfirmacaoPassword = false
   MostrarFotoCriarConta = false
@@ -28,10 +33,6 @@ export class PaginaCriarConta {
     }
   }
 
-  ServicoHttp = inject(HttpService)
-  router = inject(Router)
-
-
   URL_Imagens = Definicoes.API_URL + 'imagens/utilizador'
 
   async VerificarConta(codigo:number){
@@ -40,11 +41,29 @@ export class PaginaCriarConta {
     })
 
     if (SucessoConta){
-      this.router.navigate(['/inicial']).then(()=>{
-        window.location.reload()
-      })
+      // this.router.navigate(['/inicial']).then(()=>{
+      //   window.location.reload()
+      // })
+      this.CriarConta()
     }
   }
+
+  
+  AMandarEmail: boolean = false;
+  async EnviarCodigo() {
+    this.AMandarEmail = true
+
+    const EmailMandado = await this.ServicoHttp.Request(Definicoes.API_URL + 'verificar-email', 'POST', 
+      'Falha ao enviar o email de confirmação', {
+      email: this.FormFoto.value.email,
+    })
+
+    if (EmailMandado) {
+        this.ModalCodigo = true
+    }
+    this.AMandarEmail = false
+  }
+
   
   async CriarConta(){
     /*this.FormCriar.disable()*/
@@ -69,7 +88,24 @@ export class PaginaCriarConta {
     this.FormCriar.enable()
   }
 
-
+  Avancando = false
+  async Avancar(){
+    this.Avancando = true
+    
+    const ValoresForm = this.FormCriar.value
+    const Resposta = await this.ServicoHttp.Request(Definicoes.API_URL+'verificar_existe', 'GET', 'Erro ao avancar', {
+      nif:ValoresForm.nif,
+      email:ValoresForm.email
+    }) 
+    
+    const ContaExiste = Resposta?.existe
+    if (!ContaExiste){
+      this.MostrarFotoCriarConta = true
+    }else{
+      this.ServicoMensagens.erro('Uma conta com este nif ou email ja existe!')
+    }
+    this.Avancando = false
+  }
 
   FicheiroSelecionado?:File
   ImagemSelecionada?:string|ArrayBuffer|null
@@ -92,6 +128,12 @@ export class PaginaCriarConta {
     const Input = Event.target as HTMLInputElement
     this.PreverImagem(Input.files![0])
   }
+
+
+  FormFoto: FormGroup = new FormGroup({
+    foto: new FormControl('', [Validators.required])
+  })
+
 
   // definir o form com estrutura, campos e validacoes
   FormCriar:FormGroup = new FormGroup({

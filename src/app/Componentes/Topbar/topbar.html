@@ -58,7 +58,7 @@
 
 
 @if (ModalLoginVisivel && !ServicoAutenticacao.Utilizador()){
-    <div class="modal" id="ModalLogin">
+    <div class="modal">
 
         <form [formGroup]="FormLogin" class="modal-content animate">
             <div class="container">
@@ -72,8 +72,6 @@
                 <label style="margin-left:3%"><b>Palavra-Passe</b></label>
                 <input class="inserir" type="password" placeholder="Insira a palavra-passe" formControlName="password"
                     style="margin-left:3%">
-
-
 
                 <div style="display: flex; justify-content: space-between; width: 90%;">
                     <button type="submit" class="ButaoLogin" (click)="Login()"

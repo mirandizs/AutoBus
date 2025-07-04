@@ -1,12 +1,10 @@
-
-
-:host{
+:host {
   display: flex;
   width: 100%;
   max-width: 80vw;
   justify-content: center;
 
-  &.pagina-viagens{
+  &.pagina-viagens {
     max-width: 95vw;
   }
 }
@@ -21,17 +19,17 @@
 .row {
   display: flex;
   flex-direction: row;
-  align-items:end;
+  align-items: end;
   box-sizing: border-box;
   flex-wrap: wrap;
   /*align-items: center;*/
 
-  &.pagina-viagens{
+  &.pagina-viagens {
     padding-left: 0px !important;
   }
 }
 
-:root{
+:root {
   --width-campos: 100%;
 }
 
@@ -50,18 +48,19 @@
 }
 
 /* Input e select */
-input, select {
+input,
+select {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
 
-  padding-left:10px;
+  padding-left: 10px;
   height: 40px;
 }
 
-input{
+input {
   box-sizing: border-box;
-  padding-left:40px;
+  padding-left: 40px;
   width: 100%;
   max-width: 100%;
 }
@@ -82,11 +81,11 @@ input{
   margin: 0;
 }
 
-.data-ida{
+.data-ida {
   min-width: 245px;
 }
 
-.hora-ida{
+.hora-ida {
   min-width: 200px;
 }
 
@@ -122,13 +121,19 @@ input{
 
   cursor: pointer;
   transition-duration: 0.4s;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: rgb(9, 9, 127);
+    color: white;
+    border-color: rgb(4, 4, 77);
+  }
 }
 
-.botaoProcurar:hover {
-  background-color: rgb(9, 9, 127);
-  color: white;
-  border-color: rgb(4, 4, 77);
-}
 
 
 /* radio button ---------------- */
@@ -201,9 +206,3 @@ input{
   border-radius: 50%;
   background: white;
 }
-
-
-
-
-
-
