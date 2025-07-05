@@ -18,9 +18,21 @@ google-map{
     font-size: 14px;
 
     &.selecionado{
-        background-color: rgba(20, 18, 153, 0.61) !important;
+        background-color: #006a3aed !important;
         color: white !important;
         padding: 4px 8px;
         border-radius: 4px;
     }
+}
+
+.distancia {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 999;
 }

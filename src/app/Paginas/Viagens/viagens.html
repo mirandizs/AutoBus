@@ -15,17 +15,16 @@
                 <h2 style=>{{Viagem.preco | currency:'EUR'}}</h2>
             </div>
 
-            <label style="margin-bottom: 30px;">Hora de partida: {{Viagem.hora_partida}}</label><br>
-            <label>Data da viagem: {{Viagem.data_ida}}</label>
-            <br><br>
+            <label style="margin-bottom: 30px;">Hora de partida: {{Viagem.hora_partida}}</label><br><br>
+            <!-- <label>Data da viagem: {{Viagem.data_ida}}</label> -->
 
             <!--<button class='botaoTransicao botaoComprar'>Adicionar ao carrinho</button>-->
             <!--<form action='' method='POST'>-->
             <div style="margin-top: 20px; display: flex;">
-                <button class='botaoTransicao verMais'>Ver mais detalhes</button><br>
+                <button class='botaoTransicao verMais' (click)="abrirDetalhes(Viagem)">Ver mais detalhes</button><br>
 
                 <button class='btCarrinho' (click)="adicionarCarrinho(Viagem)" >
-                    <img src="img/carrinhoAdicionarA.png" style="height: 25px; width: 25;">
+                    <img src="img/carrinhoAdicionarA.png" style="height: 30px; width: 30;">
                 </button>
             </div>
         </div>
@@ -43,6 +42,33 @@
     
                 <h3>Bilhete adicionado ao carrinho!</h3><br>
             </div>
+        </div>
+    </div>
+}
+
+@if (ModalVerDetalhes) {
+    <carregamento></carregamento>
+    <div class="detalhes">
+        <div class="detalhes-conteudo">
+            <div>
+                <h3>Detalhes da Viagem</h3><br>
+
+                <span (click)="ModalVerDetalhes=false" class='close' style="margin-right: -50px;">&times;</span>
+                <br><br>
+            </div>
+
+            <div >
+                <p><a>📍</a><strong>Origem:</strong> {{ViagemSelecionada.local_partida}}</p>
+                <p><a>📍</a><strong>Destino:</strong> {{ViagemSelecionada.local_chegada}}</p>
+            </div>
+            <p><strong>Data:</strong> {{ViagemSelecionada.data_ida}}</p>
+            <p><strong>Hora de partida:</strong> {{ViagemSelecionada.hora_partida}}</p>
+            <p><strong>Duração estimada:</strong></p>
+            <p><strong>Distância:</strong> 200 km</p>
+            <p><strong>Preço:</strong> {{ViagemSelecionada.preco | currency:'EUR'}}</p>
+            <p><strong>Tipo de autocarro:</strong> Executivo</p>
+            <p><strong>Autocarro Nº:</strong></p>
+
         </div>
     </div>
 }

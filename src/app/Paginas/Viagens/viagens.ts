@@ -20,6 +20,13 @@ export class PaginaViagens {
   ServicoHttp = inject(HttpService)
   
   ModalAdicionarBilhete : boolean = false;
+  ModalVerDetalhes: boolean = false;
+  ViagemSelecionada: any = null;
+
+  abrirDetalhes(viagem: any) {
+    this.ViagemSelecionada = viagem;
+    this.ModalVerDetalhes = true;
+  }
 
   Viagens : any[] = []
 

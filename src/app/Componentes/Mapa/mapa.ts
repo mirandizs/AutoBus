@@ -40,6 +40,7 @@ export class Mapa {
 
   PontoA: Coordenada | undefined
   PontoB: Coordenada | undefined
+  DistanciaKm: number | null = null;
 
   VisuaisLinha: google.maps.PolylineOptions = {
     strokeColor: '#FF0000',
@@ -84,11 +85,18 @@ export class Mapa {
     }
   }
 
+  
+
   CriarTexto(text: string, Coordenadas: Coordenada): HTMLElement {
     const div = this.Renderer.createElement('div');
     this.Renderer.setProperty(div, 'textContent', text);
     this.Renderer.addClass(div, 'marcador');
 
+    // Parágrafo para a distância (fica escondido até que A e B estejam selecionados)
+    const distanciaTexto = this.Renderer.createElement('p');
+    this.Renderer.appendChild(div, distanciaTexto);
+
+    // Mantém a lógica de seleção
     this.Renderer.listen(div, 'click', (event) => {
       event.stopPropagation();
 
@@ -114,7 +122,36 @@ export class Mapa {
           this.PontoB = undefined;
         }
       }
+
+      // Atualiza a distância se A e B estiverem definidos
+      if (this.PontoA && this.PontoB) {
+        const distancia = this.calcularDistancia(this.PontoA, this.PontoB);
+        this.Renderer.setProperty(distanciaTexto, 'textContent', `Distância: ${distancia.toFixed(2)} km`);
+      } else {
+        this.Renderer.setProperty(distanciaTexto, 'textContent', '');
+      }
     });
+
     return div;
+  }
+
+
+  calcularDistancia(ponto1: Coordenada, ponto2: Coordenada): number {
+    const R = 6371; // Raio da Terra em km
+    const dLat = this.grausParaRad(ponto2.lat - ponto1.lat);
+    const dLng = this.grausParaRad(ponto2.lng - ponto1.lng);
+
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(this.grausParaRad(ponto1.lat)) *
+        Math.cos(this.grausParaRad(ponto2.lat)) *
+        Math.sin(dLng / 2) * Math.sin(dLng / 2);
+
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  }
+
+  grausParaRad(graus: number): number {
+    return graus * (Math.PI / 180);
   }
 }

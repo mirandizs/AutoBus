@@ -1,12 +1,12 @@
-<google-map height="100%" width="100%" [options]="options">
+<google-map height="100%" width="100%" [options]="options"> <!--height="100%" width="100%"-->
     @for (MarkerInfo of Markers; track $index){
         <map-advanced-marker [position]="MarkerInfo.position" [title]="MarkerInfo.title" [content]="MarkerInfo.content"></map-advanced-marker>
-    }
+    }    
 
     @if (PontoA && PontoB){
         <map-polyline [path]="[PontoA, PontoB]" [options]="VisuaisLinha"></map-polyline>
     }
 
     <map-polygon [paths]="PolygonPortugal"
-        [options]="{ fillColor: 'transparent', fillOpacity: 0.2, strokeColor: '#4a0404', strokeWeight: 3 }"></map-polygon> <!--#012778-->
+        [options]="{ fillColor: 'transparent', fillOpacity: 0.2, strokeColor: '#5e0303', strokeWeight: 3 }"></map-polygon> <!--#012778-->
 </google-map>

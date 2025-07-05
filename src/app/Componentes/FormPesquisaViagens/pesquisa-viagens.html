@@ -69,10 +69,10 @@
         
         <div class="campo data-ida" >
             <div style="display: flex;">
-                <label class="titulo-campo"><strong>Ida</strong></label> 
+                <label class="titulo-campo"><strong>Data de ida</strong></label> 
 
                 @if(FormPesquisa.value.ida == "ida-e-volta") {
-                  <label class="titulo-campo" style="margin-left: 100px;"><strong>Volta</strong></label>
+                  <label class="titulo-campo" style="margin-left: 55px;"><strong>Data de volta</strong></label>
                 }
             </div>
             
@@ -91,7 +91,7 @@
             <div style="display: flex;">
                 <label class="titulo-campo" ><strong>Hora de ida</strong></label>
                 @if (FormPesquisa.value.ida == "ida-e-volta") {
-                    <label class="titulo-campo" style="margin-left: 50px;"><strong>Hora de volta</strong></label>
+                    <label class="titulo-campo" style="margin-left: 25px;"><strong>Hora de volta</strong></label>
                 }
             </div>
 
@@ -110,8 +110,6 @@
             <ng-container *ngTemplateOutlet="ButaoProcurar"></ng-container>
         }
     </div>
-    
-
 </form>
 
 <ng-template #ButaoProcurar>

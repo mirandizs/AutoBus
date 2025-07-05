@@ -8,7 +8,7 @@ import { ButaoVoltar } from "../../Componentes/ButaoVoltar/butao-voltar";
   selector: 'pagina-localidades',
   imports: [Footer, Topbar, Mapa, ButaoVoltar],
   templateUrl: './localidades.html',
-  styleUrl: './localidades.css'
+  styleUrl: './localidades.less'
 })
 export class PaginaLocalidades {
 
