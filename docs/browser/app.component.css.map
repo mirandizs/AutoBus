@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/app.component.css"],
-  "sourcesContent": ["/* Nao adicionar nada, a nao ser que se seja css para o app.component.html */\r\n\r\n.contentor-pagina{\r\n    width: 100%;\r\n}"],
-  "mappings": "AAEA,CAAC,iBACG,MAAO,IACX",
-  "names": []
-}

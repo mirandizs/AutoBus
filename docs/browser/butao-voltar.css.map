@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/Componentes/ButaoVoltar/butao-voltar.less"],
-  "sourcesContent": ["/* BOTAO PARA VOLTAR À PÁGINA ANTERIOR */\n.botaoVoltar {\n  position: fixed;\n  bottom: 20px;\n  right: 20px;\n  \n  opacity: 0;\n  transform: translateX(100px);\n  transition: all 0.3s ease;\n}\n\n.visivel {\n  opacity: 1;\n  transform: translateX(0);\n}\n\n.invisivel {\n  opacity: 0;\n  transform: translateX(100px);\n  pointer-events: none ;\n}\n\n.botaoVolt {\n  padding: 15px 30px;\n  font-size: 15px;\n  color: white;\n  background: rgb(4, 4, 77);\n  border: none;\n  cursor: pointer;\n  border-radius: 5px;\n  transition: 0.3s;\n  margin-bottom: 80px;\n}\n\n.botaoVolt:hover {\n  background: rgb(9, 9, 127);\n  transform: scale(1.05);\n}\n\n"],
-  "mappings": "AACA,CAAA,YACE,SAAA,MACA,OAAA,KACA,MAAA,KAEA,QAAA,EACA,UAAW,UAAA,OACX,WAAA,IAAA,IAAA,KAGF,CAAA,QACE,QAAA,EACA,UAAW,UAAA,GAGb,CAAA,UACE,QAAA,EACA,UAAW,UAAA,OACX,eAAA,KAGF,CAAA,kBACE,KAAA,KACA,UAAA,KACA,MAAA,KACA,WAAA,QACA,OAAA,KACA,OAAA,sBACA,IACA,WAAA,IACA,cAAA,KAGF,CAZA,SAYU,OACR,WAAA,QACA,UAAW,MAAA",
-  "names": []
-}
