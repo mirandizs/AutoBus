@@ -5,10 +5,12 @@ import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
 import { HttpService } from '../../Services/Http.service';
 import { Definicoes } from '../../Definicoes';
 import { saveAs } from 'file-saver'; // caso ainda não tenhas
+import { CurrencyPipe } from '@angular/common';
+import { ButaoVoltar } from "../../Componentes/ButaoVoltar/butao-voltar";
 
 @Component({
     selector: 'compras',
-    imports: [Topbar],
+    imports: [Topbar, CurrencyPipe, ButaoVoltar],
     templateUrl: './compras.html',
     styleUrl: './compras.css'
   })
@@ -22,7 +24,10 @@ export class PaginaCompras {
 
     async ngOnInit() {
         const Pedido_URL = new URL(Definicoes.API_URL+"compras")
-        this.Compras = await this.ServicoHTTP.Request(Pedido_URL, "GET")
+        const Compras = await this.ServicoHTTP.Request(Pedido_URL, "GET", 'Erro ao obter compras    ')
+        if (Compras){
+            this.Compras = Compras;
+        }
     }
 
 

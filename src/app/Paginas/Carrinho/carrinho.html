@@ -42,19 +42,19 @@
         <div class="caixaTotal">
             <div style="display: flex; margin-top: 10px; padding-bottom: 5%; justify-content: space-between;">
                 <strong>Total a pagar: </strong>
-                <strong formControlName="preco">{{Total | currency:"EUR"}}</strong>
+                <strong >{{Total | currency:"EUR"}}</strong>
             </div>
 
             <hr><br>
             
             @if (Carrinho.length == 0) {
-                <button formControlName="openModal" class="botaoFinalizarDisable botaoTransicao" (click)="ModalMetodo = false" [disabled]="Carrinho.length == 0">
+                <button class="botaoFinalizarDisable botaoTransicao" (click)="ModalMetodo = false" [disabled]="Carrinho.length == 0">
                     Finalizar compra
                 </button> 
             }
 
             @else {
-                <button formControlName="openModal" class="botaoFinalizar botaoTransicao" (click)="ModalMetodo = true">
+                <button  class="botaoFinalizar botaoTransicao" (click)="ModalMetodo = true">
                     Finalizar compra
                 </button> 
             }
@@ -97,25 +97,25 @@
                 <form [formGroup]="FormCartao" (ngSubmit)="SubmeterModal()">
                     <div style="margin-left:20px;">
                         <div class="form-group">
-                            <input type="text" formControlName="nome_cartao"  placeholder=" " required class="input-grande" (input)="permitirApenasLetras($event)"/>
+                            <input type="text" formControlName="nome_cartao"  placeholder=" " class="input-grande" (input)="permitirApenasLetras($event)"/>
                             <label>Nome do titular do cartão</label>
                         </div>
     
                         <div class="form-group">
-                            <input type="tel" formControlName="numero_cartao"  placeholder=" " maxlength="19" required class="input-grande" 
+                            <input type="tel" formControlName="numero_cartao"  placeholder=" " maxlength="19" class="input-grande" 
                             (input)="formatarCartao($event)"/>
                             <label>Número do cartão</label>
                         </div>
     
                         <div style="display: flex;">
                             <div class="form-group">
-                                <input type="text" formControlName="validade"  placeholder=" " required class="input-pequeno"
+                                <input type="text" formControlName="validade"  placeholder=" " class="input-pequeno"
                                        (input)="formatarValidade($event)"/>
                                 <label>Validade</label>
                             </div> 
     
                             <div class="form-group" style="margin-left:-70px; margin-right:0px;">
-                                <input type="password" formControlName="cvv"  placeholder=" "minlength="3" maxlength="3" class="input-pequeno" required
+                                <input type="password" formControlName="cvv" maxlength="3" class="input-pequeno"
                                        (keypress)="permitirApenasNumeros($event)"/>
                                 <label>CVV</label>
                             </div>
@@ -128,7 +128,7 @@
                             <label>Guardar os dados do cartão.</label>
                         </div>
     
-                        <button type="submit" id="openCode" class="btnContinuarPay botaoTransicao" (click)="ModalCodigo = true">Continuar</button>
+                        <button [class.disabled]="FormCartao.invalid" [disabled]="FormCartao.invalid" class="btnContinuarPay botaoTransicao" (click)="ModalCodigo = true">Continuar</button>
                     </div>               
                 </form>
             </div>
@@ -143,7 +143,7 @@
 
                 <div style="margin-left:20px;">
                     <div class="form-group">
-                        <input type="tel" id="telefone" name="telefone" maxlength="9" placeholder=" " style="padding-left:20px;" required class="input-grande" 
+                        <input type="tel" id="telefone" name="telefone" maxlength="9" placeholder=" " style="padding-left:20px;" class="input-grande" 
                             (keypress)="permitirApenasNumeros($event)" [value]="ServicoAutenticacao.Utilizador()?.telefone"/>
                         <label>Número de telemóvel</label>
                     </div>
@@ -173,10 +173,13 @@
     
                 <div class='container'>
                     <form [formGroup]="FormCodigo"> 
-                        <input type='tel' formControlName="codigo" class='codigo' maxlength='6' (keypress)="permitirApenasNumeros($event)" required>
+                        <input type='tel' formControlName="codigo" class='codigo' maxlength='6' (keypress)="permitirApenasNumeros($event)">
 
                         <div class='container' style='margin-bottom: 15px; justify-content: center;'>
-                            <button type='submit' class='btnContinuarPay botaoTransicao'><strong>Verificar</strong></button>
+                            <button type='submit' class='btnContinuarPay botaoTransicao' (click)="realizarCompra()" >
+                                <strong>
+                                Verificar
+                            </strong></button>
                         </div>
                     </form>
                 </div>

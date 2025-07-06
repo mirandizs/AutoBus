@@ -44,7 +44,7 @@
                 <tr>
                     <td>{{Recibo.data_compra}}</td>
                     <td><a><strong>{{Recibo.local_partida}} para {{Recibo.local_chegada}}</strong></a></td>
-                    <td>{{Recibo.preco}}€</td>
+                    <td>{{Recibo.preco | currency:'EUR'}}</td>
                     <td>
                         <button class="botao-transferir" style="display: flex;"
                             (click)="transferirRecibo(Recibo.id_compraRealizada)"> <!--" -->
@@ -57,3 +57,5 @@
         </table>
     </div>
 </div>
+
+<butao-voltar></butao-voltar>

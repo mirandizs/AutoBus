@@ -67,7 +67,7 @@
                 <p><a>📍</a><strong>Origem:</strong> {{ViagemSelecionada.local_partida}}</p>
                 <p><a>📍</a><strong>Destino:</strong> {{ViagemSelecionada.local_chegada}}</p>
             </div>
-            <p><strong>Data:</strong> {{ViagemSelecionada.data}}</p>
+            <p><strong>Data:</strong> {{ViagemSelecionada.data | date:'dd/MM/YYYY'}}</p>
             <p><strong>Hora de partida:</strong> {{ViagemSelecionada.hora_partida}}</p>
             <p><strong>Duração estimada:</strong></p>
             <p><strong>Distância:</strong> 200 km</p>

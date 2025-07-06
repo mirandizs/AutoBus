@@ -13,13 +13,22 @@ import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
 export class ButaoVoltar {
 
   Visible = false
+  offset = '25px' // se nao houver footer, o botao fica a 25px do fundo da pagina
 
 
   @HostListener('window:scroll')
   onWindowScroll() {
     const TamanhoJanela = window.innerHeight;
     const TamanhoTotalPagina = document.documentElement.scrollHeight
-    const PixeisParaMostrar = TamanhoTotalPagina - 100 // Tamanho total menos 100 pixeis, 100 pixeis antes da pagina estar no fim
+
+    
+    const footer = document.querySelector('footer');
+    const OffsetPixeisNecessarios = footer ? 100 : 25;
+
+    if (footer){
+      this.offset = '100px' // se houver footer
+    }
+    const PixeisParaMostrar = TamanhoTotalPagina - OffsetPixeisNecessarios
 
     const PosicaoScroll = TamanhoJanela + (window.scrollY || document.documentElement.scrollTop)
     this.Visible = PosicaoScroll > PixeisParaMostrar; 
