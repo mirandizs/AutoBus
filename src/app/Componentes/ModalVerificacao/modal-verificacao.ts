@@ -14,20 +14,18 @@ import { Definicoes } from '../../Definicoes';
 })
 
 export class ModalVerificacao {
-  private _aberto = true;
 
-  @Input()
-  set Aberto(value: boolean) {
-    this._aberto = value;
-  }
+  @Input() Aberto!:Boolean
+  @Output() AbertoChange = new EventEmitter<boolean>();
 
-  get Aberto(): boolean {
-    return this._aberto;
+  MudarAberto(Estado:boolean) {
+    this.Aberto = Estado
+    this.AbertoChange.emit(Estado)
   }
 
   @HostBinding('style.display')
   get display(): string {
-    return this._aberto ? '' : 'none';
+    return this.Aberto ? '' : 'none';
   }
 
   @Output() submetido = new EventEmitter<number>();
@@ -42,7 +40,8 @@ export class ModalVerificacao {
   async ReenviarCodigo() {
   }
 
-  
+
+
   // Formulário de verificação
   FormVerificacao: FormGroup = new FormGroup({
     codigo: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]),

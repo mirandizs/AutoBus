@@ -6,11 +6,11 @@
     <div class="row" style="justify-content: space-between;">
         <div class="trip-type">
             <label class="radioestilo"><strong>Ida</strong>
-                <input type="radio" formControlName="ida" value="ida" />
+                <input type="radio" formControlName="tipo_viagem" value="Ida" />
                 <span class="checkmark"></span>
             </label>
             <label class="radioestilo"><strong>Ida e volta</strong>
-                <input type="radio" formControlName="ida" value="ida-e-volta" />
+                <input type="radio" formControlName="tipo_viagem" value="IdaVolta" />
                 <span class="checkmark"></span>
             </label>
         </div>
@@ -46,21 +46,21 @@
                     <option value="1">1 Adulto</option>
                     <option value="2">2 Adultos</option>
                     <option value="3">3 Adultos</option>
-                    <option value="3">1 Adulto e uma criança</option>
-                    <option value="3">1 Adulto e duas crianças</option>
-                    <option value="3">2 Adultos e uma criança</option>
-                    <option value="3">2 Adultos e duas crianças</option>
+                    <option value="1-1">1 Adulto e uma criança</option>
+                    <option value="1-2">1 Adulto e duas crianças</option>
+                    <option value="2-1">2 Adultos e uma criança</option>
+                    <option value="2-2">2 Adultos e duas crianças</option>
                 </select>
             }
             @else {
                 <select style="width: 220px; cursor: pointer; padding-right: -20px;" formControlName="passageiros" >
                     <option value="1">1 Adulto</option>
                     <option value="2">2 Adultos</option>
-                    <option value="2">3 Adultos</option>
-                    <option value="3">1 Adulto e uma criança</option>
-                    <option value="3">1 Adulto e duas crianças</option>
-                    <option value="3">2 Adultos e uma criança</option>
-                    <option value="3">2 Adultos e duas crianças</option>
+                    <option value="3">3 Adultos</option>
+                    <option value="1-1">1 Adulto e uma criança</option>
+                    <option value="1-2">1 Adulto e duas crianças</option>
+                    <option value="2-1">2 Adultos e uma criança</option>
+                    <option value="2-2">2 Adultos e duas crianças</option>
                 </select>
             }
         </div>
@@ -71,18 +71,19 @@
             <div style="display: flex;">
                 <label class="titulo-campo"><strong>Data de ida</strong></label> 
 
-                @if(FormPesquisa.value.ida == "ida-e-volta") {
+                @if(FormPesquisa.value.tipo_viagem == "IdaVolta") {
                   <label class="titulo-campo" style="margin-left: 55px;"><strong>Data de volta</strong></label>
                 }
             </div>
             
             <div style="display: flex;">
-            @if (FormPesquisa.value.ida == "ida-e-volta"){
-                <input type="date" value="yyyy-MM-dd" formControlName="data_ida" style="padding-left: 15px; padding-right: 20px; min-width: 150px; cursor: text;"/>
-                <input type='date' value="yyyy-MM-dd" formControlName="data_volta" style='padding-left: 15px; padding-right: 10px; width: 130px; margin-left: -75px; cursor: text;'>
+            @if (FormPesquisa.value.tipo_viagem == "IdaVolta"){
+                <input type="date"  formControlName="data_ida" style="padding-left: 15px; padding-right: 20px; min-width: 150px; cursor: text;"/>
+                <input type='date'  formControlName="data_volta" style='padding-left: 15px; padding-right: 10px; width: 130px; cursor: text;'>
+                <!-- margin-left: -75px;  -->
             }
             @else { <!--ida-->
-                <input type="date" value="yyyy-MM-dd" formControlName="data_ida" style="padding-left: 15px; padding-right: 20px; cursor: text;"/>
+                <input type="date" formControlName="data_ida" style="padding-left: 15px; padding-right: 20px; cursor: text;"/>
             }
             </div>  
         </div>
@@ -90,15 +91,16 @@
         <div class="campo hora-ida" style="display: flex;">
             <div style="display: flex;">
                 <label class="titulo-campo" ><strong>Hora de ida</strong></label>
-                @if (FormPesquisa.value.ida == "ida-e-volta") {
+                @if (FormPesquisa.value.tipo_viagem == "IdaVolta") {
                     <label class="titulo-campo" style="margin-left: 25px;"><strong>Hora de volta</strong></label>
                 }
             </div>
 
             <div style="display: flex;">
-                @if (FormPesquisa.value.ida == "ida-e-volta"){
+                @if (FormPesquisa.value.tipo_viagem == "IdaVolta"){
                     <input type="time" formControlName="hora_ida" style="padding-left: 15px; padding-right: 25px; cursor: text;"/>
-                    <input type="time" formControlName="hora_volta" style="width: 130px; padding-left: 15px; padding-right: 25px; margin-left: -90px; cursor: text;"/>
+                    <input type="time" formControlName="hora_volta" style="width: 130px; padding-left: 15px; padding-right: 25px; cursor: text;"/>
+                     <!-- margin-left: -90px; -->
                 }
                 @else {
                     <input type="time" formControlName="hora_ida" style="padding-left: 15px; padding-right: 25px; cursor: text;"/>

@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/auto-bus",
+            "outputPath": "docs",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -53,7 +53,7 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",

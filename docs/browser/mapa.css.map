@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/Componentes/Mapa/mapa.css"],
+  "sourcesContent": ["google-map{\r\n    border-radius: inherit;\r\n}\r\n\r\n::ng-deep .map-container{\r\n    border-radius: inherit;\r\n}\r\n\r\n.marcador{\r\n    cursor: pointer;\r\n    /* background: white;\r\n    border: 1px solid #ccc;\r\n    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);\r\n    padding: 4px 8px;\r\n    border-radius: 4px; */\r\n    font-weight: bold;\r\n    color: white;\r\n    font-size: 14px;\r\n\r\n    &.selecionado{\r\n        background-color: #006a3aed !important;\r\n        color: white !important;\r\n        padding: 4px 8px;\r\n        border-radius: 4px;\r\n    }\r\n}\r\n\r\n.distancia {\r\n  position: absolute;\r\n  top: 10px;\r\n  left: 10px;\r\n  background: white;\r\n  padding: 8px 12px;\r\n  border-radius: 8px;\r\n  font-weight: bold;\r\n  box-shadow: 0 0 10px rgba(0,0,0,0.2);\r\n  z-index: 999;\r\n}\r\n"],
+  "mappings": "AAAA,WACI,cAAe,OACnB,CAEA,UAAU,CAAC,cACP,cAAe,OACnB,CAEA,CAAC,SACG,OAAQ,QAMR,YAAa,IACb,MAAO,KACP,UAAW,IAQf,CAjBA,CAAC,QAWI,CAAC,YACE,iBAAkB,oBAClB,MAAO,eArBf,QAsBiB,IAAI,IAtBrB,cAuBuB,GACnB,CAGJ,CAAC,UACC,SAAU,SACV,IAAK,KACL,KAAM,KACN,WAAY,KA/Bd,QAgCW,IAAI,KAhCf,cAiCiB,IACf,YAAa,IACb,WAAY,EAAE,EAAE,KAAK,MACrB,QAAS,GACX",
+  "names": []
+}

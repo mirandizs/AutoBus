@@ -18,8 +18,8 @@ import { Carregamento } from "../../Componentes/Carregamento/carregamento";
 export class PaginaViagens {
   route = inject(ActivatedRoute) //informacoes da pagina atual
   ServicoHttp = inject(HttpService)
-  
-  ModalAdicionarBilhete : boolean = false;
+
+  ModalAdicionarBilhete: boolean = false;
   ModalVerDetalhes: boolean = false;
   ViagemSelecionada: any = null;
 
@@ -28,46 +28,55 @@ export class PaginaViagens {
     this.ModalVerDetalhes = true;
   }
 
-  Viagens : any[] = []
+  IdaSelecionada = true // true significa que volta esta selecionado
+  ViagensIda: any[] = []
+  ViagensVolta?: any[]
 
   async ngOnInit() { //funcao q é executada quando a pagina inicia 
     const queryParams = this.route.snapshot.queryParams // informacoes no link da pagina
 
-    const URL_Pedido = new URL(Definicoes.API_URL+"viagens")
+    const URL_Pedido = new URL(Definicoes.API_URL + "viagens")
     URL_Pedido.searchParams.append("local_partida", queryParams["local_partida"]) // Append adiciona informacoes ao URL do endpoint que vai ser chamado
     URL_Pedido.searchParams.append("local_chegada", queryParams["local_chegada"])
     URL_Pedido.searchParams.append("hora_ida", queryParams["hora_ida"])
-    URL_Pedido.searchParams.append("data_ida", queryParams["data_ida"])
+    URL_Pedido.searchParams.append("hora_volta", queryParams["hora_volta"])
+    URL_Pedido.searchParams.append("tipo_viagem", queryParams["tipo_viagem"])
 
-    this.Viagens = await this.ServicoHttp.Request(URL_Pedido,"GET")
-    console.log(this.Viagens)
+    const Resultado = await this.ServicoHttp.Request(URL_Pedido, "GET")
+    this.ViagensIda = Resultado.ViagensIda
+    this.ViagensVolta = Resultado.ViagensVolta
+
+    for (const viagem of [...this.ViagensIda, ...this.ViagensVolta || []]) {
+      viagem.data = viagem.tipo == "Ida" && queryParams["data_ida"]
+        || viagem.tipo == "Volta" && queryParams["data_volta"]
+        || new Date().toISOString().split('T')[0]
+    }
   }
 
 
 
   async adicionarCarrinho(viagem: any) {
-    const URL_Pedido = new URL(Definicoes.API_URL+"carrinho")
+    const URL_Pedido = new URL(Definicoes.API_URL + "carrinho")
 
     const queryParams = this.route.snapshot.queryParams;
 
     try {
-      const Resposta = await this.ServicoHttp.Request(URL_Pedido, "POST", "", {
+      const Resposta = await this.ServicoHttp.Request(URL_Pedido, "POST", "Erro ao adicionar ao carrinho", {
         "id_ponto_partida": viagem.id_ponto_partida,
         "id_ponto_chegada": viagem.id_ponto_chegada,
-        data_ida: queryParams["data_ida"],
-        tipo_viagem: queryParams["idaVolta"] === "ida-e-volta" ? "ida-e-volta" : "ida"
-        // data_volta: queryParams["data_volta"] === "ida-e-volta" ? queryParams["data_volta"] : null
+        data: viagem.data,
+        "tipo": viagem.tipo,
       });
 
       if (Resposta?.success || Resposta?.status === 200) {
         this.ModalAdicionarBilhete = true;
-      } 
-      
+      }
+
       else {
         console.error("Erro na resposta:", Resposta);
       }
-    } 
-    
+    }
+
     catch (erro) {
       console.error("Erro no pedido:", erro);
     }

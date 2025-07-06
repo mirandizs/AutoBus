@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;3a58d703f5f782463d9c712201cb73e59604f11f630b9873efa824c148cb38ed;C:/Users/sofia/Desktop/pap/AutoBus/src/app/Componentes/ServicoMensagens/container-mensagens.ts"],
+  "sourcesContent": ["\n    .message-wrapper {\n      position: fixed;\n      top: 20px;\n      right: 20px;\n      display: flex;\n      flex-direction: column;\n      gap: 8px;\n      z-index: 1000;\n    }\n  "],
+  "mappings": "AACI,CAAC,gBACC,SAAU,MACV,IAAK,KACL,MAAO,KACP,QAAS,KACT,eAAgB,OAChB,IAAK,IACL,QAAS,IACX",
+  "names": []
+}

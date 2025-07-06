@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/Componentes/Footer/footer.css"],
+  "sourcesContent": [".footer {\r\n    height: 100%;\r\n    margin: 0;\r\n    flex-direction: column;\r\n    background-color: rgba(3, 3, 59);\r\n    color: white;\r\n    bottom: 0;\r\n    width: 100%;\r\n    height: 80px;\r\n    left: 0;\r\n    font-size: 12px;\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\r\n    bottom: 0%;\r\n}\r\n\r\n.imagemContact{\r\n    margin-right: 5px;\r\n    width: 30px; /* Largura da imagem */\r\n    height: 30px; /* Altura da imagem */\r\n    object-fit: cover;\r\n    margin-right: 10px;\r\n}\r\n\r\n.contact-button {\r\n    background-color: transparent;\r\n    color: white;\r\n    border: none;\r\n    padding: 8px 15px;\r\n    margin-top: 5px;\r\n    margin-left: 40px;\r\n    font-size: 12px;\r\n    cursor: pointer;\r\n    border-radius: 5px;\r\n\r\n    transition: 0.4s;\r\n}\r\n\r\n.contact-button:hover {\r\n    transition: scale(1.5);\r\n}\r\n\r\n/*.contact-button:hover {\r\n        background-color: lightgray;\r\n    }*/"],
+  "mappings": "AAAA,CAAC,OACG,OAAQ,KADZ,OAEY,EACR,eAAgB,OAChB,iBAAkB,QAClB,MAAO,KAEP,MAAO,KACP,OAAQ,KACR,KAAM,EACN,UAAW,KACX,YAAa,IACb,eAAgB,IAChB,OAAQ,EACZ,CAEA,CAAC,cAEG,MAAO,KACP,OAAQ,KACR,WAAY,MACZ,aAAc,IAClB,CAEA,CAAC,eACG,iBAAkB,YAClB,MAAO,KACP,OAAQ,KA3BZ,QA4Ba,IAAI,KACb,WAAY,IACZ,YAAa,KACb,UAAW,KACX,OAAQ,QAhCZ,cAiCmB,IAEf,WAAY,GAChB,CAEA,CAdC,cAcc,OACX,WAAY,MAAM,IACtB",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;45d37a0ec5bfa906ac30cfeb0c1fee8a28734f846f3df200d6e2294b470f8e8c;C:/Users/sofia/Desktop/pap/AutoBus/src/app/Componentes/ServicoMensagens/mensagem.componente.ts"],
+  "sourcesContent": ["\n    .mensagem {\n      padding: 12px 16px;\n      border-radius: 4px;\n      color: white;\n      box-shadow: 0 2px 6px rgba(0,0,0,0.2);\n      display: flex;\n      justify-content: space-between;\n      align-items: center;\n      min-width: 200px;\n      font-weight: 500;\n    }\n    .mensagem.erro { background: #ff4d4f; }\n    .mensagem.sucesso { background: #52c41a; }\n    .mensagem.info { background: #1890ff; }\n    .mensagem.aviso { background: #faad14; }\n    button {\n      background: none;\n      border: none;\n      color: white;\n      font-size: 16px;\n      cursor: pointer;\n    }\n  "],
+  "mappings": "AACI,CAAC,SADL,QAEe,KAAK,KAFpB,cAGqB,IACf,MAAO,KACP,WAAY,EAAE,IAAI,IAAI,MACtB,QAAS,KACT,gBAAiB,cACjB,YAAa,OACb,UAAW,MACX,YAAa,GACf,CACA,CAXC,QAWQ,CAAC,KAAO,WAAY,OAAS,CACtC,CAZC,QAYQ,CAAC,QAAU,WAAY,OAAS,CACzC,CAbC,QAaQ,CAAC,KAAO,WAAY,OAAS,CACtC,CAdC,QAcQ,CAAC,MAAQ,WAAY,OAAS,CACvC,OACE,WAAY,KACZ,OAAQ,KACR,MAAO,KACP,UAAW,KACX,OAAQ,OACV",
+  "names": []
+}

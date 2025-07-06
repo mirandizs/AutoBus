@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/styles.css"],
+  "sourcesContent": ["/* CSS global, aplicado a todas as paginas e componentes */\r\n\r\nbody {\r\n  margin: 0;\r\n  font-family: Calibri, Helvetica, sans-serif;\r\n  overflow-x: hidden;\r\n  box-sizing: border-box;\r\n}\r\n\r\n\r\n.icon-butao{\r\n  width: 30px; /* Largura da imagem */\r\n  height: 30px;\r\n  object-fit: cover;\r\n}"],
+  "mappings": "AAEA,KAFA,OAGU,EACR,YAAa,OAAO,CAAE,SAAS,CAAE,WACjC,WAAY,OACZ,WAAY,UACd,CAGA,CAAC,WACC,MAAO,KACP,OAAQ,KACR,WAAY,KACd",
+  "names": []
+}

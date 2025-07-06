@@ -5,8 +5,14 @@
 
 <br><br><br>
 
+@if (ViagensVolta){
+    <div class="row">
+        <button (click)="IdaSelecionada=true">Ida ({{ViagensIda.length}})</button>
+        <button (click)="IdaSelecionada=false">Volta ({{ViagensVolta.length}})</button>
+    </div>
+}
 
-
+@let Viagens = IdaSelecionada ? ViagensIda : ViagensVolta;
 @for (Viagem of Viagens; track $index){
     <div class="alinhamento">
         <div class='caixaBilhete'>
@@ -61,7 +67,7 @@
                 <p><a>📍</a><strong>Origem:</strong> {{ViagemSelecionada.local_partida}}</p>
                 <p><a>📍</a><strong>Destino:</strong> {{ViagemSelecionada.local_chegada}}</p>
             </div>
-            <p><strong>Data:</strong> {{ViagemSelecionada.data_ida}}</p>
+            <p><strong>Data:</strong> {{ViagemSelecionada.data}}</p>
             <p><strong>Hora de partida:</strong> {{ViagemSelecionada.hora_partida}}</p>
             <p><strong>Duração estimada:</strong></p>
             <p><strong>Distância:</strong> 200 km</p>

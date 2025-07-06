@@ -35,27 +35,14 @@ export class PaginaCriarConta {
 
   URL_Imagens = Definicoes.API_URL + 'imagens/utilizador'
 
-  async VerificarConta(codigo:number){
-    const SucessoConta = await this.ServicoHttp.Request(Definicoes.API_URL+'verificar_conta', 'POST', 'Nao foi possivel verificar a conta', {
-      codigo:codigo
-    })
-
-    if (SucessoConta){
-      // this.router.navigate(['/inicial']).then(()=>{
-      //   window.location.reload()
-      // })
-      this.CriarConta()
-    }
-  }
-
   
   AMandarEmail: boolean = false;
   async EnviarCodigo() {
     this.AMandarEmail = true
 
-    const EmailMandado = await this.ServicoHttp.Request(Definicoes.API_URL + 'verificar-email', 'POST', 
+    const EmailMandado = await this.ServicoHttp.Request(Definicoes.API_URL + 'email-confirmacao', 'POST', 
       'Falha ao enviar o email de confirmação', {
-      email: this.FormFoto.value.email,
+      email: this.FormCriar.value.email,
     })
 
     if (EmailMandado) {
@@ -64,23 +51,30 @@ export class PaginaCriarConta {
     this.AMandarEmail = false
   }
 
+
   
-  async CriarConta(){
+  async CriarConta(Codigo:number){
     /*this.FormCriar.disable()*/
     this.ACriarConta = true
 
     const SucessoConta = await this.ServicoHttp.Request(Definicoes.API_URL+'criar_conta', 'POST', 'Nao foi possivel criar a conta', 
-      this.FormCriar.value)
+      {
+        ...this.FormCriar.value,
+        codigo_confirmacao: Codigo
+      }
+    )
 
     if (SucessoConta){
       if (this.FicheiroSelecionado){
         const Data = new FormData()
         Data.append('foto', this.FicheiroSelecionado)
 
-        const SucessoImagem = await this.ServicoHttp.Request(this.URL_Imagens, 'POST', 'Nao foi possivel editar a foto da conta', Data)
+        const SucessoImagem = await this.ServicoHttp.Request(this.URL_Imagens, 'POST', 'Nao foi possivel criar a foto da conta', Data)
 
-        this.ModalCodigo = true
       }
+
+      this.ServicoMensagens.sucesso("Conta criada com sucesso!")
+      this.router.navigate(["/inicial"])
     }
 
     
