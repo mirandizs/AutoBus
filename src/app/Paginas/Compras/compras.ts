@@ -24,7 +24,7 @@ export class PaginaCompras {
 
     async ngOnInit() {
         const Pedido_URL = new URL(Definicoes.API_URL+"compras")
-        const Compras = await this.ServicoHTTP.Request(Pedido_URL, "GET", 'Erro ao obter compras    ')
+        const Compras = await this.ServicoHTTP.Request(Pedido_URL, "GET", 'Erro ao obter compras')
         if (Compras){
             this.Compras = Compras;
         }

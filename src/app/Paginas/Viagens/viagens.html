@@ -7,8 +7,8 @@
 
 @if (ViagensVolta){
     <div class="row">
-        <button (click)="IdaSelecionada=true">Ida ({{ViagensIda.length}})</button>
-        <button (click)="IdaSelecionada=false">Volta ({{ViagensVolta.length}})</button>
+        <button class="botaoTransicao botoes" style="margin-left: 29%;" (click)="IdaSelecionada=true">Ida ({{ViagensIda.length}})</button>
+        <button class="botaoTransicao botoes" style="margin-left: 1%;" (click)="IdaSelecionada=false">Volta ({{ViagensVolta.length}})</button>
     </div>
 }
 
@@ -22,10 +22,7 @@
             </div>
 
             <label style="margin-bottom: 30px;">Hora de partida: {{Viagem.hora_partida}}</label><br><br>
-            <!-- <label>Data da viagem: {{Viagem.data_ida}}</label> -->
-
-            <!--<button class='botaoTransicao botaoComprar'>Adicionar ao carrinho</button>-->
-            <!--<form action='' method='POST'>-->
+            
             <div style="margin-top: 20px; display: flex;">
                 <button class='botaoTransicao verMais' (click)="abrirDetalhes(Viagem)">Ver mais detalhes</button><br>
 
@@ -42,11 +39,9 @@
     <carregamento></carregamento>
     <div class='modal'>
         <div class='modal-content animate'>
-            <div>
+            <div style="display: flex; justify-content: space-between;">
+                <h3 style="margin-top: 13px; margin-right: 25px;">Bilhete adicionado ao carrinho!</h3>
                 <span (click)="ModalAdicionarBilhete=false" class='close'>&times;</span>
-                <br><br>
-    
-                <h3>Bilhete adicionado ao carrinho!</h3><br>
             </div>
         </div>
     </div>
@@ -63,17 +58,14 @@
                 <br><br>
             </div>
 
-            <div >
-                <p><a>📍</a><strong>Origem:</strong> {{ViagemSelecionada.local_partida}}</p>
-                <p><a>📍</a><strong>Destino:</strong> {{ViagemSelecionada.local_chegada}}</p>
-            </div>
-            <p><strong>Data:</strong> {{ViagemSelecionada.data | date:'dd/MM/YYYY'}}</p>
-            <p><strong>Hora de partida:</strong> {{ViagemSelecionada.hora_partida}}</p>
-            <p><strong>Duração estimada:</strong></p>
-            <p><strong>Distância:</strong> 200 km</p>
-            <p><strong>Preço:</strong> {{ViagemSelecionada.preco | currency:'EUR'}}</p>
-            <p><strong>Tipo de autocarro:</strong> Executivo</p>
-            <p><strong>Autocarro Nº:</strong></p>
+            <p><a>📍</a><strong> Origem:</strong> {{ViagemSelecionada.local_partida}}</p>
+            <p><a>📍</a><strong> Destino:</strong> {{ViagemSelecionada.local_chegada}}</p>
+            <p><a>🗓️</a><strong> Data:</strong> {{ViagemSelecionada.data | date:'dd/MM/YYYY'}}</p>
+            <p><a>🕑</a><strong> Hora de partida:</strong> {{ViagemSelecionada.hora_partida}}</p>
+            <p><a>⌛</a><strong> Duração estimada:</strong></p>
+            <p><a>🛣️</a><strong> Distância:</strong> 176,98 km</p>
+            <p><a>💲</a><strong> Preço:</strong> {{ViagemSelecionada.preco | currency:'EUR'}}</p>
+            <p><a>🚍</a><strong> Autocarro Nº:</strong> 4</p>
 
         </div>
     </div>

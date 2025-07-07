@@ -5,23 +5,23 @@
         <div class="login">
 
             @if (ServicoAutenticacao.Utilizador()){
-                <button id="butao-compras" class="botaoLogin-a botao-imagem-compras" routerLink="/compras">
+                <button class="botaoLogin-a botao-imagem-compras" routerLink="/compras">
                     <img class="icon-butao" src="img/comprasB.png">
                 </button>
-                <button id="butao-carrinho" class="botaoLogin-a botao-imagem-carrinho" routerLink="/carrinho">
+                <button class="botaoLogin-a botao-imagem-carrinho" routerLink="/carrinho">
                     <img class="icon-butao" src="img/carrinhoB.png">
                 </button>
             }
 
-            <div id="dropdown-container" class="dropdown" 
+            <div class="dropdown" 
                 (mouseenter)="DropdownVisivel = true"
                 (mouseleave)="DropdownVisivel = false" 
                 (click)="ModalLoginVisivel = true">
 
                 <!-- BUTAO PERFIL -->
-                <button class="botaoLogin botao-imagem dropbtn" id="butao-perfil" alt="Utilizador">
+                <button class="botaoLogin botao-imagem dropbtn" alt="Utilizador">
                     <img class="imagem-butao-perfil" [src]="URL_Imagens" onerror="this.src='img/default-profile.png'">
-                    <span id="nome-utilizador" style="color: white; font-size: 14px; margin-left:10px;">
+                    <span style="color: white; font-size: 14px; margin-left:10px;">
                         {{ServicoAutenticacao.Utilizador()?.nome}}
                     </span>
                 </button>
@@ -31,7 +31,7 @@
 
                 <!-- DROPDOWN -->
                 @if (DropdownVisivel && ServicoAutenticacao.Utilizador()){
-                    <div id="dropdown" class="dropdown-content">
+                    <div class="dropdown-content">
                         <a routerLink="/definicoes" style="padding-top: 30px;">Definições</a>
                         <a (click)="Logout()" style="padding-bottom: 17px; cursor: pointer;">Sair</a>
                     </div>
@@ -59,7 +59,6 @@
 
 @if (ModalLoginVisivel && !ServicoAutenticacao.Utilizador()){
     <div class="modal">
-
         <form [formGroup]="FormLogin" class="modal-content animate">
             <div class="container">
                 <label class="entrar"><strong>Entrar</strong></label>

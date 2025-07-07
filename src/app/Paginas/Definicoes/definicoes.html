@@ -1,16 +1,16 @@
 <div class="roww">
     <div class="menu-lateral">
-        <button routerLink="minha-conta" type='button' id='minhaConta' class='botao' (click)='JanelaAtiva="MinhaConta"'>Minha
+        <button routerLink="minha-conta" type='button' class='botao' (click)='JanelaAtiva="MinhaConta"'>Minha
             conta</button>
 
-        <button routerLink="privacidade" type='button' id='privacidadeSeguranca' class='botao' (click)='JanelaAtiva="Seguranca"'>Privacidade
+        <button routerLink="privacidade" type='button' class='botao' (click)='JanelaAtiva="Seguranca"'>Privacidade
             e Segurança</button>
 
         @if (!ServicoAutenticacao.Admin()) {
-            <button routerLink="utilizadores" type="button" id="gestor" class="botao" (click)='JanelaAtiva="Utilizadores"'>Gerir
+            <button routerLink="utilizadores" type="button" class="botao" (click)='JanelaAtiva="Utilizadores"'>Gerir
                 Utilizadores</button>
 
-            <!-- <button routerLink="editar-utilizador" type="button" id="edicao" class="botao" (click)='JanelaAtiva="EditarUtilizador"'>Editar
+            <!-- <button routerLink="editar-utilizador" type="button" class="botao" (click)='JanelaAtiva="EditarUtilizador"'>Editar
                 Utilizadores</button> -->
         }
 
@@ -22,9 +22,6 @@
         Por exemplo, se o link for /definicoes/minha-conta, os conteudos renderizados serao os da sub-pagina minha-conta. -->
         <router-outlet></router-outlet>
     </div>
-
-</div>
-
-<br>
+</div><br>
 
 <footer-componente></footer-componente>

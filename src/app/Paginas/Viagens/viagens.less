@@ -437,19 +437,36 @@ nav {
   /*margin: 15% auto 15% auto;*/
 
   border: 1px solid #888;
-  width: 350px;
-  height: 120px;
+  width: 330px;
+  height: 80px;
   border-radius: 10px;
   border: none;
   color: rgba(3, 3, 59);
   text-align: center;
   align-self: center;
   justify-self: center;
+  padding-right: 15px;
+  padding-top: 5px;
   
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    scale: 0.95;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.modal-content.animate {
+  animation: fadeInModal 0.3s ease-out forwards;
 }
 
 /* The Close Button (x) */
@@ -470,6 +487,33 @@ nav {
 
 
 
+
+
+
+/* ida e volta botoes -------------------------------------------- */
+.botoes {
+  color: rgb(0, 0, 0);
+  /*background-color: rgb(4, 4, 77);*/
+  background-color: rgb(255, 255, 255);
+  height: 35px;
+  width: 100px;
+  border-radius: 10px;
+  /*border-color: none;*/
+  border-color: rgb(4, 4, 77);
+
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.botoes:hover {
+  background-color: rgb(9, 9, 127);
+  color: white;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+}
 
 
 

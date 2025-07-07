@@ -31,7 +31,7 @@
         </div>
 
         <div class="campo">
-            <label class="titulo-campo"><strong>Chegada</strong></label>
+            <label class="titulo-campo"><strong>Destino</strong></label>
             <div class="input-icon">
                 <i>📍</i>
                 <input type="text" placeholder="Para: Porto" formControlName="local_chegada"/>
@@ -72,18 +72,18 @@
                 <label class="titulo-campo"><strong>Data de ida</strong></label> 
 
                 @if(FormPesquisa.value.tipo_viagem == "IdaVolta") {
-                  <label class="titulo-campo" style="margin-left: 55px;"><strong>Data de volta</strong></label>
+                  <label class="titulo-campo" style="margin-left: 70px;"><strong>Data de volta</strong></label>
                 }
             </div>
             
             <div style="display: flex;">
             @if (FormPesquisa.value.tipo_viagem == "IdaVolta"){
-                <input type="date"  formControlName="data_ida" style="padding-left: 15px; padding-right: 20px; min-width: 150px; cursor: text;"/>
+                <input type="date"  formControlName="data_ida" style="padding-left: 15px; padding-right: 10px; width: 130px; cursor: text;"/>
                 <input type='date'  formControlName="data_volta" style='padding-left: 15px; padding-right: 10px; width: 130px; cursor: text;'>
                 <!-- margin-left: -75px;  -->
             }
             @else { <!--ida-->
-                <input type="date" formControlName="data_ida" style="padding-left: 15px; padding-right: 20px; cursor: text;"/>
+                <input type="date" formControlName="data_ida" style="width: 260px; padding-left: 15px; padding-right: 20px; cursor: text;"/>
             }
             </div>  
         </div>
@@ -92,18 +92,18 @@
             <div style="display: flex;">
                 <label class="titulo-campo" ><strong>Hora de ida</strong></label>
                 @if (FormPesquisa.value.tipo_viagem == "IdaVolta") {
-                    <label class="titulo-campo" style="margin-left: 25px;"><strong>Hora de volta</strong></label>
+                    <label class="titulo-campo" style="margin-left: 40px;"><strong>Hora de volta</strong></label>
                 }
             </div>
 
             <div style="display: flex;">
                 @if (FormPesquisa.value.tipo_viagem == "IdaVolta"){
-                    <input type="time" formControlName="hora_ida" style="padding-left: 15px; padding-right: 25px; cursor: text;"/>
-                    <input type="time" formControlName="hora_volta" style="width: 130px; padding-left: 15px; padding-right: 25px; cursor: text;"/>
+                    <input type="time" formControlName="hora_ida" style="width: 100px; padding-left: 15px; padding-right: 10px; cursor: text;"/>
+                    <input type="time" formControlName="hora_volta" style="width: 100px; padding-left: 15px; padding-right: 10px; cursor: text;"/>
                      <!-- margin-left: -90px; -->
                 }
                 @else {
-                    <input type="time" formControlName="hora_ida" style="padding-left: 15px; padding-right: 25px; cursor: text;"/>
+                    <input type="time" formControlName="hora_ida" style="width: 200px; padding-left: 15px; padding-right: 25px; cursor: text;"/>
                 }   
             </div>
         </div>
@@ -115,6 +115,6 @@
 </form>
 
 <ng-template #ButaoProcurar>
-    <input type="submit" id="btProcurar" value="Procurar" class="botaoTransicao botaoProcurar"
+    <input type="submit" value="Procurar" class="botaoTransicao botaoProcurar"
     [style]="PaginaViagens ? 'height:30px' : '' " [disabled]="FormPesquisa.invalid" />
 </ng-template>

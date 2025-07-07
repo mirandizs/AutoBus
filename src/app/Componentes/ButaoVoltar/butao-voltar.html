@@ -1,12 +1,7 @@
 
-<div [style.bottom] = "offset"
-    class="botaoVoltar" 
-    [class]="{'visivel':Visible}" 
-    id="botaoVoltar">
+<div [style.bottom] = "offset" class="botaoVoltar" [class]="{'visivel':Visible}">
     <button class="botaoVolt" (click)="VoltarAoTopo()">
-        <a style="text-decoration: none; color: white;">
-            Voltar ao topo
-        </a>
+        <a style="text-decoration: none; color: white;">Voltar ao topo</a>
     </button>
 </div>
 <!-- Como estava a dar problemas com angular, e o butao ficava visivel sempre que a pagina mudava, butaoVoltar e uma classe estatica

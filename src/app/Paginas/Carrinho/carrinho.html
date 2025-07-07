@@ -6,6 +6,8 @@
     
         <h1 class="titulo">Meu carrinho</h1>
 
+        <!-- {{ModalRemoverBilhete}} -->
+
         <h2 style="text-align: center; margin-bottom:50px; color: rgb(5, 5, 96);">Bilhetes</h2>
 
         @if (Carrinho.length == 0) {
@@ -25,15 +27,29 @@
                 </div>
     
                 <div>
-                    <a>Hora de partida: {{Bilhete.hora_partida}}</a>
-                    <button class='btCarrinho' (click)="removerBilhete(Bilhete.id_produto)">
+                    <button class='botaoTransicao botoes' (click)="abrirDetalhes(Bilhete)">Detalhes</button><br>
+                    
+                    <button class='btCarrinho' (click)="removerBilhete(Bilhete.id_produto) ">
                         <img src="img/carrinhoExcluirA.png" style="height: 25px; width: 25;">
                     </button>
                 </div>
-                <!--<button class='botaoTransicao verMais'></button>-->
             </div>
         }        
     </div>
+
+
+    @if (ModalRemoverBilhete){
+        <carregamento></carregamento>
+        <div class='modal'>
+            <div class='modal-content animate'>
+                <div style="display: flex; justify-content: space-between;">
+                    <h3 style="margin-top: 13px; margin-right: 25px;">Bilhete removido com sucesso!</h3>
+                    <span (click)="ModalRemoverBilhete=false" class='close'>&times;</span>
+                </div>
+            </div>
+        </div>
+    }
+    
 
     <!--CAIXA DE RESUMO DA COMPRA-->
     <div class="column right">
@@ -67,18 +83,18 @@
 
         @if (ModalMetodo) {
             <!-- CAIXA DE PAGAMENTO ---------------------------------------------------------------> 
-            <div  id="modalMetodo" class="modal-payment">
-                <button class="fechar" id="fecharModal" (click)="ModalMetodo = false">✖</button>
+            <div class="modal-payment">
+                <button class="fechar" (click)="ModalMetodo = false">✖</button>
                 <h2 style="color: rgb(0, 0, 150); margin-bottom: 50px; margin-left: 20px;">Método de pagamento</h2>
 
                 <div class="caixaEscolha" style="display: flex;">
-                    <button id="btnCartao" class="btnEscolha" style="display:flex; padding-top: 10px;" (click)="TipoPagamentoCartao = true">
+                    <button class="btnEscolha" style="display:flex; padding-top: 10px;" (click)="TipoPagamentoCartao = true">
                         <label style="margin-right:120px; margin-top:6px; cursor:pointer;">Cartão de crédito</label>
                         <img src="img/cartoes.png" style="height: 25px; width: 25;">
                     </button>
                 </div>
                 <div class="caixaEscolha" style="margin-bottom:30px;">
-                    <button id="btnMbway" class="btnEscolha"  style="display:flex; padding-top: 10px;" (click)="TipoPagamentoMB = true">
+                    <button class="btnEscolha"  style="display:flex; padding-top: 10px;" (click)="TipoPagamentoMB = true">
                         <label style="margin-right:180px; margin-top:6px; cursor:pointer;">MB WAY</label>
                         <img src="img/mbway.png" style="height: 25px; width: 25;">
                     </button>
@@ -88,9 +104,9 @@
 
         @if (TipoPagamentoCartao) {
              <!-- OPCAO DO CARTAO DE CREDITO -->
-            <div id="modalCartao" class="modalTipoPagamentoCartao">
+            <div class="modalTipoPagamentoCartao">
                 <!--<?php //var_dump($_SESSION["metodoPagamento"])?>-->
-                <button class="fechar" id="fecharModal2" (click)="TipoPagamentoCartao = false">✖</button><br>
+                <button class="fechar" (click)="TipoPagamentoCartao = false">✖</button><br>
     
                 <h2 style="color: rgb(0, 0, 150); margin-bottom: 50px; margin-left: 20px;">Pagamento com cartão de crédito</h2>
     
@@ -136,21 +152,21 @@
 
         @else if (TipoPagamentoMB) {
             <!-- OPCAO DO MBWAY -->
-            <div id="modalMbway" class="modalTipoPagamentoMB">
-                <button class="fechar" id="fecharModal3" (click)="TipoPagamentoMB = false">✖</button>
+            <div class="modalTipoPagamentoMB">
+                <button class="fechar" (click)="TipoPagamentoMB = false">✖</button>
 
                 <h2 style="color: rgb(0, 0, 150); margin-bottom: 50px; margin-left: 20px;">Pagamento com MB WAY</h2>
 
                 <div style="margin-left:20px;">
                     <div class="form-group">
-                        <input type="tel" id="telefone" name="telefone" maxlength="9" placeholder=" " style="padding-left:20px;" class="input-grande" 
+                        <input type="tel" name="telefone" maxlength="9" placeholder=" " style="padding-left:20px;" class="input-grande" 
                             (keypress)="permitirApenasNumeros($event)" [value]="ServicoAutenticacao.Utilizador()?.telefone"/>
                         <label>Número de telemóvel</label>
                     </div>
 
                     <label>Caso este não seja o teu número associado ao MBWAY, altere-o.</label><br><br><br>
 
-                    <button id="openCode" class="btnContinuarPay botaoTransicao" (click)="ModalCodigo = true">Continuar</button>
+                    <button class="btnContinuarPay botaoTransicao" (click)="ModalCodigo = true">Continuar</button>
                 </div>
             </div>
         }
@@ -184,12 +200,37 @@
                     </form>
                 </div>
             </div>
-
-            <!-- <div style="animation: slideFromRight 0.5s forwards; z-index: 3;">
-                <modal-verificacao [Aberto]="ModalCodigo"></modal-verificacao>
-            </div> -->
         }
+    </div>
+}
 
+<!-- @if (ModalVerDetalhes) {
+    <carregamento></carregamento>
+    <detalhes></detalhes>
+
+} -->
+
+@if (ModalVerDetalhes) {
+    <carregamento></carregamento>
+    <div class="detalhes">
+        <div class="detalhes-conteudo">
+            <div>
+                <h3>Detalhes da Viagem</h3><br>
+
+                <span (click)="ModalVerDetalhes=false" class='close' style="margin-right: -50px;">&times;</span>
+                <br><br>
+            </div>
+
+            <p><a>📍</a><strong> Origem:</strong> {{ViagemSelecionada.local_partida}}</p>
+            <p><a>📍</a><strong> Destino:</strong> {{ViagemSelecionada.local_chegada}}</p>
+            <p><a>🗓️</a><strong> Data:</strong> {{ViagemSelecionada.data | date:'dd/MM/YYYY'}}</p>
+            <p><a>🕑</a><strong> Hora de partida:</strong> {{ViagemSelecionada.hora_partida}}</p>
+            <p><a>⌛</a><strong> Duração estimada:</strong></p>
+            <p><a>🛣️</a><strong> Distância:</strong> 176,98 km</p>
+            <p><a>💲</a><strong> Preço:</strong> {{ViagemSelecionada.preco | currency:'EUR'}}</p>
+            <p><a>🚍</a><strong> Autocarro Nº:</strong> 4</p>
+
+        </div>
     </div>
 }
 <!-- <footer-componente></footer-componente> -->

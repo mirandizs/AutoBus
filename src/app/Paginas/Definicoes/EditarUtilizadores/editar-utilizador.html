@@ -14,13 +14,12 @@
             <input type="date" class="info campoTexto caixa" name="nascimento" [value]="UtilizadorSelecionado()?.nascimento" style="cursor: pointer;"><br><br>
 
             <label>Password:</label><br>
-            <input [type]="PasswordVisivel ? 'text' : 'password'" class='info caixa campoTexto' name='password' id='password' style="margin-bottom:30px; cursor:not-allowed" disabled>
-            <button type='button' class='ver' name="iconPasswordConfirm" id="iconPasswordConfirm"
-                (click)="PasswordVisivel = !PasswordVisivel">
+            <input [type]="PasswordVisivel ? 'text' : 'password'" class='info caixa campoTexto' name='password' style="margin-bottom:30px; cursor:not-allowed" disabled>
+            <button type='button' class='ver' name="iconPasswordConfirm" (click)="PasswordVisivel = !PasswordVisivel">
                 <img [src]="PasswordVisivel ? 'img/aberto.png' : 'img/fechado.png'" width='20px' height='20px'>
             </button><br>
 
-            <button type="submit" id="botaoEditar" name="botaoEditar" disabled>Salvo</button>
+            <button type="submit" name="botaoEditar" disabled>Salvo</button>
         </div>
 
         <div class="column right">

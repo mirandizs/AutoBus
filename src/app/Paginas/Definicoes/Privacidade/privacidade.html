@@ -11,9 +11,7 @@
             <!-- EMAIL -->
             <label>Email:</label><br>
             <input formControlName="email" type='email' class='info caixa'>
-            <button type='submit' class='editar imagemEditar'
-                [disabled]="Utilizador()?.email == FormPrivacidade.value.email"
-                (click)="ModalCodigo = true; TipoEdicao='email'">
+            <button type='submit' class='editar imagemEditar' [disabled]="Utilizador()?.email == FormPrivacidade.value.email" (click)="ModalCodigo = true; TipoEdicao='email'">
                 <img src='img/lapis.png' width='20px' height='20px'>
             </button><br><br>
 
@@ -25,8 +23,7 @@
                 <img [src]="PasswordVisivel ? 'img/aberto.png' : 'img/fechado.png'" width='20px' height='20px'>
             </button>
 
-            <button type='submit' class='editar imagemEditar' [disabled]="FormPrivacidade.invalid"
-                (click)="ModalCodigo = true; TipoEdicao='password'">
+            <button type='submit' class='editar imagemEditar' [disabled]="FormPrivacidade.invalid" (click)="ModalCodigo = true; TipoEdicao='password'">
                 <img src='img/lapis.png' width='20px' height='20px'>
             </button><br><br><br>
 

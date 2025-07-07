@@ -4,16 +4,17 @@ import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
 import { HttpService } from '../../Services/Http.service';
 import { Definicoes } from '../../Definicoes';
 import { FormsModule, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CurrencyPipe } from '@angular/common';
+
+import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Carregamento } from '../../Componentes/Carregamento/carregamento';
 import { ServicoMensagens } from '../../Componentes/ServicoMensagens/Mensagens.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'pagina-carrinho',
-  imports: [Topbar, FormsModule, ReactiveFormsModule, CurrencyPipe, Carregamento],
+  imports: [Topbar, FormsModule, ReactiveFormsModule, CurrencyPipe, Carregamento, DatePipe],
   templateUrl: './carrinho.html',
-  styleUrl: './carrinho.css'
+  styleUrl: './carrinho.less'
 })
 
 
@@ -30,6 +31,14 @@ export class PaginaCarrinho {
   ModalCodigo = false
 
   AMandarEmail: boolean = false;
+  ModalVerDetalhes: boolean = false;
+  ModalRemoverBilhete: boolean = false;
+  ViagemSelecionada: any = null;
+
+  abrirDetalhes(viagem: any) {
+    this.ViagemSelecionada = viagem;
+    this.ModalVerDetalhes = true;
+  }
 
   ServicoHttp = inject(HttpService)
   Carrinho: any[] = []
@@ -48,6 +57,8 @@ export class PaginaCarrinho {
     if (Carrinho) {
       Carrinho.forEach((produto: any) => {
         this.Total += produto.preco
+
+        // produto.disntancia = produto.distancia.toFixed(2) + " km"
       })
       this.Carrinho = Carrinho;
     }
@@ -92,6 +103,8 @@ export class PaginaCarrinho {
 
     await this.ServicoHttp.Request(Pedido_URL, "DELETE", "", { id_produto: idProduto })
 
+    this.ModalRemoverBilhete = true
+    
     this.ngOnInit()
   }
 
@@ -109,6 +122,8 @@ export class PaginaCarrinho {
 
     this.AMandarEmail = false
   }
+
+  
 
 
 

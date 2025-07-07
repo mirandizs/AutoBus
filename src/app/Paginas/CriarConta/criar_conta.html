@@ -105,7 +105,7 @@
           [disabled]="FormCriar.invalid || Avancando">Avançar</button><!--[disabled]="FormCriar.invalid"-->
       </div>
 
-      <div id="popup" class="modal">
+      <div class="modal">
         <div class="modal-content">
           <!--<span class="close">&times;</span>-->
           <p>As palavras-passe não coincidem.</p>
@@ -117,19 +117,19 @@
 
   <!-- Mostar sempre que o valor nao e vazio -->
   @if (password?.value != ''){
-    <div id="anchor">
-      <div class="box2" id="messageBox">
+    <div>
+      <div class="box2">
         <h3>A palavra-passe deve conter pelo menos: </h3>
-        <p id="letter" [className]="password?.hasError('minuscula') ? 'invalid' : 'valid'">
+        <p [className]="password?.hasError('minuscula') ? 'invalid' : 'valid'">
           Uma letra <b>minúscula</b>
         </p>
-        <p id="capital" [className]="password?.hasError('maiuscula') ? 'invalid' : 'valid'">
+        <p [className]="password?.hasError('maiuscula') ? 'invalid' : 'valid'">
           Uma letra <b>maiúscula</b>
         </p>
-        <p id="number" [className]="password?.hasError('numero') ? 'invalid' : 'valid'">
+        <p [className]="password?.hasError('numero') ? 'invalid' : 'valid'">
           Um <b>número</b>
         </p>
-        <p id="length" [className]="password?.hasError('caracteres') ? 'invalid' : 'valid'">
+        <p [className]="password?.hasError('caracteres') ? 'invalid' : 'valid'">
           Mínimo <b>8 caracteres</b>
         </p>
       </div>
@@ -159,12 +159,12 @@
         <label style="margin-left: 70px;">Insira uma imagem para o teu perfil de utilizador!</label><br><br>
 
         <a>
-          <img class='imagemUti' id='preview' [src]="ImagemSelecionada" onerror='this.src="img/default.png"'>
+          <img class='imagemUti' [src]="ImagemSelecionada" onerror='this.src="img/default.png"'>
         </a><br>
 
         <div style="display:flex; justify-content: center; align-items: center;">
           <label for="file" class="file-label">Carregar imagem</label>
-          <input type="file" accept="image/*" id="file" class="file-input" name="foto"
+          <input type="file" accept="image/*" class="file-input" name="foto"
             (change)="ImagemMudada($event)"><br>
 
           <label class="file-label" style="margin-left: 10px;">Selecionar imagem
