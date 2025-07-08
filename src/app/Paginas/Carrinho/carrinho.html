@@ -166,7 +166,9 @@
 
                     <label>Caso este não seja o teu número associado ao MBWAY, altere-o.</label><br><br><br>
 
-                    <button class="btnContinuarPay botaoTransicao" (click)="ModalCodigo = true">Continuar</button>
+                    <form [formGroup]="FormMBWay" (ngSubmit)="SubmeterModal()">
+                        <button class="btnContinuarPay botaoTransicao" (click)="ModalCodigo = true">Continuar</button>
+                    </form>
                 </div>
             </div>
         }
@@ -225,10 +227,10 @@
             <p><a>📍</a><strong> Destino:</strong> {{ViagemSelecionada.local_chegada}}</p>
             <p><a>🗓️</a><strong> Data:</strong> {{ViagemSelecionada.data | date:'dd/MM/YYYY'}}</p>
             <p><a>🕑</a><strong> Hora de partida:</strong> {{ViagemSelecionada.hora_partida}}</p>
-            <p><a>⌛</a><strong> Duração estimada:</strong></p>
-            <p><a>🛣️</a><strong> Distância:</strong> 176,98 km</p>
+            <p><a>⌛</a><strong> Duração estimada:</strong> {{ViagemSelecionada.duracao_estimada}} </p>
+            <p><a>🛣️</a><strong> Distância:</strong> {{ViagemSelecionada.distancia_km}} km </p>
             <p><a>💲</a><strong> Preço:</strong> {{ViagemSelecionada.preco | currency:'EUR'}}</p>
-            <p><a>🚍</a><strong> Autocarro Nº:</strong> 4</p>
+            <p><a>🚍</a><strong> Autocarro Nº:</strong> {{ViagemSelecionada.idautocarro}} </p>
 
         </div>
     </div>

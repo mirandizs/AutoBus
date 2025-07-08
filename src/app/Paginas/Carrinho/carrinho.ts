@@ -79,11 +79,13 @@ export class PaginaCarrinho {
     const Pedido_URL = new URL(Definicoes.API_URL + "comprar")
 
     const resultadoCompra = await this.ServicoHttp.Request(Pedido_URL, "POST", "Erro ao concluir compra", {
+      tipo_pagamento: this.TipoPagamentoCartao ? 'cartao' : 'mbway',
       nome_cartao: this.FormCartao.value.nome_cartao,
       numero_cartao: this.FormCartao.value.numero_cartao,
       validade: this.FormCartao.value.validade,
       guardarCartao: this.FormCartao.value.guardarCartao,
       codigo_verificacao: this.FormCodigo.value.codigo,
+      numero_mbway: this.FormMBWay.value.numero_mbway,
     })
 
     if (resultadoCompra) {
@@ -135,6 +137,10 @@ export class PaginaCarrinho {
     guardarCartao: new FormControl(false, []),
   });
 
+
+  FormMBWay: FormGroup = new FormGroup({
+    numero_mbway: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]), // 9 dígitos
+  });
 
   FormCodigo: FormGroup = new FormGroup({
     codigo: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]),
