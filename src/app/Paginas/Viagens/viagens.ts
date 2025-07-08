@@ -66,6 +66,8 @@ export class PaginaViagens {
         "id_ponto_chegada": viagem.id_ponto_chegada,
         data: viagem.data,
         "tipo": viagem.tipo,
+        distancia_km: viagem.distancia_km,
+        duracao_estimada: viagem.duracao_estimada,
       });
 
       if (Resposta?.success || Resposta?.status === 200) {
