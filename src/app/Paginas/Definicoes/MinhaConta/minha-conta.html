@@ -44,8 +44,8 @@
 
                     <!-- <div style="display: flex; flex-direction: column; align-items: center;"> -->
                         
-                        <label for="file" class="file-label">Carregar imagem</label>
-                        <input type="file" accept="image/*" class="file-input" formControlName="foto" (change)="ImagemMudada($event)"> 
+                        <label for="file" class="file-label" (click)="SeletorImagem.click()">Carregar imagem</label>
+                        <input #SeletorImagem type="file" accept="image/*" class="file-input"  (change)="ImagemMudada($event)"> 
 
                         <label class="file-label" style="margin-top: 10px;">Selecionar imagem
                             <input type="button" class="file-input" (click)="SelecionarImagem = true">
