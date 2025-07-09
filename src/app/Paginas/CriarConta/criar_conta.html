@@ -140,48 +140,43 @@
 
 @if (MostrarFotoCriarConta){
   <div class="caixa">
-    <div style="display: flex; justify-content: center; align-items: center;">
-      <form [formGroup]="FormFoto" (ngSubmit)="EnviarCodigo()">
-        <div style="display:flex; align-items: center; justify-content: space-between;">
-          <!-- <a href="criarConta.php" style="text-decoration: none; color: white; padding-right: 20px;">
-            <img class="imagemVolt" src="img/voltarr.png">
-          </a> -->
+    <form [formGroup]="FormFoto" (ngSubmit)="EnviarCodigo()">
+      <div style="display:flex; align-items: center; justify-content: space-between;">
 
-          <h2 style="margin-left: 10px;">Foto de perfil</h2>
+        <h2>Foto de perfil</h2>
 
-          <button class="btVoltar" (click)="MostrarFotoCriarConta = false">
-            <img src="img/voltar.png" class="imagemVolt">
-          </button>
-        </div>             
+        <button class="btVoltar" (click)="MostrarFotoCriarConta = false">
+          <img src="img/voltar.png" class="imagemVolt">
+        </button>
+      </div>             
 
-        <br>
+      <br>
 
-        <label style="margin-left: 70px;">Insira uma imagem para o teu perfil de utilizador!</label><br><br>
+      <label>Insira uma imagem para o teu perfil de utilizador!</label><br><br>
 
-        <a>
-          <img class='imagemUti' [src]="ImagemSelecionada" onerror='this.src="img/default.png"'>
-        </a><br>
+      <a>
+        <img class='imagemUti' [src]="ImagemSelecionada" onerror='this.src="img/default.png"'>
+      </a><br>
 
-        <div style="display:flex; justify-content: center; align-items: center;">
-          <label for="file" class="file-label">Carregar imagem</label>
-          <input type="file" accept="image/*" class="file-input" name="foto"
-            (change)="ImagemMudada($event)"><br>
+      <div style="display:flex; justify-content: space-between; align-items: center;">
+        <label for="file" class="file-label">Carregar imagem</label>
+        <input type="file" accept="image/*" class="file-input" name="foto"
+          (change)="ImagemMudada($event)"><br>
 
-          <label class="file-label" style="margin-left: 10px;">Selecionar imagem
-            <input type="button" class="file-input" (click)="SelecionarImagens = true"><br>
-          </label>
-        </div>
+        <label class="file-label">Selecionar imagem
+          <input type="button" class="file-input" (click)="SelecionarImagens = true"><br>
+        </label>
+      </div>
 
 
-        <!-- <button type='submit' class="botaoCriarConta" style='margin-right: 250px; margin-left:5px'
-          (click)="ModalCodigo = true">Alterar depois</button> -->
+      <!-- <button type='submit' class="botaoCriarConta" style='margin-right: 250px; margin-left:5px'
+        (click)="ModalCodigo = true">Alterar depois</button> -->
 
 
-        <input type="submit" class="botaoCriarConta" (click)="ModalCodigo = true" value="Criar conta">
+      <input type="submit" class="botaoCriarConta" (click)="ModalCodigo = true" value="Criar conta">
 
-        <carregamento [Visivel]="ACriarConta"></carregamento>
-      </form>
-    </div>
+      <carregamento [Visivel]="ACriarConta"></carregamento>
+    </form>
   </div>
 }
 
