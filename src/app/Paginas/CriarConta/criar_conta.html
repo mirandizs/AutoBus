@@ -159,8 +159,8 @@
       </a><br>
 
         <div style="display:flex; justify-content: center; align-items: center;">
-          <label for="file" class="file-label">Carregar imagem</label>
-          <input type="file" accept="image/*" class="file-input" name="foto"
+          <label for="file" class="file-label" (click)="SelectorImagem.click()">Carregar imagem</label>
+          <input #SelectorImagem type="file" accept="image/*" class="file-input" name="foto"
             (change)="ImagemMudada($event)"><br>
 
         <label class="file-label">Selecionar imagem
