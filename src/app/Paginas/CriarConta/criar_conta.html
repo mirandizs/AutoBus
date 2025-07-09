@@ -158,10 +158,10 @@
         <img class='imagemUti' [src]="ImagemSelecionada" onerror='this.src="img/default.png"'>
       </a><br>
 
-      <div style="display:flex; justify-content: space-between; align-items: center;">
-        <label for="file" class="file-label">Carregar imagem</label>
-        <input type="file" accept="image/*" class="file-input" name="foto"
-          (change)="ImagemMudada($event)"><br>
+        <div style="display:flex; justify-content: center; align-items: center;">
+          <label for="file" class="file-label">Carregar imagem</label>
+          <input type="file" accept="image/*" class="file-input" name="foto"
+            (change)="ImagemMudada($event)"><br>
 
         <label class="file-label">Selecionar imagem
           <input type="button" class="file-input" (click)="SelecionarImagens = true"><br>
