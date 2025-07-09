@@ -4,13 +4,13 @@
             conta</button>
 
         <button routerLink="privacidade" type='button' class='botao' (click)='JanelaAtiva="Seguranca"'>Privacidade
-            e Segurança</button>
+            e segurança</button>
 
         @if (!ServicoAutenticacao.Admin()) {
-            <button routerLink="utilizadores" type="button" class="botao" (click)='JanelaAtiva="Utilizadores"'>Gerir
-                Utilizadores</button>
+            <button routerLink="utilizadores" type="button" class="botao" (click)='JanelaAtiva="Utilizadores"'>Gestão de
+                utilizadores</button>
 
-            <button routerLink="aplicacao" type="button" class="botao" (click)='JanelaAtiva="Utilizadores"'>Aplicação</button>
+            <button routerLink="aplicacao" type="button" class="botao" (click)='JanelaAtiva="Aplicacao"'>Aplicação</button>
 
             <!-- <button routerLink="editar-utilizador" type="button" class="botao" (click)='JanelaAtiva="EditarUtilizador"'>Editar
                 Utilizadores</button> -->

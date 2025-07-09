@@ -26,7 +26,6 @@ export class JanelaMinhaConta {
 
   CarregamentoVisivel = false
   SelecionarImagem = false
-  Desativado = true;
   ModalSucessoVisivel: boolean = false;
   ModalFotoSucesso: boolean = false
 
@@ -117,6 +116,7 @@ export class JanelaMinhaConta {
   // funcao para fechar o modal
   FecharModalSucesso() {
     this.ModalSucessoVisivel = false;
+    this.ModalFotoSucesso = false
     this.router.navigate(['/definicoes/minha-conta'])
     window.location.reload()
   } 

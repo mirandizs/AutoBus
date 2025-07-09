@@ -12,8 +12,7 @@
             <br><br>
 
             <label>NIF: </label><br>
-            <input type='tel' class='info campoTexto caixa' maxlength='9' [value]='Utilizador()?.nif' disabled 
-                    style="cursor:not-allowed;" ><br><br>
+            <input type='tel' class='info campoTexto caixa' maxlength='9' [value]='Utilizador()?.nif' disabled style="cursor:not-allowed;" ><br><br>
 
             <label>Data de nascimento: </label><br>
             <input type='date' class='info campoTexto caixa' formControlName='nascimento' [value]='Utilizador()?.nascimento' (keypress)="permitirApenasNumeros($event)">

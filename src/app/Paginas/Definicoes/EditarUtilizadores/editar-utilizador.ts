@@ -4,6 +4,7 @@ import { ServicoAutenticacao } from '../../../Services/Autenticacao.service';
 import { HttpService } from '../../../Services/Http.service';
 import { Definicoes } from '../../../Definicoes';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Carregamento } from '../../../Componentes/Carregamento/carregamento';
 
 interface Utilizador {
   nif: number;
@@ -19,7 +20,7 @@ interface Utilizador {
 
 @Component({
   selector: 'janela-editar-utilizador',
-  imports: [RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule, Carregamento],
   templateUrl: './editar-utilizador.html',
   styleUrl: '../definicoes.less'
 })
@@ -31,7 +32,8 @@ export class JanelaEditarUtilizador {
   router = inject(Router)
   ServicoHttp = inject(HttpService)
   Utilizador = this.ServicoAutenticacao.Utilizador
-  PasswordVisivel = false
+
+  ModalSucessoVisivel: boolean = false
 
   UtilizadorSelecionado = signal<null | Utilizador>(null)
 
@@ -42,8 +44,7 @@ export class JanelaEditarUtilizador {
       this.FormEditarUtilizador.value) // O body equivale ao valor do form criar. Este .value e um array, com o nome de todos os campos e os seus valores
 
     if (Resultado) {
-      await this.router.navigate(['/definicoes/minha-conta'])
-      window.location.reload()
+      this.ModalSucessoVisivel = true
     }
     this.FormEditarUtilizador.enable()
   }
@@ -57,6 +58,8 @@ export class JanelaEditarUtilizador {
     telefone: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),  // ^\d{9}$ -> 9 digitos
     localidade: new FormControl('', [Validators.required]),
     foto: new FormControl('', [Validators.required]),
+    tipo_utilizador: new FormControl('', [Validators.required]),
+    atividade: new FormControl('', [Validators.required]),
   });
 
   get nome() {
@@ -109,6 +112,8 @@ export class JanelaEditarUtilizador {
         this.FormEditarUtilizador.get('nascimento')?.setValue(this.Utilizador()?.nascimento)
         this.FormEditarUtilizador.get('telefone')?.setValue(this.Utilizador()?.telefone)
         this.FormEditarUtilizador.get('localidade')?.setValue(this.Utilizador()?.localidade)
+        this.FormEditarUtilizador.get('tipo_utilizador')?.setValue(this.Utilizador()?.tipo_utilizador)
+        this.FormEditarUtilizador.get('atividade')?.setValue(this.Utilizador()?.atividade)
       }
     });
   }
@@ -116,7 +121,7 @@ export class JanelaEditarUtilizador {
 
 
   VerificarMudancas() {
-    const ValoresForm = this.FormEditarUtilizador.value
+    const ValoresForm = this.FormEditarUtilizador.getRawValue()
     return ValoresForm.nome !== this.Utilizador()?.nome ||
       ValoresForm.nascimento !== this.Utilizador()?.nascimento ||
       ValoresForm.telefone !== this.Utilizador()?.telefone ||
@@ -126,6 +131,11 @@ export class JanelaEditarUtilizador {
   }
 
 
+  FecharModalSucesso() {
+    this.ModalSucessoVisivel = false;
+    this.router.navigate(['/definicoes/minha-conta'])
+    window.location.reload()
+  } 
 
 
   //funcao para permitir apenas a insercao de letras

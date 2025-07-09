@@ -30,6 +30,5 @@ export class JanelaUtilizadores {
 
   MostrarGestao(Nif:number){
     this.router.navigate(['/definicoes/editar-utilizador', Nif]);
-
   }
 }

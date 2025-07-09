@@ -2,65 +2,67 @@
     <div class="column left">
         <h2>Gestão de Utilizadores</h2><br>
 
-        <table class="tabela">
-            <thead>
-                <tr>
-                    <th>NIF</th>
-                    <th>Nome</th>
-                    <th>Nascimento</th>
-                    <th>Telemóvel</th>
-                    <th>Localidade</th>
-                    <th>Email</th>
-                    <th>Atividade</th>
-                    <th>Utilizador</th>
-                    <th>Editar</th>
-                </tr>
-            </thead>
-
-
-            @for (Utilizador of Utilizadores; track $index){
-                <tbody>
-                    <tr [ngClass]="{'tr-admin': Utilizador.email === 'autobus.pap@gmail.com'}">
-                        <td>{{Utilizador.nif}}</td>
-                        <td>{{Utilizador.nome}}</td>
-                        <td>{{Utilizador.nascimento}}</td>
-                        <td>{{Utilizador.telefone}}</td>
-                        <td>{{Utilizador.localidade}}</td>
-                        <td>{{Utilizador.email}}</td>
-                        <td>
-                            @if (Utilizador.atividade == 0) {
-                               <span style="color: red;">Inativa</span>
-                            }
-                            @else {
-                               <span style="color: green;">Ativa</span>
-                            }
-                        </td>
-                        <td>
-                            @if (Utilizador.tipo_utilizador == 0) {
-                                Administrador
-                            } 
-                            
-                            @else {
-                                Cliente
-                            }
-                        </td>
-                        <td>
-                            <button type="button" class="editar imagemEditar"
-                                [disabled]="Utilizador.email == 'autobus.pap@gmail.com' || Utilizador.utilizador == 'admin'"
-                                [ngStyle]="{'cursor': Utilizador.email == 'autobus.pap@gmail.com' || Utilizador.nome == 'admin' ? 'not-allowed' : 'pointer'}"
-                                (click)="(Utilizador.email != 'autobus.pap@gmail.com' && Utilizador.nome != 'admin') && MostrarGestao(Utilizador.nif)">
-                                <img src="img/lapis.png" width="20px" height="20px">
-                            </button>
-                        </td>
+        <div class="base-tabela">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>NIF</th>
+                        <th>Nome</th>
+                        <th>Nascimento</th>
+                        <th>Telemóvel</th>
+                        <th>Localidade</th>
+                        <th>Email</th>
+                        <th>Atividade</th>
+                        <th>Utilizador</th>
+                        <th>Editar</th>
                     </tr>
-                </tbody>
-            }
-            
-            @empty {
-                <tr>
-                    <td colspan="8" style="text-align: center;">Nenhum utilizador encontrado.</td>
-                </tr>
-            }
-        </table><br>
+                </thead>
+
+
+                @for (Utilizador of Utilizadores; track $index){
+                    <tbody>
+                        <tr [ngClass]="{'tr-admin': Utilizador.email === 'autobus.pap@gmail.com'}">
+                            <td>{{Utilizador.nif}}</td>
+                            <td>{{Utilizador.nome}}</td>
+                            <td>{{Utilizador.nascimento}}</td>
+                            <td>{{Utilizador.telefone}}</td>
+                            <td>{{Utilizador.localidade}}</td>
+                            <td>{{Utilizador.email}}</td>
+                            <td>
+                                @if (Utilizador.atividade == 0) {
+                                <span style="color: red;">Inativa</span>
+                                }
+                                @else {
+                                <span style="color: green;">Ativa</span>
+                                }
+                            </td>
+                            <td>
+                                @if (Utilizador.tipo_utilizador == 0) {
+                                    Administrador
+                                } 
+                                
+                                @else {
+                                    Cliente
+                                }
+                            </td>
+                            <td>
+                                <button type="button" class="editar imagemEditar"
+                                    [disabled]="Utilizador.email == 'autobus.pap@gmail.com' || Utilizador.utilizador == 'admin'"
+                                    [ngStyle]="{'cursor': Utilizador.email == 'autobus.pap@gmail.com' || Utilizador.nome == 'admin' ? 'not-allowed' : 'pointer'}"
+                                    (click)="(Utilizador.email != 'autobus.pap@gmail.com' && Utilizador.nome != 'admin') && MostrarGestao(Utilizador.nif)">
+                                    <img src="img/lapis.png" width="20px" height="20px">
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                }
+                
+                @empty {
+                    <tr>
+                        <td colspan="8" style="text-align: center;">Nenhum utilizador encontrado.</td>
+                    </tr>
+                }
+            </table><br>
+        </div>
     </div>
 </div>

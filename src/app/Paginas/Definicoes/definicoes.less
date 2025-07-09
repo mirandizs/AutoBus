@@ -332,6 +332,15 @@ button:disabled{
 //   color: white;
 // }
 
+.base-tabela {
+    overflow-y: auto;
+    overflow-x: auto;
+    float: left;
+    box-sizing: border-box;
+    height: 90%;
+    margin-bottom: 20px;
+}
+
 
 .tabela {
   width: 80%;
@@ -341,7 +350,7 @@ button:disabled{
   align-self: center;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid #ddd;
+  // border: 1px solid #ddd;
   margin-bottom: 15px;
 }
 
@@ -413,10 +422,6 @@ button:disabled{
   background-color: rgb(255, 255, 255);
   /* Cor de fundo adicionada */
   box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.4);
-  float: left;
-
-  overflow-y: auto;
-  overflow-x: auto; // caso a tabela ultrapasse em largura
 }
 
 
@@ -879,6 +884,26 @@ padding: auto;
   color: black;
 }
 
+.botaoEditarUti {
+  background-color: rgba(3, 3, 130, 0.945);
+  color: white;
+  border: none;
+  width: 20%;
+  padding: 10px;
+  right: 100%;
+  left: 0 auto;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
+.botaoEditarUti:hover {
+  background-color: #0056b3;
+}
+
+.botaoEditarUti:disable {
+  cursor: not-allowed;
+  background-color: rgba(70, 70, 87, 0.945);
+}
 
 
