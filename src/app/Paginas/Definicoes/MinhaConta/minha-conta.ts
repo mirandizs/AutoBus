@@ -7,10 +7,12 @@ import { Validadores } from '../../../Services/Validadores';
 import { HttpService } from '../../../Services/Http.service';
 import { Reactive } from '@angular/core/primitives/signals';
 import { SeletorImagens } from '../../../Componentes/SeletorImagens/seletor-imagens';
+import { CommonModule } from '@angular/common';
+import { Carregamento } from '../../../Componentes/Carregamento/carregamento';
 
 @Component({
   selector: 'janela-minha-conta',
-  imports: [RouterModule, FormsModule, ReactiveFormsModule, SeletorImagens],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule, SeletorImagens, CommonModule, Carregamento],
   templateUrl: './minha-conta.html',
   styleUrl: '../definicoes.less'
 })
@@ -26,7 +28,10 @@ export class JanelaMinhaConta {
   SelecionarImagem = false
   Desativado = true;
   ModalSucessoVisivel: boolean = false;
+  ModalFotoSucesso: boolean = false
 
+  IsUtilizadorProtegidoNome = false;
+  IsUtilizadorProtegidoEmail= false;
 
   constructor() {
     this.FormEditar.get('nif')?.disable();
@@ -34,11 +39,19 @@ export class JanelaMinhaConta {
     effect(() => {
       const Utilizador = this.Utilizador()
       if (Utilizador) {
-        this.FormEditar.get('nome')?.setValue(this.Utilizador()?.nome)
-        this.FormEditar.get('nif')?.setValue(this.Utilizador()?.nif)
-        this.FormEditar.get('nascimento')?.setValue(this.Utilizador()?.nascimento)
-        this.FormEditar.get('telefone')?.setValue(this.Utilizador()?.telefone)
-        this.FormEditar.get('localidade')?.setValue(this.Utilizador()?.localidade)
+        this.IsUtilizadorProtegidoNome  = Utilizador.nome === 'admin'
+        this.IsUtilizadorProtegidoEmail = Utilizador.email === 'autobus.pap@gmail.com';
+
+        this.FormEditar.get('nome')?.setValue(Utilizador.nome)
+        this.FormEditar.get('nif')?.setValue(Utilizador.nif)
+        this.FormEditar.get('nascimento')?.setValue(Utilizador.nascimento)
+        this.FormEditar.get('telefone')?.setValue(Utilizador.telefone)
+        this.FormEditar.get('localidade')?.setValue(Utilizador.localidade)
+
+        // Desativar todos os campos se for protegido
+        if (this.IsUtilizadorProtegidoEmail && this.IsUtilizadorProtegidoNome) {
+          this.FormEditar.disable();
+        }
       }
     });
   }
@@ -53,17 +66,19 @@ export class JanelaMinhaConta {
   //funcao para carregar a imagem do pc 
   async PreverImagem(Ficheiro: File) {
     if (Ficheiro){
-    const reader = new FileReader();
+      const reader = new FileReader();
 
-    this.FicheiroSelecionado = Ficheiro
+      this.FicheiroSelecionado = Ficheiro
 
-    reader.onload = () => {
-      this.ImageSelecionada = reader.result
-      this.MudarImagem(Ficheiro)
-    };
+      reader.onload = () => {
+        this.ImageSelecionada = reader.result
+        this.MudarImagem(Ficheiro)
+      };
 
-    reader.readAsDataURL(Ficheiro);
+      
+      this.ModalFotoSucesso = true
 
+      reader.readAsDataURL(Ficheiro);
     }
   }
 
@@ -102,7 +117,8 @@ export class JanelaMinhaConta {
   // funcao para fechar o modal
   FecharModalSucesso() {
     this.ModalSucessoVisivel = false;
-    window.location.reload();
+    this.router.navigate(['/definicoes/minha-conta'])
+    window.location.reload()
   } 
 
 

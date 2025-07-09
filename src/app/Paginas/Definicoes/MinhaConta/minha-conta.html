@@ -1,7 +1,11 @@
-<form [formGroup]="FormEditar" (ngSubmit)="SubmeterForm()" enctype="multipart/form-data">
+<form [formGroup]="FormEditar" (ngSubmit)="SubmeterForm()" enctype="multipart/form-data" [ngClass]="{'bloqueado': IsUtilizadorProtegidoNome && IsUtilizadorProtegidoEmail}">
     <div class='box2 row'>
         <div class='column left'>
-            <h2 style="margin-bottom: 25px;">Minha conta</h2>
+            <h2 style="margin-bottom: 25px;">Minha conta
+                <span *ngIf="IsUtilizadorProtegidoNome && IsUtilizadorProtegidoEmail" style="font-size: 14px; color: red; margin-left: 10px;">
+                    (O administrador principal não é alterável)
+                </span>
+            </h2>
 
             <label>Nome: </label><br>
             <input type='text' class='info campoTexto caixa' formControlName='nome' [value]='Utilizador()?.nome' (input)="permitirApenasLetras($event)">
@@ -25,14 +29,16 @@
             <input type='text' class='info campoTexto caixa' formControlName='localidade' [value]='Utilizador()?.localidade' (input)="permitirApenasLetras($event)">
             <br>
 
-            <button type='submit' style='margin-top:30px;' name='botaoEditar' [disabled]="!VerificarMudancas()">Salvo</button> <!--|| !FormEditar.dirty"-->
+            <button type='submit' style='margin-top:30px;' class='botaoEditar' [disabled]=" IsUtilizadorProtegidoNome || !VerificarMudancas()">
+                {{ VerificarMudancas() ? 'Salvar' : 'Salvo' }}
+            </button> <!--|| !FormEditar.dirty"-->
         </div>
 
         <div class='column right'>
 
             <h3 class="foto-perfil">Foto de perfil</h3>
 
-            <div class="bordas">
+            <div class="bordas" [ngClass]="{'bloquear-botoes-imagem': IsUtilizadorProtegidoNome && IsUtilizadorProtegidoEmail}">
                 <div class="alignment">
                     <img class="imagemUti" [src]="ImageSelecionada || URL_Imagens" onerror="this.src='img/default.png'">
 
@@ -57,15 +63,29 @@
 </form>
 
 
-@if (ModalSucessoVisivel){
+@if (ModalFotoSucesso){
+    <carregamento></carregamento>
     <div class='modalSucessoFundo'>
         <div class='modalSucesso animate'>
-            <div>
+            <div style="display: flex; justify-content: space-between;">
+                <h3 style="margin-left: 30px; margin-top: 13px; margin-right: 5px;">Imagem alterada com sucesso!</h3>
                 <span (click)="FecharModalSucesso()" class='fecharSu'>&times;</span>
-                <br><br>
-    
-                <h3>Dados alterados com sucesso!</h3><br>
             </div>
+            <br><br>
+        </div>
+    </div>
+}
+
+
+@if (ModalSucessoVisivel){
+    <carregamento></carregamento>
+    <div class='modalSucessoFundo'>
+        <div class='modalSucesso animate'>
+            <div style="display: flex; justify-content: space-between;">
+                <h3 style="margin-left: 30px; margin-top: 13px; margin-right: 5px;">Dados alterados com sucesso!</h3>
+                <span (click)="FecharModalSucesso()" class='fecharSu'>&times;</span>
+            </div>
+            <br><br>
         </div>
     </div>
 }

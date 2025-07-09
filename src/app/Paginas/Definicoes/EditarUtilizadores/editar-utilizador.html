@@ -1,7 +1,7 @@
-<form [formGroup]="FormEditarUtilizador" method="POST">
+<form [formGroup]="FormEditarUtilizador" (ngSubmit)="SubmeterForm()">
     <div class="box2 row">
         <div class="column left">
-            <h2>Gestão de Utilizadores - Editar</h2><br>
+            <h2>Gestão de Utilizadores - Editar</h2><br><br>
 
             <label>Nome:</label><br>
             <input type="text" class="info campoTexto caixa" [value]="UtilizadorSelecionado()?.nome" (input)="permitirApenasLetras($event)"><br><br>
@@ -12,18 +12,26 @@
 
             <label>Data de nascimento:</label><br>
             <input type="date" class="info campoTexto caixa" name="nascimento" [value]="UtilizadorSelecionado()?.nascimento" style="cursor: pointer;"><br><br>
+            
+            <div class="column left" style="padding:0px; padding-top:0px;">
+                <label>Tipo de utilizador:</label><br>
 
-            <label>Password:</label><br>
-            <input [type]="PasswordVisivel ? 'text' : 'password'" class='info caixa campoTexto' name='password' style="margin-bottom:30px; cursor:not-allowed" disabled>
-            <button type='button' class='ver' name="iconPasswordConfirm" (click)="PasswordVisivel = !PasswordVisivel">
-                <img [src]="PasswordVisivel ? 'img/aberto.png' : 'img/fechado.png'" width='20px' height='20px'>
-            </button><br>
+                <select class="select-filtro" style="cursor: pointer;">
+                    <option value="0" [selected]="UtilizadorSelecionado()?.tipo_utilizador == 0">
+                        Administrador
+                    </option>
+                    <option value="1" [selected]="UtilizadorSelecionado()?.tipo_utilizador == 1">
+                        Cliente
+                    </option>
+                </select>
+            </div><br><br>
 
-            <button type="submit" name="botaoEditar" disabled>Salvo</button>
+
+            <button type="submit" class="botaoEditar" [disabled]="!VerificarMudancas()">Salvo</button>
         </div>
 
         <div class="column right">
-            <div style="padding-top: 70px;">
+            <div style="padding-top: 90px;">
                 <label>Telemóvel:</label><br>
                 <input type="tel" class="info campoTexto caixa" name="telefone" maxlength="9" [value]="UtilizadorSelecionado()?.telefone" (keypress)="permitirApenasNumeros($event)"><br><br>
 
@@ -31,23 +39,10 @@
                 <input type="text" class="info campoTexto caixa" name="localidade" [value]="UtilizadorSelecionado()?.localidade" (input)="permitirApenasLetras($event)"><br><br>
 
                 <label>Email:</label><br>
-                <input type="email" class="info campoTexto caixa" name="email" [value]="UtilizadorSelecionado()?.email"><br><br>
+                <input type="email" class="info campoTexto caixa" name="email" style="cursor:not-allowed" [value]="UtilizadorSelecionado()?.email" disabled><br><br>
 
                 <div class="row">
-                    <div class="column left" style="padding:0px; padding-top:10px;">
-                        <label>Tipo de utilizador:</label><br>
-
-                        <select class="select-filtro" style="cursor: pointer;">
-                            <option value="0" [selected]="UtilizadorSelecionado()?.tipo_utilizador == 0">
-                                Administrador
-                            </option>
-                            <option value="1" [selected]="UtilizadorSelecionado()?.tipo_utilizador == 1">
-                                Cliente
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="column right" style="padding:0px; padding-top:10px;">
+                    <div  style="padding:0px; padding-top:0px;">
                         <label>Atividade:</label><br>
 
                         <select class="select-filtro" style="cursor: pointer;">

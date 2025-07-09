@@ -20,7 +20,7 @@
 
             @for (Utilizador of Utilizadores; track $index){
                 <tbody>
-                    <tr>
+                    <tr [ngClass]="{'tr-admin': Utilizador.email === 'autobus.pap@gmail.com'}">
                         <td>{{Utilizador.nif}}</td>
                         <td>{{Utilizador.nome}}</td>
                         <td>{{Utilizador.nascimento}}</td>
@@ -46,7 +46,9 @@
                         </td>
                         <td>
                             <button type="button" class="editar imagemEditar"
-                                (click)="MostrarGestao(Utilizador.nif)">
+                                [disabled]="Utilizador.email == 'autobus.pap@gmail.com' || Utilizador.utilizador == 'admin'"
+                                [ngStyle]="{'cursor': Utilizador.email == 'autobus.pap@gmail.com' || Utilizador.nome == 'admin' ? 'not-allowed' : 'pointer'}"
+                                (click)="(Utilizador.email != 'autobus.pap@gmail.com' && Utilizador.nome != 'admin') && MostrarGestao(Utilizador.nif)">
                                 <img src="img/lapis.png" width="20px" height="20px">
                             </button>
                         </td>

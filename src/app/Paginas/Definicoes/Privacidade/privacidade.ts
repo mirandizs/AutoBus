@@ -7,10 +7,11 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { Definicoes } from '../../../Definicoes';
 import { ModalVerificacao } from "../../../Componentes/ModalVerificacao/modal-verificacao";
 import { Validadores } from '../../../Services/Validadores';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'janela-privacidade',
-  imports: [RouterModule, Carregamento, FormsModule, ReactiveFormsModule, ModalVerificacao],
+  imports: [RouterModule, Carregamento, FormsModule, ReactiveFormsModule, ModalVerificacao, CommonModule],
   templateUrl: './privacidade.html',
   styleUrl: '../definicoes.less'
 })
@@ -23,6 +24,8 @@ export class JanelaPrivacidade {
   
   AMandarEmail: boolean = false;
   ModalCodigo = false
+
+  IsUtilizadorProtegidoEmail= false;
 
   TipoEdicao: 'email' | 'password' | null = null;
 
@@ -72,9 +75,17 @@ export class JanelaPrivacidade {
   constructor(){
     // effect é uma função chamada quando sinais mudam de valor
     effect(() => { 
+      const Utilizador = this.Utilizador()
+      if (Utilizador) {
+        this.IsUtilizadorProtegidoEmail = Utilizador.email === 'autobus.pap@gmail.com';
+
       // como o utilizador é undefined inicialmente, depois de fazer a autenticação no servidor ele é definido. 
       // é preciso esperar para pôr o valor do email do form como o email do utilizador
       this.FormPrivacidade.get('email')?.setValue(this.Utilizador()?.email)
+      }
+      if (this.IsUtilizadorProtegidoEmail) {
+          this.FormPrivacidade.disable();
+        }
     })
   }
 

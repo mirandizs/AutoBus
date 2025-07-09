@@ -115,6 +115,15 @@ export class JanelaEditarUtilizador {
 
 
 
+  VerificarMudancas() {
+    const ValoresForm = this.FormEditarUtilizador.value
+    return ValoresForm.nome !== this.Utilizador()?.nome ||
+      ValoresForm.nascimento !== this.Utilizador()?.nascimento ||
+      ValoresForm.telefone !== this.Utilizador()?.telefone ||
+      ValoresForm.localidade !== this.Utilizador()?.localidade ||
+      ValoresForm.tipo_utilizador !== this.Utilizador()?.tipo_utilizador ||
+      ValoresForm.atividade !== this.Utilizador()?.atividade
+  }
 
 
 

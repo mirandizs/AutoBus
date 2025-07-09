@@ -1,9 +1,13 @@
 <carregamento [Visivel]="AMandarEmail"></carregamento>
 
-<form [formGroup]="FormPrivacidade" (ngSubmit)="MandarCodigoVerificacao()">
+<form [formGroup]="FormPrivacidade" (ngSubmit)="MandarCodigoVerificacao()"  [ngClass]="{'bloqueado': IsUtilizadorProtegidoEmail}">
     <div class='box2 row'>
-        <div class='column left'>
-            <h2>Privacidade e Segurança</h2><br>
+        <div class='column left' style="width: 60%;">
+            <h2>Privacidade e Segurança
+                <span *ngIf="IsUtilizadorProtegidoEmail" style="font-size: 14px; color: red; margin-left: 10px;">
+                    (O administrador principal não é alterável)
+                </span>
+            </h2><br>
 
             <label>Aqui poderás alterar o teu email e password com segurança! Atenção, será enviado um email
                 de confirmação.</label><br><br><br>
@@ -19,11 +23,11 @@
             <!-- PASSWORD -->
             <label>Password:</label><br>
             <input formControlName="password" [type]="PasswordVisivel ? 'text' : 'password'" class='info caixa'>
-            <button type='button' class='ver' (click)="PasswordVisivel = !PasswordVisivel">
+            <button type='button' class='ver' (click)="PasswordVisivel = !PasswordVisivel" [disabled]="Utilizador()?.email == FormPrivacidade.value.email">
                 <img [src]="PasswordVisivel ? 'img/aberto.png' : 'img/fechado.png'" width='20px' height='20px'>
             </button>
 
-            <button type='submit' class='editar imagemEditar' [disabled]="FormPrivacidade.invalid" (click)="ModalCodigo = true; TipoEdicao='password'">
+            <button type='submit' class='editar imagemEditar' [disabled]="Utilizador()?.email == FormPrivacidade.value.email" (click)="ModalCodigo = true; TipoEdicao='password'">
                 <img src='img/lapis.png' width='20px' height='20px'>
             </button><br><br><br>
 

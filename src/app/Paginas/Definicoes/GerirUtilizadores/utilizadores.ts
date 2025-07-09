@@ -3,10 +3,11 @@ import { Router, RouterModule } from '@angular/router';
 import { ServicoAutenticacao } from '../../../Services/Autenticacao.service';
 import { HttpService } from '../../../Services/Http.service';
 import { Definicoes } from '../../../Definicoes';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'janela-utilizadores',
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './utilizadores.html',
   styleUrl: '../definicoes.less'
 })
