@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|c:\\users\\sofia\\desktop\\pap\\autobus\\admin\\admin\\admin\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -35,7 +35,7 @@
       "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\autocarro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|c:\\users\\sofia\\desktop\\pap\\autobus\\admin\\admin\\admin\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|C:\\Users\\sofia\\Desktop\\pap\\AutoBus\\Admin\\Admin\\admin\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE36FE5B-98C1-4EB2-ACBA-16B09AEEA793}|Admin\\Admin.csproj|solutionrelative:admin\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -99,8 +99,7 @@
               "ViewState": "AgIAACIAAAAAAAAAAAAQwFgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T10:17:01.861Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -126,8 +125,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T12:47:28.7Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -139,8 +137,7 @@
               "RelativeToolTip": "Admin\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T10:17:01.974Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -153,8 +150,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T10:17:01.99Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -180,8 +176,7 @@
               "ViewState": "AgIAAPUCAAAAAAAAAAAawHQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T10:17:01.988Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -193,8 +188,7 @@
               "RelativeToolTip": "Admin\\Utilizador.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T11:05:30.566Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -207,8 +201,7 @@
               "ViewState": "AgIAABwAAAAAAAAAAAAQwLsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-16T12:58:38.889Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -220,8 +213,7 @@
               "RelativeToolTip": "Admin\\Autocarro.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-16T13:20:55.073Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -234,8 +226,7 @@
               "ViewState": "AgIAALkAAAAAAAAAAAAUwPYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-16T13:25:07.675Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -247,8 +238,7 @@
               "RelativeToolTip": "Admin\\Rotas.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-28T11:07:16.84Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -261,8 +251,7 @@
               "ViewState": "AgIAAEABAAAAAAAAAAAAAJMBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T11:57:41.394Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -324,8 +313,7 @@
               "RelativeToolTip": "Admin\\Perfil.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-16T11:56:17.751Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -338,8 +326,7 @@
               "ViewState": "AgIAAFQAAAAAAAAAAAAAAFcAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T15:33:22.991Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             }
           ]
         }
