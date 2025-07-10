@@ -72,14 +72,14 @@
                 <label class="titulo-campo"><strong>Data de ida</strong></label> 
 
                 @if(FormPesquisa.value.tipo_viagem == "IdaVolta") {
-                  <label class="titulo-campo" style="margin-left: 70px;"><strong>Data de volta</strong></label>
+                  <label class="titulo-campo" style="margin-left: 60px;"><strong>Data de volta</strong></label>
                 }
             </div>
             
             <div style="display: flex;">
             @if (FormPesquisa.value.tipo_viagem == "IdaVolta"){
-                <input type="date"  formControlName="data_ida" style="padding-left: 15px; padding-right: 10px; width: 130px; cursor: text;"/>
-                <input type='date'  formControlName="data_volta" style='padding-left: 15px; padding-right: 10px; width: 130px; cursor: text;'>
+                <input type="date"  formControlName="data_ida" style="padding-left: 10px; padding-right: 10px; width: 120px; cursor: text;"/>
+                <input type='date'  formControlName="data_volta" style='padding-left: 10px; padding-right: 10px; width: 125px; cursor: text;'>
                 <!-- margin-left: -75px;  -->
             }
             @else { <!--ida-->
@@ -92,18 +92,18 @@
             <div style="display: flex;">
                 <label class="titulo-campo" ><strong>Hora de ida</strong></label>
                 @if (FormPesquisa.value.tipo_viagem == "IdaVolta") {
-                    <label class="titulo-campo" style="margin-left: 40px;"><strong>Hora de volta</strong></label>
+                    <label class="titulo-campo" style="margin-left: 60px;"><strong>Hora de volta</strong></label>
                 }
             </div>
 
             <div style="display: flex;">
                 @if (FormPesquisa.value.tipo_viagem == "IdaVolta"){
-                    <input type="time" formControlName="hora_ida" style="width: 100px; padding-left: 15px; padding-right: 10px; cursor: text;"/>
-                    <input type="time" formControlName="hora_volta" style="width: 100px; padding-left: 15px; padding-right: 10px; cursor: text;"/>
+                    <input type="time" formControlName="hora_ida" style="width: 120px; padding-left: 10px; padding-right: 10px; cursor: text;"/>
+                    <input type="time" formControlName="hora_volta" style="width: 123px; padding-left: 10px; padding-right: 10px; cursor: text;"/>
                      <!-- margin-left: -90px; -->
                 }
                 @else {
-                    <input type="time" formControlName="hora_ida" style="width: 200px; padding-left: 15px; padding-right: 25px; cursor: text;"/>
+                    <input type="time" formControlName="hora_ida" style="width: 240px; padding-left: 15px; padding-right: 25px; cursor: text;"/>
                 }   
             </div>
         </div>
