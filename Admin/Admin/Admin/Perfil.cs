@@ -118,7 +118,7 @@ namespace Admin
       using (var stream = new WebClient().OpenRead(URLImagem))
       {
         Image originalImage = Image.FromStream(stream);
-        Bitmap resizedImage = new Bitmap(originalImage, new Size(30, 30)); // Tamanho 30x30
+        Bitmap resizedImage = new Bitmap(originalImage, new Size(140, 135)); // Tamanho 30x30
         pictureBox2.Image = resizedImage;
       }
     }

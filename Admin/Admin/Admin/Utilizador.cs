@@ -53,8 +53,6 @@ namespace Admin
 
       pictureBox1.ImageLocation = URLImagem;
 
-
-
       panelCriar.Visible = false;
       panelEditar.Visible = false;
 
@@ -91,7 +89,7 @@ namespace Admin
 
       string nif = textBox8.Text;
       string nomeFicheiroImagem = $"{nif}.jpg"; // podes usar .png conforme o formato
-      string caminhoPasta = Path.Combine(Application.StartupPath, "Uploads");
+      string caminhoPasta = @"C:\Users\sofis\Desktop\pap\ServidorAutoBus\Servidor\Uploads";
 
       if (!Directory.Exists(caminhoPasta))
       {
@@ -376,7 +374,7 @@ namespace Admin
         if (pictureBox1.Image == null)
         {
           // Caminho da imagem default (ajusta conforme o local no teu projeto)
-          string caminhoImagemDefault = Application.StartupPath + @"\img\default-profile.png";
+          string caminhoImagemDefault = @"C:\Users\sofis\Desktop\pap\ServidorAutoBus\Servidor\Uploads" + @"\img\default-profile.png";
 
           if (File.Exists(caminhoImagemDefault))
           {
@@ -484,20 +482,27 @@ namespace Admin
           int tipoUtilizador = Convert.ToInt32(rdr["tipo_utilizador"]);
           comboBox2.Text = (tipoUtilizador == 0) ? "Administrador" : "Utilizador";
 
-          string caminhoImagem = Path.Combine(Application.StartupPath, "Uploads", $"{rdr["nif"]}.jpg");
+          string caminhoImagem = Path.Combine(@"C:\Users\sofis\Desktop\pap\ServidorAutoBus\Servidor\Uploads", "Uploads", $"{rdr["nif"]}.jpg");
 
           if (File.Exists(caminhoImagem))
           {
             pictureBox1.Image = Image.FromFile(caminhoImagem);
+            Debug.WriteLine("Imagem carregada: "+ $"{ rdr["nif"]}");
           }
           else
           {
             // Imagem padrão caso não exista
-            string caminhoDefault = Path.Combine(Application.StartupPath, "img", "default-profile.png");
+            string caminhoDefault = Path.Combine(@"C:\Users\sofis\Desktop\pap\ServidorAutoBus\Servidor\Uploads", "img", "default-profile.png");
             if (File.Exists(caminhoDefault))
+            {
               pictureBox1.Image = Image.FromFile(caminhoDefault);
+              Debug.WriteLine("Imagem default carregada");
+            }
             else
+            {
               pictureBox1.Image = null; // ou deixa vazio
+              Debug.WriteLine("Erro ao carregar imagem");
+            }
           }
         }
 

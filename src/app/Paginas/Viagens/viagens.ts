@@ -68,6 +68,7 @@ export class PaginaViagens {
         "tipo": viagem.tipo,
         distancia_km: viagem.distancia_km,
         duracao_estimada: viagem.duracao_estimada,
+        hora_chegada: viagem.hora_chegada,
       });
 
       if (Resposta?.success || Resposta?.status === 200) {
