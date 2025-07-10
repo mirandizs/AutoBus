@@ -1,4 +1,4 @@
-﻿namespace Admin
+namespace Admin
 {
     partial class Utilizador
     {
@@ -36,7 +36,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btVerPassEditar = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -47,8 +46,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.btEditarUtilizador = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -106,7 +103,6 @@
             this.panelEditar.Controls.Add(this.panel2);
             this.panelEditar.Controls.Add(this.label25);
             this.panelEditar.Controls.Add(this.pictureBox1);
-            this.panelEditar.Controls.Add(this.btVerPassEditar);
             this.panelEditar.Controls.Add(this.dateTimePicker1);
             this.panelEditar.Controls.Add(this.label20);
             this.panelEditar.Controls.Add(this.comboBox2);
@@ -117,8 +113,6 @@
             this.panelEditar.Controls.Add(this.label16);
             this.panelEditar.Controls.Add(this.btEditarUtilizador);
             this.panelEditar.Controls.Add(this.textBox1);
-            this.panelEditar.Controls.Add(this.textBox7);
-            this.panelEditar.Controls.Add(this.label7);
             this.panelEditar.Controls.Add(this.textBox6);
             this.panelEditar.Controls.Add(this.label6);
             this.panelEditar.Controls.Add(this.label5);
@@ -156,7 +150,7 @@
             this.btEscolherImgEditar.Name = "btEscolherImgEditar";
             this.btEscolherImgEditar.Size = new System.Drawing.Size(164, 28);
             this.btEscolherImgEditar.TabIndex = 144;
-            this.btEscolherImgEditar.Text = "Escolher imagem";
+            this.btEscolherImgEditar.Text = "Selecionar imagem";
             this.btEscolherImgEditar.UseVisualStyleBackColor = false;
             this.btEscolherImgEditar.Click += new System.EventHandler(this.btEscolherImgEditar_Click);
             // 
@@ -180,7 +174,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(596, 351);
+            this.textBox5.Location = new System.Drawing.Point(596, 365);
             this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(189, 27);
@@ -217,24 +211,11 @@
             this.pictureBox1.TabIndex = 137;
             this.pictureBox1.TabStop = false;
             // 
-            // btVerPassEditar
-            // 
-            this.btVerPassEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btVerPassEditar.FlatAppearance.BorderSize = 0;
-            this.btVerPassEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btVerPassEditar.Image = global::Admin.Properties.Resources.fechado;
-            this.btVerPassEditar.Location = new System.Drawing.Point(426, 398);
-            this.btVerPassEditar.Name = "btVerPassEditar";
-            this.btVerPassEditar.Size = new System.Drawing.Size(35, 24);
-            this.btVerPassEditar.TabIndex = 136;
-            this.btVerPassEditar.UseVisualStyleBackColor = true;
-            this.btVerPassEditar.Click += new System.EventHandler(this.btVerPassEditar_Click);
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(234, 443);
+            this.dateTimePicker1.Location = new System.Drawing.Point(234, 410);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(185, 27);
             this.dateTimePicker1.TabIndex = 5;
@@ -244,7 +225,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label20.Location = new System.Drawing.Point(488, 355);
+            this.label20.Location = new System.Drawing.Point(488, 369);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(84, 20);
@@ -260,7 +241,7 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Administrador",
             "Cliente"});
-            this.comboBox2.Location = new System.Drawing.Point(208, 261);
+            this.comboBox2.Location = new System.Drawing.Point(208, 275);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(211, 28);
@@ -271,7 +252,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label19.Location = new System.Drawing.Point(60, 264);
+            this.label19.Location = new System.Drawing.Point(60, 278);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(140, 20);
@@ -302,7 +283,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label8.Location = new System.Drawing.Point(61, 198);
+            this.label8.Location = new System.Drawing.Point(61, 205);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(167, 20);
@@ -318,7 +299,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Ativo",
             "Inativo"});
-            this.comboBox1.Location = new System.Drawing.Point(634, 261);
+            this.comboBox1.Location = new System.Drawing.Point(634, 275);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(151, 28);
@@ -329,7 +310,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label16.Location = new System.Drawing.Point(488, 264);
+            this.label16.Location = new System.Drawing.Point(488, 278);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(124, 20);
@@ -344,7 +325,7 @@
             this.btEditarUtilizador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditarUtilizador.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btEditarUtilizador.ForeColor = System.Drawing.Color.White;
-            this.btEditarUtilizador.Location = new System.Drawing.Point(64, 504);
+            this.btEditarUtilizador.Location = new System.Drawing.Point(64, 483);
             this.btEditarUtilizador.Margin = new System.Windows.Forms.Padding(4);
             this.btEditarUtilizador.Name = "btEditarUtilizador";
             this.btEditarUtilizador.Size = new System.Drawing.Size(144, 28);
@@ -358,40 +339,16 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(258, 194);
+            this.textBox1.Location = new System.Drawing.Point(258, 202);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(72, 27);
             this.textBox1.TabIndex = 127;
             // 
-            // textBox7
-            // 
-            this.textBox7.Cursor = System.Windows.Forms.Cursors.No;
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(198, 395);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(221, 27);
-            this.textBox7.TabIndex = 125;
-            this.textBox7.UseSystemPasswordChar = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label7.Location = new System.Drawing.Point(61, 402);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 20);
-            this.label7.TabIndex = 124;
-            this.label7.Text = "Palavra-Passe:";
-            // 
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(596, 395);
+            this.textBox6.Location = new System.Drawing.Point(596, 409);
             this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(189, 27);
@@ -403,7 +360,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label6.Location = new System.Drawing.Point(61, 355);
+            this.label6.Location = new System.Drawing.Point(61, 369);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 20);
@@ -415,7 +372,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label5.Location = new System.Drawing.Point(488, 401);
+            this.label5.Location = new System.Drawing.Point(488, 415);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 20);
@@ -424,8 +381,9 @@
             // 
             // textBox4
             // 
+            this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(166, 352);
+            this.textBox4.Location = new System.Drawing.Point(166, 366);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(253, 27);
@@ -436,7 +394,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label4.Location = new System.Drawing.Point(61, 447);
+            this.label4.Location = new System.Drawing.Point(61, 414);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 20);
@@ -446,7 +404,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(166, 307);
+            this.textBox3.Location = new System.Drawing.Point(166, 321);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(253, 27);
@@ -458,7 +416,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label3.Location = new System.Drawing.Point(61, 310);
+            this.label3.Location = new System.Drawing.Point(61, 324);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 20);
@@ -470,7 +428,7 @@
             this.textBox2.Cursor = System.Windows.Forms.Cursors.No;
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(596, 306);
+            this.textBox2.Location = new System.Drawing.Point(596, 320);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(189, 27);
@@ -482,7 +440,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label2.Location = new System.Drawing.Point(488, 310);
+            this.label2.Location = new System.Drawing.Point(488, 324);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 20);
@@ -547,7 +505,7 @@
             this.btCarregarImgCriar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCarregarImgCriar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btCarregarImgCriar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btCarregarImgCriar.Location = new System.Drawing.Point(870, 461);
+            this.btCarregarImgCriar.Location = new System.Drawing.Point(870, 448);
             this.btCarregarImgCriar.Name = "btCarregarImgCriar";
             this.btCarregarImgCriar.Size = new System.Drawing.Size(167, 28);
             this.btCarregarImgCriar.TabIndex = 128;
@@ -563,18 +521,18 @@
             this.btEscolherImgCriar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEscolherImgCriar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btEscolherImgCriar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btEscolherImgCriar.Location = new System.Drawing.Point(870, 414);
+            this.btEscolherImgCriar.Location = new System.Drawing.Point(870, 401);
             this.btEscolherImgCriar.Name = "btEscolherImgCriar";
             this.btEscolherImgCriar.Size = new System.Drawing.Size(167, 28);
             this.btEscolherImgCriar.TabIndex = 127;
-            this.btEscolherImgCriar.Text = "Escolher imagem";
+            this.btEscolherImgCriar.Text = "Selecionar imagem";
             this.btEscolherImgCriar.UseVisualStyleBackColor = false;
             this.btEscolherImgCriar.Click += new System.EventHandler(this.btEscolherImgCriar_Click);
             // 
             // textBox9
             // 
             this.textBox9.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBox9.Location = new System.Drawing.Point(128, 267);
+            this.textBox9.Location = new System.Drawing.Point(128, 263);
             this.textBox9.Margin = new System.Windows.Forms.Padding(4);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(291, 27);
@@ -624,7 +582,7 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox2.Image = global::Admin.Properties.Resources.userA;
-            this.pictureBox2.Location = new System.Drawing.Point(856, 214);
+            this.pictureBox2.Location = new System.Drawing.Point(856, 201);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(190, 170);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -636,7 +594,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label9.Location = new System.Drawing.Point(47, 208);
+            this.label9.Location = new System.Drawing.Point(47, 204);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(140, 20);
@@ -650,7 +608,7 @@
             this.btPass.FlatAppearance.BorderSize = 0;
             this.btPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btPass.Image = global::Admin.Properties.Resources.fechado;
-            this.btPass.Location = new System.Drawing.Point(534, 398);
+            this.btPass.Location = new System.Drawing.Point(534, 394);
             this.btPass.Name = "btPass";
             this.btPass.Size = new System.Drawing.Size(35, 20);
             this.btPass.TabIndex = 119;
@@ -665,7 +623,7 @@
             this.btConfirmarPass.FlatAppearance.BorderSize = 0;
             this.btConfirmarPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btConfirmarPass.Image = global::Admin.Properties.Resources.fechado;
-            this.btConfirmarPass.Location = new System.Drawing.Point(535, 435);
+            this.btConfirmarPass.Location = new System.Drawing.Point(535, 431);
             this.btConfirmarPass.Name = "btConfirmarPass";
             this.btConfirmarPass.Size = new System.Drawing.Size(35, 20);
             this.btConfirmarPass.TabIndex = 118;
@@ -678,7 +636,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.Maroon;
-            this.label21.Location = new System.Drawing.Point(47, 472);
+            this.label21.Location = new System.Drawing.Point(48, 483);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(14, 17);
@@ -691,7 +649,7 @@
             this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(234, 355);
+            this.dateTimePicker2.Location = new System.Drawing.Point(234, 351);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(185, 27);
             this.dateTimePicker2.TabIndex = 5;
@@ -701,7 +659,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label10.Location = new System.Drawing.Point(47, 435);
+            this.label10.Location = new System.Drawing.Point(47, 431);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(184, 20);
@@ -717,7 +675,7 @@
             this.comboBox3.Items.AddRange(new object[] {
             "Ativo",
             "Inativo"});
-            this.comboBox3.Location = new System.Drawing.Point(602, 205);
+            this.comboBox3.Location = new System.Drawing.Point(602, 201);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(160, 28);
@@ -728,7 +686,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label11.Location = new System.Drawing.Point(466, 208);
+            this.label11.Location = new System.Drawing.Point(466, 204);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(128, 20);
@@ -738,7 +696,7 @@
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBox8.Location = new System.Drawing.Point(578, 266);
+            this.textBox8.Location = new System.Drawing.Point(578, 262);
             this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.MaxLength = 9;
             this.textBox8.Name = "textBox8";
@@ -751,7 +709,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label18.Location = new System.Drawing.Point(467, 349);
+            this.label18.Location = new System.Drawing.Point(467, 345);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(87, 20);
@@ -766,7 +724,7 @@
             this.btCriarUtilizador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCriarUtilizador.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btCriarUtilizador.ForeColor = System.Drawing.Color.White;
-            this.btCriarUtilizador.Location = new System.Drawing.Point(48, 504);
+            this.btCriarUtilizador.Location = new System.Drawing.Point(504, 519);
             this.btCriarUtilizador.Margin = new System.Windows.Forms.Padding(4);
             this.btCriarUtilizador.Name = "btCriarUtilizador";
             this.btCriarUtilizador.Size = new System.Drawing.Size(160, 28);
@@ -784,7 +742,7 @@
             this.comboBox4.Items.AddRange(new object[] {
             "Administrador",
             "Cliente"});
-            this.comboBox4.Location = new System.Drawing.Point(208, 205);
+            this.comboBox4.Location = new System.Drawing.Point(208, 201);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(211, 28);
@@ -795,7 +753,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label12.Location = new System.Drawing.Point(47, 397);
+            this.label12.Location = new System.Drawing.Point(47, 393);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(109, 20);
@@ -805,7 +763,7 @@
             // textBox10
             // 
             this.textBox10.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBox10.Location = new System.Drawing.Point(128, 309);
+            this.textBox10.Location = new System.Drawing.Point(128, 305);
             this.textBox10.Margin = new System.Windows.Forms.Padding(4);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(291, 27);
@@ -816,7 +774,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label13.Location = new System.Drawing.Point(47, 311);
+            this.label13.Location = new System.Drawing.Point(47, 307);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 20);
@@ -826,7 +784,7 @@
             // textBox11
             // 
             this.textBox11.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBox11.Location = new System.Drawing.Point(578, 306);
+            this.textBox11.Location = new System.Drawing.Point(578, 302);
             this.textBox11.Margin = new System.Windows.Forms.Padding(4);
             this.textBox11.MaxLength = 9;
             this.textBox11.Name = "textBox11";
@@ -839,7 +797,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label14.Location = new System.Drawing.Point(466, 309);
+            this.label14.Location = new System.Drawing.Point(466, 305);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(84, 20);
@@ -849,7 +807,7 @@
             // textBox12
             // 
             this.textBox12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBox12.Location = new System.Drawing.Point(578, 346);
+            this.textBox12.Location = new System.Drawing.Point(578, 342);
             this.textBox12.Margin = new System.Windows.Forms.Padding(4);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(184, 27);
@@ -861,7 +819,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label15.Location = new System.Drawing.Point(47, 354);
+            this.label15.Location = new System.Drawing.Point(47, 350);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(152, 20);
@@ -871,7 +829,7 @@
             // textBox13
             // 
             this.textBox13.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBox13.Location = new System.Drawing.Point(258, 395);
+            this.textBox13.Location = new System.Drawing.Point(258, 391);
             this.textBox13.Margin = new System.Windows.Forms.Padding(4);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(255, 27);
@@ -883,7 +841,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label17.Location = new System.Drawing.Point(47, 269);
+            this.label17.Location = new System.Drawing.Point(47, 265);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(60, 20);
@@ -893,7 +851,7 @@
             // textBox14
             // 
             this.textBox14.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBox14.Location = new System.Drawing.Point(258, 433);
+            this.textBox14.Location = new System.Drawing.Point(258, 429);
             this.textBox14.Margin = new System.Windows.Forms.Padding(4);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(255, 27);
@@ -905,7 +863,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(34)))), ((int)(((byte)(99)))));
-            this.label22.Location = new System.Drawing.Point(466, 267);
+            this.label22.Location = new System.Drawing.Point(466, 263);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(42, 20);
@@ -949,7 +907,6 @@
 
         private System.Windows.Forms.Panel panelEditar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btVerPassEditar;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox comboBox2;
@@ -960,8 +917,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btEditarUtilizador;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

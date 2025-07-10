@@ -1,4 +1,4 @@
-﻿namespace Admin
+namespace Admin
 {
     partial class Perfil
     {
@@ -298,6 +298,7 @@
             this.Name = "Perfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Perfil";
+            this.Load += new System.EventHandler(this.Perfil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

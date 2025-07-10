@@ -196,3 +196,5 @@ C:\Users\sofia\Desktop\pap\AutoBus\Admin\Admin\Admin\obj\Debug\Admin.csproj.Core
 C:\Users\sofia\Desktop\pap\AutoBus\Admin\Admin\Admin\obj\Debug\Admin.csproj.Up2Date
 C:\Users\sofia\Desktop\pap\AutoBus\Admin\Admin\Admin\obj\Debug\Admin.exe
 C:\Users\sofia\Desktop\pap\AutoBus\Admin\Admin\Admin\obj\Debug\Admin.pdb
+C:\Users\sofia\Desktop\pap\AutoBus\Admin\Admin\Admin\bin\Debug\Newtonsoft.Json.dll
+C:\Users\sofia\Desktop\pap\AutoBus\Admin\Admin\Admin\bin\Debug\Newtonsoft.Json.xml

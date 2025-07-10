@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,10 +14,9 @@ namespace Admin
         public string email { get; set; }
         public int telefone { get; set; }
         public string localidade { get; set; }
-        public string nascimento { get; set; }
+        public DateTime nascimento { get; set; }
         public string password { get; set; }
         public string tipo_utilizador { get; set; }
         public string atividade { get; set; }
-        public string foto { get; set; }
     }
 }
