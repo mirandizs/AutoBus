@@ -88,13 +88,13 @@
                 <h2 style="color: rgb(0, 0, 150); margin-bottom: 50px; margin-left: 20px;">Método de pagamento</h2>
 
                 <div class="caixaEscolha" style="display: flex;">
-                    <button class="btnEscolha" style="display:flex; padding-top: 10px;" (click)="TipoPagamentoCartao = true">
+                    <button class="btnEscolha" style="display:flex; padding-top: 10px;" (click)="TipoPagamentoCartao = true; TipoPagamentoMB = false;">
                         <label style="margin-right:120px; margin-top:6px; cursor:pointer;">Cartão de crédito</label>
                         <img src="img/cartoes.png" style="height: 25px; width: 25;">
                     </button>
                 </div>
                 <div class="caixaEscolha" style="margin-bottom:30px;">
-                    <button class="btnEscolha"  style="display:flex; padding-top: 10px;" (click)="TipoPagamentoMB = true">
+                    <button class="btnEscolha"  style="display:flex; padding-top: 10px;" (click)="TipoPagamentoMB = true; TipoPagamentoCartao = false;">
                         <label style="margin-right:180px; margin-top:6px; cursor:pointer;">MB WAY</label>
                         <img src="img/mbway.png" style="height: 25px; width: 25;">
                     </button>

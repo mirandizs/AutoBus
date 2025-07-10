@@ -35,6 +35,8 @@ export class PaginaCarrinho {
   ModalRemoverBilhete: boolean = false;
   ViagemSelecionada: any = null;
 
+  MetodoPagamentoSelecionado: 'cartao' | 'mbway' | null = null;
+
   abrirDetalhes(viagem: any) {
     this.ViagemSelecionada = viagem;
     this.ModalVerDetalhes = true;
@@ -85,16 +87,17 @@ export class PaginaCarrinho {
       guardarCartao: this.FormCartao.value.guardarCartao,
       
       codigo_verificacao: this.FormCodigo.value.codigo,
+      tipo_pagamento: this.MetodoPagamentoSelecionado,
     })
 
     
-      // tipo_pagamento: this.TipoPagamentoCartao ? 'cartao' : 'mbway',
       // numero_mbway: this.FormMBWay.value.numero_mbway,
 
     console.log(resultadoCompra)
 
     if (resultadoCompra) {
       this.ServicoMensagens.sucesso("Compra realizada com sucesso!")
+      console.log('Método enviado na compra:', this.MetodoPagamentoSelecionado);
       this.Router.navigate(['/compras'])
       this.ModalCodigo = false
     }
@@ -121,6 +124,13 @@ export class PaginaCarrinho {
     const EmailMandado = await this.ServicoHttp.Request(Definicoes.API_URL + 'email-confirmacao', 'POST',
       'Falha ao enviar o email de confirmação')
 
+    // Guardar o tipo de pagamento correto
+    if (this.TipoPagamentoCartao) {
+      this.MetodoPagamentoSelecionado = 'cartao';
+    } else if (this.TipoPagamentoMB) {
+      this.MetodoPagamentoSelecionado = 'mbway';
+    }
+    console.log('Método selecionado:', this.MetodoPagamentoSelecionado);
 
     this.ModalMetodo = false
     this.TipoPagamentoCartao = false

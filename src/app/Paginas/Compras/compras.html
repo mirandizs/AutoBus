@@ -30,31 +30,33 @@
             </select>
         </h4><br>
 
-        <table class="tabela">
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Descrição</th>
-                    <th>Total pago</th>
-                    <th>Recibo</th>
-                </tr>
-            </thead>
-            <tbody>
-                @for (Recibo of Compras ; track $index){
-                <tr>
-                    <td>{{Recibo.data_compra}}</td>
-                    <td><a><strong>{{Recibo.local_partida}} para {{Recibo.local_chegada}}</strong></a></td>
-                    <td>{{Recibo.preco | currency:'EUR'}}</td>
-                    <td>
-                        <button class="botao-transferir" style="display: flex;"
-                            (click)="transferirRecibo(Recibo.id_compraRealizada)"> <!--" -->
-                            <img src="img/transferir.png">
-                        </button>
-                    </td>
-                </tr>
-                }
-            </tbody>
-        </table>
+        <div class="base-tabela">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Total pago</th>
+                        <th>Recibo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (Recibo of Compras ; track $index){
+                    <tr>
+                        <td>{{Recibo.data_compra}}</td>
+                        <td><a><strong>{{Recibo.local_partida}} para {{Recibo.local_chegada}}</strong></a></td>
+                        <td>{{Recibo.preco | currency:'EUR'}}</td>
+                        <td>
+                            <button class="botao-transferir" style="display: flex;"
+                                (click)="transferirRecibo(Recibo.id_compraRealizada)"> <!--" -->
+                                <img src="img/transferir.png">
+                            </button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 

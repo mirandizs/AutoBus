@@ -40,6 +40,17 @@
 }
 
 
+.base-tabela {
+  justify-items: center;
+  overflow-y: auto;
+  overflow-x: auto;
+  float: left;
+  box-sizing: border-box;
+  height: 80%;
+  margin-bottom: 20px;
+}
+
+
 .tabela {
   width: 80%;
   box-sizing: border-box;
