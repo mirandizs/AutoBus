@@ -83,11 +83,12 @@ export class PaginaCarrinho {
       numero_cartao: this.FormCartao.value.numero_cartao,
       validade: this.FormCartao.value.validade,
       guardarCartao: this.FormCartao.value.guardarCartao,
+      
+      codigo_verificacao: this.FormCodigo.value.codigo,
     })
 
     
       // tipo_pagamento: this.TipoPagamentoCartao ? 'cartao' : 'mbway',
-      // codigo_verificacao: this.FormCodigo.value.codigo,
       // numero_mbway: this.FormMBWay.value.numero_mbway,
 
     console.log(resultadoCompra)
