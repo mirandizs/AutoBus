@@ -24,7 +24,15 @@ export class PaginaViagens {
   ViagemSelecionada: any = null;
 
   abrirDetalhes(viagem: any) {
-    this.ViagemSelecionada = viagem;
+    // Corrige a inversão para viagens de volta
+    if (viagem.tipo === "Volta") {
+      const viagemCorrigida = { ...viagem };
+      [viagemCorrigida.local_partida, viagemCorrigida.local_chegada] = [viagem.local_chegada, viagem.local_partida];
+      this.ViagemSelecionada = viagemCorrigida;
+    } else {
+      this.ViagemSelecionada = viagem;
+    }
+
     this.ModalVerDetalhes = true;
   }
 
