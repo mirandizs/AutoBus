@@ -1,4 +1,4 @@
-﻿namespace Admin
+namespace Admin
 {
     partial class Principal
     {
@@ -62,6 +62,8 @@
             this.btDesativarAuto = new System.Windows.Forms.Button();
             this.btEditarAutocarro = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -259,6 +261,7 @@
             // 
             // panelUtilizadores
             // 
+            this.panelUtilizadores.Controls.Add(this.textBox3);
             this.panelUtilizadores.Controls.Add(this.btAtivarUtilizador);
             this.panelUtilizadores.Controls.Add(this.btEditarUtilizadores);
             this.panelUtilizadores.Controls.Add(this.btDesativarUtilizador);
@@ -373,6 +376,9 @@
             this.dataGridViewUtilizador.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridViewUtilizador.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUtilizador_CellContentClick);
             this.dataGridViewUtilizador.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewUtilizador_CellFormatting);
+            this.dataGridViewUtilizador.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUtilizador_CellMouseLeave);
+            this.dataGridViewUtilizador.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewUtilizador_CellMouseMove);
+            this.dataGridViewUtilizador.SelectionChanged += new System.EventHandler(this.dataGridViewUtilizador_SelectionChanged);
             // 
             // textBox1
             // 
@@ -410,6 +416,7 @@
             // 
             // panelAutocarros
             // 
+            this.panelAutocarros.Controls.Add(this.textBox4);
             this.panelAutocarros.Controls.Add(this.btAtivarAuto);
             this.panelAutocarros.Controls.Add(this.dataGridViewAutocarro);
             this.panelAutocarros.Controls.Add(this.btPesquisarAutocarro);
@@ -566,6 +573,20 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Autocarros";
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(3, 10);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(20, 22);
+            this.textBox3.TabIndex = 19;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(1144, 522);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(16, 22);
+            this.textBox4.TabIndex = 29;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -635,5 +656,7 @@
         private System.Windows.Forms.Button btAtivarUtilizador;
         private System.Windows.Forms.Button btAtivarAuto;
         private System.Windows.Forms.Button btMeuPerfil;
-    }
+    private System.Windows.Forms.TextBox textBox3;
+    private System.Windows.Forms.TextBox textBox4;
+  }
 }

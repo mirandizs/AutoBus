@@ -88,6 +88,7 @@ namespace Admin
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panelEditar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCriar.SuspendLayout();
@@ -96,6 +97,7 @@ namespace Admin
             // 
             // panelEditar
             // 
+            this.panelEditar.Controls.Add(this.label7);
             this.panelEditar.Controls.Add(this.textBox15);
             this.panelEditar.Controls.Add(this.btEscolherImgEditar);
             this.panelEditar.Controls.Add(this.btCarregarImgEditar);
@@ -176,6 +178,7 @@ namespace Admin
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(596, 365);
             this.textBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox5.MaxLength = 9;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(189, 27);
             this.textBox5.TabIndex = 3;
@@ -325,7 +328,7 @@ namespace Admin
             this.btEditarUtilizador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditarUtilizador.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btEditarUtilizador.ForeColor = System.Drawing.Color.White;
-            this.btEditarUtilizador.Location = new System.Drawing.Point(64, 483);
+            this.btEditarUtilizador.Location = new System.Drawing.Point(64, 501);
             this.btEditarUtilizador.Margin = new System.Windows.Forms.Padding(4);
             this.btEditarUtilizador.Name = "btEditarUtilizador";
             this.btEditarUtilizador.Size = new System.Drawing.Size(144, 28);
@@ -430,6 +433,7 @@ namespace Admin
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(596, 320);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.MaxLength = 327679;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(189, 27);
             this.textBox2.TabIndex = 115;
@@ -882,6 +886,17 @@ namespace Admin
             this.label23.TabIndex = 94;
             this.label23.Text = "Utilizador";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.Maroon;
+            this.label7.Location = new System.Drawing.Point(61, 465);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(14, 17);
+            this.label7.TabIndex = 146;
+            this.label7.Text = "*";
+            // 
             // Utilizador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -965,5 +980,6 @@ namespace Admin
         private System.Windows.Forms.Button btEscolherImgCriar;
         private System.Windows.Forms.Button btCarregarImgCriar;
         private System.Windows.Forms.TextBox textBox15;
-    }
+    private System.Windows.Forms.Label label7;
+  }
 }

@@ -350,79 +350,116 @@ namespace Admin
     //CÓDIGO PARA >>>>EDITAR<<<< O UTILIZADOR
     private void btEditarUtilizador_Click(object sender, EventArgs e)
     {
-      //abrir a ligação à BD
-      if (db.open_connection())
+
+
+      // Verificar se o número de telemóvel tem pelo menos 9 dígitos
+      if (textBox5.Text.Length < 9 || !textBox5.Text.All(char.IsDigit))
       {
-        //definir a query
-        string query = "UPDATE utilizadores SET nif=@nif, nome=@nome, nascimento=@nascimento, telefone=@telefone, localidade=@localidade, email=@email, tipo_utilizador=@tipo_utilizador, atividade=@atividade WHERE nif=@nif";
+        label7.Text = "O número de telemóvel deve conter exatamente 9 dígitos numéricos.";
+        label7.Visible = true;
+      }
 
-        string tipoUtilizador = (comboBox2.Text == "Administrador") ? "0" : "1";
-        string atividade = (comboBox1.Text == "Ativo") ? "1" : "0";
+      else
+      {
+        label7.Visible = false;
 
-        //criar o comando e associar a query com a ligação através do construtor
-        MySqlCommand cmd = new MySqlCommand(query, db.connection);
-
-        cmd.Parameters.AddWithValue("@nif", textBox2.Text);
-        cmd.Parameters.AddWithValue("@nome", textBox3.Text);
-        cmd.Parameters.AddWithValue("@email", textBox4.Text);
-        cmd.Parameters.AddWithValue("@telefone", textBox5.Text);
-        cmd.Parameters.AddWithValue("@localidade", textBox6.Text);
-        cmd.Parameters.AddWithValue("@nascimento", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
-
-        byte[] imagemBytes;
-
-        if (pictureBox1.Image == null)
+        // Verificar se a idade é menor de 18 anos
+        DateTime dataNascimento;
+        if (!DateTime.TryParse(dateTimePicker1.Text, out dataNascimento))
         {
-          // Caminho da imagem default (ajusta conforme o local no teu projeto)
-          string caminhoImagemDefault = @"C:\Users\sofis\Desktop\pap\ServidorAutoBus\Servidor\Uploads" + @"\img\default-profile.png";
+          label7.Text = "Data de nascimento inválida.";
+          label7.Visible = true;
+        }
+        else
+        {
+          int idade = DateTime.Today.Year - dataNascimento.Year;
+          if (dataNascimento.Date > DateTime.Today.AddYears(-idade)) idade--; // Ajuste para aniversário ainda não ocorrido
 
-          if (File.Exists(caminhoImagemDefault))
+          if (idade < 18)
           {
-            imagemBytes = File.ReadAllBytes(caminhoImagemDefault);
+            label7.Text = "É necessário ter pelo menos 18 anos para criar uma conta.";
+            label7.Visible = true;
           }
           else
           {
-            MessageBox.Show("Imagem default não encontrada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
+            label7.Visible = false;
+
+            //abrir a ligação à BD
+            if (db.open_connection())
+            {
+              //definir a query
+              string query = "UPDATE utilizadores SET nif=@nif, nome=@nome, nascimento=@nascimento, telefone=@telefone, localidade=@localidade, email=@email, tipo_utilizador=@tipo_utilizador, atividade=@atividade WHERE nif=@nif";
+
+              string tipoUtilizador = (comboBox2.Text == "Administrador") ? "0" : "1";
+              string atividade = (comboBox1.Text == "Ativo") ? "1" : "0";
+
+              //criar o comando e associar a query com a ligação através do construtor
+              MySqlCommand cmd = new MySqlCommand(query, db.connection);
+
+              cmd.Parameters.AddWithValue("@nif", textBox2.Text);
+              cmd.Parameters.AddWithValue("@nome", textBox3.Text);
+              cmd.Parameters.AddWithValue("@email", textBox4.Text);
+              cmd.Parameters.AddWithValue("@telefone", textBox5.Text);
+              cmd.Parameters.AddWithValue("@localidade", textBox6.Text);
+              cmd.Parameters.AddWithValue("@nascimento", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
+
+              byte[] imagemBytes;
+
+              if (pictureBox1.Image == null)
+              {
+                // Caminho da imagem default (ajusta conforme o local no teu projeto)
+                string caminhoImagemDefault = @"C:\Users\sofis\Desktop\pap\ServidorAutoBus\Servidor\Uploads" + @"\img\default-profile.png";
+
+                if (File.Exists(caminhoImagemDefault))
+                {
+                  imagemBytes = File.ReadAllBytes(caminhoImagemDefault);
+                }
+                else
+                {
+                  MessageBox.Show("Imagem default não encontrada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  return;
+                }
+              }
+
+              else
+              {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                  pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+                  imagemBytes = ms.ToArray();
+                }
+              }
+
+              cmd.Parameters.AddWithValue("@atividade", atividade);
+              cmd.Parameters.AddWithValue("@tipo_utilizador", tipoUtilizador);
+
+
+              MessageBoxButtons botoes = MessageBoxButtons.YesNo;
+              System.Windows.Forms.DialogResult resultado;
+
+              resultado = MessageBox.Show(this, "Tem certeza que deseja alterar os dados?", "AutoBus", botoes);
+
+              if (resultado == System.Windows.Forms.DialogResult.Yes) //caso "sim"
+              {
+                MessageBox.Show("Dados alterados com sucesso.", "AutoBus", MessageBoxButtons.OK, MessageBoxIcon.Information);
+              }
+              else //caso "não"
+              {
+                MessageBox.Show("Operação cancelada.");
+              }
+
+              //executar o comando
+              cmd.ExecuteNonQuery();
+
+              //fechar a ligação à BD
+              db.close_connection();
+            }
+            else
+            {
+              MessageBox.Show("Erro ao conectar à base de dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
           }
         }
-
-        else
-        {
-          using (MemoryStream ms = new MemoryStream())
-          {
-            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
-            imagemBytes = ms.ToArray();
-          }
-        }
-
-        cmd.Parameters.AddWithValue("@atividade", atividade);
-        cmd.Parameters.AddWithValue("@tipo_utilizador", tipoUtilizador);
-
-
-        MessageBoxButtons botoes = MessageBoxButtons.YesNo;
-        System.Windows.Forms.DialogResult resultado;
-
-        resultado = MessageBox.Show(this, "Tem certeza que deseja alterar os dados?", "AutoBus", botoes);
-
-        if (resultado == System.Windows.Forms.DialogResult.Yes) //caso "sim"
-        {
-          MessageBox.Show("Dados alterados com sucesso.", "AutoBus", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        else //caso "não"
-        {
-          MessageBox.Show("Operação cancelada.");
-        }
-
-        //executar o comando
-        cmd.ExecuteNonQuery();
-
-        //fechar a ligação à BD
-        db.close_connection();
-      }
-      else
-      {
-        MessageBox.Show("Erro ao conectar à base de dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 

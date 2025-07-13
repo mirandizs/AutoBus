@@ -265,6 +265,12 @@ namespace Admin
       btUtilizadores.BackColor = Color.MidnightBlue;
       btAutocarros.BackColor = Color.FromArgb(3, 3, 59);
 
+      textBox3.TabStop = false;
+      textBox3.Visible = false;
+      this.ActiveControl = textBox3;
+
+      dataGridViewUtilizador.ClearSelection();
+
       CarregarUtilizadores();
     }
 
@@ -490,6 +496,27 @@ namespace Admin
         e.CellStyle.SelectionBackColor = Color.FromArgb(43, 34, 99); // azul
         e.CellStyle.SelectionForeColor = Color.FromArgb(255, 255, 255); // branco
       }
+
+      // Garante que não é o cabeçalho
+      if (e.RowIndex >= 0)
+      {
+        var row = dataGridViewUtilizador.Rows[e.RowIndex];
+        string email = row.Cells["email"].Value?.ToString();
+
+        if (email == "autobus.pap@gmail.com")
+        {
+          // Cor de fundo cinzenta para toda a linha
+          row.DefaultCellStyle.BackColor = Color.LightGray;
+          row.DefaultCellStyle.ForeColor = Color.DimGray; // Opcional: texto mais claro
+        }
+        else
+        {
+          // Restaura para o padrão caso não seja o admin principal
+          row.DefaultCellStyle.BackColor = Color.White;
+          row.DefaultCellStyle.ForeColor = Color.Black;
+          row.DefaultCellStyle.Font = dataGridViewUtilizador.Font;
+        }
+      }
     }
 
 
@@ -514,6 +541,12 @@ namespace Admin
 
       btAutocarros.BackColor = Color.MidnightBlue;
       btUtilizadores.BackColor = Color.FromArgb(3, 3, 59);
+
+      textBox4.TabStop = false;
+      textBox4.Visible = false;
+      this.ActiveControl = textBox4;
+
+      dataGridViewAutocarro.ClearSelection();
 
       CarregarAutocarros("");
     }
@@ -933,6 +966,46 @@ namespace Admin
           e.CellStyle.Font = new Font(e.CellStyle.Font, FontStyle.Bold);
         }
       }
+    }
+
+    private void dataGridViewUtilizador_SelectionChanged(object sender, EventArgs e)
+    {
+      if (dataGridViewUtilizador.SelectedRows.Count > 0)
+      {
+        var selectedRow = dataGridViewUtilizador.SelectedRows[0];
+        string email = selectedRow.Cells["email"].Value.ToString();
+
+        if (email == "autobus.pap@gmail.com")
+        {
+          // Cancela a seleção
+          dataGridViewUtilizador.ClearSelection();
+          MessageBox.Show("Não é permitido selecionar este utilizador.\nO admin principal não é alterável.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+      }
+    }
+
+    private void dataGridViewUtilizador_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+    {
+      // Evita erro ao passar sobre o cabeçalho
+      if (e.RowIndex >= 0)
+      {
+        var row = dataGridViewUtilizador.Rows[e.RowIndex];
+        string email = row.Cells["email"].Value?.ToString();
+
+        if (email == "autobus.pap@gmail.com")
+        {
+          dataGridViewUtilizador.Cursor = Cursors.No; // Cursor de proibido
+        }
+        else
+        {
+          dataGridViewUtilizador.Cursor = Cursors.Default;
+        }
+      }
+    }
+
+    private void dataGridViewUtilizador_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+    {
+      dataGridViewUtilizador.Cursor = Cursors.Default;
     }
   }
 }

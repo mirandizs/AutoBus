@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Admin
 {
-    public static class Sessao
-    {
-      public static DadosUtilizador UtilizadorAtual;
-    }
+  public static class Sessao
+  {
+    public static DadosUtilizador UtilizadorAtual;
+  }
 }
