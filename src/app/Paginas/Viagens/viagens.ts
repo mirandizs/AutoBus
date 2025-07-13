@@ -8,6 +8,8 @@ import { HttpService } from '../../Services/Http.service';
 import { Definicoes } from '../../Definicoes';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Carregamento } from "../../Componentes/Carregamento/carregamento";
+import { ServicoAutenticacao } from '../../Services/Autenticacao.service';
+import { ServicoMensagens } from '../../Componentes/ServicoMensagens/Mensagens.service';
 
 @Component({
   selector: 'pagina-viagens',
@@ -18,6 +20,8 @@ import { Carregamento } from "../../Componentes/Carregamento/carregamento";
 export class PaginaViagens {
   route = inject(ActivatedRoute) //informacoes da pagina atual
   ServicoHttp = inject(HttpService)
+  ServicoAutenticacao = inject(ServicoAutenticacao)
+  ServicoMensagens = inject(ServicoMensagens)
 
   ModalAdicionarBilhete: boolean = false;
   ModalVerDetalhes: boolean = false;
@@ -64,9 +68,14 @@ export class PaginaViagens {
 
 
   async adicionarCarrinho(viagem: any) {
-    const URL_Pedido = new URL(Definicoes.API_URL + "carrinho")
+    const utilizador = this.ServicoAutenticacao.Utilizador();
 
-    const queryParams = this.route.snapshot.queryParams;
+    if (!utilizador) {
+      this.ServicoMensagens.erro("É necessário iniciar sessão para adicionar ao carrinho.");
+      return;
+    }
+
+    const URL_Pedido = new URL(Definicoes.API_URL + "carrinho")
 
     try {
       const Resposta = await this.ServicoHttp.Request(URL_Pedido, "POST", "Erro ao adicionar ao carrinho", {
