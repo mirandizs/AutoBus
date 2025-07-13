@@ -7,6 +7,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { Carregamento } from '../../../Componentes/Carregamento/carregamento';
 
 interface Utilizador {
+  id_utilizador: number,
   nif: number;
   telefone: number;
   morada: string;
@@ -39,10 +40,14 @@ export class JanelaEditarUtilizador {
 
   async SubmeterForm() {
     this.FormEditarUtilizador.disable()
-    console.log(this.FormEditarUtilizador.value)
+
+    const Id = this.UtilizadorSelecionado()?.id_utilizador
 
     const Resultado = await this.ServicoHttp.Request(Definicoes.API_URL + 'editar-utilizador', 'PATCH', 'Não foi possivel editar os dados da conta',
-      this.FormEditarUtilizador.value) // O body equivale ao valor do form criar. Este .value e um array, com o nome de todos os campos e os seus valores
+      {
+        ...this.FormEditarUtilizador.value,
+        id_utilizador: Id
+      })
 
     if (Resultado) {
       this.ModalSucessoVisivel = true
@@ -54,6 +59,7 @@ export class JanelaEditarUtilizador {
 
   FormEditarUtilizador: FormGroup = new FormGroup({
     nome: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
     nif: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),  // ^\d{9}$ -> 9 digitos
     nascimento: new FormControl('', [Validators.required]),
     telefone: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),  // ^\d{9}$ -> 9 digitos
@@ -83,6 +89,8 @@ export class JanelaEditarUtilizador {
   }
 
 
+
+  // Por dados do utilizador a ser editado
   async ngOnInit() {
     const NIFUtilizador = this.route.snapshot.paramMap.get('id');
 
@@ -93,24 +101,23 @@ export class JanelaEditarUtilizador {
 
       if (resultado) {
         this.UtilizadorSelecionado.set(resultado)
-        this.FormEditarUtilizador.get('nome')?.setValue(this.Utilizador()?.nome)
-        this.FormEditarUtilizador.get('nif')?.setValue(this.Utilizador()?.nif)
-        this.FormEditarUtilizador.get('nascimento')?.setValue(this.Utilizador()?.nascimento)
-        this.FormEditarUtilizador.get('telefone')?.setValue(this.Utilizador()?.telefone)
-        this.FormEditarUtilizador.get('localidade')?.setValue(this.Utilizador()?.localidade)
-        this.FormEditarUtilizador.get('tipo_utilizador')?.setValue(this.Utilizador()?.tipo_utilizador)
-        this.FormEditarUtilizador.get('atividade')?.setValue(this.Utilizador()?.atividade)
-
-        console.log(resultado)
+        this.FormEditarUtilizador.get('nome')?.setValue(resultado.nome)
+        this.FormEditarUtilizador.get('nif')?.setValue(resultado.nif)
+        this.FormEditarUtilizador.get('email')?.setValue(resultado.email)
+        this.FormEditarUtilizador.get('nascimento')?.setValue(resultado.nascimento)
+        this.FormEditarUtilizador.get('telefone')?.setValue(resultado.telefone)
+        this.FormEditarUtilizador.get('localidade')?.setValue(resultado.localidade)
+        this.FormEditarUtilizador.get('tipo_utilizador')?.setValue(resultado.tipo_utilizador)
+        this.FormEditarUtilizador.get('atividade')?.setValue(resultado.atividade)
       }
     }
   }
 
-
+  // Por dados do utilizador que tem sessao inciada, caso nao haja nenhum a ser editado
   constructor() {
     this.FormEditarUtilizador.get('nif')?.disable();
+    this.FormEditarUtilizador.get('email')?.disable();
 
-    
     const NIFUtilizador = this.route.snapshot.paramMap.get('id');
 
     effect(() => {
@@ -144,7 +151,7 @@ export class JanelaEditarUtilizador {
     this.ModalSucessoVisivel = false;
     this.router.navigate(['/definicoes/minha-conta'])
     window.location.reload()
-  } 
+  }
 
 
   //funcao para permitir apenas a insercao de letras

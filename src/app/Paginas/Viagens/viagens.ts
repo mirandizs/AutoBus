@@ -101,6 +101,7 @@ export class PaginaViagens {
     }
 
 
+console.log(viagem)
     if (viagem.distancia_km === undefined || viagem.duracao_estimada === undefined || viagem.hora_chegada === undefined
     ) {
       this.ServicoMensagens.erro("Esta viagem não pode ser adicionada ao carrinho porque está com dados em falta.");

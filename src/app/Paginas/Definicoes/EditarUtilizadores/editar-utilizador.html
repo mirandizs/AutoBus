@@ -7,7 +7,7 @@
             <input type="text" class="info campoTexto caixa" formControlName="nome" (input)="permitirApenasLetras($event)"><br><br>
 
             <label>NIF:</label><br>
-            <input type="tel" class="info campoTexto caixa" maxlength="9" style="cursor: not-allowed;" [value]="UtilizadorSelecionado()?.nif" (keypress)="permitirApenasNumeros($event)" disabled>
+            <input type="tel" formControlName="nif" class="info campoTexto caixa" maxlength="9" style="cursor: not-allowed;"  (keypress)="permitirApenasNumeros($event)">
             <br><br>
 
             <label>Data de nascimento:</label><br>
@@ -17,10 +17,10 @@
                 <label>Tipo de utilizador:</label><br>
 
                 <select class="select-filtro" style="cursor: pointer;"  formControlName="tipo_utilizador">
-                    <option value="0" [selected]="UtilizadorSelecionado()?.tipo_utilizador == 0">
+                    <option value="0">
                         Administrador
                     </option>
-                    <option value="1" [selected]="UtilizadorSelecionado()?.tipo_utilizador == 1">
+                    <option value="1">
                         Cliente
                     </option>
                 </select>
@@ -41,17 +41,17 @@
                 <input type="text" class="info campoTexto caixa" formControlName="localidade" (input)="permitirApenasLetras($event)"><br><br>
 
                 <label>Email:</label><br>
-                <input type="email" class="info campoTexto caixa" style="cursor:not-allowed" [value]="UtilizadorSelecionado()?.email" disabled><br><br>
+                <input type="email" formControlName="email" class="info campoTexto caixa" style="cursor:not-allowed"><br><br>
 
                 <div class="row">
                     <div  style="padding:0px; padding-top:0px;">
                         <label>Atividade:</label><br>
 
                         <select class="select-filtro" style="cursor: pointer;"  formControlName="atividade">
-                            <option value="0" [selected]="UtilizadorSelecionado()?.atividade == 0">
+                            <option value="0" >
                                 Inativa
                             </option>
-                            <option value="1" [selected]="UtilizadorSelecionado()?.atividade == 1">
+                            <option value="1" >
                                 Ativa
                             </option>
                         </select>
