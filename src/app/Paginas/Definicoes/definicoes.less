@@ -151,6 +151,76 @@ button:disabled{
   color: black
 }
 
+.botaoDesativar {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border-color: #9d0a00;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.botaoDesativar:hover {
+  background-color: #9d0a00;  
+  color: white;
+}
+
+.modalDesativar {  
+  margin: 15% auto 15% auto;
+  padding-top: 15px;
+  padding-bottom: 40px;
+  background-color: white;
+  border-radius: 10px;
+  height: 100px;
+  width: 400px;
+  justify-self: center;
+  align-self: center;
+  background-color: #fefefe;
+  text-align: center;
+  justify-items: center;
+
+  div {
+    display: flex;
+  }
+}
+
+.botaoDesativarSim {
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  padding: 10px;  width: 100px;
+  transition: background 0.3s;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.botaoDesativarSim:hover {
+  background-color: #9d0a00;  
+  border-color: #6e0801;
+  color: white;
+}
+
+.botaoDesativarNao {
+  border-radius: 10px;
+  padding: 10px;
+  width: 100px;
+  background-color: white;
+  border: 2px solid black;
+  cursor: pointer;
+  color: black;
+}
+
+.botaoDesativarNao:hover {
+  background-color: rgb(9, 9, 127);
+  border-color: rgb(4, 4, 77);
+  color: white;
+}
+
+
+
+
 
 
 
@@ -389,7 +459,6 @@ button:disabled{
 .tabela tbody tr:hover {
   /*background-color: rgba(36, 33, 125, 0.514);*/
   background-color: #f0f0f0;
-  cursor: default;
 }
 
 /* Canto superior esquerdo e direito do cabeçalho */
@@ -767,6 +836,7 @@ padding: auto;
   display: none;
 }
 
+
 /* "caixa" que fica em volta da imagem de perfil */
 .bordas {
   border: 2px solid rgb(180, 180, 180);
@@ -832,15 +902,24 @@ padding: auto;
 .bloqueado input,
 .bloqueado select,
 .bloqueado textarea,
-.bloqueado button,
-.bloqueado label.file-label {
+.bloqueado button {
   cursor: not-allowed !important;
-  pointer-events: none;  /* desativa cliques */
 }
 
-.bloquear-botoes-imagem label.file-label {
-  pointer-events: none;
-  cursor: not-allowed !important;
+.bloqueado button.botaoDesativar {
+  background-color: #464657f1;
+  opacity: 0.6;
+  cursor: not-allowed;
+  border: none
+}
+.bloqueado button.botaoDesativar:hover {
+  color: black;
+}
+
+.bloqueado label.file-label {
+  background-color: #464657f1;
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 

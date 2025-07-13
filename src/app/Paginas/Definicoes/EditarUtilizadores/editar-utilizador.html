@@ -4,14 +4,14 @@
             <h2>Gestão de Utilizadores - Editar</h2><br><br>
 
             <label>Nome:</label><br>
-            <input type="text" class="info campoTexto caixa" formControlName="nome" [value]="UtilizadorSelecionado()?.nome" (input)="permitirApenasLetras($event)"><br><br>
+            <input type="text" class="info campoTexto caixa" formControlName="nome" (input)="permitirApenasLetras($event)"><br><br>
 
             <label>NIF:</label><br>
             <input type="tel" class="info campoTexto caixa" maxlength="9" style="cursor: not-allowed;" [value]="UtilizadorSelecionado()?.nif" (keypress)="permitirApenasNumeros($event)" disabled>
             <br><br>
 
             <label>Data de nascimento:</label><br>
-            <input type="date" class="info campoTexto caixa" formControlName="nascimento" [value]="UtilizadorSelecionado()?.nascimento" style="cursor: pointer;"><br><br>
+            <input type="date" class="info campoTexto caixa" formControlName="nascimento" style="cursor: pointer;"><br><br>
             
             <div class="column left" style="padding:0px; padding-top:0px;">
                 <label>Tipo de utilizador:</label><br>
@@ -35,10 +35,10 @@
         <div class="column right">
             <div style="padding-top: 90px;">
                 <label>Telemóvel:</label><br>
-                <input type="tel" class="info campoTexto caixa" formControlName="telefone" maxlength="9" [value]="UtilizadorSelecionado()?.telefone" (keypress)="permitirApenasNumeros($event)"><br><br>
+                <input type="tel" class="info campoTexto caixa" formControlName="telefone" maxlength="9" (keypress)="permitirApenasNumeros($event)"><br><br>
 
                 <label>Localidade:</label><br>
-                <input type="text" class="info campoTexto caixa" formControlName="localidade" [value]="UtilizadorSelecionado()?.localidade" (input)="permitirApenasLetras($event)"><br><br>
+                <input type="text" class="info campoTexto caixa" formControlName="localidade" (input)="permitirApenasLetras($event)"><br><br>
 
                 <label>Email:</label><br>
                 <input type="email" class="info campoTexto caixa" style="cursor:not-allowed" [value]="UtilizadorSelecionado()?.email" disabled><br><br>

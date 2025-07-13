@@ -74,7 +74,9 @@ export class PaginaCriarConta {
       }
 
       this.ServicoMensagens.sucesso("Conta criada com sucesso!")
-      this.router.navigate(["/inicial"])
+      this.router.navigate(["/inicial"]).then(()=> {
+        window.location.reload()
+      })
     }
 
     

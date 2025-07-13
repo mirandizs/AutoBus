@@ -1,5 +1,5 @@
 import { Component, effect, inject } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { ServicoAutenticacao } from '../../../Services/Autenticacao.service';
 import { Carregamento } from '../../../Componentes/Carregamento/carregamento';
 import { HttpService } from '../../../Services/Http.service';
@@ -8,6 +8,7 @@ import { Definicoes } from '../../../Definicoes';
 import { ModalVerificacao } from "../../../Componentes/ModalVerificacao/modal-verificacao";
 import { Validadores } from '../../../Services/Validadores';
 import { CommonModule } from '@angular/common';
+import { ServicoMensagens } from '../../../Componentes/ServicoMensagens/Mensagens.service';
 
 @Component({
   selector: 'janela-privacidade',
@@ -18,11 +19,15 @@ import { CommonModule } from '@angular/common';
 export class JanelaPrivacidade {
   ServicoAutenticacao = inject(ServicoAutenticacao)
   ServicoHttp = inject(HttpService)
+  router = inject(Router)
+  ServicoMensagens = inject(ServicoMensagens)
 
   Utilizador = this.ServicoAutenticacao.Utilizador
   PasswordVisivel = false
   
   AMandarEmail: boolean = false;
+  ModalDesativar: boolean = false
+  ModalSucessoVisivel: boolean = false
   ModalCodigo = false
 
   IsUtilizadorProtegidoEmail= false;
@@ -89,4 +94,39 @@ export class JanelaPrivacidade {
     })
   }
 
+
+
+  async Desativar() {
+    const URLDesativar = new URL('desativarConta', Definicoes.API_URL)
+    const ResultadoDesativar = await this.ServicoHttp.Request(URLDesativar, 'PATCH', 'Erro ao desativar conta.')
+
+    if (ResultadoDesativar) {
+    this.ModalSucessoVisivel = true
+    this.ModalDesativar = false
+
+    // Esperar 2 segundos antes de continuar
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    const URLLogout = new URL('logout', Definicoes.API_URL);
+    const ResultadoLogout = await this.ServicoHttp.Request(URLLogout, 'POST', 'Erro no logout')
+
+      if (ResultadoLogout) {
+        await this.router.navigate(['/inicial']);
+        window.location.reload();
+      } else {
+        // Se o logout falhar, fecha o modal
+        this.ModalDesativar = false;
+      }
+
+    } else {
+      // Se a desativação falhar, fecha o modal também
+      this.ServicoMensagens.erro("Erro ao desativar conta.")
+      this.ModalDesativar = false;
+    }
+  }
+
+
+  FecharModalSucesso() {
+    this.ModalDesativar = false;
+  } 
 }

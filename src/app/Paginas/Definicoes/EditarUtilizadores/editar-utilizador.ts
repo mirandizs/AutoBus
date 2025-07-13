@@ -39,6 +39,7 @@ export class JanelaEditarUtilizador {
 
   async SubmeterForm() {
     this.FormEditarUtilizador.disable()
+    console.log(this.FormEditarUtilizador.value)
 
     const Resultado = await this.ServicoHttp.Request(Definicoes.API_URL + 'editar-utilizador', 'PATCH', 'Não foi possivel editar os dados da conta',
       this.FormEditarUtilizador.value) // O body equivale ao valor do form criar. Este .value e um array, com o nome de todos os campos e os seus valores
@@ -92,6 +93,14 @@ export class JanelaEditarUtilizador {
 
       if (resultado) {
         this.UtilizadorSelecionado.set(resultado)
+        this.FormEditarUtilizador.get('nome')?.setValue(this.Utilizador()?.nome)
+        this.FormEditarUtilizador.get('nif')?.setValue(this.Utilizador()?.nif)
+        this.FormEditarUtilizador.get('nascimento')?.setValue(this.Utilizador()?.nascimento)
+        this.FormEditarUtilizador.get('telefone')?.setValue(this.Utilizador()?.telefone)
+        this.FormEditarUtilizador.get('localidade')?.setValue(this.Utilizador()?.localidade)
+        this.FormEditarUtilizador.get('tipo_utilizador')?.setValue(this.Utilizador()?.tipo_utilizador)
+        this.FormEditarUtilizador.get('atividade')?.setValue(this.Utilizador()?.atividade)
+
         console.log(resultado)
       }
     }

@@ -29,13 +29,44 @@
 
             <button type='submit' class='editar imagemEditar' [disabled]="Utilizador()?.email == FormPrivacidade.value.email" (click)="ModalCodigo = true; TipoEdicao='password'">
                 <img src='img/lapis.png' width='20px' height='20px'>
-            </button><br><br><br>
+            </button><br><br><br><br><br>
+
+
+            <button type="button" class="botaoDesativar" (click)="ModalDesativar = true"><strong>Desativar conta</strong></button><br><br><br>
 
             <label>Tenha certeza de que o email que está a utilizar está ativo ou que tenha espaço o
                 suficiente para receber emails de confirmação do nosso site.</label>
         </div>
     </div>
 </form>
+
+@if (ModalDesativar){
+    <carregamento></carregamento>
+    <div class='modalSucessoFundo'>
+        <div class='modalDesativar animate'>
+            <h3>Tem certeza que deseja desativar a conta?</h3><br>
+            <div>
+                <button class="botaoDesativarSim" (click)="Desativar()"><strong>Sim</strong></button>
+                <button class="botaoDesativarNao" (click)="FecharModalSucesso()"><strong>Não</strong></button>
+            </div>
+            
+            <br><br>
+        </div>
+    </div>
+}
+
+@if (ModalSucessoVisivel){
+    <carregamento></carregamento>
+    <div class='modalSucessoFundo'>
+        <div class='modalSucesso animate'>
+            <div style="display: flex; justify-content: space-between;">
+                <h3 style="margin-left: 30px; margin-top: 13px; margin-right: 5px;">Conta desativada com sucesso!</h3>
+                <span (click)="FecharModalSucesso()" class='fecharSu'>&times;</span>
+            </div>
+            <br><br>
+        </div>
+    </div>
+}
 
 <carregamento [Visivel]="AMandarEmail"></carregamento>
 <modal-verificacao (submetido)="EditarCredenciais($event)" [Aberto]="ModalCodigo"></modal-verificacao>

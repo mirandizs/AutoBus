@@ -33,7 +33,9 @@ export class PaginaViagens {
       const viagemCorrigida = { ...viagem };
       [viagemCorrigida.local_partida, viagemCorrigida.local_chegada] = [viagem.local_chegada, viagem.local_partida];
       this.ViagemSelecionada = viagemCorrigida;
-    } else {
+    } 
+    
+    else {
       this.ViagemSelecionada = viagem;
     }
 
@@ -55,6 +57,19 @@ export class PaginaViagens {
     URL_Pedido.searchParams.append("tipo_viagem", queryParams["tipo_viagem"])
 
     const Resultado = await this.ServicoHttp.Request(URL_Pedido, "GET")
+
+    this.ViagensIda = Resultado.ViagensIda.map((v: any) => ({
+      ...v,
+      tipo: 'Ida',
+      data: queryParams["data_ida"]
+    }));
+
+    this.ViagensVolta = Resultado.ViagensVolta?.map((v: any) => ({
+      ...v,
+      tipo: 'Volta',
+      data: queryParams["data_volta"]
+    }));
+    
     this.ViagensIda = Resultado.ViagensIda
     this.ViagensVolta = Resultado.ViagensVolta
 
@@ -62,6 +77,16 @@ export class PaginaViagens {
       viagem.data = viagem.tipo == "Ida" && queryParams["data_ida"]
         || viagem.tipo == "Volta" && queryParams["data_volta"]
         || new Date().toISOString().split('T')[0]
+    }
+
+    for (const viagem of [...this.ViagensVolta || []]) {
+      if (
+        viagem.distancia_km === undefined ||
+        viagem.duracao_estimada === undefined ||
+        viagem.hora_chegada === undefined
+      ) {
+        console.warn("Viagem de volta com dados em falta:", viagem);
+      }
     }
   }
 
@@ -74,6 +99,15 @@ export class PaginaViagens {
       this.ServicoMensagens.erro("É necessário iniciar sessão para adicionar ao carrinho.");
       return;
     }
+
+
+    if (viagem.distancia_km === undefined || viagem.duracao_estimada === undefined || viagem.hora_chegada === undefined
+    ) {
+      this.ServicoMensagens.erro("Esta viagem não pode ser adicionada ao carrinho porque está com dados em falta.");
+      console.error("Dados inválidos:", viagem);
+      return;
+    }
+
 
     const URL_Pedido = new URL(Definicoes.API_URL + "carrinho")
 
