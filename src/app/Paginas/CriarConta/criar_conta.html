@@ -118,7 +118,7 @@
   <!-- Mostar sempre que o valor nao e vazio -->
   @if (password?.value != ''){
     <div>
-      <div class="box2">
+      <div class="box2" #boxRequisitos>
         <h3>A palavra-passe deve conter pelo menos: </h3>
         <p [className]="password?.hasError('minuscula') ? 'invalid' : 'valid'">
           Uma letra <b>minúscula</b>

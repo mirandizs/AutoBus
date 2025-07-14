@@ -62,7 +62,6 @@ namespace Admin
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(359, 27);
             this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "autobus.pap@gmail.com";
             // 
             // textBox2
             // 
@@ -72,7 +71,6 @@ namespace Admin
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(357, 27);
             this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "123";
             this.textBox2.UseSystemPasswordChar = true;
             // 
             // label3

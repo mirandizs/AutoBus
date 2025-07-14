@@ -29,6 +29,7 @@ namespace Admin
         private void InitializeComponent()
         {
             this.panelEditar = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.btEscolherImgEditar = new System.Windows.Forms.Button();
             this.btCarregarImgEditar = new System.Windows.Forms.Button();
@@ -88,7 +89,6 @@ namespace Admin
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.panelEditar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCriar.SuspendLayout();
@@ -131,6 +131,17 @@ namespace Admin
             this.panelEditar.Size = new System.Drawing.Size(1130, 560);
             this.panelEditar.TabIndex = 0;
             this.panelEditar.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEditar_Paint);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.Maroon;
+            this.label7.Location = new System.Drawing.Point(61, 465);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(14, 17);
+            this.label7.TabIndex = 146;
+            this.label7.Text = "*";
             // 
             // textBox15
             // 
@@ -885,17 +896,6 @@ namespace Admin
             this.label23.Size = new System.Drawing.Size(230, 48);
             this.label23.TabIndex = 94;
             this.label23.Text = "Utilizador";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(61, 465);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(14, 17);
-            this.label7.TabIndex = 146;
-            this.label7.Text = "*";
             // 
             // Utilizador
             // 

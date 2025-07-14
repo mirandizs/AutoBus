@@ -15,102 +15,124 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Net;
+using System.IO;
+using System.Security.Cryptography;
 
 namespace Admin
 {
-    public partial class Perfil: Form
+  public partial class Perfil : Form
+  {
+    DadosUtilizador utilizador = new DadosUtilizador();
+    ligacaoDB db = new ligacaoDB();
+    Funcoes funcao = new Funcoes();
+
+    public int nif;
+
+    public Perfil(DadosUtilizador user)
     {
-        DadosUtilizador utilizador = new DadosUtilizador();
-        ligacaoDB db = new ligacaoDB();
+      InitializeComponent();
+      db.inicializa();
 
-        public int nif;
+      utilizador = user;
+      nif = utilizador.nif;
 
-        public Perfil(DadosUtilizador user)
+      //MessageBox.Show("ID do utilizador: " + id); // debug
+      Debug.WriteLine("NIF: " + nif); // debug
+
+      carregarDados();
+
+      // textbox invisível para tirar o foco
+      textBox4.TabStop = false;
+      textBox4.Visible = false;
+      this.ActiveControl = textBox4;
+
+      if (utilizador.email == "autobus.pap@gmail.com")
+      {
+        textBox2.Enabled = false;
+        textBox3.Enabled = false;
+        textBox5.Enabled = false;
+        textBox6.Enabled = false;
+        dateTimePicker1.Enabled = false;
+        btCarregarImgCriar.Enabled = false;
+        btEscolherImgCriar.Enabled=false;
+        label4.Visible = true;
+
+        label4.Text = "Não é possível editar os dados do administrador principal.";
+      }
+      else
+      {
+        textBox2.Enabled = true;
+        textBox3.Enabled = true;
+        label4.Visible = false;
+      }
+    }
+
+
+
+    //botao de sair
+    private void btVoltar_Click(object sender, EventArgs e)
+    {
+      Close();
+    }
+
+    //funcao para carregar os dados do admin
+    private void carregarDados()
+    {
+      try
+      {
+        textBox1.Text = utilizador.id_utilizador.ToString();
+        textBox2.Text = utilizador.nome;
+        textBox3.Text = utilizador.email;
+        textBox5.Text = utilizador.telefone.ToString();
+        textBox6.Text = utilizador.localidade;
+
+        if (utilizador.nascimento > dateTimePicker1.MinDate && utilizador.nascimento < dateTimePicker1.MaxDate)
         {
-            InitializeComponent();
-            db.inicializa();
-
-            utilizador = user;
-            nif = utilizador.nif;
-
-            //MessageBox.Show("ID do utilizador: " + id); // debug
-            Debug.WriteLine("NIF: " + nif); // debug
-
-            carregarDados();
-
-            // textbox invisível para tirar o foco
-            textBox4.TabStop = false;
-            textBox4.Visible = false;
-            this.ActiveControl = textBox4;
-
-            if (utilizador.email == "autobus.pap@gmail.com")
-            {
-                textBox2.Enabled = false;
-                textBox3.Enabled = false;
-                label4.Visible = true;
-                label4.Text = "Não é possível editar os dados do administrador principal.";
-            }
-            else
-            {
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
-                label4.Visible = false;
-            }
+          dateTimePicker1.Value = utilizador.nascimento;
+        }
+        else
+        {
+          // Define uma data padrão válida
+          dateTimePicker1.Value = DateTime.Now;
         }
 
-        
+        Debug.WriteLine("Dados carregados sem BD.");
+      }
+      catch (Exception ex)
+      {
+        Debug.WriteLine("Erro ao carregar dados do objeto: " + ex.Message);
+      }
+    }
 
-        //botao de sair
-        private void btVoltar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
-        //funcao para carregar os dados do admin
-        private void carregarDados()
-        {
-          try
-          {
-            textBox1.Text = utilizador.id_utilizador.ToString();
-            textBox2.Text = utilizador.nome;
-            textBox3.Text = utilizador.email;
-            textBox5.Text = utilizador.telefone.ToString();
-            textBox6.Text = utilizador.localidade;
 
-            if (utilizador.nascimento > dateTimePicker1.MinDate && utilizador.nascimento < dateTimePicker1.MaxDate)
-            {
-              dateTimePicker1.Value = utilizador.nascimento;
-            }
-            else
-            {
-              // Define uma data padrão válida
-              dateTimePicker1.Value = DateTime.Now;
-            }
+    private void btCarregarImgCriar_Click(object sender, EventArgs e)
+    {
+      OpenFileDialog ofd = new OpenFileDialog();
+      ofd.Filter = "Imagens|*.jpg;*.jpeg;*.png;*.bmp";
 
-            Debug.WriteLine("Dados carregados sem BD.");
-          }
-          catch (Exception ex)
-          {
-            Debug.WriteLine("Erro ao carregar dados do objeto: " + ex.Message);
-          }
-        }
+      if (ofd.ShowDialog() == DialogResult.OK)
+      {
+        pictureBox2.Image = Image.FromFile(ofd.FileName);
 
-        private void btEscolherImgCriar_Click(object sender, EventArgs e)
-        {
-            ImagemPerfil formImagem = new ImagemPerfil(pictureBox2);
-            formImagem.ShowDialog();
-        }
+        funcao.UploadImagem(ofd.FileName, nif);
 
-        private void btCarregarImgCriar_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Imagens|*.jpg;*.jpeg;*.png;*.bmp";
 
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox2.Image = Image.FromFile(ofd.FileName);
-            }
-        }
+      }
+    }
+    private void btEscolherImgCriar_Click(object sender, EventArgs e)
+    {
+      ImagemPerfil formImagem = new ImagemPerfil(pictureBox2);
+      formImagem.ShowDialog();
+
+      if (!string.IsNullOrEmpty(formImagem.CaminhoImagemSelecionada))
+      {
+        pictureBox2.Image = Image.FromFile(formImagem.CaminhoImagemSelecionada);
+        funcao.UploadImagem(formImagem.CaminhoImagemSelecionada, nif);
+      }
+
+    }
+
 
     private void Perfil_Load(object sender, EventArgs e)
     {

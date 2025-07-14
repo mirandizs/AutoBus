@@ -42,6 +42,7 @@ namespace Admin
             this.btMenu = new System.Windows.Forms.Button();
             this.btSair = new System.Windows.Forms.Button();
             this.panelUtilizadores = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.btAtivarUtilizador = new System.Windows.Forms.Button();
             this.btEditarUtilizadores = new System.Windows.Forms.Button();
             this.btDesativarUtilizador = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@ namespace Admin
             this.transicao = new System.Windows.Forms.Timer(this.components);
             this.transicaoLateral = new System.Windows.Forms.Timer(this.components);
             this.panelAutocarros = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.btAtivarAuto = new System.Windows.Forms.Button();
             this.dataGridViewAutocarro = new System.Windows.Forms.DataGridView();
             this.btPesquisarAutocarro = new System.Windows.Forms.Button();
@@ -62,8 +64,6 @@ namespace Admin
             this.btDesativarAuto = new System.Windows.Forms.Button();
             this.btEditarAutocarro = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -276,6 +276,13 @@ namespace Admin
             this.panelUtilizadores.Size = new System.Drawing.Size(1165, 547);
             this.panelUtilizadores.TabIndex = 5;
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(3, 10);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(20, 22);
+            this.textBox3.TabIndex = 19;
+            // 
             // btAtivarUtilizador
             // 
             this.btAtivarUtilizador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(3)))), ((int)(((byte)(59)))));
@@ -433,6 +440,13 @@ namespace Admin
             this.panelAutocarros.TabIndex = 6;
             this.panelAutocarros.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAutocarros_Paint);
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(1144, 522);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(16, 22);
+            this.textBox4.TabIndex = 29;
+            // 
             // btAtivarAuto
             // 
             this.btAtivarAuto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(3)))), ((int)(((byte)(59)))));
@@ -573,20 +587,6 @@ namespace Admin
             this.label3.TabIndex = 14;
             this.label3.Text = "Autocarros";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(3, 10);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(20, 22);
-            this.textBox3.TabIndex = 19;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(1144, 522);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(16, 22);
-            this.textBox4.TabIndex = 29;
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -597,8 +597,8 @@ namespace Admin
             this.ClientSize = new System.Drawing.Size(1350, 600);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanelMenu);
-            this.Controls.Add(this.panelAutocarros);
             this.Controls.Add(this.panelUtilizadores);
+            this.Controls.Add(this.panelAutocarros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Principal";

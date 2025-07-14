@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { HttpService } from '../../Services/Http.service';
@@ -26,7 +26,26 @@ export class PaginaCriarConta {
   SelecionarImagens = false
   ModalCodigo = false
   ACriarConta = false
+  private ScrollFeito = false;
   
+  @ViewChild('boxRequisitos') boxRequisitos?: ElementRef<HTMLDivElement>;
+
+  ngAfterViewChecked() {
+   const valor = this.password?.value;
+
+    if (valor && this.boxRequisitos && !this.ScrollFeito) {
+      setTimeout(() => {
+        this.boxRequisitos!.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        this.ScrollFeito = true; // impede scroll repetido
+      }, 150);
+    }
+
+    // Se o campo for apagado, volta a permitir scroll automático
+    if (!valor && this.ScrollFeito) {
+      this.ScrollFeito = false;
+    }
+  }
+
   ngOnInit() {
     if (this.SelecionarImagens === true) {
       console.log('Está a aparecer!');

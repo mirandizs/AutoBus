@@ -76,30 +76,23 @@ namespace Admin
 
 
 
+    Funcoes funcoes = new Funcoes();
 
 
     //CÓDIGO PARA >>>>CRIAR<<<< O UTILIZADOR -----------------------------------
     private void btCriarUtilizador_Click(object sender, EventArgs e)
     {
-      if (pictureBox2.Image == null)
+
+
+      if (CaminhoImagem!= null)
       {
-        MessageBox.Show("Por favor, selecione uma imagem!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        return;
+        Debug.WriteLine(CaminhoImagem);
+        int nif_input = int.Parse(textBox8.Text);
+        Debug.WriteLine(textBox2.Text);
+        funcoes.UploadImagem(CaminhoImagem, nif_input);
       }
 
-      string nif = textBox8.Text;
-      string nomeFicheiroImagem = $"{nif}.jpg"; // podes usar .png conforme o formato
-      string caminhoPasta = @"C:\Users\sofis\Desktop\pap\ServidorAutoBus\Servidor\Uploads";
-
-      if (!Directory.Exists(caminhoPasta))
-      {
-        Directory.CreateDirectory(caminhoPasta);
-      }
-
-      string caminhoCompleto = Path.Combine(caminhoPasta, nomeFicheiroImagem);
-      pictureBox2.Image.Save(caminhoCompleto, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-      //caso as passwords não forem iguais
+      ////caso as passwords não forem iguais
       if (textBox13.Text != textBox14.Text)
       {
         label21.Text = "As palavras-passe não coincidem.";
@@ -289,6 +282,7 @@ namespace Admin
       }
     }
 
+    private string CaminhoImagem = "";
     //botao de escolher imagem do pc
     private void btCarregarImgCriar_Click(object sender, EventArgs e)
     {
@@ -298,6 +292,7 @@ namespace Admin
       if (ofd.ShowDialog() == DialogResult.OK)
       {
         pictureBox2.Image = Image.FromFile(ofd.FileName);
+        CaminhoImagem = ofd.FileName;
       }
     }
 
@@ -306,6 +301,11 @@ namespace Admin
     {
       ImagemPerfil formImagem = new ImagemPerfil(pictureBox2);
       formImagem.ShowDialog();
+
+      if (!string.IsNullOrEmpty(formImagem.CaminhoImagemSelecionada))
+      {
+        CaminhoImagem = formImagem.CaminhoImagemSelecionada;
+      }
     }
 
     //botao de voltar para a pagina anterior
@@ -402,37 +402,8 @@ namespace Admin
               cmd.Parameters.AddWithValue("@telefone", textBox5.Text);
               cmd.Parameters.AddWithValue("@localidade", textBox6.Text);
               cmd.Parameters.AddWithValue("@nascimento", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
-
-              byte[] imagemBytes;
-
-              if (pictureBox1.Image == null)
-              {
-                // Caminho da imagem default (ajusta conforme o local no teu projeto)
-                string caminhoImagemDefault = @"C:\Users\sofis\Desktop\pap\ServidorAutoBus\Servidor\Uploads" + @"\img\default-profile.png";
-
-                if (File.Exists(caminhoImagemDefault))
-                {
-                  imagemBytes = File.ReadAllBytes(caminhoImagemDefault);
-                }
-                else
-                {
-                  MessageBox.Show("Imagem default não encontrada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                  return;
-                }
-              }
-
-              else
-              {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                  pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
-                  imagemBytes = ms.ToArray();
-                }
-              }
-
               cmd.Parameters.AddWithValue("@atividade", atividade);
               cmd.Parameters.AddWithValue("@tipo_utilizador", tipoUtilizador);
-
 
               MessageBoxButtons botoes = MessageBoxButtons.YesNo;
               System.Windows.Forms.DialogResult resultado;
@@ -441,15 +412,18 @@ namespace Admin
 
               if (resultado == System.Windows.Forms.DialogResult.Yes) //caso "sim"
               {
+                //executar o comando
+                cmd.ExecuteNonQuery();
+
+                //Editar imagens
+                funcoes.UploadImagem(CaminhoImagem, utilizador.nif);
+
                 MessageBox.Show("Dados alterados com sucesso.", "AutoBus", MessageBoxButtons.OK, MessageBoxIcon.Information);
               }
               else //caso "não"
               {
                 MessageBox.Show("Operação cancelada.");
               }
-
-              //executar o comando
-              cmd.ExecuteNonQuery();
 
               //fechar a ligação à BD
               db.close_connection();
@@ -472,6 +446,7 @@ namespace Admin
       if (ofd.ShowDialog() == DialogResult.OK)
       {
         pictureBox1.Image = Image.FromFile(ofd.FileName);
+        CaminhoImagem = ofd.FileName;
       }
     }
 
@@ -480,6 +455,11 @@ namespace Admin
     {
       ImagemPerfil formImagem = new ImagemPerfil(pictureBox1);
       formImagem.ShowDialog();
+
+      if (!string.IsNullOrEmpty(formImagem.CaminhoImagemSelecionada))
+      {
+        CaminhoImagem = formImagem.CaminhoImagemSelecionada;
+      }
     }
 
     //botao de voltar para a pagina anterior
