@@ -69,8 +69,12 @@
                     style="margin-left:3%"><br>
 
                 <label style="margin-left:3%"><b>Palavra-Passe</b></label>
-                <input class="inserir" type="password" placeholder="Insira a palavra-passe" formControlName="password"
-                    style="margin-left:3%">
+                <div style="display: flex; gap:15px; align-items: center;">
+                    <input class="inserir" [type]="PasswordVisible ? 'text' : 'password'" placeholder="Insira a palavra-passe" formControlName="password"
+                    style="margin-left:3%; width: 80%;">
+                    <img (click)="PasswordVisible = !PasswordVisible" style="pointer-events: all;" 
+                    [src]="PasswordVisible ? 'img/abertoB.png' : 'img/fechadoB.png'"  width="20px" height="20px">
+                </div>
 
                 <div style="display: flex; justify-content: space-between; width: 90%;">
                     <button type="submit" class="ButaoLogin" (click)="Login()"

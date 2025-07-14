@@ -152,21 +152,21 @@
 
       <br>
 
-      <label>Insira uma imagem para o teu perfil de utilizador!</label><br><br>
+      <label style="text-align: center; width: 100%; display: block;">Insira uma imagem para o teu perfil de utilizador!</label><br>
 
       <a>
         <img class='imagemUti' [src]="ImagemSelecionada" onerror='this.src="img/default.png"'>
       </a><br>
 
         <div style="display:flex; justify-content: center; align-items: center;">
-          <label for="file" class="file-label" (click)="SelectorImagem.click()">Carregar imagem</label>
+          <label for="file" class="file-label" style="margin-right: 20px;" (click)="SelectorImagem.click()">Carregar imagem</label>
           <input #SelectorImagem type="file" accept="image/*" class="file-input" name="foto"
             (change)="ImagemMudada($event)"><br>
 
-        <label class="file-label">Selecionar imagem
-          <input type="button" class="file-input" (click)="SelecionarImagens = true"><br>
-        </label>
-      </div>
+          <label class="file-label">Selecionar imagem
+            <input type="button" class="file-input" (click)="SelecionarImagens = true"><br>
+          </label>
+        </div>
 
 
       <!-- <button type='submit' class="botaoCriarConta" style='margin-right: 250px; margin-left:5px'

@@ -61,9 +61,10 @@ export class Topbar {
     }
   }
 
+  PasswordVisible = false
   FormLogin = new FormGroup({
-    email: new FormControl('autobus.pap@gmail.com', [Validators.required, Validators.email]),
-    password: new FormControl('123', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
   });
 
   // FormLogin = new FormGroup({
