@@ -31,7 +31,6 @@ export class FormPesquisaViagens {
     hora_volta: new FormControl('', []),
     data_ida: new FormControl('', []),
     data_volta: new FormControl('', []),
-    // passageiros: new FormControl('1', []),
     tipo_viagem: new FormControl('Ida', []), // Valor default e ida
   });
 
@@ -62,7 +61,6 @@ export class FormPesquisaViagens {
         hora_volta: params['hora_volta'] || '',
         data_ida: params['data_ida'] || '',
         data_volta: params['data_volta'] || '',
-        // passageiros: params['passageiros'] || '1',
         tipo_viagem: params['tipo_viagem'] || 'Ida',
       });
     });
